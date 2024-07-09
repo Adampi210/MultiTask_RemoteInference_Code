@@ -6,3 +6,6 @@
 3. Activate the environment using th command <code>conda activate drone_video_analysis_env</code>
 4. Test the scheduler and frame extractor using the command <code>python3 data_funcs.py</code>
 5. Test the segmenter using the command <code>python3 NN_funcs.py</code>
+
+## Pretrained model links
+- DDRNet: https://github.com/ydhongHIT/DDRNet
