@@ -1,0 +1,9 @@
+https://data.transportation.gov/resource/8ect-6jqj.csv,NGSIM_vehicle_evaluation_data.csv
+https://data.transportation.gov/api/views/2577-gpny/files/155a5a7e-3643-4ebe-8e72-8897f27bb5f6?download=true&filename=nb-camera1-0400pm-0415pm.avi,nb-camera1-0400pm-0415pm.avi
+https://data.transportation.gov/api/views/2577-gpny/files/2535967c-fdeb-4b7d-8b24-0ea0790d84d9?download=true&filename=nb-camera7-0400pm-0415pm.avi,nb-camera7-0400pm-0415pm.avi
+https://data.transportation.gov/api/views/4qzi-thur/files/3b5f1be8-077b-4a65-8831-5a6593dabb88?download=true&filename=sb-camera3-0750am-0805am.avi,sb-camera3-0750am-0805am.avi
+https://data.transportation.gov/api/views/4qzi-thur/files/316d32ba-4695-4fd4-98ea-bee220febff8?download=true&filename=sb-camera4-0805am-0820am.avi,sb-camera4-0805am-0820am.avi
+https://data.transportation.gov/api/views/mupt-aksf/files/acc346bb-d8cf-4098-ba75-642cc8fbf3d5?download=true&filename=peachtree-camera3-1245pm-0100pm.avi,peachtree-camera3-1245pm-0100pm.avi
+https://data.transportation.gov/api/views/mupt-aksf/files/a46deb7e-beb4-46fd-a520-63bcf1efeac4?download=true&filename=peachtree-camera6-0400pm-0415pm.avi,peachtree-camera6-0400pm-0415pm.avi
+https://data.transportation.gov/api/views/uv3e-y54k/files/75648656-8c22-4e56-9436-0c96f5987bb7?download=true&filename=lankershim-camera4-0830am-0845am.avi,lankershim-camera4-0830am-0845am.avi
+https://data.transportation.gov/api/views/uv3e-y54k/files/8c43e545-a877-4110-8082-b5979e5c197b?download=true&filename=lankershim-camera5-0845am-0900am.avi,lankershim-camera5-0845am-0900am.avi
