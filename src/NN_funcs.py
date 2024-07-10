@@ -1,26 +1,16 @@
-import os
-import sys
-
-# Add the parent directory to the Python path
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.insert(0, parent_dir)
-
 import numpy as np
 import torch
-import torchvision
 import cv2
 from PIL import Image
-import albumentations as A
-import torchvision.transforms as T
-import torchvision.transforms.functional as F
-import segmentation_models_pytorch as smp
+import matplotlib.pyplot as plt
+from segment_anything import SamPredictor, sam_model_registry, SamAutomaticMaskGenerator
 
-
-from torchvision.models.segmentation import deeplabv3_resnet101, DeepLabV3_ResNet101_Weights
 from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights
 
-from lib.ddrnet_23 import DualResNet_imagenet
 from data_funcs import *
+
+dir_level = '../../..'
+model_weight_path = "%s/models/" % dir_level
 
 class VehicleDetectorNN():
     def __init__(self, device = torch.device("cuda" if torch.cuda.is_available() else "cpu")):
@@ -57,148 +47,57 @@ class VehicleDetectorNN():
             cv2.rectangle(frame, (vehicle[0], vehicle[1]), (vehicle[2], vehicle[3]), (0, 0, 255), 2)
         return frame
 
-class DDRNetSegmenter:
-    def __init__(self, model_path, device=torch.device("cuda" if torch.cuda.is_available() else "cpu")):
+class SAMSegmenter:
+    def __init__(self, model_type = "vit_l", device = torch.device("cuda" if torch.cuda.is_available() else "cpu")):
         self.device = device
-        self.model = self.load_model(model_path)
-        self.model.to(self.device)
-        self.model.eval()
+        self.model_type = model_type
+        self.model = self.load_model()
+        self.mask_generator = SamAutomaticMaskGenerator(self.model)
         
-        # Classes from the Cityscapes dataset
-        self.classes = [
-            'road', 'sidewalk', 'building', 'wall', 'fence', 'pole',
-            'traffic light', 'traffic sign', 'vegetation', 'terrain', 'sky',
-            'person', 'rider', 'car', 'truck', 'bus', 'train', 'motorcycle', 'bicycle'
-        ]
-        
-        # Need to resize to Cityscapes resolution, also normalize
-        self.preprocess = T.Compose([
-            T.Resize((1024, 2048)),
-            T.ToTensor(),
-            T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-        ])
+    def load_model(self):
+        checkpoint_path = f"{model_weight_path}/sam_{self.model_type}.pth"
+        sam = sam_model_registry[self.model_type](checkpoint = checkpoint_path)
+        sam.to(device = self.device)
+        return sam
     
-    # Load the pretrained model
-    def load_model(self, model_path):
-        # Create a simple config object
-        class Config:
-            def __init__(self):
-                self.MODEL = type('', (), {})()
-                self.MODEL.PRETRAINED = model_path
-
-        cfg = Config()
-
-        # Initialize the model architecture
-        model = DualResNet_imagenet(cfg, pretrained=True)
-        
-        # The model should already be loaded with the weights, but if you want to be sure:
-        state_dict = torch.load(model_path, map_location=self.device)
-        if 'model' in state_dict:
-            state_dict = state_dict['model']
-        model.load_state_dict(state_dict, strict=False)
-        
-        return model
-    
-    # Preprocess the image for the input to the neural net
     def preprocess_image(self, image):
-        # Convert BGR to RGB
-        image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        
-        # Apply CLAHE
-        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
-        lab = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2LAB)
-        l, a, b = cv2.split(lab)
-        l = clahe.apply(l)
-        lab = cv2.merge((l,a,b))
-        image_rgb = cv2.cvtColor(lab, cv2.COLOR_LAB2RGB)
-        
-        # Apply Gaussian blur
-        image_rgb = cv2.GaussianBlur(image_rgb, (5, 5), 0)
-        
-        # Sharpen the image
-        kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
-        image_rgb = cv2.filter2D(image_rgb, -1, kernel)
-        
-        # Apply gamma correction
-        gamma = 1.2
-        inv_gamma = 1.0 / gamma
-        table = np.array([((i / 255.0) ** inv_gamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
-        image_rgb = cv2.LUT(image_rgb, table)
-        
-        # Convert to PIL Image
-        pil_image = Image.fromarray(image_rgb)
-        
-        # Apply resize and normalization
-        preprocessed = self.preprocess(pil_image)
-        return preprocessed.unsqueeze(0)
+        # Convert to RGB
+        if image.shape[2] == 3:
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        return image
     
-    # Create the segmentation
     def segment(self, image):
-        processed = self.preprocess_image(image).to(self.device)
-        with torch.no_grad():
-            output = self.model(processed)
-        
-        # Check if the output is a list (in case of augmented output)
-        if isinstance(output, list):
-            output = output[-1]  # Use the main output, not the auxiliary one
-        
-        pred = output.argmax(1).squeeze(0).cpu().numpy()
-        return pred
+        processed = self.preprocess_image(image)
+        masks = self.mask_generator.generate(processed)
+        return masks
     
-    # Create color map
-    def colorize_segmentation(self, pred):
-        colormap = np.array([
-            [128, 64, 128],  # road
-            [244, 35, 232],  # sidewalk
-            [70, 70, 70],    # building
-            [102, 102, 156], # wall
-            [190, 153, 153], # fence
-            [153, 153, 153], # pole
-            [250, 170, 30],  # traffic light
-            [220, 220, 0],   # traffic sign
-            [107, 142, 35],  # vegetation
-            [152, 251, 152], # terrain
-            [70, 130, 180],  # sky
-            [220, 20, 60],   # person
-            [255, 0, 0],     # rider
-            [0, 0, 142],     # car
-            [0, 60, 100],    # truck
-            [0, 80, 100],    # bus
-            [0, 0, 230],     # train
-            [119, 11, 32],   # motorcycle
-            [0, 0, 142],     # bicycle
-        ], dtype=np.uint8)
+    def colorize_segmentation(self, masks):
+        # Get a colormap for the segmentation output
+        colormap = plt.get_cmap('tab20b')
+        # Colored segmentation
+        colored_seg = np.zeros((*masks[0]['segmentation'].shape, 3), dtype = np.uint8)
         
-        colored_pred = colormap[pred]
-        return colored_pred
-
-def test_segmentation(image_path, model_path):
-    segmenter = DDRNetSegmenter(model_path)
+        # Assign colors to the generated masks
+        for i, mask in enumerate(masks):
+            color = np.array(colormap(i % 20)[:3]) * 255
+            colored_seg[mask['segmentation']] = color
+        
+        return colored_seg
+    
+# For testing the segmenter
+def test_segmentation(image_path, model_type = "vit_l"):
+    segmenter = SAMSegmenter(model_type = model_type)
     image = cv2.imread(image_path)
-    if image is None:
-        print(f"Error: Could not read image from {image_path}")
-        return
     
-    segmentation = segmenter.segment(image)
-    colored_segmentation = segmenter.colorize_segmentation(segmentation)
-    
-    # Resize colored_segmentation to match original image size
-    colored_segmentation = cv2.resize(colored_segmentation, (image.shape[1], image.shape[0]))
+    masks = segmenter.segment(image)
+    colored_segmentation = segmenter.colorize_segmentation(masks)
     
     # Overlay segmentation on original image
     overlay = cv2.addWeighted(image, 0.3, colored_segmentation, 0.7, 0)
     
-    cv2.imwrite('segmentation_result.jpg', cv2.cvtColor(overlay, cv2.COLOR_RGB2BGR))
-    print("Segmentation result saved as segmentation_result.jpg")
+    cv2.imwrite(f'segmentation_result_{model_type}.jpg', cv2.cvtColor(overlay, cv2.COLOR_RGB2BGR))
 
-    # Print unique classes in the segmentation
-    unique_classes = np.unique(segmentation)
-    print("\nClasses found in the image:")
-    for class_id in unique_classes:
-        if class_id < len(segmenter.classes):
-            print(f"- {segmenter.classes[class_id]}")
-        else:
-            print(f"- Unknown class {class_id}")
+    print(f"\nNumber of segments found: {len(masks)}")
 
 if __name__ == "__main__":
-    test_segmentation("../data/first_frame.jpg", "../../../models/DDRNet_23_Cityscapes.pth")
+    test_segmentation("../data/first_frame.jpg", model_type = "vit_b")
