@@ -104,3 +104,17 @@ if __name__ == "__main__":
                 save_img(frame, "../data/first_frame.jpg")
                 print("Saved the image as first_frame.jpg")
                 break
+            
+            
+# Try SAM
+# Complete 1 task perfectly (Counting the vehicles)
+# About the LSTM: 
+#   - Count the number of vehicles, predict the number of vehicles for next frame
+#   - Pretrain an LSTM model for the task
+#   - The LSTM should be pretrained offline on the prediction data
+#   - For the segmentation, potentially use past frame for future prediction
+#   - Add inference error function of the LSTM for predicting the k (number of vehicles)
+#   - Have multiple LSTMs for different k values, where k is the future predicted offset. 
+# - Get the loss of the LSTM 
+# email: preston smith and ask about the disk: https://www.rcac.purdue.edu/index.php/about/staff/psmith
+# 
