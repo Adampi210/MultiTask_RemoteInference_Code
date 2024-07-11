@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     # Test frame retreival
     if video_files:
-        frames = get_frames(video_files[1])
+        frames = get_frames(video_files[3])
         for i, frame in enumerate(frames):
             if i == 0:  
                 save_img(frame, "../data/first_frame.jpg")

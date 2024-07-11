@@ -3,50 +3,86 @@ import torch
 import cv2
 from PIL import Image
 import matplotlib.pyplot as plt
+import torchvision.transforms.functional as F
+
+from ultralytics import YOLO
 from segment_anything import SamPredictor, sam_model_registry, SamAutomaticMaskGenerator
-
-from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights
-
 from data_funcs import *
 
 dir_level = '../../..'
 model_weight_path = "%s/models/" % dir_level
 
 class VehicleDetectorNN():
-    def __init__(self, device = torch.device("cuda" if torch.cuda.is_available() else "cpu")):
+    def __init__(self, model_path='../../../models/yolov8x.pt', device='cuda' if torch.cuda.is_available() else 'cpu'):
         self.device = device
-        # Use a pretrained model, NOTE: if want to change the model, change here
-        self.model = fasterrcnn_resnet50_fpn(weights=FasterRCNN_ResNet50_FPN_Weights.DEFAULT).to(self.device)
-        self.model.eval()
-        self.vehicle_classes = [3, 6, 8]  # Indices for car, bus, truck in COCO dataset
-    
-    # To find all vehicles in a frame
+        self.model = YOLO(model_path)
+        self.vehicle_classes = ['car', 'truck', 'bus']
+        self.input_size = (640, 640)  # Standard input size for YOLOv8
+
+    def preprocess_image(self, frame):
+        # Convert to RGB (YOLO expects RGB input)
+        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        # Resize the image
+        frame_resized = cv2.resize(frame_rgb, self.input_size, interpolation=cv2.INTER_LINEAR)
+
+        # Apply Gaussian blur to reduce noise
+        frame_blurred = cv2.GaussianBlur(frame_resized, (5, 5), 0)
+
+
+
+        return frame_blurred
+
     def detect_vehicles(self, frame):
-        # Get the image tensor from the frame
-        img_tns = F.to_tensor(frame).unsqueeze(0).to(self.device)
-        # Get prediction on the frame
-        with torch.no_grad():
-            prediction_tns = self.model(img_tns)[0]  
-            # Get boxes for each vehicle  
-            vehicles = []
-            for i, label in enumerate(prediction_tns['labels']):
-                if label in self.vehicle_classes and prediction_tns['scores'][i] > 0.5:
-                    box = prediction_tns['boxes'][i].cpu().numpy().astype(int)
-                    vehicles.append(box)
+        preprocessed_frame = self.preprocess_image(frame)
+        results = self.model(preprocessed_frame)
+        vehicles = []
+        for r in results:
+            boxes = r.boxes
+            for box in boxes:
+                cls = int(box.cls[0])
+                if self.model.names[cls] in self.vehicle_classes:
+                    x1, y1, x2, y2 = box.xyxy[0].cpu().numpy().astype(int)
+                    conf = float(box.conf[0])
+                    if conf > 0.25:  # Confidence threshold
+                        # Scale bounding box coordinates back to original image size
+                        h, w = frame.shape[:2]
+                        x1 = int(x1 * w / self.input_size[0])
+                        y1 = int(y1 * h / self.input_size[1])
+                        x2 = int(x2 * w / self.input_size[0])
+                        y2 = int(y2 * h / self.input_size[1])
+                        vehicles.append([x1, y1, x2, y2])
         return vehicles
-    
-    # To count vehicles
+
     def count_vehicles(self, frame):
-        vehicles = self.detect_vehicles(frame)
-        return len(vehicles)
-    
-    # To draw boxes over a vehicles in a frame
+        return len(self.detect_vehicles(frame))
+
     def draw_vehicles(self, frame):
         vehicles = self.detect_vehicles(frame)
         for vehicle in vehicles:
-            cv2.rectangle(frame, (vehicle[0], vehicle[1]), (vehicle[2], vehicle[3]), (0, 0, 255), 2)
+            cv2.rectangle(frame, (vehicle[0], vehicle[1]), (vehicle[2], vehicle[3]), (0, 255, 0), 2)
         return frame
 
+    def process_video(self, video_path, output_path):
+        cap = cv2.VideoCapture(video_path)
+        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        fps = int(cap.get(cv2.CAP_PROP_FPS))
+        
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+        
+        while cap.isOpened():
+            ret, frame = cap.read()
+            if not ret:
+                break
+            
+            frame_with_vehicles = self.draw_vehicles(frame)
+            out.write(frame_with_vehicles)
+        
+        cap.release()
+        out.release()
+                
 class SAMSegmenter:
     def __init__(self, model_type = "vit_l", device = torch.device("cuda" if torch.cuda.is_available() else "cpu")):
         self.device = device
@@ -100,4 +136,4 @@ def test_segmentation(image_path, model_type = "vit_l"):
     print(f"\nNumber of segments found: {len(masks)}")
 
 if __name__ == "__main__":
-    test_segmentation("../data/first_frame.jpg", model_type = "vit_b")
+    test_segmentation("../data/first_frame.jpg", model_type = "vit_l")
