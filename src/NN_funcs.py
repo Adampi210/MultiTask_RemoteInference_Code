@@ -246,5 +246,5 @@ if __name__ == "__main__":
     dir_data_path = '/scratch/gilbreth/apiasecz/data/NGSIM_traffic_data/'
     video_files = sorted(get_video_files(dir_data_path))
     for video_file in video_files:
-        segmentation_loss_calculation(video_file, seed = 0, start_frame = 0, end_frame = 11, results_dir = results_dir)
+        segmentation_loss_calculation(video_file, seed = 0, start_frame = None, end_frame = None, results_dir = results_dir)
     exit()

@@ -1,8 +1,0 @@
-
-The following have been reloaded with a version change:
-  1) cuda/11.2.0 => cuda/12.1.1
-
-Frame size: 640x480
-Processed frame 0
-Processed frame 10
-IoU loss results saved to ../data/lankershim-camera1-0830am-0845am_segmentation_IoU_loss_result_seed_0.csv
