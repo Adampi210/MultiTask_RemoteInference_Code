@@ -13,7 +13,7 @@ from data_funcs import *
 dir_level = "../../.."
 model_weight_path = "%s/models/" % dir_level
 # results_dir = "/scratch/gilbreth/apiasecz/results/NGSIM_traffic_data_results/segmentation_masks"
-results_dir = '.'
+results_dir = '../data/'
 
 # Detector class
 class VehicleDetectorNN():
@@ -210,17 +210,17 @@ def segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_
             vit_l_masks, vit_b_masks = process_frame_both_models(frame, vit_l_segmenter, vit_b_segmenter)
             
             # Optional get the frames with segmentation for checking
-            if frame_num % 10 == 0:
+            if frame_num % 500 == 0:
                 colored_vit_l_masks = vit_l_segmenter.colorize_segmentation(vit_l_masks)
                 colored_vit_b_masks = vit_b_segmenter.colorize_segmentation(vit_b_masks)
                 overlay_l = cv2.addWeighted(frame, 0.3, colored_vit_l_masks, 0.7, 0)
                 overlay_b = cv2.addWeighted(frame, 0.3, colored_vit_b_masks, 0.7, 0)
-                cv2.imwrite(f'../data/frame_{frame_num}_segmentation_result_vit_l.jpg', cv2.cvtColor(overlay_l, cv2.COLOR_RGB2BGR))
-                cv2.imwrite(f'../data/frame_{frame_num}_segmentation_result_vit_b.jpg', cv2.cvtColor(overlay_b, cv2.COLOR_RGB2BGR))
+                cv2.imwrite(f'../data/{video_name}_frame_{frame_num}_segmentation_result_vit_l.jpg', cv2.cvtColor(overlay_l, cv2.COLOR_RGB2BGR))
+                cv2.imwrite(f'../data/{video_name}_frame_{frame_num}_segmentation_result_vit_b.jpg', cv2.cvtColor(overlay_b, cv2.COLOR_RGB2BGR))
 
             # Calculate loss
-            vit_l_combined = np.zeros((frame_height, frame_width), dtype=bool)
-            vit_b_combined = np.zeros((frame_height, frame_width), dtype=bool)
+            vit_l_combined = np.zeros((frame_height, frame_width), dtype = bool)
+            vit_b_combined = np.zeros((frame_height, frame_width), dtype = bool)
 
             for mask in vit_l_masks:
                 vit_l_combined |= mask['segmentation']
@@ -240,7 +240,11 @@ def segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_
     print(f"IoU loss results saved to {output_file}")
 
 
+
 if __name__ == "__main__":
     # test_segmentation('../data/first_frame.jpg', 'vit_b')
-    video_path = '/scratch/gilbreth/apiasecz/data/NGSIM_traffic_data/nb-camera1-0400pm-0415pm.avi'
-    segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_frame = 11, results_dir = results_dir)
+    dir_data_path = '/scratch/gilbreth/apiasecz/data/NGSIM_traffic_data/'
+    video_files = sorted(get_video_files(dir_data_path))
+    for video_file in video_files:
+        segmentation_loss_calculation(video_file, seed = 0, start_frame = 0, end_frame = 11, results_dir = results_dir)
+    exit()
