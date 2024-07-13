@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Put data in desired dir
-target_dir="$HOME/data/NGSIM_traffic_data"
+target_dir="/scratch/gilbreth/apiasecz/data/NGSIM_traffic_data"
 mkdir -p "$target_dir"
 
 # Read URLs and names
-input_file="./NGSIM_data_URL_list_lite.txt"
+input_file="./NGSIM_data_URL_list.txt"
 
 # Download all data
 while IFS=',' read -r url filename

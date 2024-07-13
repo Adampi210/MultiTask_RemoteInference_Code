@@ -1,5 +1,9 @@
 import cv2
 import os 
+import random
+import numpy as np
+import torch
+import json
 from collections import deque
 
 # Return a generator object with video frames
@@ -66,6 +70,17 @@ class DataHistory:
             return None, None, None
         return list(self.data), list(self.segmentations), list(self.vehicle_counts)
 
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+
 # Test data processing code
 if __name__ == "__main__":
     # Test Data history class
@@ -98,7 +113,7 @@ if __name__ == "__main__":
 
     # Test frame retreival
     if video_files:
-        frames = get_frames(video_files[3])
+        frames = get_frames(video_files[0])
         for i, frame in enumerate(frames):
             if i == 0:  
                 save_img(frame, "../data/first_frame.jpg")
