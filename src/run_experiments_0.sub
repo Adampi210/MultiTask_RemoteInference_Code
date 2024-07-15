@@ -24,4 +24,4 @@ module load anaconda/2020.11-py38
 conda activate $conda_env_used
 
 # Run the experiment code
-python3 NN_funcs.py
+python3 test.py
