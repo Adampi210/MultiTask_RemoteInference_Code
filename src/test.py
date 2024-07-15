@@ -58,7 +58,7 @@ class VehicleDetectorNN():
         preprocessed_frame = self.preprocess_image(frame)
         cv2.imwrite('after_preprocessing.jpg', preprocessed_frame)
       
-        results = self.model(preprocessed_frame, conf=self.conf_threshold, iou=self.iou_threshold, classes=self.vehicle_classes)
+        results = self.model(preprocessed_frame, conf = self.conf_threshold, iou = self.iou_threshold, classes = self.vehicle_classes)
 
         vehicles = []
         if results and len(results) > 0:

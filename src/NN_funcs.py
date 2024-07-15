@@ -239,12 +239,102 @@ def segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_
 
     print(f"IoU loss results saved to {output_file}")
 
+def calculate_multi_k_loss(video_path, seed = 0, start_frame = None, end_frame = None, results_dir = './results', max_k = 20):
+    set_seed(seed)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+    vit_l_segmenter = SAMSegmenter(model_type = "vit_l", device = device)
+    vit_b_segmenter = SAMSegmenter(model_type = "vit_b", device = device)
+
+    video_name = os.path.splitext(os.path.basename(video_path))[0]
+    output_file = os.path.join(results_dir, f"{video_name}_multi_k_loss_result_seed_{seed}.csv")
+    
+    os.makedirs(results_dir, exist_ok = True)
+
+    frame_generator = get_frames(video_path)
+    
+    # Initialize a deque to store the last max_k+1 frames
+    frame_history = deque(maxlen = max_k + 1)
+    
+    with open(output_file, 'w', newline = '') as csvfile:
+        csv_writer = csv.writer(csvfile)
+        header = ['Frame'] + [f'k={i}' for i in range(max_k + 1)]
+        csv_writer.writerow(header)
+
+        for frame_num, frame in enumerate(frame_generator):
+            if start_frame is not None and frame_num < start_frame:
+                continue
+            if end_frame is not None and frame_num >= end_frame:
+                break
+
+            if frame_num == 0:
+                frame_height, frame_width = frame.shape[:2]
+                print(f"Frame size: {frame_width}x{frame_height}")
+
+            # Get masks for current frame
+            vit_l_masks, vit_b_masks = process_frame_both_models(frame, vit_l_segmenter, vit_b_segmenter)
+            
+            # Combine masks
+            vit_l_combined = np.zeros((frame_height, frame_width), dtype = bool)
+            vit_b_combined = np.zeros((frame_height, frame_width), dtype = bool)
+            for mask in vit_l_masks:
+                vit_l_combined |= mask['segmentation']
+            for mask in vit_b_masks:
+                vit_b_combined |= mask['segmentation']
+            
+            # Add current frame masks to history
+            frame_history.append((vit_l_combined, vit_b_combined))
+            
+            # Calculate losses for all k values
+            losses = [frame_num]  # Start with frame number
+            for k in range(max_k):
+                if len(frame_history) > k:
+                    Y_t, Y_hat_t_minus_k = frame_history[-1][0], frame_history[-k-1][1]
+                    loss = calculate_iou(Y_t, Y_hat_t_minus_k)
+                    losses.append(loss)
+                else:
+                    losses.append(0)  # Pad with zeros if not enough frames
+            
+            # Write losses to CSV
+            csv_writer.writerow(losses)
+
+            if frame_num % 10 == 0:
+                print(f"Processed frame {frame_num}")
+
+    print(f"Multi-k loss results saved to {output_file}")
+
+    # Calculate final p(k) values
+    calculate_final_pk_values(output_file, max_k)
+
+def calculate_final_pk_values(input_file, max_k):
+    with open(input_file, 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)  # Skip header
+        
+        sum_losses = [0] * (max_k + 1)
+        frame_count = 0
+        
+        for row in reader:
+            frame_count += 1
+            for k in range(max_k):
+                sum_losses[k] += float(row[k + 1])  # +1 because first column is frame number
+    
+    pk_values = [sum_loss / frame_count for sum_loss in sum_losses]
+    
+    # Save p(k) values
+    output_file = os.path.splitext(input_file)[0] + "_pk_values.csv"
+    with open(output_file, 'w', newline = '') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['k', 'p(k)'])
+        for k, pk in enumerate(pk_values):
+            writer.writerow([k, pk])
+    
+    print(f"Final p(k) values saved to {output_file}")
 
 if __name__ == "__main__":
-    # test_segmentation('../data/first_frame.jpg', 'vit_b')
     dir_data_path = '/scratch/gilbreth/apiasecz/data/NGSIM_traffic_data/'
     video_files = sorted(get_video_files(dir_data_path))
     for video_file in video_files:
-        segmentation_loss_calculation(video_file, seed = 0, start_frame = None, end_frame = None, results_dir = results_dir)
+        calculate_multi_k_loss(video_file, seed = 0, start_frame = None, end_frame = 51, results_dir = results_dir, max_k = 20)
+        break
     exit()
