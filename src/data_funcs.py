@@ -116,11 +116,10 @@ def get_subset_video_files(dir_data, n = 5, seed = None):
             selected_files.append(random.choice(prefix_files[prefix]))
     
     # The rest draw randomly from all
-    remaining = list(set(video_files) - set(selected_files))
+    remaining = sorted(list(set(video_files) - set(selected_files)))
     additional_needed = max(0, n - len(selected_files))
     selected_files.extend(random.sample(remaining, min(additional_needed, len(remaining))))
     
-
     return selected_files
 
 # Test data processing code

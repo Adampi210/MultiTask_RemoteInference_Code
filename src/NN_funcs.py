@@ -199,6 +199,56 @@ class VehicleDetectorNN():
         
         return frame_with_vehicles, vehicle_count
         
+# Get the testing result
+def calculate_vehicle_detection(video_path, seed = 0, start_frame = None, end_frame = None, results_dir = './results'):
+    set_seed(seed)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    detector = VehicleDetectorNN(device = device)
+
+    video_name = os.path.splitext(os.path.basename(video_path))[0]
+    output_file = os.path.join(results_dir, f"{video_name}_vehicle_detection_result_seed_{seed}.csv")
+    os.makedirs(results_dir, exist_ok = True)
+
+    frame_generator = get_frames(video_path)
+    
+    with open(output_file, 'w', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile)
+        csv_writer.writerow(['Frame', 'Vehicle_Count', 'Vehicle_Locations'])
+
+        for frame_num, frame in enumerate(frame_generator):
+            if frame_num == 0:
+                frame_height, frame_width = frame.shape[:2]
+                print(f"Frame size: {frame_width}x{frame_height}")
+                
+            if start_frame is not None and frame_num < start_frame:
+                continue
+            if end_frame is not None and frame_num >= end_frame:
+                break
+
+            # Detect vehicles
+            vehicles = detector.detect_vehicles(frame)
+            
+            # Count vehicles
+            vehicle_count = len(vehicles)
+            
+            # Format vehicle locations
+            vehicle_locations = []
+            for vehicle in vehicles:
+                x1, y1, x2, y2, cls, conf = vehicle
+                vehicle_locations.append(f"({x1},{y1},{x2},{y2})")
+            
+            # Join vehicle locations into a string
+            vehicle_locations_str = "|".join(vehicle_locations)
+            
+            # Write to CSV
+            csv_writer.writerow([frame_num, vehicle_count, vehicle_locations_str])
+
+            if frame_num % 10 == 0:
+                print(f"Processed frame {frame_num}")
+
+    print(f"Vehicle detection results saved to {output_file}")
+
 ############## SEGMENTER ###############
 # Segmenter class              
 class SAMSegmenter:
@@ -277,7 +327,6 @@ def segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_
 
     video_name = os.path.splitext(os.path.basename(video_path))[0]
     output_file = os.path.join(results_dir, f"{video_name}_segmentation_IoU_loss_result_seed_{seed}.csv")
-
     os.makedirs(results_dir, exist_ok = True)
 
     frame_generator = get_frames(video_path)
@@ -287,15 +336,14 @@ def segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_
         csv_writer.writerow(['Frame', 'IoU_Loss'])
 
         for frame_num, frame in enumerate(frame_generator):
+            if frame_num == 0:
+                frame_height, frame_width = frame.shape[:2]
+                print(f"Frame size: {frame_width}x{frame_height}")
             if start_frame is not None and frame_num < start_frame:
                 continue
             if end_frame is not None and frame_num >= end_frame:
                 break
-
-            if frame_num == 0:
-                frame_height, frame_width = frame.shape[:2]
-                print(f"Frame size: {frame_width}x{frame_height}")
-
+    
             # Get masks
             vit_l_masks, vit_b_masks = process_frame_both_models(frame, vit_l_segmenter, vit_b_segmenter)
             
@@ -338,7 +386,6 @@ def calculate_multi_k_loss(video_path, seed = 0, start_frame = None, end_frame =
 
     video_name = os.path.splitext(os.path.basename(video_path))[0]
     output_file = os.path.join(results_dir, f"{video_name}_multi_k_loss_result_seed_{seed}.csv")
-    
     os.makedirs(results_dir, exist_ok = True)
 
     frame_generator = get_frames(video_path)
@@ -352,14 +399,14 @@ def calculate_multi_k_loss(video_path, seed = 0, start_frame = None, end_frame =
         csv_writer.writerow(header)
 
         for frame_num, frame in enumerate(frame_generator):
+            if frame_num == 0:
+                frame_height, frame_width = frame.shape[:2]
+                print(f"Frame size: {frame_width}x{frame_height}")
+                
             if start_frame is not None and frame_num < start_frame:
                 continue
             if end_frame is not None and frame_num >= end_frame:
                 break
-
-            if frame_num == 0:
-                frame_height, frame_width = frame.shape[:2]
-                print(f"Frame size: {frame_width}x{frame_height}")
 
             # Get masks for current frame
             vit_l_masks, vit_b_masks = process_frame_both_models(frame, vit_l_segmenter, vit_b_segmenter)
