@@ -6,6 +6,17 @@ import torch
 import json
 from collections import deque
 
+# Set all seeds to specified value
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
 # Return a generator object with video frames
 def get_frames(video_path):
     # Get the video object
@@ -70,16 +81,47 @@ class DataHistory:
             return None, None, None
         return list(self.data), list(self.segmentations), list(self.vehicle_counts)
 
-def set_seed(seed):
-    random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    if torch.cuda.is_available():
-        torch.cuda.manual_seed(seed)
-        torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+def get_subset_video_files(dir_data, n = 5, seed = None):
+    # For deterministic operation set all seeds to specified seed
+    if seed is not None:
+        set_seed(seed)
+    
+    # Draw at least 1 from all
+    video_files = []
+    prefix_files = {
+        'sb': [],
+        'nb': [],
+        'peachtree': [],
+        'lankershim': []
+    }
+    
+    for file in os.listdir(dir_data):
+        if file.endswith('.avi'):
+            full_path = os.path.join(dir_data, file)
+            video_files.append(full_path)
+            
+            if file.startswith('sb-'):
+                prefix_files['sb'].append(full_path)
+            elif file.startswith('nb-'):
+                prefix_files['nb'].append(full_path)
+            elif file.startswith('peachtree-'):
+                prefix_files['peachtree'].append(full_path)
+            elif file.startswith('lankershim-'):
+                prefix_files['lankershim'].append(full_path)
+    
+    # Have at least 1 from all roads
+    selected_files = []
+    for prefix in prefix_files:
+        if prefix_files[prefix]:
+            selected_files.append(random.choice(prefix_files[prefix]))
+    
+    # The rest draw randomly from all
+    remaining = list(set(video_files) - set(selected_files))
+    additional_needed = max(0, n - len(selected_files))
+    selected_files.extend(random.sample(remaining, min(additional_needed, len(remaining))))
+    
 
+    return selected_files
 
 # Test data processing code
 if __name__ == "__main__":

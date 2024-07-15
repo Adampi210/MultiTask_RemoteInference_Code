@@ -36,6 +36,6 @@ def plot_pk_values(csv_file_path, output_image_path):
     return
 
 if __name__ == '__main__':
-    csv_file_path = '../data/lankershim-camera1-0830am-0845am_multi_k_loss_result_seed_0_pk_values.csv'
+    csv_file_path = '../data/sb-camera5-0820am-0835am_multi_k_loss_result_seed_0_pk_values.csv'
     plotted_loss_file = 'plotted_pk_ex.png'
     plot_pk_values(csv_file_path, plotted_loss_file)
