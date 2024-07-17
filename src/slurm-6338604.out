@@ -2,3 +2,42 @@
 The following have been reloaded with a version change:
   1) cuda/11.2.0 => cuda/12.1.1
 
+Frame size: 640x480
+Processed frame 0
+Processed frame 10
+Processed frame 20
+Processed frame 30
+Traceback (most recent call last):
+  File "/home/apiasecz/programming/MultiTask_RemoteInference_Code/src/NN_funcs.py", line 475, in <module>
+    calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 20)
+  File "/home/apiasecz/programming/MultiTask_RemoteInference_Code/src/NN_funcs.py", line 412, in calculate_multi_k_loss
+    vit_l_masks, vit_b_masks = process_frame_both_models(frame, vit_l_segmenter, vit_b_segmenter)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/apiasecz/programming/MultiTask_RemoteInference_Code/src/NN_funcs.py", line 309, in process_frame_both_models
+    vit_b_masks = vit_b_segmenter.segment(frame)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/apiasecz/programming/MultiTask_RemoteInference_Code/src/NN_funcs.py", line 275, in segment
+    masks = self.mask_generator.generate(processed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/apiasecz/.conda/envs/cent7/2020.11-py38/drone_video_analysis_env/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/apiasecz/programming/segment-anything/segment_anything/automatic_mask_generator.py", line 163, in generate
+    mask_data = self._generate_masks(image)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/apiasecz/programming/segment-anything/segment_anything/automatic_mask_generator.py", line 206, in _generate_masks
+    crop_data = self._process_crop(image, crop_box, layer_idx, orig_size)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/apiasecz/programming/segment-anything/segment_anything/automatic_mask_generator.py", line 245, in _process_crop
+    batch_data = self._process_batch(points, cropped_im_size, crop_box, orig_size)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/apiasecz/programming/segment-anything/segment_anything/automatic_mask_generator.py", line 297, in _process_batch
+    data.filter(keep_mask)
+  File "/home/apiasecz/programming/segment-anything/segment_anything/utils/amg.py", line 49, in filter
+    self._stats[k] = v[torch.as_tensor(keep, device=v.device)]
+                     ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: unspecified launch failure
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

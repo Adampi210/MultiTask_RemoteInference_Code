@@ -15,6 +15,12 @@ if __name__ == "__main__":
     dir_data_path = '/scratch/gilbreth/apiasecz/data/NGSIM_traffic_data/'
     # video_files = sorted(get_video_files(dir_data_path))
     video_files = get_subset_video_files(dir_data_path, N_FILES, seed)
+    i = 0
     for video_file in video_files:        
-        calculate_vehicle_detection(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir)
+        i += 1
+        if i >= 3:
+            break
+        print(video_file)
+        calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 20)
+        # calculate_vehicle_detection(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir)
     exit()
