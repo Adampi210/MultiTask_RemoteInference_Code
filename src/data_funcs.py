@@ -1,5 +1,6 @@
 import cv2
 import os 
+import csv
 import random
 import numpy as np
 import torch
@@ -122,10 +123,36 @@ def get_subset_video_files(dir_data, n = 5, seed = None):
     
     return selected_files
 
+def average_pk_values(data_dir, output_file):
+    pk_files = [f for f in os.listdir(data_dir) if '_pk_values' in f]
+    pk_sum = {k: 0 for k in range(21)}
+    file_count = 0
+
+    for pk_file in pk_files:
+        file_path = os.path.join(data_dir, pk_file)
+        with open(file_path, 'r') as file_pk:
+            reader = csv.reader(file_pk)
+            next(reader)
+            for row in reader:
+                k = int(row[0])
+                pk = float(row[1])
+                pk_sum[k] += pk
+        file_count += 1
+
+    pk_avg = {k: pk_sum[k] / file_count for k in pk_sum}
+
+    output_path = os.path.join(data_dir, output_file)
+    with open(output_path, 'w') as file_pk_avg:
+        writer = csv.writer(file_pk_avg)
+        writer.writerow(['k', 'p(k)'])
+        for k in range(1, 21):
+            writer.writerow([k, pk_avg[k]])
+
+
 # Test data processing code
 if __name__ == "__main__":
     # Test Data history class
-    print('3') 
+    average_pk_values('../data/', '../data/segmentation_averaged_multi_k_loss_pk_data.csv')
             
 # Try SAM
 # Complete 1 task perfectly (Counting the vehicles)
@@ -137,5 +164,4 @@ if __name__ == "__main__":
 #   - Add inference error function of the LSTM for predicting the k (number of vehicles)
 #   - Have multiple LSTMs for different k values, where k is the future predicted offset. 
 # - Get the loss of the LSTM 
-# email: preston smith and ask about the disk: https://www.rcac.purdue.edu/index.php/about/staff/psmith
 # 
