@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -A cgb-n
+#SBATCH -A cgb2-n
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --ntasks=18
+#SBATCH --cpus-per-task=1
 #SBATCH --gpus-per-node=1
 #SBATCH --time=24:00:00
 
