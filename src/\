@@ -47,7 +47,7 @@ def create_sequences(data_list, window_size, prediction_offset):
 			y.append(data_vid[i + window_size + prediction_offset])
 	return np.array(X), np.array(y)
 
-def train_lstm(data_list, window_size, prediction_offset, hidden_size = 50, num_layers = 1, batch_size = 32, num_epochs = 100, lr = 0.001, seed = 0):
+def train_lstm(data_list, window_size, prediction_offset, output_dir, hidden_size = 50, num_layers = 1, batch_size = 32, num_epochs = 100, lr = 0.001, seed = 0):
 	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 	
 	# Preprocess data
@@ -84,13 +84,15 @@ def train_lstm(data_list, window_size, prediction_offset, hidden_size = 50, num_
 			optimizer.zero_grad()
 			loss.backward()
 			optimizer.step()
+			break
 
 		if (epoch + 1) % 10 == 0:
 			print(f'Epoch [{epoch + 1}/{num_epochs}, Loss: {loss.item():.4f}')
-	
+		break
+	print('got here')
 	return model, scaler
 
-def save_model(model, scaler, window_size, prediction_offset, output_dir):
+def save_model(moedl, scaler, window_size, prediction_offset, output_dir):
 	if not os.path.exists(output_dir):
 		os.makedirs(output_dir)
 	
@@ -100,10 +102,6 @@ def save_model(model, scaler, window_size, prediction_offset, output_dir):
 	torch.save(model.state_dict(), model_path)
 	torch.save(scaler, scaler_path)
 
-def train_lstm_model(csv_files, window_size, prediction_offset, output_dir):
-	data_list = load_vehicle_count_data(csv_files)
-	model, scaler = train_lstm(data_list, window_size, prediction_offset)
-	save_model(model, scaler, window_size, prediction_offset, output_dir)
 
 if __name__ == '__main__':
 	data_dir = '../data/'
@@ -113,6 +111,7 @@ if __name__ == '__main__':
 	prediction_offsets = list(range(20))
 	
 	csv_files = get_vehicle_detection_csv_files(data_dir)
+	data_lists = load_vehicle_count_data(csv_files)	
 
 	for prediction_offset in prediction_offsets:
-		train_lstm_model(csv_files, window_size, prediction_offset, output_dir)
+		train_lstm(data_lists, window_size, prediction_offset, output_dir)
