@@ -4,15 +4,18 @@ import torch.optim as optim
 import numpy as np
 import csv
 import os
+
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
+
+from data_funcs import *
 
 class VehicleCountLSTM(nn.Module):
     def __init__(self, input_size, hidden_size, num_layers, output_size):
         super(VehicleCountLSTM, self).__init__()
         self.hidden_size = hidden_size
         self.num_layers = num_layers
-        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
+        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first = True)
         self.fc = nn.Linear(hidden_size, output_size)
 
     def forward(self, x):
@@ -54,18 +57,18 @@ def calculate_loss(model, criterion, X, y):
         loss = criterion(outputs, y)
     return loss.item()
 
-def train_lstm(data_list, window_size, prediction_offset, hidden_size=50, num_layers=1, batch_size=32, num_epochs=100, lr=0.001, seed=0):
+def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 50, num_layers = 1, batch_size = 32, num_epochs = 100, lr = 0.001, seed = 0):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Preprocess data
-    scaler = MinMaxScaler(feature_range=(0, 1))
+    scaler = MinMaxScaler(feature_range = (0, 1))
     normalized_data_list = [scaler.fit_transform(np.array(data).reshape(-1, 1)) for data in data_list]
 
     # Get sequences
     X, y = create_sequences(normalized_data_list, window_size, prediction_offset)
 
     # Split the data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=seed)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state=seed)
     
     # Convert to tensors
     X_train = torch.FloatTensor(X_train).to(device)
@@ -74,17 +77,17 @@ def train_lstm(data_list, window_size, prediction_offset, hidden_size=50, num_la
     y_test = torch.FloatTensor(y_test).to(device)
 
     # Create the model
-    model = VehicleCountLSTM(input_size=1, hidden_size=hidden_size, num_layers=num_layers, output_size=1).to(device)
+    model = VehicleCountLSTM(input_size = 1, hidden_size = hidden_size, num_layers = num_layers, output_size = 1).to(device)
 
     # Loss and optimizer
     criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=lr)
+    optimizer = optim.Adam(model.parameters(), lr = lr)
 
     # Initialize loss files
-    train_loss_file = f'detection_train_loss_k_{prediction_offset}_seed_{seed}.csv'
-    test_loss_file = f'detection_test_loss_k_{prediction_offset}_seed_{seed}.csv'
+    train_loss_file = data_dir + f'detection_train_loss_k_{prediction_offset}_seed_{seed}.csv'
+    test_loss_file = data_dir + f'detection_test_loss_k_{prediction_offset}_seed_{seed}.csv'
     
-    with open(train_loss_file, 'w', newline='') as f_train, open(test_loss_file, 'w', newline='') as f_test:
+    with open(train_loss_file, 'w', newline = '') as f_train, open(test_loss_file, 'w', newline  = '') as f_test:
         train_writer = csv.writer(f_train)
         test_writer = csv.writer(f_test)
         train_writer.writerow(['Epoch', 'Loss'])
@@ -117,10 +120,10 @@ def train_lstm(data_list, window_size, prediction_offset, hidden_size=50, num_la
             # Calculate test loss
             test_loss = calculate_loss(model, criterion, X_test, y_test)
             test_writer.writerow([epoch + 1, test_loss])
-
+            break
             if (epoch + 1) % 10 == 0:
                 print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {avg_train_loss:.4f}, Test Loss: {test_loss:.4f}')
-
+	
     return model, scaler
 
 def save_model(model, scaler, window_size, prediction_offset, output_dir):
@@ -133,12 +136,14 @@ def save_model(model, scaler, window_size, prediction_offset, output_dir):
     torch.save(model.state_dict(), model_path)
     torch.save(scaler, scaler_path)
 
-def train_lstm_model(csv_files, window_size, prediction_offset, output_dir):
+def train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output_dir, seed):
+    set_seed(seed)
     data_list = load_vehicle_count_data(csv_files)
-    model, scaler = train_lstm(data_list, window_size, prediction_offset)
+    model, scaler = train_lstm(data_list, window_size, prediction_offset, data_dir)
     save_model(model, scaler, window_size, prediction_offset, output_dir)
 
 if __name__ == '__main__':
+    SEED = 0
     data_dir = '../data/'
     output_dir = '../../../models/lstm/'
 
@@ -149,4 +154,6 @@ if __name__ == '__main__':
 
     for prediction_offset in prediction_offsets:
         print(f"Training LSTM for offset {prediction_offset}")
-        train_lstm_model(csv_files, window_size, prediction_offset, output_dir)
+        
+        train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output_dir, SEED)
+        break
