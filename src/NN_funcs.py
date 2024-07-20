@@ -474,5 +474,8 @@ if __name__ == "__main__":
     video_files = get_subset_video_files(dir_data_path, N_FILES, seed)
     for video_file in video_files:
         print(video_file)
-        calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 20)
+        i += 1
+        if i < 3:
+            continue
+        calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 100)
     exit()

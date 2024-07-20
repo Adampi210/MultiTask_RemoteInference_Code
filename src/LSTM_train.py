@@ -47,7 +47,7 @@ def create_sequences(data_list, window_size, prediction_offset):
 			y.append(data_vid[i + window_size + prediction_offset])
 	return np.array(X), np.array(y)
 
-def train_lstm(data_list, window_size, prediction_offset, hidden_size = 50, num_layers = 1, batch_size = 32, num_epochs = 100, lr = 0.001, seed = 0):
+def train_lstm(data_list, window_size, prediction_offset, hidden_size = 64, num_layers = 1, batch_size = 64, num_epochs = 100, lr = 0.01, seed = 0):
 	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 	
 	# Preprocess data
@@ -58,7 +58,7 @@ def train_lstm(data_list, window_size, prediction_offset, hidden_size = 50, num_
 	X, y = create_sequences(normalized_data_list, window_size, prediction_offset)
 
 	# Split the data
-	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = seed)
 	
 	# Convert to tensors
 	X_train = torch.FloatTensor(X_train).to(device)

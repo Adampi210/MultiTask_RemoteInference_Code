@@ -21,6 +21,6 @@ if __name__ == "__main__":
         if i >= 3:
             break
         print(video_file)
-        calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 20)
+        calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 100)
         # calculate_vehicle_detection(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir)
     exit()
