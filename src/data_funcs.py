@@ -125,7 +125,7 @@ def get_subset_video_files(dir_data, n = 5, seed = None):
 
 def average_pk_values(data_dir, output_file):
     pk_files = [f for f in os.listdir(data_dir) if '_pk_values' in f]
-    pk_sum = {k: 0 for k in range(21)}
+    pk_sum = {k: 0 for k in range(101)}
     file_count = 0
 
     for pk_file in pk_files:
@@ -145,7 +145,7 @@ def average_pk_values(data_dir, output_file):
     with open(output_path, 'w') as file_pk_avg:
         writer = csv.writer(file_pk_avg)
         writer.writerow(['k', 'p(k)'])
-        for k in range(1, 21):
+        for k in range(1, 101):
             writer.writerow([k, pk_avg[k]])
 
 
