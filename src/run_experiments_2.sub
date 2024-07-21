@@ -24,4 +24,4 @@ module load anaconda/2020.11-py38
 conda activate $conda_env_used
 
 # Run the experiment code
-python3 LSTM_train_modified_test.py
+python3 LSTM_train.py
