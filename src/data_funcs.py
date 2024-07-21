@@ -1,5 +1,6 @@
 import cv2
-import os 
+import os
+import re 
 import csv
 import random
 import numpy as np
@@ -148,12 +149,35 @@ def average_pk_values(data_dir, output_file):
         for k in range(1, 101):
             writer.writerow([k, pk_avg[k]])
 
+def detection_pk_test_loss(data_dir, output_file):
+    detect_loss_files = sorted([f for f in os.listdir(data_dir) if 'detection_test_loss_k_' in f])
+    k_vals = []
+
+    for f in detect_loss_files:
+        match = re.search(r'_k_(.+?)_seed', f)
+        k_vals.append(int(match.group(1)))
+
+    k_vals = sorted(k_vals)
+    loss_val = {k: 0 for k in k_vals}
+
+    for k, f in zip(k_vals, detect_loss_files):
+        data_file = os.path.join(data_dir, f)
+        with open(data_file, 'r') as df:
+            lines = df.readlines()
+            loss_val[k] = float(lines[-1].split(',')[1])
+
+    with open(output_file, 'w') as result_file:
+        writer = csv.writer(result_file)
+        writer.writerow(['k', 'test los'])
+        for k, loss in loss_val.items():
+            writer.writerow([k + 1, loss])
+
 
 # Test data processing code
 if __name__ == "__main__":
     # Test Data history class
-    average_pk_values('../data/', '../data/segmentation_averaged_multi_k_loss_pk_data.csv')
-            
+    # average_pk_values('../data/', '../data/segmentation_averaged_multi_k_loss_pk_data.csv')
+    detection_pk_test_loss('../data/', '../data/detection_test_loss_pk_data.csv')      
 # Try SAM
 # Complete 1 task perfectly (Counting the vehicles)
 # About the LSTM: 
