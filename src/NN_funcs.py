@@ -323,7 +323,7 @@ def segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_
 
     # Init the 2 model
     vit_l_segmenter = SAMSegmenter(model_type = "vit_l", device = device)
-    vit_b_segmenter = SAMSegmenter(model_type = "vit_b", device = device)
+    vit_b_segmenter = SAMSegmenter(model_type = "vit_l", device = device)
 
     video_name = os.path.splitext(os.path.basename(video_path))[0]
     output_file = os.path.join(results_dir, f"{video_name}_segmentation_IoU_loss_result_seed_{seed}.csv")
@@ -382,7 +382,7 @@ def calculate_multi_k_loss(video_path, seed = 0, start_frame = None, end_frame =
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     vit_l_segmenter = SAMSegmenter(model_type = "vit_l", device = device)
-    vit_b_segmenter = SAMSegmenter(model_type = "vit_b", device = device)
+    vit_b_segmenter = SAMSegmenter(model_type = "vit_l", device = device)
 
     video_name = os.path.splitext(os.path.basename(video_path))[0]
     output_file = os.path.join(results_dir, f"{video_name}_multi_k_loss_result_seed_{seed}.csv")
@@ -474,8 +474,6 @@ if __name__ == "__main__":
     video_files = get_subset_video_files(dir_data_path, N_FILES, seed)
     for video_file in video_files:
         print(video_file)
-        i += 1
-        if i < 3:
-            continue
         calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 100)
+        break
     exit()

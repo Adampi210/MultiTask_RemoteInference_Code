@@ -57,12 +57,11 @@ def calculate_loss(model, criterion, X, y):
         loss = criterion(outputs, y)
     return loss.item()
 
-def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 32, num_layers = 1, batch_size = 32, num_epochs = 100, lr = 0.001, seed = 0):
+def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 8, num_layers = 1, batch_size = 32, num_epochs = 50, lr = 0.0001, seed = 0):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Preprocess data
-    scaler = MinMaxScaler(feature_range = (0, 1))
-    normalized_data_list = [scaler.fit_transform(np.array(data).reshape(-1, 1)) for data in data_list]
+    normalized_data_list = [np.array(data).reshape(-1, 1) for data in data_list]
 
     # Get sequences
     X, y = create_sequences(normalized_data_list, window_size, prediction_offset)
@@ -96,7 +95,7 @@ def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size 
         # Calculate initial test loss
         initial_test_loss = calculate_loss(model, criterion, X_test, y_test)
         test_writer.writerow([0, initial_test_loss])
-
+        
         for epoch in range(num_epochs):
             model.train()
             train_loss = 0
@@ -121,26 +120,22 @@ def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size 
             test_loss = calculate_loss(model, criterion, X_test, y_test)
             test_writer.writerow([epoch + 1, test_loss])
             
-            if (epoch + 1) % 10 == 0:
-                print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {avg_train_loss:.4f}, Test Loss: {test_loss:.4f}')
+            print(f'Epoch [{epoch + 1}/{num_epochs}], Train Loss: {avg_train_loss:.4f}, Test Loss: {test_loss:.4f}')
 	
-    return model, scaler
+    return model
 
-def save_model(model, scaler, window_size, prediction_offset, output_dir):
+def save_model(model, window_size, prediction_offset, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
     model_path = os.path.join(output_dir, f'lstm_w_{window_size}_o_{prediction_offset}.pth')
-    scaler_path = os.path.join(output_dir, f'scaler_w_{window_size}_o_{prediction_offset}.pkl')
-
     torch.save(model.state_dict(), model_path)
-    torch.save(scaler, scaler_path)
 
 def train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output_dir, seed):
     set_seed(seed)
     data_list = load_vehicle_count_data(csv_files)
-    model, scaler = train_lstm(data_list, window_size, prediction_offset, data_dir)
-    save_model(model, scaler, window_size, prediction_offset, output_dir)
+    model = train_lstm(data_list, window_size, prediction_offset, data_dir)
+    save_model(model, window_size, prediction_offset, output_dir)
 
 if __name__ == '__main__':
     SEED = 0
