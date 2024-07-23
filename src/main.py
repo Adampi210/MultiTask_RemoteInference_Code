@@ -18,8 +18,8 @@ if __name__ == "__main__":
     i = 0
     for video_file in video_files:        
         i += 1
-        if i >= 3:
-            break
+        if i <= 3:
+            continue
         print(video_file)
         calculate_multi_k_loss(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir, max_k = 100)
         # calculate_vehicle_detection(video_file, seed = seed, start_frame = None, end_frame = None, results_dir = results_dir)

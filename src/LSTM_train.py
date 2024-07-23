@@ -142,7 +142,7 @@ if __name__ == '__main__':
     data_dir = '../data/'
     output_dir = '../../../models/lstm/'
 
-    window_size = 4
+    window_size = 2
     prediction_offsets = list(range(20)) + list(range(24, 100, 5))
     
     csv_files = get_vehicle_detection_csv_files(data_dir)
@@ -151,3 +151,7 @@ if __name__ == '__main__':
         print(f"Training LSTM for offset {prediction_offset}")
         
         train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output_dir, SEED)
+
+
+# Try exponential/log loss (take the exponential over MSE) (e ** (0.1 * MSE)) or 1 + log (0.1 * MSE)
+# Decrease the window size to 2 

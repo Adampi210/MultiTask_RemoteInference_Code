@@ -1,0 +1,6 @@
+
+The following have been reloaded with a version change:
+  1) cuda/11.2.0 => cuda/12.1.1
+
+/home/apiasecz/.conda/envs/cent7/2020.11-py38/drone_video_analysis_env/lib/python3.12/site-packages/torch/cuda/__init__.py:118: UserWarning: CUDA initialization: CUDA driver initialization failed, you might not have a CUDA gpu. (Triggered internally at /opt/conda/conda-bld/pytorch_1716905971214/work/c10/cuda/CUDAFunctions.cpp:108.)
+  return torch._C._cuda_getDeviceCount() > 0
