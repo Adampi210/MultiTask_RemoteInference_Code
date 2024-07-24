@@ -166,11 +166,6 @@ def detection_pk_test_loss(data_dir, output_file):
         with open(data_file, 'r') as df:
             lines = df.readlines()
             loss_val[k] = float(lines[-1].split(',')[1])
-            print(k)
-            print(lines[-1])
-            print(loss_val[k])
-            print()
-            
 
     with open(output_file, 'w') as result_file:
         writer = csv.writer(result_file)
@@ -178,12 +173,59 @@ def detection_pk_test_loss(data_dir, output_file):
         for k, loss in loss_val.items():
             writer.writerow([k + 1, loss])
 
+def simple_detection_loss(data_dir, output_file, seed = 0):
+    set_seed(seed)
+
+    def get_vehicle_detection_csv_files(data_dir):
+        csv_files = []
+        for file_data in os.listdir(data_dir):
+            if file_data.endswith('.csv') and 'vehicle_detection_result_seed' in file_data:
+                csv_files.append(os.path.join(data_dir, file_data))
+        return csv_files
+
+    def load_vehicle_count_data(csv_file):
+        with open(csv_file, 'r') as file_data:
+            reader = csv.reader(file_data)
+            next(reader)  # Skip header
+            return [int(row[1]) for row in reader]
+
+    csv_files = get_vehicle_detection_csv_files(data_dir)
+    max_k = 100
+
+    total_losses = np.zeros(max_k + 1)
+    file_count = 0
+
+    for csv_file in csv_files:
+        vehicle_counts = load_vehicle_count_data(csv_file)
+        file_losses = np.zeros(max_k + 1)
+
+        for k in range(1, max_k + 1):
+            predictions = vehicle_counts[:-k]
+            actuals = vehicle_counts[k:]
+            
+            mse = np.mean((np.array(predictions) - np.array(actuals)) ** 2)
+            file_losses[k] = mse
+
+        total_losses += file_losses
+        file_count += 1
+
+    average_losses = total_losses / file_count
+
+    # Write results to output file
+    with open(output_file, 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerow(['k', 'test loss'])
+        for k in range(1, max_k + 1):
+            writer.writerow([k, average_losses[k]])
+
+    return average_losses
 
 # Test data processing code
 if __name__ == "__main__":
     # Test Data history class
     # average_pk_values('../data/', '../data/segmentation_averaged_multi_k_loss_pk_data.csv')
-    detection_pk_test_loss('../data/', '../data/detection_test_loss_pk_data.csv')      
+    detection_pk_test_loss('../data/', '../data/detection_test_loss_pk_data.csv')
+    simple_detection_loss('../data/', '../data/detection_simple_test_loss_pk_data.csv')      
 # Try SAM
 # Complete 1 task perfectly (Counting the vehicles)
 # About the LSTM: 

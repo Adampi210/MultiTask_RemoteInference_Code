@@ -57,7 +57,7 @@ def calculate_loss(model, criterion, X, y):
         loss = criterion(outputs, y)
     return loss.item()
 
-def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 4, num_layers = 1, batch_size = 32, num_epochs = 50, lr = 0.0001, seed = 0):
+def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 8, num_layers = 1, batch_size = 32, num_epochs = 50, lr = 0.0001, seed = 0):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Preprocess data
@@ -67,7 +67,7 @@ def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size 
     X, y = create_sequences(normalized_data_list, window_size, prediction_offset)
 
     # Split the data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state=seed)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = seed)
     
     # Convert to tensors
     X_train = torch.FloatTensor(X_train).to(device)
@@ -138,19 +138,17 @@ def train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output
     save_model(model, window_size, prediction_offset, output_dir)
 
 if __name__ == '__main__':
-    SEED = 0
     data_dir = '../data/'
     output_dir = '../../../models/lstm/'
 
-    window_size = 3
-    prediction_offsets = list(range(20)) + list(range(24, 100, 5))
+    window_size = 4
+    prediction_offsets = list(range(100))
     
     csv_files = get_vehicle_detection_csv_files(data_dir)
-
-    for prediction_offset in prediction_offsets:
-        print(f"Training LSTM for offset {prediction_offset}")
-        
-        train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output_dir, SEED)
+    for seed in range(3):
+        for prediction_offset in prediction_offsets:
+            print(f"Training LSTM for offset {prediction_offset}")
+            train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output_dir, seed)
 
 
 # Try exponential/log loss (take the exponential over MSE) (e ** (0.1 * MSE)) or 1 + log (0.1 * MSE)

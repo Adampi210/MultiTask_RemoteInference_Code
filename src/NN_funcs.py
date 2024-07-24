@@ -378,6 +378,7 @@ def segmentation_loss_calculation(video_path, seed = 0, start_frame = None, end_
     print(f"IoU loss results saved to {output_file}")
 
 def calculate_multi_k_loss(video_path, seed = 0, start_frame = None, end_frame = None, results_dir = './results', max_k = 20):
+    print(f'Max k: {max_k}')
     set_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -434,8 +435,8 @@ def calculate_multi_k_loss(video_path, seed = 0, start_frame = None, end_frame =
             
             csv_writer.writerow(losses)
 
-            if frame_num % 10 == 0:
-                print(f"Processed frame {frame_num}")
+            
+            print(f"Processed frame {frame_num}")
 
     print(f"Multi-k loss results saved to {output_file}")
 
@@ -466,6 +467,10 @@ def calculate_final_pk_values(input_file, max_k):
     print(f"Final p(k) values saved to {output_file}")
     
 if __name__ == "__main__":
+    print(torch.__version__)
+    print(torch.version.cuda)
+    print(torch.cuda.is_available())
+    print(torch.cuda.get_device_name(0))
     N_FILES = 5
     seed = 0
     i = 0
@@ -474,7 +479,7 @@ if __name__ == "__main__":
     video_files = get_subset_video_files(dir_data_path, N_FILES, seed)
     for video_file in video_files:
         i += 1
-        if i < 2 or i > 3:
+        if i < 2 or i >= 3:
             continue
 
         print(video_file)
