@@ -150,25 +150,31 @@ def average_pk_values(data_dir, output_file):
             writer.writerow([k, pk_avg[k]])
 
 def detection_pk_test_loss(data_dir, output_file):
-    detect_loss_files = sorted([f for f in os.listdir(data_dir) if 'detection_test_loss_k_' in f])
+    detect_loss_files = [f for f in os.listdir(data_dir) if 'detection_test_loss_k_' in f]
     k_vals = []
-
+    k_val_file_dict = {}
     for f in detect_loss_files:
         match = re.search(r'_k_(.+?)_seed', f)
-        k_vals.append(int(match.group(1)))
-
+        k = int(match.group(1))
+        k_vals.append(k)
+        k_val_file_dict[k] = f
     k_vals = sorted(k_vals)
     loss_val = {k: 0 for k in k_vals}
 
-    for k, f in zip(k_vals, detect_loss_files):
-        data_file = os.path.join(data_dir, f)
+    for k in k_vals:
+        data_file = os.path.join(data_dir, k_val_file_dict[k])
         with open(data_file, 'r') as df:
             lines = df.readlines()
             loss_val[k] = float(lines[-1].split(',')[1])
+            print(k)
+            print(lines[-1])
+            print(loss_val[k])
+            print()
+            
 
     with open(output_file, 'w') as result_file:
         writer = csv.writer(result_file)
-        writer.writerow(['k', 'test los'])
+        writer.writerow(['k', 'test loss'])
         for k, loss in loss_val.items():
             writer.writerow([k + 1, loss])
 

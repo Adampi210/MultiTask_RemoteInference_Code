@@ -10,7 +10,7 @@
 # run the job:          sbatch run_experiments.sub
 # check job status:     squeue -u $USERNAME ($USERNAME==apiasecz)
 # check job details:    scontrol show job_id (job id from job status)
-# interactive session:  sinteractive -A cgb-l -N1 -n32 --gpus-per-node=1 (this is for the H100, -A standby for A100, other options same as above)
+# interactive session:  sinteractive -A cgb-l -N1 -n32 --gpus-per-node=1
 # 
 
 # Variables

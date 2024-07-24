@@ -57,7 +57,7 @@ def calculate_loss(model, criterion, X, y):
         loss = criterion(outputs, y)
     return loss.item()
 
-def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 8, num_layers = 1, batch_size = 32, num_epochs = 50, lr = 0.0001, seed = 0):
+def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 4, num_layers = 1, batch_size = 32, num_epochs = 50, lr = 0.0001, seed = 0):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Preprocess data
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     data_dir = '../data/'
     output_dir = '../../../models/lstm/'
 
-    window_size = 2
+    window_size = 3
     prediction_offsets = list(range(20)) + list(range(24, 100, 5))
     
     csv_files = get_vehicle_detection_csv_files(data_dir)
