@@ -57,7 +57,7 @@ def calculate_loss(model, criterion, X, y):
         loss = criterion(outputs, y)
     return loss.item()
 
-def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 8, num_layers = 1, batch_size = 32, num_epochs = 50, lr = 0.0001, seed = 0):
+def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size = 16, num_layers = 1, batch_size = 32, num_epochs = 50, lr = 0.0001, seed = 0):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Preprocess data
@@ -85,7 +85,7 @@ def train_lstm(data_list, window_size, prediction_offset, data_dir, hidden_size 
     # Initialize loss files
     train_loss_file = data_dir + f'detection_train_loss_k_{prediction_offset}_seed_{seed}.csv'
     test_loss_file = data_dir + f'detection_test_loss_k_{prediction_offset}_seed_{seed}.csv'
-    
+    print(test_loss_file)
     with open(train_loss_file, 'w', newline = '') as f_train, open(test_loss_file, 'w', newline  = '') as f_test:
         train_writer = csv.writer(f_train)
         test_writer = csv.writer(f_test)
@@ -132,9 +132,10 @@ def save_model(model, window_size, prediction_offset, output_dir):
     torch.save(model.state_dict(), model_path)
 
 def train_lstm_model(csv_files, window_size, prediction_offset, data_dir, output_dir, seed):
+    print(f'Seed: {seed}')
     set_seed(seed)
     data_list = load_vehicle_count_data(csv_files)
-    model = train_lstm(data_list, window_size, prediction_offset, data_dir)
+    model = train_lstm(data_list, window_size, prediction_offset, data_dir, seed = seed)
     save_model(model, window_size, prediction_offset, output_dir)
 
 if __name__ == '__main__':
