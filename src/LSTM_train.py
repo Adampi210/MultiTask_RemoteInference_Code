@@ -142,7 +142,7 @@ if __name__ == '__main__':
     data_dir = '../data/'
     output_dir = '../../../models/lstm/'
 
-    window_size = 4
+    window_size = 3
     prediction_offsets = list(range(100))
     
     csv_files = get_vehicle_detection_csv_files(data_dir)

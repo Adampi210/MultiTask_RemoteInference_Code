@@ -152,25 +152,36 @@ def average_pk_values(data_dir, output_file):
 def detection_pk_test_loss(data_dir, output_file):
     detect_loss_files = [f for f in os.listdir(data_dir) if 'detection_test_loss_k_' in f]
     k_vals = []
+    seed_vals = []
     k_val_file_dict = {}
     for f in detect_loss_files:
-        match = re.search(r'_k_(.+?)_seed', f)
+        match = re.search(r'_k_(.+?)_seed_(.+?)', f)
         k = int(match.group(1))
+        seed = int(match.group(2))
         k_vals.append(k)
-        k_val_file_dict[k] = f
+        if k in k_val_file_dict:
+            k_val_file_dict[k].append(f)
+        else:
+            k_val_file_dict[k] = [f,]
+        seed_vals.append(seed)
     k_vals = sorted(k_vals)
-    loss_val = {k: 0 for k in k_vals}
-
+    loss_val = {k: {seed: 0 for seed in seed_vals} for k in k_vals}
+    seed_vals = sorted(list(set(seed_vals)))
+    
     for k in k_vals:
-        data_file = os.path.join(data_dir, k_val_file_dict[k])
-        with open(data_file, 'r') as df:
-            lines = df.readlines()
-            loss_val[k] = float(lines[-1].split(',')[1])
+        for f in k_val_file_dict[k]:
+            data_file = os.path.join(data_dir, f)
+            match = re.search(r'seed_(.+?)', f)
+            seed = int(match.group(1))
+            with open(data_file, 'r') as df:
+                lines = df.readlines()
+                loss_val[k][seed] = float(lines[-1].split(',')[1])
+    averaged_loss = {k: np.mean(np.array([loss_val[k][seed] for seed in seed_vals])) for k in k_vals}
 
     with open(output_file, 'w') as result_file:
         writer = csv.writer(result_file)
         writer.writerow(['k', 'test loss'])
-        for k, loss in loss_val.items():
+        for k, loss in averaged_loss.items():
             writer.writerow([k + 1, loss])
 
 def simple_detection_loss(data_dir, output_file, seed = 0):
@@ -182,7 +193,7 @@ def simple_detection_loss(data_dir, output_file, seed = 0):
             if file_data.endswith('.csv') and 'vehicle_detection_result_seed' in file_data:
                 csv_files.append(os.path.join(data_dir, file_data))
         return csv_files
-
+    
     def load_vehicle_count_data(csv_file):
         with open(csv_file, 'r') as file_data:
             reader = csv.reader(file_data)
@@ -191,7 +202,6 @@ def simple_detection_loss(data_dir, output_file, seed = 0):
 
     csv_files = get_vehicle_detection_csv_files(data_dir)
     max_k = 100
-
     total_losses = np.zeros(max_k + 1)
     file_count = 0
 
@@ -224,8 +234,8 @@ def simple_detection_loss(data_dir, output_file, seed = 0):
 if __name__ == "__main__":
     # Test Data history class
     # average_pk_values('../data/', '../data/segmentation_averaged_multi_k_loss_pk_data.csv')
-    detection_pk_test_loss('../data/', '../data/detection_test_loss_pk_data.csv')
-    simple_detection_loss('../data/', '../data/detection_simple_test_loss_pk_data.csv')      
+    detection_pk_test_loss('../data/', '../data/averaged_detection_test_loss_pk_data.csv')
+    # simple_detection_loss('../data/', '../data/detection_simple_test_loss_pk_data.csv')      
 # Try SAM
 # Complete 1 task perfectly (Counting the vehicles)
 # About the LSTM: 
