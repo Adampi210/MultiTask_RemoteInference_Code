@@ -7,6 +7,7 @@ import numpy as np
 import torch
 import json
 from collections import deque
+from scipy.ndimage import gaussian_filter1d
 
 # Set all seeds to specified value
 def set_seed(seed):
@@ -176,13 +177,22 @@ def detection_pk_test_loss(data_dir, output_file):
             with open(data_file, 'r') as df:
                 lines = df.readlines()
                 loss_val[k][seed] = float(lines[-1].split(',')[1])
-    averaged_loss = {k: np.mean(np.array([loss_val[k][seed] for seed in seed_vals])) for k in k_vals}
-
-    with open(output_file, 'w') as result_file:
-        writer = csv.writer(result_file)
-        writer.writerow(['k', 'test loss'])
-        for k, loss in averaged_loss.items():
-            writer.writerow([k + 1, loss])
+                
+    k_values, avg_losses, variances = [], [], []
+    for k in sorted(loss_val.keys()):
+        losses = [loss_val[k][seed] for seed in seed_vals]
+        avg_loss = np.mean(losses)
+        variance = np.var(losses)
+        k_values.append(k)
+        avg_losses.append(avg_loss)
+        variances.append(variance)
+    
+    # Write results to CSV
+    with open(output_file, 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerow(['k', 'average_loss', 'variance'])
+        for k, avg, var in zip(k_values, avg_losses, variances):
+            writer.writerow([k, avg, var])
 
 def simple_detection_loss(data_dir, output_file, seed = 0):
     set_seed(seed)
@@ -230,12 +240,77 @@ def simple_detection_loss(data_dir, output_file, seed = 0):
 
     return average_losses
 
+def calculate_moving_average_and_variance(data, window_size = 5):
+    moving_avg = np.convolve(data, np.ones(window_size), 'valid') / window_size
+    padding = np.full(window_size - 1, np.mean(data[-1 - window_size:-1]))
+    moving_avg = np.concatenate((moving_avg, padding))
+    variance = np.array([np.var(data[max(0, i - window_size) : i + 1]) for i in range(len(data))])
+    
+    return moving_avg, variance
+
+def process_segmentation_data(input_file, output_file):
+    k_values, pk_values = [], []
+    with open(input_file, 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+        for row in reader:
+            k_values.append(int(row[0]))
+            pk_values.append(float(row[1]))
+    
+    moving_avg, variance = calculate_moving_average_and_variance(pk_values)
+    
+    with open(output_file, 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerow(['k', 'average_loss', 'variance'])
+        for k, avg, var in zip(k_values, moving_avg, variance):
+            writer.writerow([k, avg, var])
+
+def process_simple_detection_data(input_file, output_file):
+    k_values, loss_values = [], []
+    with open(input_file, 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+        for row in reader:
+            k_values.append(int(row[0]))
+            loss_values.append(float(row[1]))
+    
+    moving_avg, variance = calculate_moving_average_and_variance(loss_values)
+    
+    with open(output_file, 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerow(['k', 'average_loss', 'variance'])
+        for k, avg, var in zip(k_values, moving_avg, variance):
+            writer.writerow([k, avg, var])
+
+def smooth_lstm_detection_data(input_file, output_file, smoothing_factor = 2):
+    k_values, avg_losses, variances = [], [], []
+    with open(input_file, 'r') as csvfile:
+        reader = csv.reader(csvfile)
+        next(reader)
+        for row in reader:
+            k_values.append(int(row[0]))
+            avg_losses.append(float(row[1]))
+            variances.append(float(row[2]))
+    
+    smoothed_avg = gaussian_filter1d(avg_losses, sigma = smoothing_factor)
+    smoothed_var = gaussian_filter1d(variances, sigma = smoothing_factor)
+    
+    with open(output_file, 'w', newline = '') as f:
+        writer = csv.writer(f)
+        writer.writerow(['k', 'average_loss', 'variance'])
+        for k, avg, var in zip(k_values, smoothed_avg, smoothed_var):
+            writer.writerow([k, avg, var])
+
 # Test data processing code
 if __name__ == "__main__":
     # Test Data history class
-    # average_pk_values('../data/', '../data/segmentation_averaged_multi_k_loss_pk_data.csv')
+    average_pk_values('../data/', '../data/segmentation_averaged_multi_k_loss_pk_data.csv')
+    process_segmentation_data('../data/segmentation_averaged_multi_k_loss_pk_data.csv', '../data/smooth_segmentation_averaged_multi_k_loss_pk_data.csv')
     detection_pk_test_loss('../data/', '../data/averaged_detection_test_loss_pk_data.csv')
-    # simple_detection_loss('../data/', '../data/detection_simple_test_loss_pk_data.csv')      
+    smooth_lstm_detection_data('../data/averaged_detection_test_loss_pk_data.csv', '../data/smooth_averaged_detection_test_loss_pk_data.csv')
+    simple_detection_loss('../data/', '../data/detection_simple_test_loss_pk_data.csv')      
+    process_simple_detection_data('../data/detection_simple_test_loss_pk_data.csv', '../data/smooth_detection_simple_test_loss_pk_data.csv')
+
 # Try SAM
 # Complete 1 task perfectly (Counting the vehicles)
 # About the LSTM: 
