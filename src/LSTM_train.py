@@ -144,7 +144,7 @@ if __name__ == '__main__':
 
     window_size = 3
     prediction_offsets = list(range(100))
-    
+    print(f'Window size: {window_size}')
     csv_files = get_vehicle_detection_csv_files(data_dir)
     for seed in range(3):
         for prediction_offset in prediction_offsets:
