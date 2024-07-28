@@ -479,7 +479,7 @@ if __name__ == "__main__":
     video_files = get_subset_video_files(dir_data_path, N_FILES, seed)
     for video_file in video_files:
         i += 1
-        if i < 2 or i >= 3:
+        if i < 2:
             continue
 
         print(video_file)
