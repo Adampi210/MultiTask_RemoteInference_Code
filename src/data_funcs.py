@@ -142,7 +142,7 @@ def average_pk_values(data_dir, output_file):
         file_count += 1
 
     pk_avg = {k: pk_sum[k] / file_count for k in pk_sum}
-
+    print(file_count)
     output_path = os.path.join(data_dir, output_file)
     with open(output_path, 'w') as file_pk_avg:
         writer = csv.writer(file_pk_avg)
@@ -300,6 +300,7 @@ def smooth_lstm_detection_data(input_file, output_file, smoothing_factor = 2):
         writer.writerow(['k', 'average_loss', 'variance'])
         for k, avg, var in zip(k_values, smoothed_avg, smoothed_var):
             writer.writerow([k, avg, var])
+
 
 # Test data processing code
 if __name__ == "__main__":
