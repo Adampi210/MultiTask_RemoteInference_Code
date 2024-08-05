@@ -1,0 +1,308 @@
+ViT-L layers in order of activation:
+1. Conv2d(3, 1024, kernel_size=(16, 16), stride=(16, 16)): 4194304
+2. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+3. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+4. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+5. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+6. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+7. GELU(approximate='none'): 16777216
+8. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+9. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+10. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+11. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+12. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+13. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+14. GELU(approximate='none'): 16777216
+15. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+16. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+17. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+18. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+19. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+20. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+21. GELU(approximate='none'): 16777216
+22. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+23. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+24. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+25. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+26. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+27. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+28. GELU(approximate='none'): 16777216
+29. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+30. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+31. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+32. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+33. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+34. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+35. GELU(approximate='none'): 16777216
+36. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+37. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+38. Linear(in_features=1024, out_features=3072, bias=True): 12582912
+39. Linear(in_features=1024, out_features=1024, bias=True): 4194304
+40. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+41. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+42. GELU(approximate='none'): 16777216
+43. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+44. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+45. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+46. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+47. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+48. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+49. GELU(approximate='none'): 16777216
+50. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+51. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+52. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+53. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+54. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+55. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+56. GELU(approximate='none'): 16777216
+57. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+58. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+59. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+60. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+61. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+62. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+63. GELU(approximate='none'): 16777216
+64. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+65. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+66. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+67. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+68. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+69. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+70. GELU(approximate='none'): 16777216
+71. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+72. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+73. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+74. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+75. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+76. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+77. GELU(approximate='none'): 16777216
+78. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+79. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+80. Linear(in_features=1024, out_features=3072, bias=True): 12582912
+81. Linear(in_features=1024, out_features=1024, bias=True): 4194304
+82. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+83. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+84. GELU(approximate='none'): 16777216
+85. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+86. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+87. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+88. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+89. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+90. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+91. GELU(approximate='none'): 16777216
+92. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+93. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+94. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+95. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+96. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+97. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+98. GELU(approximate='none'): 16777216
+99. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+100. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+101. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+102. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+103. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+104. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+105. GELU(approximate='none'): 16777216
+106. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+107. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+108. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+109. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+110. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+111. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+112. GELU(approximate='none'): 16777216
+113. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+114. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+115. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+116. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+117. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+118. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+119. GELU(approximate='none'): 16777216
+120. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+121. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+122. Linear(in_features=1024, out_features=3072, bias=True): 12582912
+123. Linear(in_features=1024, out_features=1024, bias=True): 4194304
+124. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+125. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+126. GELU(approximate='none'): 16777216
+127. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+128. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+129. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+130. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+131. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+132. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+133. GELU(approximate='none'): 16777216
+134. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+135. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+136. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+137. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+138. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+139. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+140. GELU(approximate='none'): 16777216
+141. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+142. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+143. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+144. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+145. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+146. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+147. GELU(approximate='none'): 16777216
+148. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+149. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+150. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+151. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+152. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+153. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+154. GELU(approximate='none'): 16777216
+155. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+156. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+157. Linear(in_features=1024, out_features=3072, bias=True): 15052800
+158. Linear(in_features=1024, out_features=1024, bias=True): 5017600
+159. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+160. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+161. GELU(approximate='none'): 16777216
+162. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+163. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+164. Linear(in_features=1024, out_features=3072, bias=True): 12582912
+165. Linear(in_features=1024, out_features=1024, bias=True): 4194304
+166. LayerNorm((1024,), eps=1e-06, elementwise_affine=True): 4194304
+167. Linear(in_features=1024, out_features=4096, bias=True): 16777216
+168. GELU(approximate='none'): 16777216
+169. Linear(in_features=4096, out_features=1024, bias=True): 4194304
+170. Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False): 1048576
+171. LayerNorm2d(): 1048576
+172. Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False): 1048576
+173. LayerNorm2d(): 1048576
+174. PositionEmbeddingRandom(): 1048576
+175. Linear(in_features=256, out_features=256, bias=True): 1792
+176. Linear(in_features=256, out_features=256, bias=True): 1792
+177. Linear(in_features=256, out_features=256, bias=True): 1792
+178. Linear(in_features=256, out_features=256, bias=True): 1792
+179. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1792
+180. Linear(in_features=256, out_features=128, bias=True): 896
+181. Linear(in_features=256, out_features=128, bias=True): 524288
+182. Linear(in_features=256, out_features=128, bias=True): 524288
+183. Linear(in_features=128, out_features=256, bias=True): 1792
+184. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1792
+185. Linear(in_features=256, out_features=2048, bias=True): 14336
+186. ReLU(): 14336
+187. Linear(in_features=2048, out_features=256, bias=True): 1792
+188. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1792
+189. Linear(in_features=256, out_features=128, bias=True): 524288
+190. Linear(in_features=256, out_features=128, bias=True): 896
+191. Linear(in_features=256, out_features=128, bias=True): 896
+192. Linear(in_features=128, out_features=256, bias=True): 1048576
+193. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1048576
+194. Linear(in_features=256, out_features=256, bias=True): 1792
+195. Linear(in_features=256, out_features=256, bias=True): 1792
+196. Linear(in_features=256, out_features=256, bias=True): 1792
+197. Linear(in_features=256, out_features=256, bias=True): 1792
+198. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1792
+199. Linear(in_features=256, out_features=128, bias=True): 896
+200. Linear(in_features=256, out_features=128, bias=True): 524288
+201. Linear(in_features=256, out_features=128, bias=True): 524288
+202. Linear(in_features=128, out_features=256, bias=True): 1792
+203. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1792
+204. Linear(in_features=256, out_features=2048, bias=True): 14336
+205. ReLU(): 14336
+206. Linear(in_features=2048, out_features=256, bias=True): 1792
+207. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1792
+208. Linear(in_features=256, out_features=128, bias=True): 524288
+209. Linear(in_features=256, out_features=128, bias=True): 896
+210. Linear(in_features=256, out_features=128, bias=True): 896
+211. Linear(in_features=128, out_features=256, bias=True): 1048576
+212. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1048576
+213. Linear(in_features=256, out_features=128, bias=True): 896
+214. Linear(in_features=256, out_features=128, bias=True): 524288
+215. Linear(in_features=256, out_features=128, bias=True): 524288
+216. Linear(in_features=128, out_features=256, bias=True): 1792
+217. LayerNorm((256,), eps=1e-05, elementwise_affine=True): 1792
+218. ConvTranspose2d(256, 64, kernel_size=(2, 2), stride=(2, 2)): 1048576
+219. LayerNorm2d(): 1048576
+220. GELU(approximate='none'): 1048576
+221. ConvTranspose2d(64, 32, kernel_size=(2, 2), stride=(2, 2)): 2097152
+222. GELU(approximate='none'): 2097152
+223. Linear(in_features=256, out_features=256, bias=True): 256
+224. Linear(in_features=256, out_features=256, bias=True): 256
+225. Linear(in_features=256, out_features=32, bias=True): 32
+226. Linear(in_features=256, out_features=256, bias=True): 256
+227. Linear(in_features=256, out_features=256, bias=True): 256
+228. Linear(in_features=256, out_features=32, bias=True): 32
+229. Linear(in_features=256, out_features=256, bias=True): 256
+230. Linear(in_features=256, out_features=256, bias=True): 256
+231. Linear(in_features=256, out_features=32, bias=True): 32
+232. Linear(in_features=256, out_features=256, bias=True): 256
+233. Linear(in_features=256, out_features=256, bias=True): 256
+234. Linear(in_features=256, out_features=32, bias=True): 32
+235. Linear(in_features=256, out_features=256, bias=True): 256
+236. Linear(in_features=256, out_features=256, bias=True): 256
+237. Linear(in_features=256, out_features=4, bias=True): 4
+
+Potential layer to split:
+After layer 3: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 7: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 10: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 14: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 17: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 21: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 24: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 28: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 31: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 35: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 38: Linear(in_features=1024, out_features=1024, bias=True) (size: 4194304)
+After layer 42: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 45: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 49: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 52: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 56: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 59: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 63: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 66: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 70: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 73: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 77: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 80: Linear(in_features=1024, out_features=1024, bias=True) (size: 4194304)
+After layer 84: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 87: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 91: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 94: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 98: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 101: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 105: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 108: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 112: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 115: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 119: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 122: Linear(in_features=1024, out_features=1024, bias=True) (size: 4194304)
+After layer 126: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 129: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 133: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 136: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 140: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 143: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 147: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 150: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 154: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 157: Linear(in_features=1024, out_features=1024, bias=True) (size: 5017600)
+After layer 161: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 164: Linear(in_features=1024, out_features=1024, bias=True) (size: 4194304)
+After layer 168: Linear(in_features=4096, out_features=1024, bias=True) (size: 4194304)
+After layer 169: Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False) (size: 1048576)
+After layer 174: Linear(in_features=256, out_features=256, bias=True) (size: 1792)
+After layer 182: Linear(in_features=128, out_features=256, bias=True) (size: 1792)
+After layer 186: Linear(in_features=2048, out_features=256, bias=True) (size: 1792)
+After layer 189: Linear(in_features=256, out_features=128, bias=True) (size: 896)
+After layer 193: Linear(in_features=256, out_features=256, bias=True) (size: 1792)
+After layer 201: Linear(in_features=128, out_features=256, bias=True) (size: 1792)
+After layer 205: Linear(in_features=2048, out_features=256, bias=True) (size: 1792)
+After layer 208: Linear(in_features=256, out_features=128, bias=True) (size: 896)
+After layer 212: Linear(in_features=256, out_features=128, bias=True) (size: 896)
+After layer 215: Linear(in_features=128, out_features=256, bias=True) (size: 1792)
+After layer 222: Linear(in_features=256, out_features=256, bias=True) (size: 256)
+After layer 224: Linear(in_features=256, out_features=32, bias=True) (size: 32)
+After layer 227: Linear(in_features=256, out_features=32, bias=True) (size: 32)
+After layer 230: Linear(in_features=256, out_features=32, bias=True) (size: 32)
+After layer 233: Linear(in_features=256, out_features=32, bias=True) (size: 32)
+After layer 236: Linear(in_features=256, out_features=4, bias=True) (size: 4)
+
+Layer with smallest activations: Linear(in_features=256, out_features=4, bias=True)
+Size of smallest activations: 4
