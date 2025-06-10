@@ -9,9 +9,9 @@ fi
 # Default settings
 DEVICE="/dev/video0"    # Video device
 FORMAT="mjpeg"          # Default to MJPG
-FRAMES=10               # Number of frames
+FRAMES=30               # Number of frames
 FRAMERATE=30            # Frame rate (fps)
-RESOLUTION="1600x1200"  # Resolution (WIDTHxHEIGHT)
+RESOLUTION="1920x1080"  # Resolution (WIDTHxHEIGHT)
 
 # Parse command-line options
 while [ "$1" != "" ]; do
@@ -19,9 +19,9 @@ while [ "$1" != "" ]; do
         --help )    echo "Usage: $0 [options]"
                     echo "  --device DEV     Video device (default: /dev/video0)"
                     echo "  --format FMT     Format: mjpeg or yuyv422 (default: mjpeg)"
-                    echo "  --frames N       Number of frames (default: 10)"
+                    echo "  --frames N       Number of frames (default: 90)"
                     echo "  --framerate FPS  Frame rate (default: 30)"
-                    echo "  --resolution WxH Resolution (default: 1600x1200)"
+                    echo "  --resolution WxH Resolution (default: 1920x1080)"
                     exit 0
                     ;;
         --device )  shift; DEVICE=$1 ;;
@@ -46,4 +46,4 @@ fi
 
 # Run the capture
 echo "Capturing $FRAMES frames from $DEVICE using $FORMAT at $FRAMERATE fps with $RESOLUTION"
-ffmpeg -f v4l2 -input_format $FORMAT -framerate $FRAMERATE -video_size $RESOLUTION -i $DEVICE -frames:v $FRAMES frame_%05d.jpg
+ffmpeg -f v4l2 -input_format $FORMAT -r $FRAMERATE -s $RESOLUTION -i $DEVICE -frames:v $FRAMES frame_%06d.jpg
