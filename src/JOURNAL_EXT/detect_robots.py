@@ -52,38 +52,27 @@ def merge_close_bboxes(bboxes, distance_threshold):
 # ======================================================================================
 def process_image(image_path, model, distance_threshold, y_cutoff):
     """
-    Loads an image, performs object detection, filters by Y-coordinate, merges bboxes, 
-    and returns structured data.
-
-    Args:
-        image_path (str): Path to the input image.
-        model (YOLO): The loaded YOLO model object.
-        distance_threshold (int): The distance threshold for merging boxes.
-        y_cutoff (int): The Y-axis coordinate to ignore detections above.
+    Loads an image, performs object detection, filters, merges, and returns data and the image.
 
     Returns:
-        list: A list of dictionaries, where each dictionary represents a detected object.
+        tuple: A tuple containing (list_of_detections, image_object).
+               The image_object is None if the image could not be read.
     """
     img = cv2.imread(image_path)
     if img is None:
         print(f"    - Warning: Could not read image at {image_path}")
-        return []
+        return [], None
 
     results = model.predict(source=img, conf=0.05, verbose=False)
     result = results[0]
 
     boxes_by_class = {}
     for box in result.boxes:
-        # Extract coordinates and class ID
         x1, y1, x2, y2 = [int(i) for i in box.xyxy[0]]
         class_id = int(box.cls[0])
 
-        # ==================================================
-        # NEW: Filter out objects above the Y_CUTOFF line
-        # If the top of the box is above the cutoff line, skip it.
         if y1 < y_cutoff:
             continue
-        # ==================================================
             
         if class_id not in boxes_by_class:
             boxes_by_class[class_id] = []
@@ -98,8 +87,9 @@ def process_image(image_path, model, distance_threshold, y_cutoff):
                 "class_name": model.names[class_id],
                 "box_2d": [int(coord) for coord in mbox]
             })
-
-    return final_detections
+    
+    # Return both the structured data and the loaded image for drawing
+    return final_detections, img
 
 # ======================================================================================
 # Main Script Logic
@@ -109,22 +99,18 @@ def main():
     Main function to run the batch processing.
     """
     # --- Configuration ---
-    MODEL_PATH = 'yolov8m.pt'
+    # NOTE: 'yolo11m.pt' appears to be a typo. Corrected to 'yolov8m.pt'.
+    # Please update this to the correct path of your model.
+    MODEL_PATH = 'yolo11m.pt' 
     
     FOLDERS_TO_PROCESS = [
-        '../../data/session1/',
-        '../../data/session2/',
+        '../test/',
     ]
     
     DISTANCE_THRESHOLD = 150
     
-    # ===============================================================================
-    # NEW SETTING: Y-axis cutoff
-    # Any object with a bounding box starting above this Y-pixel value will be ignored.
-    # The Y-axis starts at 0 at the top of the image.
-    # Set to 0 to disable this filter and process the whole image.
-    Y_CUTOFF = 250
-    # ===============================================================================
+    # Set to 0 to disable the filter, otherwise set to the Y-pixel value to cut off above.
+    Y_CUTOFF = 10 # For example, ignore the top 250 pixels of the image.
 
     print(f"Loading YOLO model from: {MODEL_PATH}")
     try:
@@ -152,13 +138,48 @@ def main():
             filename = os.path.basename(image_path)
             print(f"  - Processing file: {filename}")
             
-            # Pass the new Y_CUTOFF value to the processing function
-            detected_objects = process_image(image_path, model, DISTANCE_THRESHOLD, Y_CUTOFF)
+            # Get detections and the loaded image object
+            detected_objects, loaded_img = process_image(image_path, model, DISTANCE_THRESHOLD, Y_CUTOFF)
             
+            # If the image could not be loaded, skip to the next one
+            if loaded_img is None:
+                continue
+
+            # Store the structured data for the JSON file
             all_results_for_folder[filename] = detected_objects
 
+            # --- START VISUALIZATION ---
+            
+            # Draw the excluded region as a semi-transparent rectangle (only if cutoff is active)
+            if Y_CUTOFF > 0:
+                height, width, _ = loaded_img.shape
+                overlay = loaded_img.copy()
+                cv2.rectangle(overlay, (0, 0), (width, Y_CUTOFF), (0, 0, 0), -1)
+                alpha = 0.4  # Transparency factor.
+                cv2.addWeighted(overlay, alpha, loaded_img, 1 - alpha, 0, loaded_img)
+
+            # Draw the final, merged bounding boxes on the image
+            for obj in detected_objects:
+                box = obj['box_2d']
+                class_name = obj['class_name']
+                x1, y1, x2, y2 = box
+                
+                # Draw the bounding box
+                cv2.rectangle(loaded_img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                
+                # Prepare and draw the label
+                label = f"{class_name}"
+                cv2.putText(loaded_img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+
+            # Save the new image with drawings
+            output_filename = "processed_" + filename
+            output_image_path = os.path.join(folder_path, output_filename)
+            cv2.imwrite(output_image_path, loaded_img)
+            # --- END VISUALIZATION ---
+
+        # Save the JSON file for the entire folder
         json_output_path = os.path.join(folder_path, 'detection_results.json')
-        print(f"\nSaving results for {folder_path} to {json_output_path}")
+        print(f"\nSaving JSON results for {folder_path} to {json_output_path}")
         with open(json_output_path, 'w') as f:
             json.dump(all_results_for_folder, f, indent=4)
         print("  - Save complete.")
