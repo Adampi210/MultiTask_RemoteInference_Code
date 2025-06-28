@@ -47,63 +47,71 @@ def merge_close_bboxes(bboxes, distance_threshold):
         merged_bboxes.append([min_x, min_y, max_x, max_y])
     return np.array(merged_bboxes)
 
+def compute_hull_bbox(bboxes):
+    if len(bboxes) == 0:
+        return None
+    # Collect all corner points from the bounding boxes
+    points = []
+    for bbox in bboxes:
+        x1, y1, x2, y2 = bbox
+        points.append([x1, y1])
+        points.append([x2, y2])
+        points.append([x1, y2])
+        points.append([x2, y1])
+    points = np.array(points, dtype=np.float32)
+    # Compute convex hull
+    hull = cv2.convexHull(points)
+    # Find the bounding box of the hull
+    min_x = np.min(hull[:, 0, 0])
+    min_y = np.min(hull[:, 0, 1])
+    max_x = np.max(hull[:, 0, 0])
+    max_y = np.max(hull[:, 0, 1])
+    return [int(min_x), int(min_y), int(max_x), int(max_y)]
+
 # ======================================================================================
 # Updated Function to Process a Single Image
 # ======================================================================================
-def process_image(image_path, model, distance_threshold, y_cutoff):
+def process_image(image_path, model, y_cutoff):
     """
-    Loads an image, performs object detection, filters, merges, and returns data and the image.
+    Loads an image, performs object detection, filters, computes the convex hull bounding box,
+    and returns data and the image.
 
     Returns:
-        tuple: A tuple containing (list_of_detections, image_object).
-               The image_object is None if the image could not be read.
+        tuple: (list_of_detections, image_object). image_object is None if the image cannot be read.
     """
-
     img = cv2.imread(image_path)
-    height, width, _ = img. shape
     if img is None:
         print(f"    - Warning: Could not read image at {image_path}")
         return [], None
 
+    height, width, _ = img.shape
     results = model.predict(source=img, conf=0.01, verbose=False)
     result = results[0]
 
-    boxes_by_class = {}
+    bboxes = []
     for box in result.boxes:
         x1, y1, x2, y2 = [int(i) for i in box.xyxy[0]]
-        class_id = int(box.cls[0])
-
         if y1 < y_cutoff:
             continue
-
         if 'robot_6' in image_path or 'robot_7' in image_path:
-            # Define parameters for the two lines
-            m1 = 0.65
-            b1 = -320
-            m2 = -0.55
-            b2 = -300
-            # Calculate y-values of the lines at x1
+            m1, b1 = 0.65, -320
+            m2, b2 = -0.55, -300
             line1_v = m1 * (x1 - width / 2) + b1 + height / 2
             line2_v = m2 * (x1 - width / 2) + b2 + height / 2
-            # Skip if top-left corner is above either line
             if y1 < line1_v or y1 < line2_v:
                 continue
-            
-        if class_id not in boxes_by_class:
-            boxes_by_class[class_id] = []
-        boxes_by_class[class_id].append([x1, y1, x2, y2])
+        bboxes.append([x1, y1, x2, y2])
 
-    final_detections = []
-    for class_id, bboxes in boxes_by_class.items():
-        merged_bboxes = merge_close_bboxes(bboxes, distance_threshold)
-        for mbox in merged_bboxes:
-            final_detections.append({
-                "class_id": class_id,
-                "class_name": model.names[class_id],
-                "box_2d": [int(coord) for coord in mbox]
-            })
-    
-    # Return both the structured data and the loaded image for drawing
+    hull_bbox = compute_hull_bbox(bboxes)
+    if hull_bbox is None:
+        return [], img
+
+    final_detections = [{
+        "class_id": -1,  # Special ID for the robot
+        "class_name": "robot",
+        "box_2d": hull_bbox
+    }]
+
     return final_detections, img
 
 def draw_line_and_shade_above(image, m, b, alpha=0.4):
@@ -201,9 +209,7 @@ def main():
     ]
     
     y_cutoffs = [300, 300, 370, 370, 300, 300, 380, 380]  # Example Y cutoff values for each folder
-    
-    DISTANCE_THRESHOLD = 150
-    
+        
     print(f"Loading YOLO model from: {MODEL_PATH}")
     try:
         model = YOLO(MODEL_PATH)
@@ -231,7 +237,7 @@ def main():
             print(f"  - Processing file: {filename}")
             
             # Get detections and the loaded image object
-            detected_objects, loaded_img = process_image(image_path, model, DISTANCE_THRESHOLD, y_cutoff)
+            detected_objects, loaded_img = process_image(image_path, model, y_cutoff)
 
             # If the image could not be loaded, skip to the next one
             if loaded_img is None:
