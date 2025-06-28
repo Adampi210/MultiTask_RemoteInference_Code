@@ -58,12 +58,14 @@ def process_image(image_path, model, distance_threshold, y_cutoff):
         tuple: A tuple containing (list_of_detections, image_object).
                The image_object is None if the image could not be read.
     """
+
     img = cv2.imread(image_path)
+    height, width, _ = img. shape
     if img is None:
         print(f"    - Warning: Could not read image at {image_path}")
         return [], None
 
-    results = model.predict(source=img, conf=0.05, verbose=False)
+    results = model.predict(source=img, conf=0.01, verbose=False)
     result = results[0]
 
     boxes_by_class = {}
@@ -73,6 +75,19 @@ def process_image(image_path, model, distance_threshold, y_cutoff):
 
         if y1 < y_cutoff:
             continue
+
+        if 'robot_6' in image_path or 'robot_7' in image_path:
+            # Define parameters for the two lines
+            m1 = 0.65
+            b1 = -320
+            m2 = -0.55
+            b2 = -300
+            # Calculate y-values of the lines at x1
+            line1_v = m1 * (x1 - width / 2) + b1 + height / 2
+            line2_v = m2 * (x1 - width / 2) + b2 + height / 2
+            # Skip if top-left corner is above either line
+            if y1 < line1_v or y1 < line2_v:
+                continue
             
         if class_id not in boxes_by_class:
             boxes_by_class[class_id] = []
@@ -91,6 +106,77 @@ def process_image(image_path, model, distance_threshold, y_cutoff):
     # Return both the structured data and the loaded image for drawing
     return final_detections, img
 
+def draw_line_and_shade_above(image, m, b, alpha=0.4):
+    """
+    Draws a red line on the image with the equation y = mx + b, where (0,0) is the image center,
+    and shades the region above the line with a blue transparent overlay.
+
+    Parameters:
+        image (numpy.ndarray): The input image in BGR format.
+        m (float): Slope of the line.
+        b (float): Y-intercept of the line at x=0, with origin at image center.
+        alpha (float): Transparency factor for the blue overlay (default is 0.4).
+    """
+    # Get image dimensions
+    height, width, _ = image.shape
+
+    # Step 1: Find intersection points of the line with image boundaries
+    points = []
+    
+    # Intersection with left edge (u=0)
+    u = 0
+    x = u - width / 2
+    y = m * x + b
+    v = y + height / 2
+    if 0 <= v <= height - 1:
+        points.append((u, v))
+
+    # Intersection with right edge (u=width-1)
+    u = width - 1
+    x = u - width / 2
+    y = m * x + b
+    v = y + height / 2
+    if 0 <= v <= height - 1:
+        points.append((u, v))
+
+    # Intersection with top edge (v=0)
+    v = 0
+    y = v - height / 2
+    if m != 0:  # Avoid division by zero
+        x = (y - b) / m
+        u = x + width / 2
+        if 0 <= u <= width - 1:
+            points.append((u, v))
+
+    # Intersection with bottom edge (v=height-1)
+    v = height - 1
+    y = v - height / 2
+    if m != 0:
+        x = (y - b) / m
+        u = x + width / 2
+        if 0 <= u <= width - 1:
+            points.append((u, v))
+
+    # Step 2: Draw the red line if there are at least two intersection points
+    if len(points) >= 2:
+        pt1 = (int(points[0][0]), int(points[0][1]))
+        pt2 = (int(points[1][0]), int(points[1][1]))
+        cv2.line(image, pt1, pt2, (0, 0, 255), 2)  # Red line in BGR
+
+    # Step 3: Shade the region above the line
+    # Create coordinate grids for all pixels
+    u_grid, v_grid = np.meshgrid(np.arange(width), np.arange(height))
+    # Line equation in image coordinates: v = m*(u - width/2) + b + height/2
+    # Shade where v > m*(u - width/2) + b + height/2
+    mask = v_grid < m * (u_grid - width / 2) + b + height / 2
+
+    # Create overlay for shading
+    overlay = np.zeros_like(image)
+    overlay[mask] = [255, 0, 0]  # Blue in BGR
+
+    # Blend the overlay with the original image
+    cv2.addWeighted(overlay, alpha, image, 1 - alpha, 0, image)
+
 # ======================================================================================
 # Main Script Logic
 # ======================================================================================
@@ -101,17 +187,23 @@ def main():
     # --- Configuration ---
     # NOTE: 'yolo11m.pt' appears to be a typo. Corrected to 'yolov8m.pt'.
     # Please update this to the correct path of your model.
-    MODEL_PATH = 'yolo11m.pt' 
+    MODEL_PATH = 'yolov8m.pt' 
     
     FOLDERS_TO_PROCESS = [
-        '../test/',
+        '../robot_0/',
+        '../robot_1/',
+        '../robot_2/',
+        '../robot_3/',
+        '../robot_4/',
+        '../robot_5/',
+        '../robot_6/',
+        '../robot_7/',
     ]
+    
+    y_cutoffs = [300, 300, 370, 370, 300, 300, 380, 380]  # Example Y cutoff values for each folder
     
     DISTANCE_THRESHOLD = 150
     
-    # Set to 0 to disable the filter, otherwise set to the Y-pixel value to cut off above.
-    Y_CUTOFF = 10 # For example, ignore the top 250 pixels of the image.
-
     print(f"Loading YOLO model from: {MODEL_PATH}")
     try:
         model = YOLO(MODEL_PATH)
@@ -119,7 +211,7 @@ def main():
         print(f"Error loading model: {e}")
         return
 
-    for folder_path in FOLDERS_TO_PROCESS:
+    for folder_path, y_cutoff in zip(FOLDERS_TO_PROCESS, y_cutoffs):
         if not os.path.isdir(folder_path):
             print(f"\nSkipping non-existent directory: {folder_path}")
             continue
@@ -139,8 +231,8 @@ def main():
             print(f"  - Processing file: {filename}")
             
             # Get detections and the loaded image object
-            detected_objects, loaded_img = process_image(image_path, model, DISTANCE_THRESHOLD, Y_CUTOFF)
-            
+            detected_objects, loaded_img = process_image(image_path, model, DISTANCE_THRESHOLD, y_cutoff)
+
             # If the image could not be loaded, skip to the next one
             if loaded_img is None:
                 continue
@@ -151,13 +243,17 @@ def main():
             # --- START VISUALIZATION ---
             
             # Draw the excluded region as a semi-transparent rectangle (only if cutoff is active)
-            if Y_CUTOFF > 0:
+            if y_cutoff > 0:
                 height, width, _ = loaded_img.shape
                 overlay = loaded_img.copy()
-                cv2.rectangle(overlay, (0, 0), (width, Y_CUTOFF), (0, 0, 0), -1)
+                cv2.rectangle(overlay, (0, 0), (width, y_cutoff), (0, 0, 0), -1)
                 alpha = 0.4  # Transparency factor.
                 cv2.addWeighted(overlay, alpha, loaded_img, 1 - alpha, 0, loaded_img)
-
+            
+            if 'robot_6' in image_path or 'robot_7' in image_path:
+                draw_line_and_shade_above(loaded_img, m=0.65, b=-320)
+                draw_line_and_shade_above(loaded_img, m=-0.55, b=-300)
+                    
             # Draw the final, merged bounding boxes on the image
             for obj in detected_objects:
                 box = obj['box_2d']
