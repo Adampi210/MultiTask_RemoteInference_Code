@@ -7,7 +7,7 @@ from ultralytics import YOLO
 # List of folders to process (same as in your original code)
 path_dirs = '../../..'
 FOLDERS_TO_PROCESS = [
-    f'{path_dirs}/robot_2/',
+    f'{path_dirs}/robot_7/',
     # f'{path_dirs}/robot_1/',
     # f'{path_dirs}/robot_2/',
     # f'{path_dirs}/robot_3/',
@@ -18,7 +18,7 @@ FOLDERS_TO_PROCESS = [
 ]
 
 y_cutoffs = [
-    370, 
+    380, 
     # 300, 
     # 370, 
     # 370, 
@@ -138,36 +138,6 @@ def compute_hull_bbox(bboxes):
     max_y = np.max(hull[:, 0, 1])
     return [int(min_x), int(min_y), int(max_x), int(max_y)]
 
-def process_image(image_path, model, y_cutoff):
-    img = cv2.imread(image_path)
-    if img is None:
-        print(f"    - Warning: Could not read image at {image_path}")
-        return [], None
-    height, width, _ = img.shape
-    results = model.predict(source=img, conf=0.01, verbose=False)
-    result = results[0]
-    bboxes = []
-    for box in result.boxes:
-        x1, y1, x2, y2 = [int(i) for i in box.xyxy[0]]
-        if y1 < y_cutoff:
-            continue
-        if 'robot_6' in image_path or 'robot_7' in image_path:
-            m1, b1 = 0.65, -320
-            m2, b2 = -0.55, -300
-            line1_v = m1 * (x1 - width / 2) + b1 + height / 2
-            line2_v = m2 * (x1 - width / 2) + b2 + height / 2
-            if y1 < line1_v or y1 < line2_v:
-                continue
-        bboxes.append([x1, y1, x2, y2])
-    hull_bbox = compute_hull_bbox(bboxes)
-    if hull_bbox is None:
-        return [], img
-    final_detections = [{
-        "class_id": -1,
-        "class_name": "robot",
-        "box_2d": hull_bbox
-    }]
-    return final_detections, img
 
 def draw_line_and_shade_above(image, m, b, alpha=0.4):
     height, width, _ = image.shape
@@ -210,7 +180,7 @@ def draw_line_and_shade_above(image, m, b, alpha=0.4):
 
 def transform_and_detect(image_path, model, y_cutoff):
     """
-    Applies a transformation to the image to enhance robot detection, then returns the merged bounding box.
+    Applies enhanced preprocessing and detection to improve robot detection, saving the preprocessed image.
 
     Args:
         image_path (str): Path to the image file.
@@ -224,12 +194,41 @@ def transform_and_detect(image_path, model, y_cutoff):
     if img is None:
         print(f"    - Warning: Could not read image at {image_path}")
         return []
-    # Apply contrast enhancement
-    enhanced_img = cv2.convertScaleAbs(img, alpha=1.5, beta=0)
-    height, width, _ = enhanced_img.shape
-    results = model.predict(source=enhanced_img, conf=0.01, verbose=False)
+    
+    # Apply Gaussian blur to reduce noise
+    img = cv2.GaussianBlur(img, (5, 5), 0)
+    
+    # Apply CLAHE to L channel in LAB for adaptive contrast enhancement
+    lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+    l, a, b = cv2.split(lab)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    l_clahe = clahe.apply(l)
+    lab_clahe = cv2.merge((l_clahe, a, b))
+    enhanced_img = cv2.cvtColor(lab_clahe, cv2.COLOR_LAB2BGR)
+    
+    # Apply unsharp masking to enhance edges
+    blurred = cv2.GaussianBlur(enhanced_img, (0, 0), sigmaX=3, sigmaY=3)
+    sharpened = cv2.addWeighted(enhanced_img, 1.5, blurred, -0.5, 0)
+    
+    # Create mask to focus on region below y_cutoff
+    height, width, _ = sharpened.shape
+    mask = np.zeros_like(sharpened)
+    mask[y_cutoff:, :, :] = 255
+    masked_img = cv2.bitwise_and(sharpened, mask)
+    
+    # Save the preprocessed image with 'test_' prefix
+    output_dir = os.path.dirname(image_path)
+    os.makedirs(output_dir, exist_ok=True)  # Ensure directory exists
+    image_name = os.path.basename(image_path)
+    output_path = os.path.join(output_dir, f"test_{image_name}")
+    cv2.imwrite(output_path, masked_img)
+    print(f"    - Saved preprocessed image to {output_path}")
+    
+    # Perform detection with low confidence threshold
+    results = model.predict(source=masked_img, conf=0.001, verbose=False)
     result = results[0]
     bboxes = []
+    
     for box in result.boxes:
         x1, y1, x2, y2 = [int(i) for i in box.xyxy[0]]
         if y1 < y_cutoff:
@@ -242,6 +241,7 @@ def transform_and_detect(image_path, model, y_cutoff):
             if y1 < line1_v or y1 < line2_v:
                 continue
         bboxes.append([x1, y1, x2, y2])
+    
     hull_bbox = compute_hull_bbox(bboxes)
     if hull_bbox is None:
         return []
@@ -251,8 +251,9 @@ def transform_and_detect(image_path, model, y_cutoff):
         "box_2d": hull_bbox
     }]
 
+
 if __name__ == "__main__":
-    MODEL_PATH = 'yolo11x.pt'
+    MODEL_PATH = 'yolo11n.pt'
     # Load the YOLO model
     model = YOLO(MODEL_PATH)
     for directory, y_cutoff in zip(FOLDERS_TO_PROCESS, y_cutoffs):

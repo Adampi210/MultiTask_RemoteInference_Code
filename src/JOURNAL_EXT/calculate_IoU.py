@@ -58,7 +58,7 @@ def plot_error_vs_aoi(bboxes, filename, max_aoi):
     plt.show()
 
 if __name__ == "__main__":
-    filename = '../../data/detection_results_robot_2'
+    filename = '../../data/detection_results_robot_7'
     # Load the JSON data
     with open(filename + '.json', 'r') as f:
         data = json.load(f)
@@ -71,3 +71,7 @@ if __name__ == "__main__":
 
     # Plot error vs AoI for AoI from 0 to 100
     plot_error_vs_aoi(bboxes, filename, 40)
+    
+    # Plot the current bbox and predicted bbox for a given AoI for different frames
+    
+    

@@ -1,0 +1,8762 @@
+{
+    "frame_00100.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                730,
+                840,
+                891,
+                992
+            ]
+        }
+    ],
+    "frame_00101.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                730,
+                839,
+                888,
+                992
+            ]
+        }
+    ],
+    "frame_00102.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                735,
+                835,
+                899,
+                991
+            ]
+        }
+    ],
+    "frame_00103.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                750,
+                830,
+                911,
+                984
+            ]
+        }
+    ],
+    "frame_00104.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                764,
+                821,
+                924,
+                972
+            ]
+        }
+    ],
+    "frame_00105.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                776,
+                809,
+                944,
+                954
+            ]
+        }
+    ],
+    "frame_00106.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                795,
+                799,
+                961,
+                938
+            ]
+        }
+    ],
+    "frame_00107.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                808,
+                790,
+                968,
+                923
+            ]
+        }
+    ],
+    "frame_00108.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                825,
+                777,
+                981,
+                909
+            ]
+        }
+    ],
+    "frame_00109.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                832,
+                770,
+                998,
+                893
+            ]
+        }
+    ],
+    "frame_00110.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                863,
+                759,
+                1012,
+                880
+            ]
+        }
+    ],
+    "frame_00111.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                877,
+                750,
+                1028,
+                871
+            ]
+        }
+    ],
+    "frame_00112.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                879,
+                740,
+                1042,
+                858
+            ]
+        }
+    ],
+    "frame_00113.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                897,
+                734,
+                1057,
+                847
+            ]
+        }
+    ],
+    "frame_00114.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                919,
+                725,
+                1072,
+                836
+            ]
+        }
+    ],
+    "frame_00115.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                926,
+                718,
+                1077,
+                827
+            ]
+        }
+    ],
+    "frame_00116.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                927,
+                710,
+                1080,
+                818
+            ]
+        }
+    ],
+    "frame_00117.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                925,
+                708,
+                1077,
+                812
+            ]
+        }
+    ],
+    "frame_00118.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                917,
+                704,
+                1064,
+                805
+            ]
+        }
+    ],
+    "frame_00119.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                902,
+                702,
+                1048,
+                804
+            ]
+        }
+    ],
+    "frame_00120.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                882,
+                702,
+                1037,
+                799
+            ]
+        }
+    ],
+    "frame_00121.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                876,
+                695,
+                1016,
+                794
+            ]
+        }
+    ],
+    "frame_00122.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                855,
+                692,
+                994,
+                791
+            ]
+        }
+    ],
+    "frame_00123.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                838,
+                689,
+                974,
+                784
+            ]
+        }
+    ],
+    "frame_00124.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                823,
+                682,
+                958,
+                779
+            ]
+        }
+    ],
+    "frame_00125.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                799,
+                681,
+                933,
+                774
+            ]
+        }
+    ],
+    "frame_00126.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                789,
+                676,
+                913,
+                769
+            ]
+        }
+    ],
+    "frame_00127.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                758,
+                673,
+                894,
+                763
+            ]
+        }
+    ],
+    "frame_00128.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                741,
+                669,
+                879,
+                758
+            ]
+        }
+    ],
+    "frame_00129.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                736,
+                664,
+                850,
+                753
+            ]
+        }
+    ],
+    "frame_00130.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                718,
+                660,
+                841,
+                747
+            ]
+        }
+    ],
+    "frame_00131.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                718,
+                654,
+                838,
+                741
+            ]
+        }
+    ],
+    "frame_00132.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                724,
+                648,
+                840,
+                735
+            ]
+        }
+    ],
+    "frame_00133.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                725,
+                643,
+                840,
+                728
+            ]
+        }
+    ],
+    "frame_00134.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                738,
+                640,
+                853,
+                721
+            ]
+        }
+    ],
+    "frame_00135.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                751,
+                632,
+                860,
+                712
+            ]
+        }
+    ],
+    "frame_00136.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                762,
+                627,
+                869,
+                706
+            ]
+        }
+    ],
+    "frame_00137.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                768,
+                621,
+                878,
+                696
+            ]
+        }
+    ],
+    "frame_00138.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                783,
+                613,
+                884,
+                688
+            ]
+        }
+    ],
+    "frame_00139.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                796,
+                607,
+                895,
+                681
+            ]
+        }
+    ],
+    "frame_00140.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                800,
+                603,
+                906,
+                675
+            ]
+        }
+    ],
+    "frame_00141.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                815,
+                600,
+                916,
+                669
+            ]
+        }
+    ],
+    "frame_00142.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                829,
+                598,
+                928,
+                664
+            ]
+        }
+    ],
+    "frame_00143.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                844,
+                593,
+                940,
+                658
+            ]
+        }
+    ],
+    "frame_00144.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                847,
+                590,
+                944,
+                654
+            ]
+        }
+    ],
+    "frame_00145.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                846,
+                584,
+                943,
+                649
+            ]
+        }
+    ],
+    "frame_00146.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                841,
+                580,
+                931,
+                645
+            ]
+        }
+    ],
+    "frame_00147.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                832,
+                576,
+                922,
+                641
+            ]
+        }
+    ],
+    "frame_00148.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                817,
+                573,
+                909,
+                635
+            ]
+        }
+    ],
+    "frame_00149.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                802,
+                570,
+                897,
+                634
+            ]
+        }
+    ],
+    "frame_00150.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                796,
+                568,
+                881,
+                629
+            ]
+        }
+    ],
+    "frame_00151.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                783,
+                565,
+                867,
+                625
+            ]
+        }
+    ],
+    "frame_00152.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                768,
+                560,
+                854,
+                622
+            ]
+        }
+    ],
+    "frame_00153.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                755,
+                559,
+                840,
+                618
+            ]
+        }
+    ],
+    "frame_00154.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                736,
+                558,
+                831,
+                615
+            ]
+        }
+    ],
+    "frame_00155.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                721,
+                554,
+                813,
+                611
+            ]
+        }
+    ],
+    "frame_00156.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                718,
+                554,
+                802,
+                609
+            ]
+        }
+    ],
+    "frame_00157.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                703,
+                554,
+                787,
+                607
+            ]
+        }
+    ],
+    "frame_00158.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                688,
+                551,
+                775,
+                606
+            ]
+        }
+    ],
+    "frame_00159.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                684,
+                550,
+                765,
+                607
+            ]
+        }
+    ],
+    "frame_00160.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                672,
+                551,
+                755,
+                608
+            ]
+        }
+    ],
+    "frame_00161.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                667,
+                551,
+                749,
+                610
+            ]
+        }
+    ],
+    "frame_00162.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                656,
+                552,
+                737,
+                614
+            ]
+        }
+    ],
+    "frame_00163.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                641,
+                556,
+                728,
+                617
+            ]
+        }
+    ],
+    "frame_00164.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                632,
+                562,
+                718,
+                620
+            ]
+        }
+    ],
+    "frame_00165.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                621,
+                564,
+                705,
+                625
+            ]
+        }
+    ],
+    "frame_00166.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                603,
+                562,
+                693,
+                629
+            ]
+        }
+    ],
+    "frame_00167.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                588,
+                569,
+                686,
+                633
+            ]
+        }
+    ],
+    "frame_00168.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                573,
+                562,
+                672,
+                638
+            ]
+        }
+    ],
+    "frame_00169.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                559,
+                577,
+                656,
+                641
+            ]
+        }
+    ],
+    "frame_00170.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                542,
+                583,
+                642,
+                647
+            ]
+        }
+    ],
+    "frame_00171.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                524,
+                584,
+                629,
+                651
+            ]
+        }
+    ],
+    "frame_00172.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                514,
+                588,
+                625,
+                656
+            ]
+        }
+    ],
+    "frame_00173.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                512,
+                594,
+                625,
+                659
+            ]
+        }
+    ],
+    "frame_00174.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                519,
+                595,
+                626,
+                663
+            ]
+        }
+    ],
+    "frame_00175.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                525,
+                599,
+                635,
+                669
+            ]
+        }
+    ],
+    "frame_00176.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                539,
+                602,
+                642,
+                672
+            ]
+        }
+    ],
+    "frame_00177.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                542,
+                605,
+                654,
+                678
+            ]
+        }
+    ],
+    "frame_00178.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                553,
+                607,
+                659,
+                681
+            ]
+        }
+    ],
+    "frame_00179.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                561,
+                612,
+                673,
+                688
+            ]
+        }
+    ],
+    "frame_00180.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                587,
+                616,
+                684,
+                690
+            ]
+        }
+    ],
+    "frame_00181.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                592,
+                618,
+                691,
+                696
+            ]
+        }
+    ],
+    "frame_00182.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                604,
+                622,
+                706,
+                703
+            ]
+        }
+    ],
+    "frame_00183.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                622,
+                628,
+                722,
+                707
+            ]
+        }
+    ],
+    "frame_00184.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                638,
+                633,
+                738,
+                713
+            ]
+        }
+    ],
+    "frame_00185.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                645,
+                636,
+                749,
+                719
+            ]
+        }
+    ],
+    "frame_00186.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                648,
+                640,
+                753,
+                721
+            ]
+        }
+    ],
+    "frame_00187.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                642,
+                643,
+                750,
+                728
+            ]
+        }
+    ],
+    "frame_00188.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                634,
+                644,
+                739,
+                731
+            ]
+        }
+    ],
+    "frame_00189.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                618,
+                648,
+                731,
+                738
+            ]
+        }
+    ],
+    "frame_00190.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                603,
+                655,
+                720,
+                747
+            ]
+        }
+    ],
+    "frame_00191.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                589,
+                660,
+                704,
+                750
+            ]
+        }
+    ],
+    "frame_00192.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                570,
+                665,
+                690,
+                758
+            ]
+        }
+    ],
+    "frame_00193.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                557,
+                670,
+                671,
+                764
+            ]
+        }
+    ],
+    "frame_00194.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                526,
+                677,
+                655,
+                772
+            ]
+        }
+    ],
+    "frame_00195.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                508,
+                680,
+                640,
+                779
+            ]
+        }
+    ],
+    "frame_00196.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                465,
+                687,
+                619,
+                788
+            ]
+        }
+    ],
+    "frame_00197.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                455,
+                695,
+                593,
+                796
+            ]
+        }
+    ],
+    "frame_00198.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                427,
+                704,
+                573,
+                804
+            ]
+        }
+    ],
+    "frame_00199.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                398,
+                709,
+                558,
+                816
+            ]
+        }
+    ],
+    "frame_00200.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                396,
+                715,
+                540,
+                820
+            ]
+        }
+    ],
+    "frame_00201.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                400,
+                717,
+                535,
+                827
+            ]
+        }
+    ],
+    "frame_00202.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                404,
+                721,
+                545,
+                831
+            ]
+        }
+    ],
+    "frame_00203.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                411,
+                721,
+                559,
+                835
+            ]
+        }
+    ],
+    "frame_00204.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                430,
+                729,
+                564,
+                841
+            ]
+        }
+    ],
+    "frame_00205.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                434,
+                733,
+                579,
+                849
+            ]
+        }
+    ],
+    "frame_00206.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                446,
+                736,
+                596,
+                859
+            ]
+        }
+    ],
+    "frame_00207.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                472,
+                742,
+                609,
+                868
+            ]
+        }
+    ],
+    "frame_00208.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                492,
+                751,
+                634,
+                875
+            ]
+        }
+    ],
+    "frame_00209.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                509,
+                759,
+                653,
+                889
+            ]
+        }
+    ],
+    "frame_00210.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                526,
+                766,
+                676,
+                899
+            ]
+        }
+    ],
+    "frame_00211.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                542,
+                773,
+                704,
+                910
+            ]
+        }
+    ],
+    "frame_00212.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                559,
+                783,
+                724,
+                916
+            ]
+        }
+    ],
+    "frame_00213.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                585,
+                786,
+                746,
+                919
+            ]
+        }
+    ],
+    "frame_00214.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                604,
+                788,
+                758,
+                921
+            ]
+        }
+    ],
+    "frame_00215.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                626,
+                787,
+                782,
+                918
+            ]
+        }
+    ],
+    "frame_00216.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                630,
+                774,
+                794,
+                911
+            ]
+        }
+    ],
+    "frame_00217.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                667,
+                761,
+                807,
+                897
+            ]
+        }
+    ],
+    "frame_00218.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                683,
+                758,
+                825,
+                886
+            ]
+        }
+    ],
+    "frame_00219.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                700,
+                754,
+                841,
+                873
+            ]
+        }
+    ],
+    "frame_00220.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                718,
+                742,
+                858,
+                860
+            ]
+        }
+    ],
+    "frame_00221.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                740,
+                741,
+                877,
+                848
+            ]
+        }
+    ],
+    "frame_00222.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                758,
+                725,
+                892,
+                838
+            ]
+        }
+    ],
+    "frame_00223.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                774,
+                719,
+                909,
+                828
+            ]
+        }
+    ],
+    "frame_00224.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                792,
+                712,
+                916,
+                816
+            ]
+        }
+    ],
+    "frame_00225.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                804,
+                707,
+                938,
+                807
+            ]
+        }
+    ],
+    "frame_00226.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                818,
+                702,
+                955,
+                799
+            ]
+        }
+    ],
+    "frame_00227.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                831,
+                691,
+                963,
+                792
+            ]
+        }
+    ],
+    "frame_00228.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                835,
+                685,
+                960,
+                784
+            ]
+        }
+    ],
+    "frame_00229.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                829,
+                679,
+                951,
+                776
+            ]
+        }
+    ],
+    "frame_00230.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                815,
+                677,
+                935,
+                770
+            ]
+        }
+    ],
+    "frame_00231.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                801,
+                672,
+                915,
+                764
+            ]
+        }
+    ],
+    "frame_00232.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                794,
+                666,
+                897,
+                758
+            ]
+        }
+    ],
+    "frame_00233.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                664,
+                883,
+                752
+            ]
+        }
+    ],
+    "frame_00234.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                758,
+                659,
+                864,
+                745
+            ]
+        }
+    ],
+    "frame_00235.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                733,
+                650,
+                844,
+                738
+            ]
+        }
+    ],
+    "frame_00236.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                719,
+                645,
+                824,
+                732
+            ]
+        }
+    ],
+    "frame_00237.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                703,
+                643,
+                805,
+                728
+            ]
+        }
+    ],
+    "frame_00238.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                686,
+                639,
+                795,
+                721
+            ]
+        }
+    ],
+    "frame_00239.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                633,
+                776,
+                714
+            ]
+        }
+    ],
+    "frame_00240.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                661,
+                629,
+                765,
+                708
+            ]
+        }
+    ],
+    "frame_00241.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                644,
+                622,
+                750,
+                701
+            ]
+        }
+    ],
+    "frame_00242.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                643,
+                614,
+                741,
+                696
+            ]
+        }
+    ],
+    "frame_00243.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                647,
+                612,
+                745,
+                688
+            ]
+        }
+    ],
+    "frame_00244.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                660,
+                607,
+                750,
+                680
+            ]
+        }
+    ],
+    "frame_00245.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                668,
+                605,
+                763,
+                676
+            ]
+        }
+    ],
+    "frame_00246.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                681,
+                599,
+                772,
+                670
+            ]
+        }
+    ],
+    "frame_00247.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                594,
+                786,
+                666
+            ]
+        }
+    ],
+    "frame_00248.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                701,
+                591,
+                801,
+                659
+            ]
+        }
+    ],
+    "frame_00249.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                709,
+                586,
+                809,
+                654
+            ]
+        }
+    ],
+    "frame_00250.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                720,
+                583,
+                822,
+                649
+            ]
+        }
+    ],
+    "frame_00251.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                734,
+                579,
+                833,
+                641
+            ]
+        }
+    ],
+    "frame_00252.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                739,
+                572,
+                840,
+                635
+            ]
+        }
+    ],
+    "frame_00253.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                750,
+                569,
+                851,
+                632
+            ]
+        }
+    ],
+    "frame_00254.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                753,
+                566,
+                860,
+                626
+            ]
+        }
+    ],
+    "frame_00255.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                766,
+                561,
+                866,
+                622
+            ]
+        }
+    ],
+    "frame_00256.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                558,
+                867,
+                617
+            ]
+        }
+    ],
+    "frame_00257.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                762,
+                555,
+                864,
+                614
+            ]
+        }
+    ],
+    "frame_00258.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                751,
+                555,
+                854,
+                612
+            ]
+        }
+    ],
+    "frame_00259.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                737,
+                552,
+                844,
+                608
+            ]
+        }
+    ],
+    "frame_00260.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                732,
+                551,
+                824,
+                607
+            ]
+        }
+    ],
+    "frame_00261.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                719,
+                550,
+                814,
+                603
+            ]
+        }
+    ],
+    "frame_00262.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                704,
+                548,
+                799,
+                602
+            ]
+        }
+    ],
+    "frame_00263.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                544,
+                783,
+                600
+            ]
+        }
+    ],
+    "frame_00264.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                682,
+                544,
+                766,
+                596
+            ]
+        }
+    ],
+    "frame_00265.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                674,
+                542,
+                755,
+                594
+            ]
+        }
+    ],
+    "frame_00266.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                656,
+                540,
+                739,
+                593
+            ]
+        }
+    ],
+    "frame_00267.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                647,
+                535,
+                733,
+                590
+            ]
+        }
+    ],
+    "frame_00268.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                638,
+                533,
+                718,
+                586
+            ]
+        }
+    ],
+    "frame_00269.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                626,
+                532,
+                706,
+                584
+            ]
+        }
+    ],
+    "frame_00270.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                620,
+                529,
+                697,
+                583
+            ]
+        }
+    ],
+    "frame_00271.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                608,
+                531,
+                690,
+                582
+            ]
+        }
+    ],
+    "frame_00272.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                606,
+                530,
+                686,
+                584
+            ]
+        }
+    ],
+    "frame_00273.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                602,
+                531,
+                682,
+                586
+            ]
+        }
+    ],
+    "frame_00274.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                595,
+                533,
+                674,
+                589
+            ]
+        }
+    ],
+    "frame_00275.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                588,
+                536,
+                668,
+                592
+            ]
+        }
+    ],
+    "frame_00276.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                575,
+                537,
+                657,
+                594
+            ]
+        }
+    ],
+    "frame_00277.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                564,
+                543,
+                648,
+                597
+            ]
+        }
+    ],
+    "frame_00278.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                560,
+                545,
+                641,
+                601
+            ]
+        }
+    ],
+    "frame_00279.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                544,
+                547,
+                628,
+                605
+            ]
+        }
+    ],
+    "frame_00280.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                542,
+                552,
+                617,
+                608
+            ]
+        }
+    ],
+    "frame_00281.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                526,
+                553,
+                607,
+                611
+            ]
+        }
+    ],
+    "frame_00282.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                523,
+                555,
+                596,
+                615
+            ]
+        }
+    ],
+    "frame_00283.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                505,
+                560,
+                589,
+                619
+            ]
+        }
+    ],
+    "frame_00284.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                487,
+                563,
+                580,
+                623
+            ]
+        }
+    ],
+    "frame_00285.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                495,
+                563,
+                584,
+                626
+            ]
+        }
+    ],
+    "frame_00286.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                497,
+                565,
+                589,
+                628
+            ]
+        }
+    ],
+    "frame_00287.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                509,
+                568,
+                604,
+                632
+            ]
+        }
+    ],
+    "frame_00288.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                514,
+                570,
+                609,
+                633
+            ]
+        }
+    ],
+    "frame_00289.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                527,
+                572,
+                624,
+                635
+            ]
+        }
+    ],
+    "frame_00290.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                545,
+                572,
+                640,
+                637
+            ]
+        }
+    ],
+    "frame_00291.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                554,
+                575,
+                648,
+                640
+            ]
+        }
+    ],
+    "frame_00292.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                561,
+                576,
+                658,
+                643
+            ]
+        }
+    ],
+    "frame_00293.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                582,
+                581,
+                675,
+                647
+            ]
+        }
+    ],
+    "frame_00294.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                594,
+                583,
+                689,
+                650
+            ]
+        }
+    ],
+    "frame_00295.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                610,
+                587,
+                706,
+                651
+            ]
+        }
+    ],
+    "frame_00296.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                625,
+                592,
+                724,
+                656
+            ]
+        }
+    ],
+    "frame_00297.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                634,
+                593,
+                735,
+                659
+            ]
+        }
+    ],
+    "frame_00298.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                640,
+                596,
+                747,
+                666
+            ]
+        }
+    ],
+    "frame_00299.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                643,
+                600,
+                751,
+                670
+            ]
+        }
+    ],
+    "frame_00300.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                641,
+                602,
+                747,
+                675
+            ]
+        }
+    ],
+    "frame_00301.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                637,
+                606,
+                739,
+                680
+            ]
+        }
+    ],
+    "frame_00302.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                634,
+                612,
+                724,
+                686
+            ]
+        }
+    ],
+    "frame_00303.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                618,
+                616,
+                722,
+                693
+            ]
+        }
+    ],
+    "frame_00304.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                602,
+                620,
+                711,
+                699
+            ]
+        }
+    ],
+    "frame_00305.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                589,
+                627,
+                702,
+                705
+            ]
+        }
+    ],
+    "frame_00306.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                574,
+                630,
+                691,
+                712
+            ]
+        }
+    ],
+    "frame_00307.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                560,
+                633,
+                681,
+                716
+            ]
+        }
+    ],
+    "frame_00308.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                553,
+                638,
+                672,
+                722
+            ]
+        }
+    ],
+    "frame_00309.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                548,
+                643,
+                657,
+                732
+            ]
+        }
+    ],
+    "frame_00310.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                526,
+                647,
+                647,
+                734
+            ]
+        }
+    ],
+    "frame_00311.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                521,
+                652,
+                640,
+                741
+            ]
+        }
+    ],
+    "frame_00312.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                510,
+                657,
+                637,
+                747
+            ]
+        }
+    ],
+    "frame_00313.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                508,
+                662,
+                640,
+                753
+            ]
+        }
+    ],
+    "frame_00314.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                514,
+                661,
+                648,
+                755
+            ]
+        }
+    ],
+    "frame_00315.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                524,
+                664,
+                660,
+                756
+            ]
+        }
+    ],
+    "frame_00316.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                541,
+                668,
+                677,
+                760
+            ]
+        }
+    ],
+    "frame_00317.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                555,
+                671,
+                689,
+                762
+            ]
+        }
+    ],
+    "frame_00318.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                571,
+                674,
+                709,
+                765
+            ]
+        }
+    ],
+    "frame_00319.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                589,
+                677,
+                725,
+                772
+            ]
+        }
+    ],
+    "frame_00320.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                605,
+                676,
+                739,
+                772
+            ]
+        }
+    ],
+    "frame_00321.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                626,
+                683,
+                756,
+                776
+            ]
+        }
+    ],
+    "frame_00322.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                643,
+                685,
+                778,
+                782
+            ]
+        }
+    ],
+    "frame_00323.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                659,
+                688,
+                803,
+                787
+            ]
+        }
+    ],
+    "frame_00324.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                672,
+                694,
+                818,
+                794
+            ]
+        }
+    ],
+    "frame_00325.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                703,
+                697,
+                847,
+                796
+            ]
+        }
+    ],
+    "frame_00326.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                721,
+                700,
+                867,
+                798
+            ]
+        }
+    ],
+    "frame_00327.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                722,
+                699,
+                884,
+                802
+            ]
+        }
+    ],
+    "frame_00328.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                732,
+                696,
+                885,
+                796
+            ]
+        }
+    ],
+    "frame_00329.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                735,
+                694,
+                892,
+                794
+            ]
+        }
+    ],
+    "frame_00330.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                742,
+                685,
+                896,
+                787
+            ]
+        }
+    ],
+    "frame_00331.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                751,
+                683,
+                899,
+                778
+            ]
+        }
+    ],
+    "frame_00332.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                753,
+                676,
+                904,
+                771
+            ]
+        }
+    ],
+    "frame_00333.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                763,
+                671,
+                910,
+                760
+            ]
+        }
+    ],
+    "frame_00334.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                666,
+                913,
+                754
+            ]
+        }
+    ],
+    "frame_00335.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                772,
+                655,
+                915,
+                744
+            ]
+        }
+    ],
+    "frame_00336.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                782,
+                648,
+                919,
+                735
+            ]
+        }
+    ],
+    "frame_00337.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                784,
+                644,
+                923,
+                725
+            ]
+        }
+    ],
+    "frame_00338.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                794,
+                637,
+                926,
+                717
+            ]
+        }
+    ],
+    "frame_00339.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                798,
+                629,
+                929,
+                710
+            ]
+        }
+    ],
+    "frame_00340.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                800,
+                623,
+                928,
+                700
+            ]
+        }
+    ],
+    "frame_00341.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                799,
+                621,
+                926,
+                696
+            ]
+        }
+    ],
+    "frame_00342.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                785,
+                615,
+                914,
+                691
+            ]
+        }
+    ],
+    "frame_00343.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                777,
+                614,
+                900,
+                689
+            ]
+        }
+    ],
+    "frame_00344.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                764,
+                614,
+                886,
+                687
+            ]
+        }
+    ],
+    "frame_00345.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                751,
+                613,
+                869,
+                683
+            ]
+        }
+    ],
+    "frame_00346.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                736,
+                614,
+                851,
+                680
+            ]
+        }
+    ],
+    "frame_00347.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                720,
+                607,
+                834,
+                678
+            ]
+        }
+    ],
+    "frame_00348.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                702,
+                604,
+                820,
+                677
+            ]
+        }
+    ],
+    "frame_00349.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                602,
+                802,
+                674
+            ]
+        }
+    ],
+    "frame_00350.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                600,
+                788,
+                672
+            ]
+        }
+    ],
+    "frame_00351.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                655,
+                598,
+                776,
+                668
+            ]
+        }
+    ],
+    "frame_00352.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                638,
+                597,
+                758,
+                666
+            ]
+        }
+    ],
+    "frame_00353.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                623,
+                595,
+                735,
+                660
+            ]
+        }
+    ],
+    "frame_00354.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                608,
+                592,
+                724,
+                662
+            ]
+        }
+    ],
+    "frame_00355.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                602,
+                591,
+                720,
+                656
+            ]
+        }
+    ],
+    "frame_00356.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                602,
+                587,
+                719,
+                654
+            ]
+        }
+    ],
+    "frame_00357.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                604,
+                583,
+                720,
+                649
+            ]
+        }
+    ],
+    "frame_00358.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                607,
+                578,
+                723,
+                643
+            ]
+        }
+    ],
+    "frame_00359.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                609,
+                575,
+                726,
+                640
+            ]
+        }
+    ],
+    "frame_00360.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                616,
+                572,
+                732,
+                636
+            ]
+        }
+    ],
+    "frame_00361.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                623,
+                567,
+                735,
+                631
+            ]
+        }
+    ],
+    "frame_00362.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                625,
+                565,
+                736,
+                624
+            ]
+        }
+    ],
+    "frame_00363.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                635,
+                562,
+                738,
+                618
+            ]
+        }
+    ],
+    "frame_00364.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                641,
+                557,
+                742,
+                615
+            ]
+        }
+    ],
+    "frame_00365.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                646,
+                553,
+                747,
+                610
+            ]
+        }
+    ],
+    "frame_00366.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                654,
+                549,
+                752,
+                606
+            ]
+        }
+    ],
+    "frame_00367.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                660,
+                546,
+                756,
+                600
+            ]
+        }
+    ],
+    "frame_00368.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                669,
+                543,
+                759,
+                596
+            ]
+        }
+    ],
+    "frame_00369.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                672,
+                536,
+                759,
+                593
+            ]
+        }
+    ],
+    "frame_00370.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                667,
+                535,
+                752,
+                590
+            ]
+        }
+    ],
+    "frame_00371.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                655,
+                535,
+                743,
+                589
+            ]
+        }
+    ],
+    "frame_00372.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                647,
+                533,
+                735,
+                583
+            ]
+        }
+    ],
+    "frame_00373.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                639,
+                529,
+                723,
+                582
+            ]
+        }
+    ],
+    "frame_00374.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                625,
+                530,
+                707,
+                579
+            ]
+        }
+    ],
+    "frame_00375.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                618,
+                528,
+                695,
+                577
+            ]
+        }
+    ],
+    "frame_00376.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                606,
+                525,
+                687,
+                575
+            ]
+        }
+    ],
+    "frame_00377.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                594,
+                523,
+                673,
+                573
+            ]
+        }
+    ],
+    "frame_00378.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                586,
+                523,
+                666,
+                570
+            ]
+        }
+    ],
+    "frame_00379.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                571,
+                521,
+                649,
+                568
+            ]
+        }
+    ],
+    "frame_00380.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                562,
+                519,
+                640,
+                567
+            ]
+        }
+    ],
+    "frame_00381.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                545,
+                515,
+                625,
+                564
+            ]
+        }
+    ],
+    "frame_00382.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                540,
+                514,
+                610,
+                561
+            ]
+        }
+    ],
+    "frame_00383.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                527,
+                513,
+                605,
+                562
+            ]
+        }
+    ],
+    "frame_00384.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                520,
+                515,
+                598,
+                562
+            ]
+        }
+    ],
+    "frame_00385.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                517,
+                514,
+                593,
+                564
+            ]
+        }
+    ],
+    "frame_00386.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                519,
+                518,
+                579,
+                567
+            ]
+        }
+    ],
+    "frame_00387.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                503,
+                518,
+                580,
+                570
+            ]
+        }
+    ],
+    "frame_00388.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                489,
+                522,
+                566,
+                572
+            ]
+        }
+    ],
+    "frame_00389.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                479,
+                524,
+                557,
+                576
+            ]
+        }
+    ],
+    "frame_00390.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                464,
+                528,
+                550,
+                582
+            ]
+        }
+    ],
+    "frame_00391.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                472,
+                531,
+                530,
+                582
+            ]
+        }
+    ],
+    "frame_00392.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                449,
+                532,
+                525,
+                586
+            ]
+        }
+    ],
+    "frame_00393.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                436,
+                536,
+                525,
+                592
+            ]
+        }
+    ],
+    "frame_00394.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                430,
+                538,
+                511,
+                593
+            ]
+        }
+    ],
+    "frame_00395.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                421,
+                543,
+                495,
+                599
+            ]
+        }
+    ],
+    "frame_00396.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                407,
+                546,
+                494,
+                601
+            ]
+        }
+    ],
+    "frame_00397.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                399,
+                549,
+                495,
+                604
+            ]
+        }
+    ],
+    "frame_00398.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                400,
+                552,
+                500,
+                606
+            ]
+        }
+    ],
+    "frame_00399.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                408,
+                553,
+                511,
+                607
+            ]
+        }
+    ],
+    "frame_00400.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                417,
+                553,
+                520,
+                609
+            ]
+        }
+    ],
+    "frame_00401.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                429,
+                553,
+                531,
+                609
+            ]
+        }
+    ],
+    "frame_00402.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                439,
+                554,
+                540,
+                611
+            ]
+        }
+    ],
+    "frame_00403.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                447,
+                556,
+                559,
+                612
+            ]
+        }
+    ],
+    "frame_00404.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                464,
+                557,
+                570,
+                612
+            ]
+        }
+    ],
+    "frame_00405.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                479,
+                556,
+                581,
+                613
+            ]
+        }
+    ],
+    "frame_00406.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                493,
+                557,
+                603,
+                615
+            ]
+        }
+    ],
+    "frame_00407.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                508,
+                558,
+                612,
+                615
+            ]
+        }
+    ],
+    "frame_00408.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                523,
+                559,
+                630,
+                616
+            ]
+        }
+    ],
+    "frame_00409.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                534,
+                558,
+                646,
+                617
+            ]
+        }
+    ],
+    "frame_00410.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                548,
+                558,
+                658,
+                617
+            ]
+        }
+    ],
+    "frame_00411.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                561,
+                563,
+                673,
+                622
+            ]
+        }
+    ],
+    "frame_00412.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                562,
+                560,
+                675,
+                627
+            ]
+        }
+    ],
+    "frame_00413.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                563,
+                567,
+                676,
+                630
+            ]
+        }
+    ],
+    "frame_00414.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                563,
+                573,
+                677,
+                637
+            ]
+        }
+    ],
+    "frame_00415.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                561,
+                579,
+                677,
+                641
+            ]
+        }
+    ],
+    "frame_00416.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                559,
+                583,
+                675,
+                647
+            ]
+        }
+    ],
+    "frame_00417.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                552,
+                588,
+                673,
+                652
+            ]
+        }
+    ],
+    "frame_00418.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                545,
+                592,
+                671,
+                657
+            ]
+        }
+    ],
+    "frame_00419.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                540,
+                595,
+                661,
+                666
+            ]
+        }
+    ],
+    "frame_00420.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                529,
+                604,
+                658,
+                674
+            ]
+        }
+    ],
+    "frame_00421.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                525,
+                605,
+                655,
+                680
+            ]
+        }
+    ],
+    "frame_00422.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                513,
+                611,
+                648,
+                689
+            ]
+        }
+    ],
+    "frame_00423.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                509,
+                617,
+                644,
+                696
+            ]
+        }
+    ],
+    "frame_00424.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                499,
+                625,
+                641,
+                705
+            ]
+        }
+    ],
+    "frame_00425.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                495,
+                632,
+                644,
+                711
+            ]
+        }
+    ],
+    "frame_00426.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                498,
+                635,
+                653,
+                713
+            ]
+        }
+    ],
+    "frame_00427.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                512,
+                639,
+                666,
+                715
+            ]
+        }
+    ],
+    "frame_00428.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                525,
+                638,
+                679,
+                717
+            ]
+        }
+    ],
+    "frame_00429.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                545,
+                640,
+                695,
+                717
+            ]
+        }
+    ],
+    "frame_00430.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                562,
+                640,
+                722,
+                714
+            ]
+        }
+    ],
+    "frame_00431.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                589,
+                642,
+                750,
+                715
+            ]
+        }
+    ],
+    "frame_00432.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                606,
+                641,
+                766,
+                714
+            ]
+        }
+    ],
+    "frame_00433.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                638,
+                643,
+                787,
+                717
+            ]
+        }
+    ],
+    "frame_00434.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                655,
+                644,
+                814,
+                717
+            ]
+        }
+    ],
+    "frame_00435.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                673,
+                641,
+                831,
+                719
+            ]
+        }
+    ],
+    "frame_00436.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                697,
+                639,
+                851,
+                719
+            ]
+        }
+    ],
+    "frame_00437.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                719,
+                641,
+                869,
+                715
+            ]
+        }
+    ],
+    "frame_00438.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                736,
+                641,
+                883,
+                718
+            ]
+        }
+    ],
+    "frame_00439.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                752,
+                639,
+                899,
+                714
+            ]
+        }
+    ],
+    "frame_00440.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                763,
+                635,
+                914,
+                715
+            ]
+        }
+    ],
+    "frame_00441.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                633,
+                916,
+                711
+            ]
+        }
+    ],
+    "frame_00442.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                768,
+                629,
+                916,
+                704
+            ]
+        }
+    ],
+    "frame_00443.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                769,
+                623,
+                913,
+                694
+            ]
+        }
+    ],
+    "frame_00444.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                614,
+                912,
+                689
+            ]
+        }
+    ],
+    "frame_00445.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                611,
+                908,
+                681
+            ]
+        }
+    ],
+    "frame_00446.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                768,
+                603,
+                907,
+                673
+            ]
+        }
+    ],
+    "frame_00447.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                776,
+                599,
+                909,
+                668
+            ]
+        }
+    ],
+    "frame_00448.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                778,
+                595,
+                910,
+                659
+            ]
+        }
+    ],
+    "frame_00449.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                780,
+                589,
+                909,
+                651
+            ]
+        }
+    ],
+    "frame_00450.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                783,
+                584,
+                906,
+                647
+            ]
+        }
+    ],
+    "frame_00451.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                783,
+                580,
+                903,
+                641
+            ]
+        }
+    ],
+    "frame_00452.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                783,
+                573,
+                904,
+                634
+            ]
+        }
+    ],
+    "frame_00453.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                783,
+                567,
+                900,
+                631
+            ]
+        }
+    ],
+    "frame_00454.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                772,
+                567,
+                893,
+                627
+            ]
+        }
+    ],
+    "frame_00455.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                764,
+                566,
+                883,
+                624
+            ]
+        }
+    ],
+    "frame_00456.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                752,
+                565,
+                868,
+                621
+            ]
+        }
+    ],
+    "frame_00457.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                735,
+                565,
+                852,
+                620
+            ]
+        }
+    ],
+    "frame_00458.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                719,
+                565,
+                835,
+                617
+            ]
+        }
+    ],
+    "frame_00459.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                702,
+                561,
+                815,
+                617
+            ]
+        }
+    ],
+    "frame_00460.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                685,
+                564,
+                801,
+                615
+            ]
+        }
+    ],
+    "frame_00461.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                667,
+                562,
+                783,
+                617
+            ]
+        }
+    ],
+    "frame_00462.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                648,
+                559,
+                769,
+                616
+            ]
+        }
+    ],
+    "frame_00463.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                633,
+                559,
+                747,
+                615
+            ]
+        }
+    ],
+    "frame_00464.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                609,
+                557,
+                732,
+                613
+            ]
+        }
+    ],
+    "frame_00465.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                600,
+                555,
+                711,
+                611
+            ]
+        }
+    ],
+    "frame_00466.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                584,
+                556,
+                697,
+                611
+            ]
+        }
+    ],
+    "frame_00467.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                575,
+                552,
+                684,
+                609
+            ]
+        }
+    ],
+    "frame_00468.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                570,
+                551,
+                677,
+                607
+            ]
+        }
+    ],
+    "frame_00469.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                567,
+                547,
+                675,
+                602
+            ]
+        }
+    ],
+    "frame_00470.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                566,
+                544,
+                675,
+                596
+            ]
+        }
+    ],
+    "frame_00471.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                570,
+                541,
+                675,
+                593
+            ]
+        }
+    ],
+    "frame_00472.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                573,
+                535,
+                676,
+                588
+            ]
+        }
+    ],
+    "frame_00473.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                577,
+                532,
+                679,
+                585
+            ]
+        }
+    ],
+    "frame_00474.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                582,
+                528,
+                683,
+                579
+            ]
+        }
+    ],
+    "frame_00475.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                588,
+                526,
+                686,
+                574
+            ]
+        }
+    ],
+    "frame_00476.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                592,
+                523,
+                689,
+                571
+            ]
+        }
+    ],
+    "frame_00477.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                599,
+                519,
+                693,
+                568
+            ]
+        }
+    ],
+    "frame_00478.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                602,
+                516,
+                696,
+                564
+            ]
+        }
+    ],
+    "frame_00479.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                607,
+                513,
+                700,
+                559
+            ]
+        }
+    ],
+    "frame_00480.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                608,
+                512,
+                703,
+                555
+            ]
+        }
+    ],
+    "frame_00481.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                607,
+                508,
+                703,
+                552
+            ]
+        }
+    ],
+    "frame_00482.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                606,
+                503,
+                695,
+                550
+            ]
+        }
+    ],
+    "frame_00483.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                598,
+                503,
+                688,
+                550
+            ]
+        }
+    ],
+    "frame_00484.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                591,
+                503,
+                678,
+                545
+            ]
+        }
+    ],
+    "frame_00485.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                577,
+                502,
+                668,
+                546
+            ]
+        }
+    ],
+    "frame_00486.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                568,
+                497,
+                657,
+                545
+            ]
+        }
+    ],
+    "frame_00487.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                558,
+                501,
+                642,
+                544
+            ]
+        }
+    ],
+    "frame_00488.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                544,
+                496,
+                638,
+                542
+            ]
+        }
+    ],
+    "frame_00489.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                540,
+                497,
+                616,
+                540
+            ]
+        }
+    ],
+    "frame_00490.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                524,
+                495,
+                611,
+                542
+            ]
+        }
+    ],
+    "frame_00491.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                522,
+                495,
+                601,
+                541
+            ]
+        }
+    ],
+    "frame_00492.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                512,
+                494,
+                594,
+                538
+            ]
+        }
+    ],
+    "frame_00493.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                510,
+                496,
+                589,
+                538
+            ]
+        }
+    ],
+    "frame_00494.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                499,
+                496,
+                582,
+                540
+            ]
+        }
+    ],
+    "frame_00495.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                495,
+                493,
+                573,
+                539
+            ]
+        }
+    ],
+    "frame_00496.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                490,
+                497,
+                567,
+                542
+            ]
+        }
+    ],
+    "frame_00497.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                485,
+                497,
+                559,
+                544
+            ]
+        }
+    ],
+    "frame_00498.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                479,
+                500,
+                553,
+                547
+            ]
+        }
+    ],
+    "frame_00499.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                474,
+                501,
+                543,
+                549
+            ]
+        }
+    ],
+    "frame_00500.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                477,
+                503,
+                534,
+                552
+            ]
+        }
+    ],
+    "frame_00501.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                459,
+                507,
+                527,
+                556
+            ]
+        }
+    ],
+    "frame_00502.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                449,
+                511,
+                510,
+                559
+            ]
+        }
+    ],
+    "frame_00503.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                432,
+                510,
+                510,
+                563
+            ]
+        }
+    ],
+    "frame_00504.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                425,
+                515,
+                498,
+                566
+            ]
+        }
+    ],
+    "frame_00505.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                416,
+                518,
+                486,
+                569
+            ]
+        }
+    ],
+    "frame_00506.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                410,
+                522,
+                478,
+                573
+            ]
+        }
+    ],
+    "frame_00507.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                393,
+                527,
+                470,
+                578
+            ]
+        }
+    ],
+    "frame_00508.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                395,
+                529,
+                462,
+                581
+            ]
+        }
+    ],
+    "frame_00509.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                391,
+                530,
+                463,
+                584
+            ]
+        }
+    ],
+    "frame_00510.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                383,
+                533,
+                466,
+                586
+            ]
+        }
+    ],
+    "frame_00511.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                387,
+                533,
+                473,
+                588
+            ]
+        }
+    ],
+    "frame_00512.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                393,
+                534,
+                481,
+                591
+            ]
+        }
+    ],
+    "frame_00513.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                402,
+                535,
+                493,
+                592
+            ]
+        }
+    ],
+    "frame_00514.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                421,
+                541,
+                512,
+                592
+            ]
+        }
+    ],
+    "frame_00515.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                427,
+                540,
+                519,
+                593
+            ]
+        }
+    ],
+    "frame_00516.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                437,
+                543,
+                532,
+                595
+            ]
+        }
+    ],
+    "frame_00517.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                447,
+                544,
+                548,
+                596
+            ]
+        }
+    ],
+    "frame_00518.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                464,
+                544,
+                560,
+                596
+            ]
+        }
+    ],
+    "frame_00519.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                479,
+                543,
+                579,
+                599
+            ]
+        }
+    ],
+    "frame_00520.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                494,
+                544,
+                597,
+                600
+            ]
+        }
+    ],
+    "frame_00521.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                511,
+                548,
+                612,
+                600
+            ]
+        }
+    ],
+    "frame_00522.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                527,
+                546,
+                637,
+                604
+            ]
+        }
+    ],
+    "frame_00523.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                535,
+                551,
+                641,
+                607
+            ]
+        }
+    ],
+    "frame_00524.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                539,
+                552,
+                645,
+                611
+            ]
+        }
+    ],
+    "frame_00525.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                538,
+                556,
+                646,
+                614
+            ]
+        }
+    ],
+    "frame_00526.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                536,
+                557,
+                645,
+                617
+            ]
+        }
+    ],
+    "frame_00527.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                532,
+                561,
+                643,
+                621
+            ]
+        }
+    ],
+    "frame_00528.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                528,
+                566,
+                641,
+                629
+            ]
+        }
+    ],
+    "frame_00529.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                525,
+                571,
+                640,
+                633
+            ]
+        }
+    ],
+    "frame_00530.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                521,
+                574,
+                635,
+                639
+            ]
+        }
+    ],
+    "frame_00531.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                515,
+                580,
+                630,
+                643
+            ]
+        }
+    ],
+    "frame_00532.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                511,
+                584,
+                627,
+                649
+            ]
+        }
+    ],
+    "frame_00533.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                504,
+                588,
+                623,
+                657
+            ]
+        }
+    ],
+    "frame_00534.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                496,
+                594,
+                614,
+                665
+            ]
+        }
+    ],
+    "frame_00535.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                484,
+                599,
+                609,
+                672
+            ]
+        }
+    ],
+    "frame_00536.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                480,
+                602,
+                607,
+                678
+            ]
+        }
+    ],
+    "frame_00537.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                480,
+                604,
+                609,
+                680
+            ]
+        }
+    ],
+    "frame_00538.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                482,
+                608,
+                620,
+                679
+            ]
+        }
+    ],
+    "frame_00539.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                492,
+                608,
+                632,
+                679
+            ]
+        }
+    ],
+    "frame_00540.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                504,
+                609,
+                641,
+                682
+            ]
+        }
+    ],
+    "frame_00541.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                512,
+                608,
+                655,
+                682
+            ]
+        }
+    ],
+    "frame_00542.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                526,
+                613,
+                659,
+                681
+            ]
+        }
+    ],
+    "frame_00543.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                543,
+                612,
+                688,
+                681
+            ]
+        }
+    ],
+    "frame_00544.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                559,
+                613,
+                701,
+                683
+            ]
+        }
+    ],
+    "frame_00545.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                578,
+                614,
+                722,
+                686
+            ]
+        }
+    ],
+    "frame_00546.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                593,
+                614,
+                737,
+                683
+            ]
+        }
+    ],
+    "frame_00547.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                616,
+                615,
+                760,
+                679
+            ]
+        }
+    ],
+    "frame_00548.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                636,
+                615,
+                781,
+                683
+            ]
+        }
+    ],
+    "frame_00549.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                653,
+                614,
+                795,
+                678
+            ]
+        }
+    ],
+    "frame_00550.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                610,
+                810,
+                678
+            ]
+        }
+    ],
+    "frame_00551.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                684,
+                609,
+                821,
+                681
+            ]
+        }
+    ],
+    "frame_00552.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                688,
+                604,
+                831,
+                675
+            ]
+        }
+    ],
+    "frame_00553.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                688,
+                603,
+                830,
+                672
+            ]
+        }
+    ],
+    "frame_00554.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                693,
+                598,
+                830,
+                664
+            ]
+        }
+    ],
+    "frame_00555.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                692,
+                593,
+                829,
+                657
+            ]
+        }
+    ],
+    "frame_00556.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                695,
+                590,
+                829,
+                653
+            ]
+        }
+    ],
+    "frame_00557.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                696,
+                585,
+                824,
+                647
+            ]
+        }
+    ],
+    "frame_00558.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                696,
+                578,
+                822,
+                639
+            ]
+        }
+    ],
+    "frame_00559.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                691,
+                575,
+                819,
+                633
+            ]
+        }
+    ],
+    "frame_00560.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                570,
+                817,
+                628
+            ]
+        }
+    ],
+    "frame_00561.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                688,
+                566,
+                813,
+                620
+            ]
+        }
+    ],
+    "frame_00562.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                561,
+                808,
+                616
+            ]
+        }
+    ],
+    "frame_00563.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                686,
+                559,
+                805,
+                612
+            ]
+        }
+    ],
+    "frame_00564.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                686,
+                556,
+                802,
+                609
+            ]
+        }
+    ],
+    "frame_00565.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                676,
+                551,
+                798,
+                606
+            ]
+        }
+    ],
+    "frame_00566.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                550,
+                786,
+                603
+            ]
+        }
+    ],
+    "frame_00567.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                659,
+                550,
+                772,
+                601
+            ]
+        }
+    ],
+    "frame_00568.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                645,
+                549,
+                764,
+                601
+            ]
+        }
+    ],
+    "frame_00569.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                638,
+                549,
+                750,
+                602
+            ]
+        }
+    ],
+    "frame_00570.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                623,
+                547,
+                736,
+                601
+            ]
+        }
+    ],
+    "frame_00571.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                607,
+                545,
+                725,
+                600
+            ]
+        }
+    ],
+    "frame_00572.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                598,
+                546,
+                708,
+                596
+            ]
+        }
+    ],
+    "frame_00573.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                586,
+                542,
+                697,
+                597
+            ]
+        }
+    ],
+    "frame_00574.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                573,
+                543,
+                679,
+                597
+            ]
+        }
+    ],
+    "frame_00575.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                559,
+                543,
+                669,
+                596
+            ]
+        }
+    ],
+    "frame_00576.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                545,
+                539,
+                654,
+                594
+            ]
+        }
+    ],
+    "frame_00577.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                529,
+                537,
+                639,
+                594
+            ]
+        }
+    ],
+    "frame_00578.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                516,
+                536,
+                627,
+                592
+            ]
+        }
+    ],
+    "frame_00579.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                511,
+                537,
+                618,
+                591
+            ]
+        }
+    ],
+    "frame_00580.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                508,
+                534,
+                615,
+                587
+            ]
+        }
+    ],
+    "frame_00581.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                506,
+                531,
+                613,
+                584
+            ]
+        }
+    ],
+    "frame_00582.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                506,
+                529,
+                612,
+                578
+            ]
+        }
+    ],
+    "frame_00583.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                507,
+                526,
+                612,
+                574
+            ]
+        }
+    ],
+    "frame_00584.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                511,
+                523,
+                613,
+                572
+            ]
+        }
+    ],
+    "frame_00585.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                513,
+                520,
+                614,
+                569
+            ]
+        }
+    ],
+    "frame_00586.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                516,
+                518,
+                616,
+                563
+            ]
+        }
+    ],
+    "frame_00587.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                515,
+                514,
+                618,
+                560
+            ]
+        }
+    ],
+    "frame_00588.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                520,
+                511,
+                620,
+                555
+            ]
+        }
+    ],
+    "frame_00589.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                521,
+                509,
+                622,
+                552
+            ]
+        }
+    ],
+    "frame_00590.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                525,
+                502,
+                623,
+                550
+            ]
+        }
+    ],
+    "frame_00591.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                526,
+                501,
+                623,
+                546
+            ]
+        }
+    ],
+    "frame_00592.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                528,
+                497,
+                623,
+                544
+            ]
+        }
+    ],
+    "frame_00593.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                525,
+                493,
+                617,
+                539
+            ]
+        }
+    ],
+    "frame_00594.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                522,
+                494,
+                614,
+                537
+            ]
+        }
+    ],
+    "frame_00595.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                512,
+                497,
+                608,
+                538
+            ]
+        }
+    ],
+    "frame_00596.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                510,
+                495,
+                602,
+                537
+            ]
+        }
+    ],
+    "frame_00597.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                504,
+                494,
+                596,
+                537
+            ]
+        }
+    ],
+    "frame_00598.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                497,
+                494,
+                592,
+                538
+            ]
+        }
+    ],
+    "frame_00599.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                494,
+                493,
+                587,
+                537
+            ]
+        }
+    ],
+    "frame_00600.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                494,
+                496,
+                585,
+                540
+            ]
+        }
+    ],
+    "frame_00601.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                488,
+                495,
+                581,
+                539
+            ]
+        }
+    ],
+    "frame_00602.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                487,
+                495,
+                579,
+                537
+            ]
+        }
+    ],
+    "frame_00603.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                487,
+                493,
+                578,
+                537
+            ]
+        }
+    ],
+    "frame_00604.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                485,
+                493,
+                578,
+                537
+            ]
+        }
+    ],
+    "frame_00605.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                485,
+                494,
+                577,
+                537
+            ]
+        }
+    ],
+    "frame_00606.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                485,
+                493,
+                576,
+                537
+            ]
+        }
+    ],
+    "frame_00607.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                484,
+                494,
+                576,
+                538
+            ]
+        }
+    ],
+    "frame_00608.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                482,
+                494,
+                575,
+                541
+            ]
+        }
+    ],
+    "frame_00609.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                481,
+                498,
+                575,
+                544
+            ]
+        }
+    ],
+    "frame_00610.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                481,
+                502,
+                575,
+                547
+            ]
+        }
+    ],
+    "frame_00611.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                481,
+                503,
+                576,
+                551
+            ]
+        }
+    ],
+    "frame_00612.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                479,
+                509,
+                575,
+                553
+            ]
+        }
+    ],
+    "frame_00613.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                475,
+                512,
+                572,
+                557
+            ]
+        }
+    ],
+    "frame_00614.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                473,
+                513,
+                569,
+                560
+            ]
+        }
+    ],
+    "frame_00615.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                468,
+                517,
+                566,
+                566
+            ]
+        }
+    ],
+    "frame_00616.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                464,
+                521,
+                564,
+                570
+            ]
+        }
+    ],
+    "frame_00617.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                461,
+                525,
+                563,
+                571
+            ]
+        }
+    ],
+    "frame_00618.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                448,
+                527,
+                562,
+                577
+            ]
+        }
+    ],
+    "frame_00619.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                452,
+                533,
+                560,
+                581
+            ]
+        }
+    ],
+    "frame_00620.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                447,
+                535,
+                560,
+                586
+            ]
+        }
+    ],
+    "frame_00621.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                449,
+                536,
+                563,
+                590
+            ]
+        }
+    ],
+    "frame_00622.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                457,
+                539,
+                564,
+                591
+            ]
+        }
+    ],
+    "frame_00623.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                463,
+                542,
+                582,
+                591
+            ]
+        }
+    ],
+    "frame_00624.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                477,
+                543,
+                591,
+                594
+            ]
+        }
+    ],
+    "frame_00625.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                493,
+                543,
+                605,
+                593
+            ]
+        }
+    ],
+    "frame_00626.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                506,
+                536,
+                636,
+                594
+            ]
+        }
+    ],
+    "frame_00627.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                523,
+                543,
+                641,
+                592
+            ]
+        }
+    ],
+    "frame_00628.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                544,
+                542,
+                656,
+                592
+            ]
+        }
+    ],
+    "frame_00629.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                558,
+                542,
+                674,
+                589
+            ]
+        }
+    ],
+    "frame_00630.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                576,
+                541,
+                691,
+                590
+            ]
+        }
+    ],
+    "frame_00631.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                593,
+                542,
+                707,
+                591
+            ]
+        }
+    ],
+    "frame_00632.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                606,
+                542,
+                725,
+                592
+            ]
+        }
+    ],
+    "frame_00633.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                624,
+                543,
+                736,
+                592
+            ]
+        }
+    ],
+    "frame_00634.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                639,
+                540,
+                753,
+                592
+            ]
+        }
+    ],
+    "frame_00635.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                654,
+                542,
+                768,
+                590
+            ]
+        }
+    ],
+    "frame_00636.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                664,
+                543,
+                778,
+                594
+            ]
+        }
+    ],
+    "frame_00637.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                670,
+                543,
+                784,
+                596
+            ]
+        }
+    ],
+    "frame_00638.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                547,
+                789,
+                600
+            ]
+        }
+    ],
+    "frame_00639.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                674,
+                552,
+                791,
+                604
+            ]
+        }
+    ],
+    "frame_00640.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                676,
+                555,
+                797,
+                610
+            ]
+        }
+    ],
+    "frame_00641.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                679,
+                559,
+                800,
+                614
+            ]
+        }
+    ],
+    "frame_00642.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                680,
+                562,
+                801,
+                618
+            ]
+        }
+    ],
+    "frame_00643.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                677,
+                566,
+                800,
+                624
+            ]
+        }
+    ],
+    "frame_00644.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                679,
+                567,
+                801,
+                630
+            ]
+        }
+    ],
+    "frame_00645.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                676,
+                575,
+                803,
+                635
+            ]
+        }
+    ],
+    "frame_00646.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                676,
+                581,
+                802,
+                640
+            ]
+        }
+    ],
+    "frame_00647.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                675,
+                584,
+                804,
+                647
+            ]
+        }
+    ],
+    "frame_00648.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                677,
+                592,
+                807,
+                653
+            ]
+        }
+    ],
+    "frame_00649.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                678,
+                595,
+                814,
+                659
+            ]
+        }
+    ],
+    "frame_00650.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                598,
+                825,
+                663
+            ]
+        }
+    ],
+    "frame_00651.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                700,
+                598,
+                837,
+                663
+            ]
+        }
+    ],
+    "frame_00652.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                713,
+                600,
+                848,
+                661
+            ]
+        }
+    ],
+    "frame_00653.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                731,
+                599,
+                865,
+                664
+            ]
+        }
+    ],
+    "frame_00654.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                750,
+                599,
+                882,
+                666
+            ]
+        }
+    ],
+    "frame_00655.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                764,
+                599,
+                899,
+                658
+            ]
+        }
+    ],
+    "frame_00656.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                783,
+                599,
+                917,
+                661
+            ]
+        }
+    ],
+    "frame_00657.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                799,
+                599,
+                931,
+                658
+            ]
+        }
+    ],
+    "frame_00658.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                817,
+                598,
+                958,
+                660
+            ]
+        }
+    ],
+    "frame_00659.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                834,
+                599,
+                971,
+                659
+            ]
+        }
+    ],
+    "frame_00660.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                848,
+                598,
+                988,
+                659
+            ]
+        }
+    ],
+    "frame_00661.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                869,
+                598,
+                1007,
+                660
+            ]
+        }
+    ],
+    "frame_00662.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                880,
+                598,
+                1024,
+                657
+            ]
+        }
+    ],
+    "frame_00663.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                903,
+                596,
+                1040,
+                659
+            ]
+        }
+    ],
+    "frame_00664.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                916,
+                592,
+                1050,
+                657
+            ]
+        }
+    ],
+    "frame_00665.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                922,
+                591,
+                1055,
+                653
+            ]
+        }
+    ],
+    "frame_00666.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                922,
+                589,
+                1053,
+                651
+            ]
+        }
+    ],
+    "frame_00667.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                914,
+                584,
+                1046,
+                646
+            ]
+        }
+    ],
+    "frame_00668.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                912,
+                582,
+                1041,
+                641
+            ]
+        }
+    ],
+    "frame_00669.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                911,
+                576,
+                1038,
+                634
+            ]
+        }
+    ],
+    "frame_00670.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                908,
+                570,
+                1030,
+                631
+            ]
+        }
+    ],
+    "frame_00671.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                903,
+                566,
+                1026,
+                625
+            ]
+        }
+    ],
+    "frame_00672.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                903,
+                561,
+                1023,
+                616
+            ]
+        }
+    ],
+    "frame_00673.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                898,
+                558,
+                1021,
+                613
+            ]
+        }
+    ],
+    "frame_00674.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                897,
+                553,
+                1016,
+                608
+            ]
+        }
+    ],
+    "frame_00675.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                895,
+                550,
+                1013,
+                601
+            ]
+        }
+    ],
+    "frame_00676.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                894,
+                545,
+                1008,
+                598
+            ]
+        }
+    ],
+    "frame_00677.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                891,
+                543,
+                1005,
+                593
+            ]
+        }
+    ],
+    "frame_00678.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                881,
+                543,
+                995,
+                592
+            ]
+        }
+    ],
+    "frame_00679.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                875,
+                537,
+                990,
+                590
+            ]
+        }
+    ],
+    "frame_00680.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                864,
+                534,
+                978,
+                590
+            ]
+        }
+    ],
+    "frame_00681.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                848,
+                537,
+                963,
+                590
+            ]
+        }
+    ],
+    "frame_00682.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                833,
+                538,
+                947,
+                589
+            ]
+        }
+    ],
+    "frame_00683.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                820,
+                538,
+                934,
+                588
+            ]
+        }
+    ],
+    "frame_00684.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                809,
+                536,
+                925,
+                589
+            ]
+        }
+    ],
+    "frame_00685.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                788,
+                539,
+                902,
+                590
+            ]
+        }
+    ],
+    "frame_00686.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                776,
+                540,
+                888,
+                589
+            ]
+        }
+    ],
+    "frame_00687.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                760,
+                540,
+                871,
+                590
+            ]
+        }
+    ],
+    "frame_00688.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                743,
+                535,
+                852,
+                589
+            ]
+        }
+    ],
+    "frame_00689.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                722,
+                535,
+                839,
+                589
+            ]
+        }
+    ],
+    "frame_00690.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                713,
+                539,
+                821,
+                590
+            ]
+        }
+    ],
+    "frame_00691.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                701,
+                536,
+                807,
+                589
+            ]
+        }
+    ],
+    "frame_00692.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                535,
+                799,
+                588
+            ]
+        }
+    ],
+    "frame_00693.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                681,
+                534,
+                791,
+                586
+            ]
+        }
+    ],
+    "frame_00694.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                533,
+                785,
+                583
+            ]
+        }
+    ],
+    "frame_00695.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                524,
+                779,
+                578
+            ]
+        }
+    ],
+    "frame_00696.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                667,
+                527,
+                774,
+                575
+            ]
+        }
+    ],
+    "frame_00697.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                666,
+                524,
+                771,
+                569
+            ]
+        }
+    ],
+    "frame_00698.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                666,
+                521,
+                768,
+                567
+            ]
+        }
+    ],
+    "frame_00699.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                664,
+                518,
+                767,
+                564
+            ]
+        }
+    ],
+    "frame_00700.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                663,
+                514,
+                765,
+                559
+            ]
+        }
+    ],
+    "frame_00701.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                663,
+                512,
+                766,
+                556
+            ]
+        }
+    ],
+    "frame_00702.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                663,
+                509,
+                762,
+                553
+            ]
+        }
+    ],
+    "frame_00703.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                662,
+                505,
+                757,
+                549
+            ]
+        }
+    ],
+    "frame_00704.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                657,
+                504,
+                755,
+                544
+            ]
+        }
+    ],
+    "frame_00705.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                655,
+                500,
+                752,
+                542
+            ]
+        }
+    ],
+    "frame_00706.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                652,
+                495,
+                749,
+                538
+            ]
+        }
+    ],
+    "frame_00707.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                641,
+                495,
+                736,
+                536
+            ]
+        }
+    ],
+    "frame_00708.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                631,
+                495,
+                725,
+                534
+            ]
+        }
+    ],
+    "frame_00709.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                622,
+                493,
+                714,
+                533
+            ]
+        }
+    ],
+    "frame_00710.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                605,
+                494,
+                702,
+                531
+            ]
+        }
+    ],
+    "frame_00711.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                593,
+                494,
+                684,
+                532
+            ]
+        }
+    ],
+    "frame_00712.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                578,
+                493,
+                673,
+                531
+            ]
+        }
+    ],
+    "frame_00713.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                568,
+                492,
+                657,
+                530
+            ]
+        }
+    ],
+    "frame_00714.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                553,
+                488,
+                645,
+                529
+            ]
+        }
+    ],
+    "frame_00715.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                541,
+                488,
+                629,
+                528
+            ]
+        }
+    ],
+    "frame_00716.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                526,
+                491,
+                612,
+                528
+            ]
+        }
+    ],
+    "frame_00717.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                513,
+                488,
+                601,
+                527
+            ]
+        }
+    ],
+    "frame_00718.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                506,
+                487,
+                585,
+                526
+            ]
+        }
+    ],
+    "frame_00719.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                487,
+                486,
+                580,
+                524
+            ]
+        }
+    ],
+    "frame_00720.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                477,
+                482,
+                566,
+                523
+            ]
+        }
+    ],
+    "frame_00721.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                473,
+                483,
+                562,
+                524
+            ]
+        }
+    ],
+    "frame_00722.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                472,
+                481,
+                561,
+                524
+            ]
+        }
+    ],
+    "frame_00723.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                497,
+                487,
+                562,
+                527
+            ]
+        }
+    ],
+    "frame_00724.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                490,
+                489,
+                560,
+                527
+            ]
+        }
+    ],
+    "frame_00725.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                468,
+                483,
+                560,
+                530
+            ]
+        }
+    ],
+    "frame_00726.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                469,
+                479,
+                560,
+                531
+            ]
+        }
+    ],
+    "frame_00727.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                469,
+                492,
+                561,
+                534
+            ]
+        }
+    ],
+    "frame_00728.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                468,
+                495,
+                562,
+                537
+            ]
+        }
+    ],
+    "frame_00729.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                473,
+                492,
+                566,
+                543
+            ]
+        }
+    ],
+    "frame_00730.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                474,
+                497,
+                566,
+                544
+            ]
+        }
+    ],
+    "frame_00731.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                476,
+                503,
+                570,
+                549
+            ]
+        }
+    ],
+    "frame_00732.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                479,
+                506,
+                575,
+                552
+            ]
+        }
+    ],
+    "frame_00733.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                479,
+                510,
+                575,
+                555
+            ]
+        }
+    ],
+    "frame_00734.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                480,
+                511,
+                581,
+                558
+            ]
+        }
+    ],
+    "frame_00735.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                481,
+                514,
+                589,
+                561
+            ]
+        }
+    ],
+    "frame_00736.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                493,
+                517,
+                598,
+                560
+            ]
+        }
+    ],
+    "frame_00737.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                510,
+                515,
+                610,
+                560
+            ]
+        }
+    ],
+    "frame_00738.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                516,
+                515,
+                623,
+                563
+            ]
+        }
+    ],
+    "frame_00739.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                527,
+                517,
+                640,
+                564
+            ]
+        }
+    ],
+    "frame_00740.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                543,
+                519,
+                656,
+                561
+            ]
+        }
+    ],
+    "frame_00741.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                560,
+                518,
+                668,
+                560
+            ]
+        }
+    ],
+    "frame_00742.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                577,
+                520,
+                685,
+                562
+            ]
+        }
+    ],
+    "frame_00743.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                601,
+                520,
+                706,
+                564
+            ]
+        }
+    ],
+    "frame_00744.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                607,
+                520,
+                719,
+                563
+            ]
+        }
+    ],
+    "frame_00745.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                624,
+                517,
+                735,
+                561
+            ]
+        }
+    ],
+    "frame_00746.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                641,
+                518,
+                751,
+                561
+            ]
+        }
+    ],
+    "frame_00747.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                657,
+                519,
+                766,
+                561
+            ]
+        }
+    ],
+    "frame_00748.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                674,
+                518,
+                779,
+                562
+            ]
+        }
+    ],
+    "frame_00749.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                684,
+                520,
+                780,
+                560
+            ]
+        }
+    ],
+    "frame_00750.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                521,
+                796,
+                565
+            ]
+        }
+    ],
+    "frame_00751.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                697,
+                521,
+                804,
+                569
+            ]
+        }
+    ],
+    "frame_00752.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                703,
+                525,
+                811,
+                572
+            ]
+        }
+    ],
+    "frame_00753.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                703,
+                528,
+                818,
+                575
+            ]
+        }
+    ],
+    "frame_00754.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                717,
+                530,
+                825,
+                579
+            ]
+        }
+    ],
+    "frame_00755.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                721,
+                533,
+                834,
+                583
+            ]
+        }
+    ],
+    "frame_00756.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                722,
+                534,
+                838,
+                586
+            ]
+        }
+    ],
+    "frame_00757.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                735,
+                539,
+                848,
+                591
+            ]
+        }
+    ],
+    "frame_00758.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                739,
+                544,
+                853,
+                595
+            ]
+        }
+    ],
+    "frame_00759.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                744,
+                548,
+                862,
+                600
+            ]
+        }
+    ],
+    "frame_00760.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                752,
+                551,
+                868,
+                604
+            ]
+        }
+    ],
+    "frame_00761.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                754,
+                554,
+                873,
+                611
+            ]
+        }
+    ],
+    "frame_00762.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                762,
+                558,
+                880,
+                614
+            ]
+        }
+    ],
+    "frame_00763.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                561,
+                888,
+                615
+            ]
+        }
+    ],
+    "frame_00764.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                780,
+                562,
+                899,
+                617
+            ]
+        }
+    ],
+    "frame_00765.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                794,
+                562,
+                913,
+                616
+            ]
+        }
+    ],
+    "frame_00766.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                803,
+                561,
+                928,
+                616
+            ]
+        }
+    ],
+    "frame_00767.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                824,
+                562,
+                944,
+                616
+            ]
+        }
+    ],
+    "frame_00768.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                844,
+                561,
+                961,
+                615
+            ]
+        }
+    ],
+    "frame_00769.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                861,
+                560,
+                975,
+                614
+            ]
+        }
+    ],
+    "frame_00770.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                877,
+                559,
+                993,
+                614
+            ]
+        }
+    ],
+    "frame_00771.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                893,
+                559,
+                1009,
+                612
+            ]
+        }
+    ],
+    "frame_00772.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                909,
+                558,
+                1026,
+                610
+            ]
+        }
+    ],
+    "frame_00773.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                924,
+                557,
+                1041,
+                609
+            ]
+        }
+    ],
+    "frame_00774.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                943,
+                553,
+                1055,
+                606
+            ]
+        }
+    ],
+    "frame_00775.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                959,
+                555,
+                1071,
+                606
+            ]
+        }
+    ],
+    "frame_00776.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                963,
+                552,
+                1078,
+                603
+            ]
+        }
+    ],
+    "frame_00777.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                974,
+                550,
+                1084,
+                601
+            ]
+        }
+    ],
+    "frame_00778.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                974,
+                547,
+                1082,
+                599
+            ]
+        }
+    ],
+    "frame_00779.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                966,
+                544,
+                1076,
+                594
+            ]
+        }
+    ],
+    "frame_00780.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                960,
+                542,
+                1069,
+                592
+            ]
+        }
+    ],
+    "frame_00781.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                956,
+                540,
+                1058,
+                587
+            ]
+        }
+    ],
+    "frame_00782.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                944,
+                535,
+                1051,
+                584
+            ]
+        }
+    ],
+    "frame_00783.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                937,
+                532,
+                1042,
+                580
+            ]
+        }
+    ],
+    "frame_00784.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                927,
+                532,
+                1031,
+                577
+            ]
+        }
+    ],
+    "frame_00785.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                922,
+                526,
+                1026,
+                572
+            ]
+        }
+    ],
+    "frame_00786.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                913,
+                526,
+                1013,
+                569
+            ]
+        }
+    ],
+    "frame_00787.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                903,
+                524,
+                1008,
+                566
+            ]
+        }
+    ],
+    "frame_00788.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                897,
+                519,
+                996,
+                562
+            ]
+        }
+    ],
+    "frame_00789.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                889,
+                517,
+                990,
+                559
+            ]
+        }
+    ],
+    "frame_00790.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                880,
+                513,
+                981,
+                556
+            ]
+        }
+    ],
+    "frame_00791.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                865,
+                513,
+                970,
+                554
+            ]
+        }
+    ],
+    "frame_00792.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                855,
+                511,
+                959,
+                554
+            ]
+        }
+    ],
+    "frame_00793.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                845,
+                511,
+                945,
+                552
+            ]
+        }
+    ],
+    "frame_00794.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                831,
+                512,
+                931,
+                552
+            ]
+        }
+    ],
+    "frame_00795.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                815,
+                512,
+                917,
+                553
+            ]
+        }
+    ],
+    "frame_00796.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                799,
+                513,
+                905,
+                556
+            ]
+        }
+    ],
+    "frame_00797.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                784,
+                512,
+                889,
+                555
+            ]
+        }
+    ],
+    "frame_00798.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                767,
+                513,
+                876,
+                555
+            ]
+        }
+    ],
+    "frame_00799.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                753,
+                516,
+                860,
+                557
+            ]
+        }
+    ],
+    "frame_00800.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                736,
+                516,
+                846,
+                556
+            ]
+        }
+    ],
+    "frame_00801.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                721,
+                514,
+                831,
+                558
+            ]
+        }
+    ],
+    "frame_00802.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                705,
+                517,
+                814,
+                558
+            ]
+        }
+    ],
+    "frame_00803.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                687,
+                516,
+                800,
+                557
+            ]
+        }
+    ],
+    "frame_00804.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                680,
+                516,
+                782,
+                559
+            ]
+        }
+    ],
+    "frame_00805.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                671,
+                513,
+                770,
+                558
+            ]
+        }
+    ],
+    "frame_00806.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                664,
+                512,
+                767,
+                555
+            ]
+        }
+    ],
+    "frame_00807.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                654,
+                510,
+                754,
+                553
+            ]
+        }
+    ],
+    "frame_00808.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                650,
+                510,
+                751,
+                552
+            ]
+        }
+    ],
+    "frame_00809.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                641,
+                505,
+                741,
+                547
+            ]
+        }
+    ],
+    "frame_00810.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                638,
+                503,
+                734,
+                545
+            ]
+        }
+    ],
+    "frame_00811.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                625,
+                503,
+                723,
+                540
+            ]
+        }
+    ],
+    "frame_00812.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                619,
+                497,
+                717,
+                538
+            ]
+        }
+    ],
+    "frame_00813.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                611,
+                497,
+                707,
+                535
+            ]
+        }
+    ],
+    "frame_00814.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                605,
+                493,
+                702,
+                534
+            ]
+        }
+    ],
+    "frame_00815.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                601,
+                491,
+                694,
+                529
+            ]
+        }
+    ],
+    "frame_00816.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                596,
+                489,
+                688,
+                528
+            ]
+        }
+    ],
+    "frame_00817.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                593,
+                487,
+                685,
+                525
+            ]
+        }
+    ],
+    "frame_00818.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                587,
+                486,
+                678,
+                521
+            ]
+        }
+    ],
+    "frame_00819.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                577,
+                482,
+                673,
+                521
+            ]
+        }
+    ],
+    "frame_00820.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                569,
+                482,
+                661,
+                521
+            ]
+        }
+    ],
+    "frame_00821.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                559,
+                484,
+                652,
+                518
+            ]
+        }
+    ],
+    "frame_00822.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                545,
+                484,
+                640,
+                521
+            ]
+        }
+    ],
+    "frame_00823.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                535,
+                485,
+                630,
+                521
+            ]
+        }
+    ],
+    "frame_00824.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                521,
+                483,
+                619,
+                521
+            ]
+        }
+    ],
+    "frame_00825.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                510,
+                482,
+                610,
+                521
+            ]
+        }
+    ],
+    "frame_00826.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                495,
+                484,
+                596,
+                521
+            ]
+        }
+    ],
+    "frame_00827.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                480,
+                481,
+                578,
+                522
+            ]
+        }
+    ],
+    "frame_00828.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                473,
+                482,
+                570,
+                519
+            ]
+        }
+    ],
+    "frame_00829.jpg": [
+        {
+            "class_id": -1,
+            "class_name": "robot",
+            "box_2d": [
+                492,
+                487,
+                557,
+                517
+            ]
+        }
+    ]
+}
