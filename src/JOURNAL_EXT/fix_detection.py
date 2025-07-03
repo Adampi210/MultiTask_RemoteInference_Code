@@ -7,7 +7,7 @@ from ultralytics import YOLO
 # List of folders to process (same as in your original code)
 path_dirs = '../../..'
 FOLDERS_TO_PROCESS = [
-    f'{path_dirs}/robot_7/',
+    f'{path_dirs}/robot_5/',
     # f'{path_dirs}/robot_1/',
     # f'{path_dirs}/robot_2/',
     # f'{path_dirs}/robot_3/',
@@ -18,7 +18,7 @@ FOLDERS_TO_PROCESS = [
 ]
 
 y_cutoffs = [
-    380, 
+    300, 
     # 300, 
     # 370, 
     # 370, 
@@ -253,7 +253,7 @@ def transform_and_detect(image_path, model, y_cutoff):
 
 
 if __name__ == "__main__":
-    MODEL_PATH = 'yolo11n.pt'
+    MODEL_PATH = 'yolo11x.pt'
     # Load the YOLO model
     model = YOLO(MODEL_PATH)
     for directory, y_cutoff in zip(FOLDERS_TO_PROCESS, y_cutoffs):

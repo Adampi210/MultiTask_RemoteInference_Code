@@ -58,7 +58,7 @@ def plot_error_vs_aoi(bboxes, filename, max_aoi):
     plt.show()
 
 if __name__ == "__main__":
-    filename = '../../data/detection_results_robot_7'
+    filename = '../../data/detection_results_robot_5'
     # Load the JSON data
     with open(filename + '.json', 'r') as f:
         data = json.load(f)
