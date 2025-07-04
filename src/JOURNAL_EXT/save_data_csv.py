@@ -47,6 +47,8 @@ if __name__ == "__main__":
         f'{dir_data}/detection_results_robot_5_error_function.json',
         f'{dir_data}/detection_results_robot_6_error_function.json',
         f'{dir_data}/detection_results_robot_7_error_function.json',
+        f'{dir_data}/detection_results_robot_8_error_function.json',
+        f'{dir_data}/detection_results_robot_9_error_function.json',
     ]
     # Process each JSON file
     for json_file in json_files:

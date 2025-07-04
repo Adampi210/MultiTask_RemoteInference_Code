@@ -7,7 +7,7 @@ from ultralytics import YOLO
 # List of folders to process (same as in your original code)
 path_dirs = '../../..'
 FOLDERS_TO_PROCESS = [
-    f'{path_dirs}/robot_5/',
+    f'{path_dirs}/robot_9/',
     # f'{path_dirs}/robot_1/',
     # f'{path_dirs}/robot_2/',
     # f'{path_dirs}/robot_3/',
@@ -18,7 +18,7 @@ FOLDERS_TO_PROCESS = [
 ]
 
 y_cutoffs = [
-    300, 
+    255, 
     # 300, 
     # 370, 
     # 370, 
@@ -225,7 +225,7 @@ def transform_and_detect(image_path, model, y_cutoff):
     print(f"    - Saved preprocessed image to {output_path}")
     
     # Perform detection with low confidence threshold
-    results = model.predict(source=masked_img, conf=0.001, verbose=False)
+    results = model.predict(source=masked_img, conf=0.05, verbose=False)
     result = results[0]
     bboxes = []
     
