@@ -1,0 +1,7 @@
+scenario,method,objective_mean,objective_std,runtime_sec,objective_rank,stability_rank,runtime_rank,status
+deterministic_synthetic_small,harmonic,98.03423464839484,0.0,0.00667899998370558,1,1,2,ok
+deterministic_synthetic_small,sqrt,98.03423464839484,0.0,0.005975099978968501,2,2,1,ok
+probabilistic_two_cluster,harmonic,142.66239725085887,0.0,0.00768499996047467,2,1,2,ok
+probabilistic_two_cluster,sqrt,118.15187931641532,0.0,0.007021300029009581,1,2,1,ok
+probabilistic_adversarial,harmonic,104.8739936125931,0.0,0.006986399996094406,1,1,2,ok
+probabilistic_adversarial,sqrt,105.11159865588196,0.0,0.006818099995143712,2,2,1,ok

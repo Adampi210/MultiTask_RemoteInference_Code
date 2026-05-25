@@ -1,0 +1,5 @@
+- Implement a transmision probability function (reliability metric, in blue in the paper)
+- Make W_i 1 for everyone but add the transmission probability (reliability of the link) to the reward function - in ErrorVSources, q_mj should not be heterogeneous, some success prob 0.6, some 0.95, etc, make it very heterogeneous
+- Edit Delta (AOI) = with probability Q_m_j is 1, otherwise increase it by 1
+- For MGF we need to change the value function - the blue in the paper, another 1 - aq_mj 
+- Compare the subgradient methods

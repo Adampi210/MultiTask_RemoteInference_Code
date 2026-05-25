@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import scipy.io; import numpy as np; m = scipy.io.loadmat\\('loss.mat'\\); print\\('loss.mat keys:', list\\(m.keys\\(\\)\\)\\); print\\('p1 shape:', m['p1'].shape, 'p2 shape:', m['p2'].shape\\); print\\('p1[:5]:', m['p1'].flatten\\(\\)[:10]\\); print\\('p2[:5]:', m['p2'].flatten\\(\\)[:10]\\)\")",
+      "Bash(python -c \"import scipy.io; import numpy as np; m = scipy.io.loadmat\\('multipliers.mat'\\); print\\('multipliers.mat keys:', list\\(m.keys\\(\\)\\)\\); print\\('lambdasource shape:', m['lambdasource'].shape\\); print\\('mu shape:', m['mu'].shape\\); print\\('lambdasource[0,:10]:', m['lambdasource'][0, :10]\\); print\\('mu[0,:10]:', m['mu'][0,:10]\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(python lossread.py)",
+      "Bash(set INFOCOM_TITER=100)",
+      "Bash(set MPLBACKEND=Agg)",
+      "Bash(timeout 60 cat C:/Users/adamp/AppData/Local/Temp/claude/c--Users-adamp-Downloads-Reviews-and-Codes-ToN-Paper-INFOCOM-CODE-INFOCOM-CODE-INFOCOM-Code/48d0f302-6062-4993-9ad8-0ae54b1e641f/tasks/bnvphbbz0.output)",
+      "Bash(python python_code/fig_reader.py ErrorVsSourcesM.fig)",
+      "Bash(python compare_with_matlab.py)",
+      "Read(//c/Users/adamp/Downloads/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/**)",
+      "Bash(python test_mief.py)",
+      "Bash(python checkmief.py)",
+      "Bash(python checkmaf.py)",
+      "Bash(set INFOCOM_TITER=20)",
+      "Bash(python -u -c ' *)",
+      "Read(//c/Users/adamp/AppData/Local/Temp/claude/c--Users-adamp-Downloads-Reviews-and-Codes-ToN-Paper-INFOCOM-CODE-INFOCOM-CODE-INFOCOM-Code/48d0f302-6062-4993-9ad8-0ae54b1e641f/tasks/**)",
+      "PowerShell($f = \"C:\\\\Users\\\\adamp\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-adamp-Downloads-Reviews-and-Codes-ToN-Paper-INFOCOM-CODE-INFOCOM-CODE-INFOCOM-Code\\\\48d0f302-6062-4993-9ad8-0ae54b1e641f\\\\tasks\\\\bp4uh1bl8.output\"; \\(Get-Item $f\\).Length; \\(Get-Item $f\\).LastWriteTime)",
+      "Bash(ls \"c:\\\\Users\\\\adamp\\\\Desktop\\\\Purdue\\\\Research\\\\Reviews and Codes ToN Paper\" 2>&1 | head -50)",
+      "Read(//c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/**)",
+      "Bash(pdftotext -layout \"c:\\\\Users\\\\adamp\\\\Desktop\\\\Purdue\\\\Research\\\\Reviews and Codes ToN Paper\\\\60820258_File000007_1506074036.pdf\" \"/tmp/paper1.txt\")",
+      "Read(//tmp/**)",
+      "Bash(pdftotext -layout \"c:\\\\Users\\\\adamp\\\\Desktop\\\\Purdue\\\\Research\\\\Reviews and Codes ToN Paper\\\\60820258_File000007_1506074036.pdf\" \"paper1.txt\")",
+      "Bash(pdftotext -layout \"c:\\\\Users\\\\adamp\\\\Desktop\\\\Purdue\\\\Research\\\\Reviews and Codes ToN Paper\\\\60820258_File000008_1511915266.pdf\" \"paper2.txt\")",
+      "Bash(python -m pytest test_probabilistic.py -v)",
+      "Bash(pip install *)",
+      "Bash(INFOCOM_TITER=50 INFOCOM_MC_TRIALS=3 INFOCOM_SEED=42 INFOCOM_SOURCES=\"2,6\" INFOCOM_PROFILES=\"constant_high,uniform_wide\" python ErrorVsSources_probabilistic.py)",
+      "Bash(INFOCOM_TITER=50 INFOCOM_MC_TRIALS=3 INFOCOM_SEED=42 python ErrorVsSources_probabilistic.py)",
+      "Bash(INFOCOM_TITER=100 INFOCOM_MC_TRIALS=3 INFOCOM_SEED=42 python CompareSubgradient_probabilistic.py)",
+      "Bash(INFOCOM_TITER=10 INFOCOM_SEED=42 MPLBACKEND=Agg python ErrorVsSources.py)",
+      "Bash(INFOCOM_TITER=100 INFOCOM_MC_TRIALS=3 INFOCOM_SEED=42 INFOCOM_M=\"6\" INFOCOM_PROFILES=\"two_cluster_60_95\" python CompareSubgradient_probabilistic.py)",
+      "Bash(python -c \"import scipy.optimize; print\\('linprog available'\\); from scipy.optimize import linprog, minimize; print\\('all good'\\)\")",
+      "Bash(INFOCOM_PRECHECK_TITER=20 INFOCOM_PRECHECK_MC_TRIALS=2 INFOCOM_PRECHECK_FAST=1 python PrecheckSubgradientMethods.py)",
+      "Bash(INFOCOM_PRECHECK_TITER=100 INFOCOM_PRECHECK_MC_TRIALS=5 INFOCOM_PRECHECK_FAST=1 python PrecheckSubgradientMethods.py)",
+      "Bash(INFOCOM_TITER=5 INFOCOM_SEED=42 MPLBACKEND=Agg python ErrorVsSources.py)",
+      "Bash(INFOCOM_PRECHECK_TITER=50 INFOCOM_PRECHECK_MC_TRIALS=3 INFOCOM_PRECHECK_FAST=1 INFOCOM_PRECHECK_INCLUDE_CUTTING_PLANES=1 python PrecheckSubgradientMethods.py)",
+      "Bash(python -m pytest test_probabilistic.py test_mief.py -v)"
+    ]
+  }
+}

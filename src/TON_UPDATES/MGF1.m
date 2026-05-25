@@ -1,0 +1,75 @@
+function presult=MGF1(M,N,km,T,B,K,n,c,w,gamma,p)
+
+
+%% Lambda and mu after subgradient method of optimization
+subgradientiter1(M, N, T, B, gamma, p, km, w, n, c);
+lambdasource=zeros(M, T); 
+mu=zeros(1, T); 
+multipliers=load('multipliers.mat', 'lambdasource', 'mu');
+lambdasource=multipliers.lambdasource; 
+mu=multipliers.mu;
+
+%% gain indices
+asource1(1:M,1:T,1:B, 1:km)=0; % gain index for all source for task 1
+%asource2(1:M,1:T,1:B,1:B,1:4)=0; % gain index for all source for task 2
+ for m=1:M
+        for task=1:km
+        lambda=lambdasource(m,:);
+        a=valuefunction1(lambda, mu, B, w(m, task)*p(task,:), T, gamma);
+        asource1(m,:,:,task)=a;
+        end
+ end
+
+%% policy execution
+% initialization
+Delta=ones(M,km); % State (AoI) initialization
+pavg=zeros(1,K);
+presult=0;
+for t=1:K
+    % Initialization
+    g=zeros(M,km);
+    gainindex1=zeros(M, km);
+    for m=1:M
+        for task=1:km
+            gainindex1(m, task)=asource1(m,t,Delta(m,task),task);
+        end
+    end
+    gainindex1;
+    Ccurr=zeros(1,M);
+    Ncurr=0;
+    Change=zeros(M,km);
+    while max(max(gainindex1))>0
+      [vr, index]=max(gainindex1);
+      [vc, column]=max(vr);
+      row=index(column);
+      n1=Ncurr+n(row, column);
+      if n1<=N && Ccurr(row)+1<=c(row)
+          g(row, column)=1;
+          Delta(row, column)=1;
+          Ccurr(row)=Ccurr(row)+1;
+          Ncurr=n1;
+          Change(row, column)=1;
+      end
+      gainindex1(row, column)=0;
+    end
+    %% update AoI
+    for m=1:M
+        for j=1:km
+            if Change(m,j)==0
+                if Delta(m, j)+1>B
+                    Delta(m, j)=B;
+                else
+                    Delta(m, j)=Delta(m, j)+1;
+                end
+            end
+           pavg(t)=pavg(t)+(w(m, j)*p(j,Delta(m,j)))/(km*M);
+        end
+    end
+    if t<T
+    presult=presult+gamma^(t-1)*pavg(t);
+    end
+    Ncurr;
+  Delta;
+end
+presult
+end
