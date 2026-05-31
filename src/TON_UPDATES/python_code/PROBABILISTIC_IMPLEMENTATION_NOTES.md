@@ -114,16 +114,45 @@ Probabilistic code never writes to `multipliers.mat`. With `save=True` it writes
 
 Top-level outputs:
 
-- `ErrorVsSources_probabilistic_data.csv` / `.png`
+- `ErrorVsSources_probabilistic_data.csv` / `_summary.csv` / `.png` — `M` sweep
+- `ErrorVsChannel_probabilistic_data.csv` / `_summary.csv` / `.png` — `N` sweep with empirical loss.mat penalties (km=2)
+- `ErrorVsChannelsmodel_probabilistic_data.csv` / `_summary.csv` / `.png` — `N` sweep with synthetic 9-task model
+- `ErrorVsTasks_probabilistic_data.csv` / `_summary.csv` / `.png` — `km` sweep with synthetic model
 - `ErrorVsSources_variants_data.csv` / `.png` (deterministic, method-selectable)
 - `PrecheckSubgradientMethods_data.csv` / `_summary.csv` / `.png`
+- `CompareSubgradient_probabilistic_data.csv` / `.png`
 - `recommended_subgradient_methods.json`
+- `q_profiles_probabilistic.npz` — raw q matrices used per profile / per sweep value (for reproducibility)
 
-`ErrorVsSources_probabilistic.py` reads `recommended_subgradient_methods.json` for its MGF method unless `INFOCOM_SUBGRADIENT_METHOD` overrides it; same for `ErrorVsSources_variants.py`.
+All probabilistic sweep scripts share the same conventions:
+
+- `w = ones((M, km))` (probabilistic experiments use uniform weights so reliability heterogeneity drives the result)
+- `c = 2 * ones((M, km))`, `n = ones((M, km))` by default
+- Read `INFOCOM_TITER`, `INFOCOM_MC_TRIALS`, `INFOCOM_SEED`, and `INFOCOM_PROFILES` from env
+- Default sweep variable, fixed problem dims, and 1-indexed synthetic penalty (`j%3==0` linear, `j%3==1` 10·log, `j%3==2` exp(0.5·d)) all match the deterministic scripts
+- Read `recommended_subgradient_methods.json` for the MGF subgradient method unless `INFOCOM_SUBGRADIENT_METHOD` overrides it
+- One PNG per script with one subplot per q profile; CSV rows have `(profile, sweep_var, policy, mean_error, std_error, ...)`
 
 ## 8. Probability profiles
 
-`probability_profiles_probabilistic.py` exposes 10 named profiles spanning constant (high/low), two-cluster, uniform (wide/high/low), source-gradient, task-gradient, bimodal-extreme, and an adversarial profile that gives the largest-penalty task class (exponential growth) the lowest reliability. The intent is to stress-test policies that aren't reliability-aware.
+`probability_profiles_probabilistic.py` exposes 12 named profiles in three families. They focus on settings that empirically discriminate policies the most (uniform variants and bimodal variants), and many of them mix exact `q = 1.0` (perfect) links with significantly lower-reliability links to stress reliability-aware vs. reliability-blind scheduling.
+
+| Family | Profile | Description |
+|---|---|---|
+| Uniform | `uniform_wide` | Uniform(0.35, 0.98) wide baseline |
+| Uniform | `uniform_low` | Uniform(0.35, 0.70) moderate-low |
+| Uniform | `uniform_mid` | Uniform(0.55, 0.85) moderate band |
+| Uniform | `uniform_very_wide` | Uniform(0.20, 0.99) extreme spread |
+| Uniform | `uniform_with_perfect_outliers` | 85% Uniform(0.40, 0.80) + 15% q=1 |
+| Bimodal | `bimodal_extreme` | 70% ~0.95 / 30% ~0.30 |
+| Bimodal | `bimodal_balanced` | 50% ~0.95 / 50% ~0.40 |
+| Bimodal | `bimodal_q1_vs_lossy_30_70` | 30% q=1 / 70% Uniform(0.30, 0.50) |
+| Bimodal | `bimodal_q1_vs_lossy_70_30` | 70% q=1 / 30% Uniform(0.30, 0.55) |
+| Mixed | `trimodal_perfect_mid_low` | Equal thirds: q=1 / ~0.65 / ~0.35 |
+| Mixed | `source_split_perfect_or_lossy` | Per source: all q=1 OR all Uniform(0.35, 0.60) |
+| Mixed | `adversarial_perfect_with_critical_lossy` | All q=1 except exponential-penalty tasks (j%3==2) get q ~ 0.35 |
+
+`Q_MAX = 1.0` (perfect links are allowed) and `Q_MIN = 0.05` (lower tail bounded away from 0).
 
 ## 9. Caveats
 

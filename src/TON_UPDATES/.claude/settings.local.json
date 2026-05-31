@@ -36,7 +36,42 @@
       "Bash(INFOCOM_PRECHECK_TITER=100 INFOCOM_PRECHECK_MC_TRIALS=5 INFOCOM_PRECHECK_FAST=1 python PrecheckSubgradientMethods.py)",
       "Bash(INFOCOM_TITER=5 INFOCOM_SEED=42 MPLBACKEND=Agg python ErrorVsSources.py)",
       "Bash(INFOCOM_PRECHECK_TITER=50 INFOCOM_PRECHECK_MC_TRIALS=3 INFOCOM_PRECHECK_FAST=1 INFOCOM_PRECHECK_INCLUDE_CUTTING_PLANES=1 python PrecheckSubgradientMethods.py)",
-      "Bash(python -m pytest test_probabilistic.py test_mief.py -v)"
+      "Bash(python -m pytest test_probabilistic.py test_mief.py -v)",
+      "Bash(INFOCOM_TITER=40 INFOCOM_MC_TRIALS=3 INFOCOM_SEED=42 INFOCOM_SOURCES=\"6,12\" python ErrorVsSources_probabilistic.py)",
+      "Bash(INFOCOM_TITER=200 INFOCOM_MC_TRIALS=10 INFOCOM_SEED=42 python ErrorVsSources_probabilistic.py)",
+      "Bash(INFOCOM_TITER=30 INFOCOM_MC_TRIALS=2 INFOCOM_SEED=42 INFOCOM_PROFILES=\"uniform_wide,bimodal_extreme,uniform_with_perfect_outliers\" INFOCOM_CHANNELS=\"2,10,20\" python ErrorVsChannel_probabilistic.py)",
+      "Bash(INFOCOM_TITER=30 INFOCOM_MC_TRIALS=2 INFOCOM_SEED=42 INFOCOM_PROFILES=\"uniform_wide,bimodal_extreme,uniform_with_perfect_outliers\" INFOCOM_CHANNELS=\"2,8,20\" python ErrorVsChannel_probabilistic.py)",
+      "Bash(INFOCOM_TITER=30 INFOCOM_MC_TRIALS=2 INFOCOM_SEED=42 INFOCOM_PROFILES=\"uniform_wide,bimodal_extreme,adversarial_perfect_with_critical_lossy\" INFOCOM_CHANNELS=\"2,10,20\" python ErrorVsChannelsmodel_probabilistic.py)",
+      "Bash(INFOCOM_TITER=30 INFOCOM_MC_TRIALS=2 INFOCOM_SEED=42 INFOCOM_PROFILES=\"uniform_wide,bimodal_extreme,adversarial_perfect_with_critical_lossy\" INFOCOM_TASKS=\"3,9,15\" python ErrorVsTasks_probabilistic.py)",
+      "Bash(INFOCOM_TITER=100 INFOCOM_MC_TRIALS=5 INFOCOM_SEED=42 python ErrorVsChannelsmodel_probabilistic.py)",
+      "Bash(cd \"c:/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/\" && mv multipliers_probabilistic_*.mat data/probabilistic/)",
+      "Bash(python -c \"import sys, os; sys.path.insert\\(0, 'src/execute'\\); from _bootstrap import paths; print\\('paths.DATA_DIR =', paths.DATA_DIR\\); print\\('paths.PLOTS_DIR =', paths.PLOTS_DIR\\); print\\('paths.REPO_ROOT =', paths.REPO_ROOT\\)\")",
+      "Bash(python -c \"import sys; sys.path.insert\\(0, 'src/execute'\\); from _bootstrap import paths; from MGF1 import MGF1; from MAF1 import MAF1; from MIEF1 import MIEF1; from randpolicy import randpolicy; print\\('All imports OK'\\)\")",
+      "Bash(python -c \"import sys; sys.path.insert\\(0, 'src/execute'\\); from _bootstrap import paths; from MGF1_probabilistic import MGF1_probabilistic; from MAF1_probabilistic import MAF1_probabilistic; from _probabilistic_sweep_helpers import run_sweep; print\\('All probabilistic imports OK'\\)\")",
+      "Bash(INFOCOM_TITER=5 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/lossread.py)",
+      "Bash(INFOCOM_TITER=2 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsChannel.py)",
+      "Bash(INFOCOM_TITER=3 INFOCOM_MC_TRIALS=1 INFOCOM_PROFILES=uniform_wide INFOCOM_CHANNELS=4,8 MPLBACKEND=Agg python src/execute/ErrorVsChannel_probabilistic.py)",
+      "Bash(MPLBACKEND=Agg python src/execute/compare_with_matlab.py)",
+      "Bash(INFOCOM_PRECHECK_TITER=5 INFOCOM_PRECHECK_MC_TRIALS=1 INFOCOM_PRECHECK_METHODS=harmonic,sqrt MPLBACKEND=Agg python src/execute/PrecheckSubgradientMethods.py)",
+      "Bash(INFOCOM_PRECHECK_TITER=3 INFOCOM_PRECHECK_MC_TRIALS=1 INFOCOM_PRECHECK_METHODS=harmonic INFOCOM_PRECHECK_FAST=1 INFOCOM_TITER=2 INFOCOM_MC_TRIALS=1 INFOCOM_PROFILES=uniform_wide INFOCOM_CHANNELS=4 INFOCOM_SOURCES=4 INFOCOM_TASKS=3 MPLBACKEND=Agg python src/execute/run_all.py)",
+      "Bash(INFOCOM_PRECHECK_TITER=3 INFOCOM_PRECHECK_MC_TRIALS=1 INFOCOM_PRECHECK_METHODS=harmonic INFOCOM_PRECHECK_FAST=1 INFOCOM_TITER=2 INFOCOM_MC_TRIALS=1 INFOCOM_PROFILES=uniform_wide INFOCOM_CHANNELS=4 INFOCOM_SOURCES=4 INFOCOM_TASKS=3 INFOCOM_M=6 INFOCOM_INCLUDE_CONSTANT=0 MPLBACKEND=Agg python src/execute/run_all.py)",
+      "Bash(grep -E \"\\\\.\\(csv|mat|m|fig|jpg\\)$\")",
+      "Bash(python -c \"import sys; sys.path.insert\\(0, 'src/execute'\\); from _bootstrap import paths; import os; print\\('MATLAB_DIR =', paths.MATLAB_DIR\\); print\\('loss.mat exists?', os.path.isfile\\(paths.matlab_path\\('loss.mat'\\)\\)\\); print\\('ErrorVsTasks.fig exists?', os.path.isfile\\(paths.matlab_path\\('ErrorVsTasks.fig'\\)\\)\\); print\\('smooth seg csv?', os.path.isfile\\(paths.matlab_path\\('smooth_segmentation_averaged_multi_k_loss_pk_data.csv'\\)\\)\\)\")",
+      "Bash(INFOCOM_TITER=10000 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsTasks.py)",
+      "Bash(stat -c \"%s\" \"C:/Users/adamp/AppData/Local/Temp/claude/c--Users-adamp-Desktop-Purdue-Research-Reviews-and-Codes-ToN-Paper-INFOCOM-CODE-INFOCOM-CODE-INFOCOM-Code/e93497eb-5b7d-4dd8-8c55-4804d411596e/tasks/b7l14exl4.output\" && wc -l \"C:/Users/adamp/AppData/Local/Temp/claude/c--Users-adamp-Desktop-Purdue-Research-Reviews-and-Codes-ToN-Paper-INFOCOM-CODE-INFOCOM-CODE-INFOCOM-Code/e93497eb-5b7d-4dd8-8c55-4804d411596e/tasks/b7l14exl4.output\")",
+      "Read(//c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/**)",
+      "Bash(INFOCOM_TITER=10000 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsChannel.py)",
+      "Bash(INFOCOM_TITER=10000 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsChannelsmodel.py)",
+      "Bash(INFOCOM_TITER=10000 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsSources.py)",
+      "Bash(INFOCOM_TITER=10000 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsSourcesM.py)",
+      "Bash(INFOCOM_TITER=2000 INFOCOM_MC_TRIALS=5 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsChannel_probabilistic.py)",
+      "Bash(INFOCOM_TITER=2000 INFOCOM_MC_TRIALS=5 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsChannelsmodel_probabilistic.py)",
+      "Bash(INFOCOM_TITER=2000 INFOCOM_MC_TRIALS=5 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsSources_probabilistic.py)",
+      "Bash(INFOCOM_TITER=2000 INFOCOM_MC_TRIALS=5 INFOCOM_SEED=0 MPLBACKEND=Agg python src/execute/ErrorVsTasks_probabilistic.py)",
+      "Bash(MPLBACKEND=Agg python src/execute/lossread.py)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\adamp\\Desktop\\Purdue\\Research\\Reviews and Codes ToN Paper\\INFOCOM CODE\\INFOCOM CODE\\INFOCOM Code\\python_code"
     ]
   }
 }

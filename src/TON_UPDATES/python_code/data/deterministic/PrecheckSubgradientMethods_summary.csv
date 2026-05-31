@@ -1,0 +1,4 @@
+scenario,method,objective_mean,objective_std,runtime_sec,objective_rank,stability_rank,runtime_rank,status
+deterministic_synthetic_small,harmonic,88.78996769907052,0.0,0.007607400068081915,1,1,1,ok
+probabilistic_bimodal_balanced,harmonic,127.52379942028415,0.0,0.008150500012561679,1,1,1,ok
+probabilistic_adversarial,harmonic,96.14575061474328,0.0,0.007811899995431304,1,1,1,ok

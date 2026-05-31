@@ -1,0 +1,20 @@
+{
+  "deterministic": {
+    "recommended_method": "harmonic",
+    "reason": "MATLAB-faithful default; refresh via PrecheckSubgradientMethods.py",
+    "timestamp": "",
+    "precheck_file": "PrecheckSubgradientMethods_data.csv"
+  },
+  "probabilistic": {
+    "recommended_method": "episode1_mstep",
+    "reason": "MATLAB-equivalent M-step closed-form projection (Episode1) with probabilistic Bellman; reduces to deterministic MGF at q=1, n=1",
+    "timestamp": "",
+    "precheck_file": "PrecheckSubgradientMethods_data.csv"
+  },
+  "combined": {
+    "recommended_method": "harmonic",
+    "reason": "MATLAB-faithful default; refresh via PrecheckSubgradientMethods.py",
+    "timestamp": "",
+    "precheck_file": "PrecheckSubgradientMethods_data.csv"
+  }
+}
