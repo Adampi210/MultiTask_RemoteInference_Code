@@ -6,21 +6,24 @@ penalties loaded from data/deterministic/loss.mat (sub-sampled p1, p2 from
 inference-error data). Compares MGF / MAF (pure) / MIEF (reliability-aware)
 / Random (gated) under each of the 12 q profiles.
 
-The original deterministic ErrorVsChannel.py uses a hand-tuned heterogeneous
-weight matrix (a couple of high-priority pairs against w=0.01 elsewhere). The
-probabilistic variant uses w = ones so reliability heterogeneity is the
-driver, consistent with the other probabilistic sweep scripts.
+This sweep is run in TWO weight modes (see experiment_configs.py):
+  * deterministic -- the heterogeneous weight matrix of the deterministic
+    ErrorVsChannel.py (w=0.01 everywhere with two priority pairs = 1). Outputs
+    keep the bare ``ErrorVsChannel_probabilistic`` stem.
+  * ones (``weights_1``) -- w = 1 everywhere so reliability heterogeneity is the
+    sole driver. Outputs carry the ``_weights_1`` suffix.
 
 Configuration via env vars (defaults from _probabilistic_sweep_helpers):
     INFOCOM_TITER, INFOCOM_MC_TRIALS, INFOCOM_SEED, INFOCOM_PROFILES,
     INFOCOM_EXTRA_POLICIES, INFOCOM_SUBGRADIENT_METHOD
     INFOCOM_CHANNELS (e.g. "2,4,6,8,10,12,14,16,18,20")
+    INFOCOM_WEIGHT_MODES (e.g. "deterministic" or "ones" to run a single mode)
 
-Writes (under the reorganized layout):
-    data/probabilistic/ErrorVsChannel_probabilistic_data.csv
-    data/probabilistic/ErrorVsChannel_probabilistic_summary.csv
-    data/probabilistic/ErrorVsChannel_probabilistic_q_profiles.npz
-    plots/probabilistic/ErrorVsChannel_probabilistic.png
+Writes (under the reorganized layout), once per weight mode:
+    data/probabilistic/ErrorVsChannel_probabilistic[_weights_1]_data.csv
+    data/probabilistic/ErrorVsChannel_probabilistic[_weights_1]_summary.csv
+    data/probabilistic/ErrorVsChannel_probabilistic[_weights_1]_q_profiles.npz
+    plots/probabilistic/ErrorVsChannel_probabilistic[_weights_1].png
 """
 import os
 import numpy as np
@@ -28,7 +31,10 @@ import scipy.io as sio
 
 from _bootstrap import paths
 
-from _probabilistic_sweep_helpers import run_sweep, resolve_subgradient_method
+from _probabilistic_sweep_helpers import (
+    run_sweep_both_modes,
+    resolve_subgradient_method,
+)
 
 
 def _load_empirical_penalty(km, B):
@@ -66,20 +72,21 @@ def main():
     p = _load_empirical_penalty(km, B)
     n = np.ones((M, km))
     c = np.ones((M, km)) * 2
-    w = np.ones((M, km))   # probabilistic experiment: uniform weights
 
     channels = _parse_int_list(os.environ.get("INFOCOM_CHANNELS"),
                                list(range(2, 21, 2)))
 
     def build_problem(N):
+        # Weights are supplied by run_sweep_both_modes per weight mode.
         return {
             "M": M, "N": N, "km": km, "T": T, "B": B, "K": K,
-            "n": n, "c": c, "w": w, "p": p, "gamma": gamma,
+            "n": n, "c": c, "p": p, "gamma": gamma,
         }
 
     method, source = resolve_subgradient_method()
-    run_sweep(
-        output_stem="ErrorVsChannel_probabilistic",
+    run_sweep_both_modes(
+        base_stem="ErrorVsChannel_probabilistic",
+        experiment_name="ErrorVsChannel",
         sweep_name="N",
         sweep_values=channels,
         build_problem=build_problem,

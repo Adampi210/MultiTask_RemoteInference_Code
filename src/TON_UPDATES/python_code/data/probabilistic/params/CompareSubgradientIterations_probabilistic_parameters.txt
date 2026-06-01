@@ -1,0 +1,55 @@
+======================================================================
+EXPERIMENT: CompareSubgradientIterations_probabilistic
+======================================================================
+flavor      : probabilistic
+description : probabilistic MGF discounted-error objective vs. the
+              number of subgradient episodes (iterations), one curve
+              per subgradient method, one subplot per q-profile.
+
+PROBLEM DIMENSIONS
+  M     = 10
+  N     = 10
+  km    = 9
+  B     = 20
+  T     = 100
+  K     = 100  (K = T)
+  gamma = 0.9
+
+RESOURCES
+  n (channel cost per pair)  : 1.0 (uniform)
+  c (compute cap per source) : 2.0 (uniform)
+
+PENALTY MODEL
+  synthetic 9-task (j%3: linear / 10*log / exp(0.5 d))
+
+WEIGHTS
+  ones (uniform) (isolates the optimizer)
+
+EPISODES (subgradient iteration counts swept)
+  [1, 2, 4, 8, 16, 32, 64, 128]   (env INFOCOM_COMPARE_ITERATIONS)
+
+SUBGRADIENT METHODS COMPARED
+  - harmonic
+  - sqrt
+  - normalized_global
+  - normalized_blocks
+  - adagrad
+  - rmsprop
+  - adam
+  - deflected_sqrt
+  - episode1_mstep
+
+SOLVER / MC
+  mc_trials : 10  (env INFOCOM_MC_TRIALS)
+  seed      : 0  (env INFOCOM_SEED)
+
+RELIABILITY q PROFILES
+  representative point: M=10, km=9, seed=0
+  profile                                         min    mean    max     std
+  uniform_wide                                  0.352   0.681  0.978   0.182
+  uniform_low                                   0.351   0.534  0.699   0.101
+  bimodal_extreme                               0.203   0.741  0.986   0.305
+
+OUTPUTS
+  data : data/probabilistic/CompareSubgradientIterations_probabilistic_data.csv
+  plot : plots/probabilistic/CompareSubgradientIterations_probabilistic.png

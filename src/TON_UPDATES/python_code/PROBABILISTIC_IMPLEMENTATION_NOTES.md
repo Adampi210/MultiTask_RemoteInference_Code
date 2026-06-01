@@ -99,7 +99,7 @@ The penalty `w * p(j, Delta_new)` is then evaluated on the realized `Delta_new`.
 
 ## 5. Weights `w` and per-pair channel cost `n_{m,j}`
 
-- The existing `ErrorVsSources.py` uses heterogeneous `w` (`1` for `m <= M/2`, `0.01` otherwise) and `n = 1`. The probabilistic experiment `ErrorVsSources_probabilistic.py` sets `w = ones` everywhere, per the user spec, so reliability heterogeneity drives the result rather than weight heterogeneity.
+- The existing `ErrorVsSources.py` uses heterogeneous `w` (`1` for `m <= M/2`, `0.01` otherwise) and `n = 1`. As of the latest revision, each probabilistic sweep is run in **two weight modes** (centralised in `experiment_configs.make_weights`): a `deterministic` mode that mirrors the matching paper figure's heterogeneous weights (the default, written to the bare stem) and an `ones` mode with `w = 1` everywhere (written to a `_weights_1` stem) so reliability heterogeneity alone drives the result. Restrict modes with `INFOCOM_WEIGHT_MODES`. Earlier versions of these scripts hard-coded `w = ones`; that case is now the `_weights_1` variant.
 - The probabilistic Bellman includes `mu * n_{m,j}`, so the value table now depends on `n_{m,j}` (not just on aggregate `N`). `subgradientiter1_probabilistic._batched_gain_table_probabilistic` passes per-pair `n_{m,j}` into the recursion.
 
 ## 6. Baselines and reliability awareness
@@ -124,9 +124,15 @@ Top-level outputs:
 - `recommended_subgradient_methods.json`
 - `q_profiles_probabilistic.npz` — raw q matrices used per profile / per sweep value (for reproducibility)
 
+Each probabilistic sweep also emits a `_weights_1` companion (uniform `w=1`):
+
+- `ErrorVs*_probabilistic_weights_1_data.csv` / `_summary.csv` / `.png` — same sweep with `w = 1` everywhere.
+- `ErrorVsIterations_probabilistic_data.csv` / `.png` — MGF objective vs. subgradient-iteration count at `q=1` (also the `q=1` ⇒ MATLAB sanity check).
+- `data/<flavor>/params/<stem>_parameters.txt` / `.json` and `EXPERIMENT_PARAMETERS.md` — full parameter dump for every experiment, from `ExportExperimentParameters.py`.
+
 All probabilistic sweep scripts share the same conventions:
 
-- `w = ones((M, km))` (probabilistic experiments use uniform weights so reliability heterogeneity drives the result)
+- Weights come from `experiment_configs.make_weights` in one of two modes — `deterministic` (heterogeneous, matches the paper figure) or `ones` (`w=1`, the `_weights_1` variant). The CSV records the mode in a `weights_mode` column.
 - `c = 2 * ones((M, km))`, `n = ones((M, km))` by default
 - Read `INFOCOM_TITER`, `INFOCOM_MC_TRIALS`, `INFOCOM_SEED`, and `INFOCOM_PROFILES` from env
 - Default sweep variable, fixed problem dims, and 1-indexed synthetic penalty (`j%3==0` linear, `j%3==1` 10·log, `j%3==2` exp(0.5·d)) all match the deterministic scripts

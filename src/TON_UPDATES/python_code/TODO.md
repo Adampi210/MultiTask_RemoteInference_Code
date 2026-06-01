@@ -3,4 +3,4 @@
 - Try different weights w_i
 - Fix number of sources, increase tasks and channels
 - Increase computational resource, r as a new axis
-- Increase the number of iterations
+- Increase the number of iterationsg   

@@ -49,7 +49,15 @@ PROBABILISTIC_SWEEPS = [
     'ErrorVsSources_probabilistic',
     'ErrorVsTasks_probabilistic',
 ]
-PROBABILISTIC_EXTRA = ['CompareSubgradient_probabilistic']
+# MGF-vs-iterations + q=1 sanity check (probabilistic-flavored outputs but uses
+# the deterministic settings; reduces to MGF1 at q=1).
+PROBABILISTIC_EXTRA = [
+    'ErrorVsIterations_probabilistic',
+    'CompareSubgradient_probabilistic',
+    'CompareSubgradientIterations_probabilistic',
+]
+# Parameter dump runs last (documents every experiment) regardless of flavor.
+PARAMETER_EXPORT = ['ExportExperimentParameters']
 
 PRECHECK = ['PrecheckSubgradientMethods']
 
@@ -105,6 +113,10 @@ def main():
     if run_prob:
         for name in PROBABILISTIC_SWEEPS + PROBABILISTIC_EXTRA:
             _import_and_run(name, seed, name)
+
+    # Always export the parameter summary for every experiment at the end.
+    for name in PARAMETER_EXPORT:
+        _import_and_run(name, seed, name)
 
 
 if __name__ == "__main__":

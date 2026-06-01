@@ -1,0 +1,96 @@
+======================================================================
+EXPERIMENT: ErrorVsIterations_probabilistic
+======================================================================
+flavor      : probabilistic (q = 1 everywhere)
+description : MGF discounted-error objective vs. number of subgradient
+              iterations (local episodes). q=1 makes the probabilistic MGF
+              reduce exactly to the deterministic MGF1 (MATLAB 1:1 port),
+              so the curve is also a q=1 sanity check.
+
+ITERATION COUNTS SWEPT (local episodes)
+  [1, 2, 4, 8, 16, 32]   (env INFOCOM_ITERATIONS)
+  reference iterations : 10000  (env INFOCOM_ITER_REFERENCE)
+  q : 1.0 for every (source, task) pair
+  subgradient method : episode1_mstep
+  seed : 0
+
+SETTINGS (each a single fixed problem point)
+------------------------------------------------------------
+  ErrorVsChannel
+    M = 20, N = 10, km = 2, B = 20, T = 100, gamma = 0.9
+    penalty : empirical loss.mat (p1, p2)
+    n = 1.0 (uniform), c = 2.0 (uniform)
+    weights : w = 0.01 everywhere except w[0,1]=1 and w[4,0]=1 (two priority pairs; MATLAB w(1,2)=1, w(5,1)=1)
+    weight value summary: {0.01: 38, 1.0: 2}
+    weight matrix (M=20 x km=2):
+      [[0.01, 1.  ],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [1.  , 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01],
+       [0.01, 0.01]]
+------------------------------------------------------------
+  ErrorVsChannelsmodel
+    M = 20, N = 10, km = 9, B = 20, T = 100, gamma = 0.9
+    penalty : synthetic 9-task model
+    n = 1.0 (uniform), c = 2.0 (uniform)
+    weights : w = 1 for the first half of the sources (m+1 <= M/2), else w = 0.01
+    weight value summary: {0.01: 90, 1.0: 90}
+    weight matrix (M=20 x km=9):
+      [[1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]]
+------------------------------------------------------------
+  ErrorVsSources
+    M = 10, N = 10, km = 9, B = 20, T = 100, gamma = 0.9
+    penalty : synthetic 9-task model (M fixed at 10)
+    n = 1.0 (uniform), c = 2.0 (uniform)
+    weights : w = 1 for the first half of the sources (m+1 <= M/2), else w = 0.01
+    weight value summary: {0.01: 45, 1.0: 45}
+    weight matrix (M=10 x km=9):
+      [[1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+       [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]]
+
+OUTPUTS
+  data : data/probabilistic/ErrorVsIterations_probabilistic_data.csv
+  plot : plots/probabilistic/ErrorVsIterations_probabilistic.png  (combined)
+         plots/probabilistic/ErrorVsIterations_<setting>_probabilistic.png  (per setting)

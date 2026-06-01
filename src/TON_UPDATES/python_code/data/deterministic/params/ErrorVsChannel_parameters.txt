@@ -1,0 +1,64 @@
+======================================================================
+EXPERIMENT: ErrorVsChannel
+======================================================================
+flavor      : deterministic
+family      : ErrorVsChannel
+description : Sweep channels N; empirical penalties from loss.mat (km=2).
+
+PROBLEM DIMENSIONS
+  M     = 20
+  N     = swept (N)
+  km    = 2
+  B     = 20
+  T     = 100
+  K     = 100  (K = T)
+  gamma = 0.9
+
+SWEEP
+  variable : N
+  values   : [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  env var  : INFOCOM_CHANNELS
+
+RESOURCES
+  n (channel cost per pair)  : 1.0 (uniform over all (m, j))
+  c (compute cap per source) : 2.0 (uniform over all m)
+
+PENALTY MODEL
+  empirical loss.mat (p1, p2)
+
+WEIGHTS  (mode: deterministic)
+  pattern : w = 0.01 everywhere except w[0,1]=1 and w[4,0]=1 (two priority pairs; MATLAB w(1,2)=1, w(5,1)=1)
+  value summary (value: count): {0.01: 38, 1.0: 2}
+  representative matrix (M=20 x km=2):
+    [[0.01, 1.  ],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [1.  , 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01],
+     [0.01, 0.01]]
+
+POLICIES
+  Random, MAF, MGF, MIEF
+
+SUBGRADIENT / SOLVER
+  method     : harmonic (Episode1 M-step)
+  iterations : 10000  (env INFOCOM_TITER)
+  seed       : 0  (env INFOCOM_SEED)
+
+OUTPUTS
+  data : data/deterministic/ErrorVsChannel_data.csv
+  plot : plots/deterministic/ErrorVsChannel.png

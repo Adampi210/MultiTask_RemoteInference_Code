@@ -1,0 +1,85 @@
+======================================================================
+EXPERIMENT: ErrorVsTasks_probabilistic_weights_1
+======================================================================
+flavor      : probabilistic
+family      : ErrorVsTasks
+description : Sweep tasks-per-source km; synthetic penalty model.
+
+PROBLEM DIMENSIONS
+  M     = 20
+  N     = 10
+  km    = swept (km)
+  B     = 20
+  T     = 100
+  K     = 100  (K = T)
+  gamma = 0.9
+
+SWEEP
+  variable : km
+  values   : [3, 6, 9, 12, 15]
+  env var  : INFOCOM_TASKS
+
+RESOURCES
+  n (channel cost per pair)  : 1.0 (uniform over all (m, j))
+  c (compute cap per source) : 2.0 (uniform over all m)
+
+PENALTY MODEL
+  synthetic model (j%3: linear / 10*log / exp(0.5 d))
+
+WEIGHTS  (mode: ones)
+  pattern : w = 1 for every (source, task) pair  [weights_1]
+  value summary (value: count): {1.0: 300}
+  representative matrix (M=20 x km=15):
+    [[1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+     [1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]]
+
+POLICIES
+  MGF, MAF, MIEF, Random
+
+SUBGRADIENT / SOLVER
+  method     : episode1_mstep
+  iterations : 1000  (env INFOCOM_TITER)
+  mc_trials  : 10  (env INFOCOM_MC_TRIALS)
+  seed       : 0  (env INFOCOM_SEED)
+
+RELIABILITY q PROFILES
+  representative point: M=20, km=15, seed=0
+  profile                                         min    mean    max     std
+  uniform_wide                                  0.350   0.690  0.978   0.187
+  uniform_low                                   0.350   0.539  0.699   0.104
+  uniform_mid                                   0.550   0.712  0.849   0.089
+  uniform_very_wide                             0.200   0.627  0.988   0.235
+  uniform_with_perfect_outliers                 0.401   0.658  1.000   0.163
+  bimodal_extreme                               0.174   0.706  0.992   0.318
+  bimodal_balanced                              0.299   0.647  0.992   0.277
+  bimodal_q1_vs_lossy_30_70                     0.301   0.556  1.000   0.263
+  bimodal_q1_vs_lossy_70_30                     0.301   0.787  1.000   0.280
+  trimodal_perfect_mid_low                      0.272   0.640  1.000   0.268
+  source_split_perfect_or_lossy                 0.350   0.693  1.000   0.257
+  adversarial_perfect_with_critical_lossy       0.262   0.783  1.000   0.307
+  full q matrices (per profile, per sweep value) stored in:
+    data/probabilistic/ErrorVsTasks_probabilistic_weights_1_q_profiles.npz (keys: <profile>_km<value>)
+
+OUTPUTS
+  data : data/probabilistic/ErrorVsTasks_probabilistic_weights_1_data.csv
+         data/probabilistic/ErrorVsTasks_probabilistic_weights_1_summary.csv
+         data/probabilistic/ErrorVsTasks_probabilistic_weights_1_q_profiles.npz
+  plot : plots/probabilistic/ErrorVsTasks_probabilistic_weights_1.png

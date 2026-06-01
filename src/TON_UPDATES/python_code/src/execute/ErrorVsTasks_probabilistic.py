@@ -6,11 +6,14 @@ synthetic penalty model as ErrorVsChannelsmodel (j%3==0 linear, j%3==1
 10*log, j%3==2 exp(0.5 d), 1-indexed). Compares MGF / MAF / MIEF / Random
 under each of the 12 q profiles.
 
-Writes:
-    data/probabilistic/ErrorVsTasks_probabilistic_data.csv
-    data/probabilistic/ErrorVsTasks_probabilistic_summary.csv
-    data/probabilistic/ErrorVsTasks_probabilistic_q_profiles.npz
-    plots/probabilistic/ErrorVsTasks_probabilistic.png
+Run in two weight modes (see experiment_configs.py): deterministic (paper
+half-weights: 1 for m+1<=M/2 else 0.01) and ones (w=1, ``_weights_1`` suffix).
+
+Writes (once per weight mode):
+    data/probabilistic/ErrorVsTasks_probabilistic[_weights_1]_data.csv
+    data/probabilistic/ErrorVsTasks_probabilistic[_weights_1]_summary.csv
+    data/probabilistic/ErrorVsTasks_probabilistic[_weights_1]_q_profiles.npz
+    plots/probabilistic/ErrorVsTasks_probabilistic[_weights_1].png
 """
 import os
 import numpy as np
@@ -18,7 +21,7 @@ import numpy as np
 from _bootstrap import paths   # noqa: F401  (bootstraps sys.path)
 
 from _probabilistic_sweep_helpers import (
-    run_sweep,
+    run_sweep_both_modes,
     resolve_subgradient_method,
     make_synthetic_penalty,
 )
@@ -44,18 +47,19 @@ def main():
                             list(range(3, 16, 3)))
 
     def build_problem(km):
+        # Weights are supplied by run_sweep_both_modes per weight mode.
         n = np.ones((M, km))
         c = np.ones((M, km)) * 2
-        w = np.ones((M, km))
         p = p_full[:km, :]
         return {
             "M": M, "N": N, "km": km, "T": T, "B": B, "K": K,
-            "n": n, "c": c, "w": w, "p": p, "gamma": gamma,
+            "n": n, "c": c, "p": p, "gamma": gamma,
         }
 
     method, source = resolve_subgradient_method()
-    run_sweep(
-        output_stem="ErrorVsTasks_probabilistic",
+    run_sweep_both_modes(
+        base_stem="ErrorVsTasks_probabilistic",
+        experiment_name="ErrorVsTasks",
         sweep_name="km",
         sweep_values=tasks,
         build_problem=build_problem,

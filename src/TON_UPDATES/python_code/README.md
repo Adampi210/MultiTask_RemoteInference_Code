@@ -9,6 +9,12 @@ See [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) for the conceptual model and
 file-by-file rundown, and [PROBABILISTIC_IMPLEMENTATION_NOTES.md](PROBABILISTIC_IMPLEMENTATION_NOTES.md)
 for the differences between the deterministic and probabilistic variants.
 
+**New to running these experiments? Start with
+[EXPERIMENTS_GUIDE.md](EXPERIMENTS_GUIDE.md)** — a copy-paste guide to running
+every experiment and changing its hyper-parameters (weight modes, the
+MGF-vs-iterations experiment, and the parameter-export script are all covered
+there).
+
 ---
 
 ## Directory Layout
@@ -143,18 +149,26 @@ python src/execute/ErrorVsSourcesM.py
 python src/execute/ErrorVsTasks.py
 python src/execute/ErrorVsSources_variants.py    # method-selectable MGF
 
-# Probabilistic
+# Probabilistic (each emits BOTH a deterministic-weights and a _weights_1 variant)
 python src/execute/ErrorVsChannel_probabilistic.py
 python src/execute/ErrorVsChannelsmodel_probabilistic.py
 python src/execute/ErrorVsSources_probabilistic.py
 python src/execute/ErrorVsTasks_probabilistic.py
 python src/execute/CompareSubgradient_probabilistic.py
+python src/execute/ErrorVsIterations_probabilistic.py  # MGF vs #iterations (q=1) + MATLAB sanity
 
 # Auxiliary
 python src/execute/lossread.py                   # rebuild loss.mat
 python src/execute/PrecheckSubgradientMethods.py # refresh recommended_subgradient_methods.json
 python src/execute/compare_with_matlab.py        # rebuild side-by-side compare PNGs
+python src/execute/ExportExperimentParameters.py # dump every experiment's parameters
 ```
+
+> Each probabilistic sweep is run in two **weight modes**: the heterogeneous
+> deterministic/paper weights (bare stem) and a uniform `w=1` variant
+> (`_weights_1` suffix). Restrict to one with
+> `INFOCOM_WEIGHT_MODES=deterministic` or `INFOCOM_WEIGHT_MODES=ones`. See
+> [EXPERIMENTS_GUIDE.md](EXPERIMENTS_GUIDE.md) for full details.
 
 Each script writes:
 
@@ -211,11 +225,20 @@ All scripts read configuration from environment variables (defaults shown):
 | `INFOCOM_MC_TRIALS`          | `10`    | every probabilistic script           |
 | `INFOCOM_SEED`               | `0`     | every probabilistic script           |
 | `INFOCOM_PROFILES`           | all 12  | every probabilistic script (`uniform_wide,bimodal_extreme,...`) |
+| `INFOCOM_WEIGHT_MODES`       | `deterministic,ones` | which weight modes a probabilistic sweep runs |
 | `INFOCOM_EXTRA_POLICIES`     | `0`     | adds MAF_relaware + MIEF_pure rows   |
 | `INFOCOM_SUBGRADIENT_METHOD` | from JSON | every probabilistic script         |
 | `INFOCOM_SOURCES`            | `2..20` step 2 | `ErrorVsSources_probabilistic.py` |
 | `INFOCOM_CHANNELS`           | `2..20` step 2 | `ErrorVs*Channel*_probabilistic.py` |
 | `INFOCOM_TASKS`              | `3..15` step 3 | `ErrorVsTasks_probabilistic.py` |
+
+### MGF-vs-iterations experiment (`ErrorVsIterations_probabilistic.py`)
+
+| Variable                     | Default | Used by                              |
+|------------------------------|---------|--------------------------------------|
+| `INFOCOM_ITERATIONS`         | `1,2,4,8,16,32` | subgradient-iteration counts swept |
+| `INFOCOM_ITER_REFERENCE`     | `10000` | converged reference MGF1 iteration count |
+| `INFOCOM_ITER_SETTINGS`      | all 3   | subset of `ErrorVsChannel,ErrorVsChannelsmodel,ErrorVsSources` |
 
 ### Precheck
 

@@ -1,0 +1,54 @@
+START Mon Jun  1 16:23:37 UTC 2026
+CompareSubgradientIterations (probabilistic MGF objective vs #episodes)
+  M=10, N=10, km=9, T=100, B=20, gamma=0.9
+  iterations: [1, 2, 4, 8, 16, 32, 64, 128]
+  methods   : ['harmonic', 'sqrt', 'normalized_global', 'normalized_blocks', 'adagrad', 'rmsprop', 'adam', 'deflected_sqrt', 'episode1_mstep', 'kelley_bounded', 'trust_region_kelley', 'proximal_bundle']
+  profiles  : ['uniform_wide', 'uniform_low', 'bimodal_extreme']
+  MC_TRIALS=10, SEED=0
+
+--- profile: uniform_wide (q in [0.35, 0.98]) ---
+            harmonic: final=118.3  best=117.7
+                sqrt: final=112.1  best=112.1
+   normalized_global: final=113.4  best=113.4
+   normalized_blocks: final=113.2  best=113.2
+             adagrad: final=113.3  best=113.1
+             rmsprop: final=118.2  best=112.7
+                adam: final=111.6  best=111.6
+      deflected_sqrt: final=111.8  best=111.8
+      episode1_mstep: final=115.6  best=115.6
+      kelley_bounded: final=125.6  best=113.7
+  trust_region_kelley: final=125.6  best=113.7
+     proximal_bundle: final=113.7  best=113.7
+
+--- profile: uniform_low (q in [0.35, 0.70]) ---
+            harmonic: final=133.5  best=133.4
+                sqrt: final=128.3  best=128.3
+   normalized_global: final=127.6  best=127.3
+   normalized_blocks: final=129  best=127.4
+             adagrad: final=129  best=127.3
+             rmsprop: final=128.5  best=128.3
+                adam: final=127.3  best=127.3
+      deflected_sqrt: final=127.5  best=127.5
+      episode1_mstep: final=131.2  best=131.2
+      kelley_bounded: final=145.6  best=128.2
+  trust_region_kelley: final=142.4  best=128.2
+     proximal_bundle: final=128.2  best=128.2
+
+--- profile: bimodal_extreme (q in [0.20, 0.99]) ---
+            harmonic: final=142.6  best=139.3
+                sqrt: final=137.5  best=137.5
+   normalized_global: final=141.7  best=141.7
+   normalized_blocks: final=141.4  best=141.4
+             adagrad: final=143.7  best=140.9
+             rmsprop: final=141.4  best=136.9
+                adam: final=138  best=138
+      deflected_sqrt: final=137.7  best=137
+      episode1_mstep: final=139.9  best=139.9
+      kelley_bounded: final=142.2  best=142.2
+  trust_region_kelley: final=142.1  best=142.1
+     proximal_bundle: final=142.3  best=142.3
+
+Total runtime: 77.6s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/CompareSubgradientIterations_probabilistic_data.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/CompareSubgradientIterations_probabilistic.png
+DONE Mon Jun  1 16:24:58 UTC 2026

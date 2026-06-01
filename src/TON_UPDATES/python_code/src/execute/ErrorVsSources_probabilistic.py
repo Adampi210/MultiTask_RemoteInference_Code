@@ -8,6 +8,9 @@ For each q profile, sweep M (sources) and compare:
 Optional extra rows: MAF reliability-aware and pure MIEF, controlled by
 INFOCOM_EXTRA_POLICIES=1.
 
+Run in two weight modes (see experiment_configs.py): deterministic (paper
+half-weights: 1 for m+1<=M/2 else 0.01) and ones (w=1, ``_weights_1`` suffix).
+
 Configuration via env vars:
     INFOCOM_TITER              (default 1000)
     INFOCOM_MC_TRIALS          (default 10)
@@ -15,14 +18,15 @@ Configuration via env vars:
     INFOCOM_SOURCES            (default '2,4,6,8,10,12,14,16,18,20')
     INFOCOM_PROFILES           (default = list_q_profiles())
     INFOCOM_EXTRA_POLICIES     (default 0)
+    INFOCOM_WEIGHT_MODES       (default 'deterministic,ones')
     INFOCOM_SUBGRADIENT_METHOD (optional override; default = read recommended
                                  method from recommended_subgradient_methods.json)
 
-Writes:
-    data/probabilistic/ErrorVsSources_probabilistic_data.csv
-    data/probabilistic/ErrorVsSources_probabilistic_summary.csv
-    data/probabilistic/ErrorVsSources_probabilistic_q_profiles.npz
-    plots/probabilistic/ErrorVsSources_probabilistic.png
+Writes (once per weight mode):
+    data/probabilistic/ErrorVsSources_probabilistic[_weights_1]_data.csv
+    data/probabilistic/ErrorVsSources_probabilistic[_weights_1]_summary.csv
+    data/probabilistic/ErrorVsSources_probabilistic[_weights_1]_q_profiles.npz
+    plots/probabilistic/ErrorVsSources_probabilistic[_weights_1].png
 """
 import os
 import numpy as np
@@ -30,7 +34,7 @@ import numpy as np
 from _bootstrap import paths   # noqa: F401  (bootstraps sys.path)
 
 from _probabilistic_sweep_helpers import (
-    run_sweep,
+    run_sweep_both_modes,
     resolve_subgradient_method,
     make_synthetic_penalty,
 )
@@ -55,17 +59,18 @@ def main():
                               list(range(2, 21, 2)))
 
     def build_problem(M):
+        # Weights are supplied by run_sweep_both_modes per weight mode.
         n = np.ones((M, km))
         c = np.ones((M, km)) * 2
-        w = np.ones((M, km))   # probabilistic experiment: w=1 everywhere
         return {
             "M": M, "N": N, "km": km, "T": T, "B": B, "K": K,
-            "n": n, "c": c, "w": w, "p": p, "gamma": gamma,
+            "n": n, "c": c, "p": p, "gamma": gamma,
         }
 
     method, source = resolve_subgradient_method()
-    run_sweep(
-        output_stem="ErrorVsSources_probabilistic",
+    run_sweep_both_modes(
+        base_stem="ErrorVsSources_probabilistic",
+        experiment_name="ErrorVsSources",
         sweep_name="M",
         sweep_values=sources,
         build_problem=build_problem,

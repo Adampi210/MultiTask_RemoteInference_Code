@@ -1,0 +1,64 @@
+======================================================================
+EXPERIMENT: ErrorVsSources
+======================================================================
+flavor      : deterministic
+family      : ErrorVsSources
+description : Sweep sources M; synthetic 9-task penalty model.
+
+PROBLEM DIMENSIONS
+  M     = swept (M)
+  N     = 10
+  km    = 9
+  B     = 20
+  T     = 100
+  K     = 100  (K = T)
+  gamma = 0.9
+
+SWEEP
+  variable : M
+  values   : [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  env var  : INFOCOM_SOURCES
+
+RESOURCES
+  n (channel cost per pair)  : 1.0 (uniform over all (m, j))
+  c (compute cap per source) : 2.0 (uniform over all m)
+
+PENALTY MODEL
+  synthetic 9-task (j%3: linear / 10*log / exp(0.5 d))
+
+WEIGHTS  (mode: deterministic)
+  pattern : w = 1 for the first half of the sources (m+1 <= M/2), else w = 0.01
+  value summary (value: count): {0.01: 90, 1.0: 90}
+  representative matrix (M=20 x km=9):
+    [[1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  , 1.  ],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
+     [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]]
+
+POLICIES
+  Random, MAF, MGF, MIEF
+
+SUBGRADIENT / SOLVER
+  method     : harmonic (Episode1 M-step)
+  iterations : 10000  (env INFOCOM_TITER)
+  seed       : 0  (env INFOCOM_SEED)
+
+OUTPUTS
+  data : data/deterministic/ErrorVsSources_data.csv
+  plot : plots/deterministic/ErrorVsSources.png

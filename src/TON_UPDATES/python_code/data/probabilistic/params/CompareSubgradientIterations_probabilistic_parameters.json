@@ -1,0 +1,73 @@
+{
+  "stem": "CompareSubgradientIterations_probabilistic",
+  "flavor": "probabilistic",
+  "description": "Probabilistic MGF objective vs number of subgradient episodes, per method.",
+  "dimensions": {
+    "M": 10,
+    "N": 10,
+    "km": 9,
+    "B": 20,
+    "T": 100,
+    "K": 100,
+    "gamma": 0.9
+  },
+  "resources": {
+    "n_channel_cost": 1.0,
+    "c_compute_cap": 2.0
+  },
+  "penalty": "synthetic 9-task (j%3: linear / 10*log / exp(0.5 d))",
+  "weights": "ones (uniform)",
+  "episodes": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "methods": [
+    "harmonic",
+    "sqrt",
+    "normalized_global",
+    "normalized_blocks",
+    "adagrad",
+    "rmsprop",
+    "adam",
+    "deflected_sqrt",
+    "episode1_mstep"
+  ],
+  "mc_trials": 10,
+  "seed": 0,
+  "q_profiles": [
+    {
+      "profile": "uniform_wide",
+      "q_min": 0.35172525510719327,
+      "q_mean": 0.6809830602056709,
+      "q_max": 0.9782422595472029,
+      "q_std": 0.18246413519700477,
+      "description": "Uniform(0.35, 0.98) -- wide heterogeneity baseline"
+    },
+    {
+      "profile": "uniform_low",
+      "q_min": 0.3509584750595518,
+      "q_mean": 0.5338794778920395,
+      "q_max": 0.6990234775262238,
+      "q_std": 0.10136896399833598,
+      "description": "Uniform(0.35, 0.70) -- all moderately-low reliability"
+    },
+    {
+      "profile": "bimodal_extreme",
+      "q_min": 0.20278675120072276,
+      "q_mean": 0.7414569287665936,
+      "q_max": 0.9863295188176229,
+      "q_std": 0.3045812255588744,
+      "description": "Bimodal: ~70% around 0.95 (std 0.02), ~30% around 0.30 (std 0.05)"
+    }
+  ],
+  "outputs": {
+    "data_csv": "data/probabilistic/CompareSubgradientIterations_probabilistic_data.csv",
+    "plot_png": "plots/probabilistic/CompareSubgradientIterations_probabilistic.png"
+  }
+}

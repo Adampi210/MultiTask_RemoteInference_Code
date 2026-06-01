@@ -1,0 +1,1822 @@
+START Mon Jun  1 16:05:54 UTC 2026
+/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/lossread.py:90: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/ErrorVsChannel.py:103: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/ErrorVsChannelsmodel.py:96: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+=== run_all  (TITER=10000, SEED=0) ===
+
+  data outputs -> /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/[deterministic|probabilistic]/
+  plot outputs -> /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/[deterministic|probabilistic]/
+
+---- PrecheckSubgradientMethods ----
+PrecheckSubgradientMethods
+  TITER=100, MC_TRIALS=5, SEED=0, FAST=1, INCLUDE_CP=0
+  Methods: ['harmonic', 'sqrt', 'normalized_blocks', 'adagrad', 'rmsprop', 'adam', 'deflected_sqrt', 'episode1_mstep']
+  Scenarios: ['deterministic_synthetic_small', 'probabilistic_bimodal_balanced', 'probabilistic_adversarial']
+
+--- scenario: deterministic_synthetic_small (deterministic) ---
+  harmonic                  obj=93.234  (0.1s)  status=ok
+  sqrt                      obj=91.789  (0.1s)  status=ok
+  normalized_blocks         obj=85.758  (0.1s)  status=ok
+  adagrad                   obj=87.04  (0.1s)  status=ok
+  rmsprop                   obj=87.191  (0.1s)  status=ok
+  adam                      obj=87.188  (0.1s)  status=ok
+  deflected_sqrt            obj=91.211  (0.1s)  status=ok
+  episode1_mstep            obj=82.937  (0.2s)  status=ok
+
+--- scenario: probabilistic_bimodal_balanced (probabilistic) ---
+  harmonic                  obj=125.63  (0.1s)  status=ok
+  sqrt                      obj=123.59  (0.1s)  status=ok
+  normalized_blocks         obj=124.81  (0.1s)  status=ok
+  adagrad                   obj=125.94  (0.1s)  status=ok
+  rmsprop                   obj=122.57  (0.1s)  status=ok
+  adam                      obj=123.32  (0.1s)  status=ok
+  deflected_sqrt            obj=123.82  (0.1s)  status=ok
+  episode1_mstep            obj=124.18  (0.2s)  status=ok
+
+--- scenario: probabilistic_adversarial (probabilistic) ---
+  harmonic                  obj=96.001  (0.1s)  status=ok
+  sqrt                      obj=96.573  (0.1s)  status=ok
+  normalized_blocks         obj=88.625  (0.1s)  status=ok
+  adagrad                   obj=89.557  (0.1s)  status=ok
+  rmsprop                   obj=91.312  (0.1s)  status=ok
+  adam                      obj=88.119  (0.1s)  status=ok
+  deflected_sqrt            obj=97.502  (0.1s)  status=ok
+  episode1_mstep            obj=86.281  (0.2s)  status=ok
+
+Total runtime: 2.6s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/PrecheckSubgradientMethods_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/PrecheckSubgradientMethods_summary.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/PrecheckSubgradientMethods.png
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/recommended_subgradient_methods.json
+
+=== Recommendations ===
+  Best deterministic method : episode1_mstep
+    lowest mean total_score (2.65); top3: episode1_mstep=2.65, normalized_blocks=3.20, adam=3.40
+  Best probabilistic method : adam
+    lowest mean total_score (2.52); top3: adam=2.52, rmsprop=3.45, episode1_mstep=3.75
+  Best combined method      : adam
+    lowest mean total_score (2.82); top3: adam=2.82, episode1_mstep=3.38, rmsprop=3.97
+
+  -> Full deterministic experiments will use: episode1_mstep
+  -> Full probabilistic experiments will use: adam
+---- PrecheckSubgradientMethods done in 3s ----
+
+---- lossread ----
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/loss.mat
+---- lossread done in 0s ----
+
+---- ErrorVsChannel ----
+
+=== N = 2 ===
+MGF1 presult = 19.176721365517523
+MAF1 presult = 19.374931504453507
+MIEF1 presult = 17.473809887417872
+randpolicy presult = 19.434590409532106
+
+=== N = 4 ===
+MGF1 presult = 17.425159745608575
+MAF1 presult = 19.0472994143562
+MIEF1 presult = 17.409614981140642
+randpolicy presult = 19.166026685068456
+
+=== N = 6 ===
+MGF1 presult = 17.380337311347443
+MAF1 presult = 18.779227227840646
+MIEF1 presult = 17.360242098559034
+randpolicy presult = 18.954290149069486
+
+=== N = 8 ===
+MGF1 presult = 17.318348690823615
+MAF1 presult = 18.555644132573843
+MIEF1 presult = 17.33073609740863
+randpolicy presult = 18.764545848401657
+
+=== N = 10 ===
+MGF1 presult = 17.296651838425582
+MAF1 presult = 18.40627499169977
+MIEF1 presult = 17.313193864562702
+randpolicy presult = 18.605578468608158
+
+=== N = 12 ===
+MGF1 presult = 17.256056899531604
+MAF1 presult = 18.241023299802393
+MIEF1 presult = 17.29894340359704
+randpolicy presult = 18.471651773490336
+
+=== N = 14 ===
+MGF1 presult = 17.245998214586752
+MAF1 presult = 18.186247618870897
+MIEF1 presult = 17.290134789741025
+randpolicy presult = 18.354198256405354
+
+=== N = 16 ===
+MGF1 presult = 17.21760518689717
+MAF1 presult = 17.974515750665308
+MIEF1 presult = 17.281326175885003
+randpolicy presult = 18.20317681734527
+
+=== N = 18 ===
+MGF1 presult = 17.19936423020448
+MAF1 presult = 17.86279954544501
+MIEF1 presult = 17.272517562028987
+randpolicy presult = 18.03057079357879
+
+=== N = 20 ===
+MGF1 presult = 17.17946903094568
+MAF1 presult = 17.8457609113821
+MIEF1 presult = 17.263708948172972
+randpolicy presult = 17.994761474529867
+
+Saved data to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/ErrorVsChannel_data.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsChannel.png
+---- ErrorVsChannel done in 239s ----
+
+---- ErrorVsChannelsmodel ----
+
+=== N = 2 ===
+MGF1 presult = 1396.1002655770628
+MAF1 presult = 4732.835326081899
+MIEF1 presult = 497.3461191418326
+randpolicy presult = 5619.948205124211
+
+=== N = 4 ===
+MGF1 presult = 474.9836564735832
+MAF1 presult = 4839.593978857923
+MIEF1 presult = 131.2218482612011
+randpolicy presult = 4645.012903239062
+
+=== N = 6 ===
+MGF1 presult = 129.33240761841824
+MAF1 presult = 2887.925049364521
+MIEF1 presult = 85.29032518801579
+randpolicy presult = 3820.353337496863
+
+=== N = 8 ===
+MGF1 presult = 99.52965093821231
+MAF1 presult = 1126.5463887705723
+MIEF1 presult = 64.79094604399234
+randpolicy presult = 3193.800692673305
+
+=== N = 10 ===
+MGF1 presult = 67.2066513170129
+MAF1 presult = 525.2258732842337
+MIEF1 presult = 52.687604085991886
+randpolicy presult = 2584.783086728893
+
+=== N = 12 ===
+MGF1 presult = 48.06245632563146
+MAF1 presult = 216.88138502766336
+MIEF1 presult = 46.55416617512954
+randpolicy presult = 2154.735556614017
+
+=== N = 14 ===
+MGF1 presult = 40.8297185014374
+MAF1 presult = 124.94224906093896
+MIEF1 presult = 41.72013198721556
+randpolicy presult = 1774.8757250198264
+
+=== N = 16 ===
+MGF1 presult = 35.10797407751779
+MAF1 presult = 85.92779875033764
+MIEF1 presult = 36.914690949644225
+randpolicy presult = 1477.8563968103358
+
+=== N = 18 ===
+MGF1 presult = 31.110565680189
+MAF1 presult = 66.74731638219801
+MIEF1 presult = 32.60759542010484
+randpolicy presult = 1187.8233116722135
+
+=== N = 20 ===
+MGF1 presult = 28.705965602862772
+MAF1 presult = 55.567090369318095
+MIEF1 presult = 29.071325058388094
+randpolicy presult = 967.3054743284086
+
+Saved data to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/ErrorVsChannelsmodel_data.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsChannelsmodel.png
+---- ErrorVsChannelsmodel done in 375s ----
+
+---- ErrorVsSources ----
+
+=== M = 2 ===
+MGF1 presult = 26.099952902779837
+MAF1 presult = 25.805423638051465
+MIEF1 presult = 24.66854385189104
+randpolicy presult = 967.4173158191812
+
+=== M = 4 ===
+MGF1 presult = 26.950268127219154
+MAF1 presult = 25.805423638051472
+MIEF1 presult = 24.66854385189105
+randpolicy presult = 918.9233790454861
+
+=== M = 6 ===/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/ErrorVsSources.py:95: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/ErrorVsSourcesM.py:97: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/ErrorVsTasks.py:92: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+MGF1 presult = 26.629061331809595
+MAF1 presult = 30.56430116046756
+MIEF1 presult = 24.775408449115442
+randpolicy presult = 957.0603631591406
+
+=== M = 8 ===
+MGF1 presult = 26.73809083966713
+MAF1 presult = 41.090762231490004
+MIEF1 presult = 25.11933712278151
+randpolicy presult = 965.3171395601113
+
+=== M = 10 ===
+MGF1 presult = 28.601651467020325
+MAF1 presult = 55.56709036931809
+MIEF1 presult = 29.071325058388066
+randpolicy presult = 977.9456740551743
+
+=== M = 12 ===
+MGF1 presult = 33.06757842155229
+MAF1 presult = 78.8254940834301
+MIEF1 presult = 35.23656226419559
+randpolicy presult = 1389.6517197303579
+
+=== M = 14 ===
+MGF1 presult = 39.365636575997975
+MAF1 presult = 120.20085706519555
+MIEF1 presult = 41.02500879562942
+randpolicy presult = 1749.9445751340295
+
+=== M = 16 ===
+MGF1 presult = 45.121616809044944
+MAF1 presult = 188.94201931757976
+MIEF1 presult = 45.28614336315819
+randpolicy presult = 2086.119285569138
+
+=== M = 18 ===
+MGF1 presult = 58.98455825129558
+MAF1 presult = 310.53940676377346
+MIEF1 presult = 49.41903711949608
+randpolicy presult = 2294.557024372345
+
+=== M = 20 ===
+MGF1 presult = 67.2066513170129
+MAF1 presult = 525.2258732842337
+MIEF1 presult = 52.687604085991886
+randpolicy presult = 2613.27035492284
+
+Saved data to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/ErrorVsSources_data.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsSources.png
+---- ErrorVsSources done in 295s ----
+
+---- ErrorVsSourcesM ----
+
+=== M = 3 ===
+MGF1 presult = 0.37776662854861504
+MAF1 presult = 1.1292247219575904
+MIEF1 presult = 0.37776662854861504
+randpolicy presult = 2.009744764506983
+
+=== M = 6 ===
+MGF1 presult = 0.5610945512266196
+MAF1 presult = 1.8612378402596115
+MIEF1 presult = 0.5610945512266196
+randpolicy presult = 3.0006446289138715
+
+=== M = 9 ===
+MGF1 presult = 0.49998524366728475
+MAF1 presult = 2.1427658631958835
+MIEF1 presult = 0.49998524366728475
+randpolicy presult = 2.7012803509745593
+
+=== M = 12 ===
+MGF1 presult = 0.5629463484253876
+MAF1 presult = 2.949260130116628
+MIEF1 presult = 0.5629463484253876
+randpolicy presult = 3.2376609060357837
+
+=== M = 15 ===
+MGF1 presult = 0.5294658506994202
+MAF1 presult = 3.2073028440158065
+MIEF1 presult = 0.5294658506994202
+randpolicy presult = 3.372313725928999
+
+=== M = 18 ===
+MGF1 presult = 0.5788359008834372
+MAF1 presult = 3.8287563601940495
+MIEF1 presult = 0.5788359008834372
+randpolicy presult = 3.77879934844945
+
+=== M = 21 ===
+MGF1 presult = 0.5852405426739535
+MAF1 presult = 3.991318052963507
+MIEF1 presult = 0.5852405426739535
+randpolicy presult = 3.7973220435606714
+
+Saved data to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/ErrorVsSourcesM_data.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsSourcesM.png
+---- ErrorVsSourcesM done in 211s ----
+
+---- ErrorVsTasks ----
+
+=== km = 3 ===
+MGF1 presult = 18.26988891194741
+MAF1 presult = 32.868816207459155
+MIEF1 presult = 19.654435726508105
+randpolicy presult = 399.8318438432522
+
+=== km = 6 ===
+MGF1 presult = 35.595921076300264
+MAF1 presult = 99.21810361019665
+MIEF1 presult = 39.23347312372319
+randpolicy presult = 1578.6464044119666
+
+=== km = 9 ===
+MGF1 presult = 67.2066513170129
+MAF1 presult = 525.2258732842337
+MIEF1 presult = 52.687604085991886
+randpolicy presult = 2629.83800655837
+
+=== km = 12 ===
+MGF1 presult = 82.29667713905808
+MAF1 presult = 2424.9061301514744
+MIEF1 presult = 69.49748865853797
+randpolicy presult = 3351.668259870671
+
+=== km = 15 ===
+MGF1 presult = 126.08326610778774
+MAF1 presult = 3292.6505057625623
+MIEF1 presult = 85.29032518801584
+randpolicy presult = 3816.1276245932177
+
+Saved data to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/ErrorVsTasks_data.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsTasks.png
+---- ErrorVsTasks done in 186s ----
+
+---- ErrorVsSources_variants ----
+ErrorVsSources_variants  (deterministic, method-selectable MGF)
+  TITER=1000, SEED=0, SOURCES=[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  SUBGRAD_METHOD=episode1_mstep  (from recommended_subgradient_methods.json)
+
+=== M = 2 ===
+  MGF_episode1_mstep=24.87 MAF=25.81 MIEF=24.67 Rand=967.4
+
+=== M = 4 ===
+  MGF_episode1_mstep=25.97 MAF=25.81 MIEF=24.67 Rand=918.9
+
+=== M = 6 ===
+  MGF_episode1_mstep=25.74 MAF=30.56 MIEF=24.78 Rand=957.1
+
+=== M = 8 ===
+  MGF_episode1_mstep=25.89 MAF=41.09 MIEF=25.12 Rand=965.3
+
+=== M = 10 ===
+  MGF_episode1_mstep=28.09 MAF=55.57 MIEF=29.07 Rand=977.9
+
+=== M = 12 ===
+  MGF_episode1_mstep=35.26 MAF=78.83 MIEF=35.24 Rand=1390
+
+=== M = 14 ===
+  MGF_episode1_mstep=50.02 MAF=120.2 MIEF=41.03 Rand=1750
+
+=== M = 16 ===
+  MGF_episode1_mstep=59.99 MAF=188.9 MIEF=45.29 Rand=2086
+
+=== M = 18 ===
+  MGF_episode1_mstep=69.78 MAF=310.5 MIEF=49.42 Rand=2295
+
+=== M = 20 ===
+  MGF_episode1_mstep=75.34 MAF=525.2 MIEF=52.69 Rand=2613
+
+Total runtime: 43.3s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/deterministic/ErrorVsSources_variants_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsSources_variants.png
+---- ErrorVsSources_variants done in 44s ----
+
+=== running comparison ===
+
+=== ErrorVsChannel ===
+  Random Policy:
+    Number of Channels          matlab          python     abs_err     rel_err
+        2         19.4528         19.4346      0.0183       0.09%
+        4         19.1921         19.1660      0.0261       0.14%
+        6         18.9822         18.9543      0.0279       0.15%
+        8         18.8185         18.7645      0.0539       0.29%
+       10         18.6429         18.6056      0.0373       0.20%
+       12         18.4797         18.4717      0.0081       0.04%
+       14         18.3033         18.3542      0.0509       0.28%
+       16         18.2302         18.2032      0.0270       0.15%
+       18         18.0812         18.0306      0.0507       0.28%
+       20         17.9564         17.9948      0.0384       0.21%
+  MAF Policy:
+    Number of Channels          matlab          python     abs_err     rel_err
+        2         19.3749         19.3749      0.0000       0.00%
+        4         19.0473         19.0473      0.0000       0.00%
+        6         18.7792         18.7792      0.0000       0.00%
+        8         18.5556         18.5556      0.0000       0.00%
+       10         18.4063         18.4063      0.0000       0.00%
+       12         18.2410         18.2410      0.0000       0.00%
+       14         18.1862         18.1862      0.0000       0.00%
+       16         17.9745         17.9745      0.0000       0.00%
+       18         17.8628         17.8628      0.0000       0.00%
+       20         17.8458         17.8458      0.0000       0.00%
+  MGF Policy:
+    Number of Channels          matlab          python     abs_err     rel_err
+        2         19.1767         19.1767      0.0000       0.00%
+        4         17.4252         17.4252      0.0000       0.00%
+        6         17.3803         17.3803      0.0000       0.00%
+        8         17.3183         17.3183      0.0000       0.00%
+       10         17.2967         17.2967      0.0000       0.00%
+       12         17.2561         17.2561      0.0000       0.00%
+       14         17.2460         17.2460      0.0000       0.00%
+       16         17.2176         17.2176      0.0000       0.00%
+       18         17.1994         17.1994      0.0000       0.00%
+       20         17.1795         17.1795      0.0000       0.00%
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsChannel_compare.png
+
+=== ErrorVsChannelsmodel ===
+  Random Policy:
+    channel          matlab          python     abs_err     rel_err
+        2       5664.3574       5619.9482     44.4092       0.78%
+        4       4690.5305       4645.0129     45.5176       0.97%
+        6       3902.0346       3820.3533     81.6813       2.09%
+        8       3233.5542       3193.8007     39.7535       1.23%
+       10       2623.4812       2584.7831     38.6981       1.48%
+       12       2148.8596       2154.7356      5.8760       0.27%
+       14       1736.4774       1774.8757     38.3984       2.21%
+       16       1478.0868       1477.8564      0.2304       0.02%
+       18       1190.9776       1187.8233      3.1543       0.26%
+       20       1034.5758        967.3055     67.2703       6.50%
+  MAF Policy:
+    channel          matlab          python     abs_err     rel_err
+        2       4732.8353       4732.8353      0.0000       0.00%
+        4       4732.8353       4839.5940    106.7587       2.26%
+        6       2887.9250       2887.9250      0.0000       0.00%
+        8       1126.5464       1126.5464      0.0000       0.00%
+       10        525.2259        525.2259      0.0000       0.00%
+       12        216.8814        216.8814      0.0000       0.00%
+       14        124.9422        124.9422      0.0000       0.00%
+       16         85.9278         85.9278      0.0000       0.00%
+       18         66.7473         66.7473      0.0000       0.00%
+       20         55.5671         55.5671      0.0000       0.00%
+  MGF Policy:
+    channel          matlab          python     abs_err     rel_err
+        2       1396.1003       1396.1003      0.0000       0.00%
+        4        474.9837        474.9837      0.0000       0.00%
+        6        129.3324        129.3324      0.0000       0.00%
+        8         99.5296         99.5297      0.0000       0.00%
+       10         67.2067         67.2067      0.0000       0.00%
+       12         48.0625         48.0625      0.0000       0.00%
+       14         40.8603         40.8297      0.0306       0.07%
+       16         35.1080         35.1080      0.0000       0.00%
+       18         31.1106         31.1106      0.0000       0.00%
+       20         28.7060         28.7060      0.0000       0.00%
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsChannelsmodel_compare.png
+
+=== ErrorVsSources ===
+  Random Policy:
+    Number of Sources          matlab          python     abs_err     rel_err
+        2       1055.4764        967.4173     88.0591       8.34%
+        4       1033.3852        918.9234    114.4619      11.08%
+        6        988.6464        957.0604     31.5861       3.19%
+        8        973.6933        965.3171      8.3762       0.86%
+       10        999.4670        977.9457     21.5213       2.15%
+       12       1377.4067       1389.6517     12.2450       0.89%
+       14       1723.0676       1749.9446     26.8769       1.56%
+       16       2064.4431       2086.1193     21.6762       1.05%
+       18       2238.1505       2294.5570     56.4066       2.52%
+       20       2605.9860       2613.2704      7.2844       0.28%
+  MAF Policy:
+    Number of Sources          matlab          python     abs_err     rel_err
+        2         25.8054         25.8054      0.0000       0.00%
+        4         25.8054         25.8054      0.0000       0.00%
+        6         30.5643         30.5643      0.0000       0.00%
+        8         41.0908         41.0908      0.0000       0.00%
+       10         55.5671         55.5671      0.0000       0.00%
+       12         78.8255         78.8255      0.0000       0.00%
+       14        120.2009        120.2009      0.0000       0.00%
+       16        188.9420        188.9420      0.0000       0.00%
+       18        310.5394        310.5394      0.0000       0.00%
+       20        525.2259        525.2259      0.0000       0.00%
+  MGF Policy:
+    Number of Sources          matlab          python     abs_err     rel_err
+        2         25.1000         26.1000      1.0000       3.98%
+        4         25.9503         26.9503      1.0000       3.85%
+        6         26.6291         26.6291      0.0000       0.00%
+        8         26.7381         26.7381      0.0000       0.00%
+       10         28.6017         28.6017      0.0000       0.00%
+       12         33.0676         33.0676      0.0000       0.00%
+       14         39.3656         39.3656      0.0000       0.00%
+       16         45.1216         45.1216      0.0000       0.00%
+       18         58.9852         58.9846      0.0006       0.00%
+       20         67.2067         67.2067      0.0000       0.00%
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsSources_compare.png
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsSourcesM_compare.png
+
+=== ErrorVsTasks ===
+  Random Policy:
+    Number of Tasks          matlab          python     abs_err     rel_err
+        3        180.7571        399.8318    219.0748     121.20%
+        6       1473.8525       1578.6464    104.7939       7.11%
+        9       2077.2835       2629.8380    552.5545      26.60%
+       12       3580.2699       3351.6683    228.6016       6.39%
+       15       4127.5188       3816.1276    311.3912       7.54%
+  MAF Policy:
+    Number of Tasks          matlab          python     abs_err     rel_err
+        3         32.8688         32.8688      0.0000       0.00%
+        6         99.2181         99.2181      0.0000       0.00%
+        9        525.2259        525.2259      0.0000       0.00%
+       12       2424.9061       2424.9061      0.0000       0.00%
+       15       3292.6505       3292.6505      0.0000       0.00%
+  MGF Policy:
+    Number of Tasks          matlab          python     abs_err     rel_err
+        3         18.2699         18.2699      0.0000       0.00%
+        6         35.5959         35.5959      0.0000       0.00%
+        9         67.2067         67.2067      0.0000       0.00%
+       12         82.2967         82.2967      0.0000       0.00%
+       15        126.0833        126.0833      0.0000       0.00%
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/ErrorVsTasks_compare.png
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/lossread_fig1_compare.png
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/lossread_fig2_compare.png
+  saved /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/deterministic/lossread_fig3_compare.png
+
+---- ExportExperimentParameters ----
+Exporting experiment parameters...
+  wrote params for ErrorVsChannel (deterministic)
+  wrote params for ErrorVsChannelsmodel (deterministic)
+  wrote params for ErrorVsSources (deterministic)
+  wrote params for ErrorVsTasks (deterministic)
+  wrote params for ErrorVsChannel_probabilistic (probabilistic)
+  wrote params for ErrorVsChannel_probabilistic_weights_1 (probabilistic)
+  wrote params for ErrorVsChannelsmodel_probabilistic (probabilistic)
+  wrote params for ErrorVsChannelsmodel_probabilistic_weights_1 (probabilistic)
+  wrote params for ErrorVsSources_probabilistic (probabilistic)
+  wrote params for ErrorVsSources_probabilistic_weights_1 (probabilistic)
+  wrote params for ErrorVsTasks_probabilistic (probabilistic)
+  wrote params for ErrorVsTasks_probabilistic_weights_1 (probabilistic)
+  wrote params for ErrorVsIterations_probabilistic (probabilistic)
+  wrote params for CompareSubgradientIterations_probabilistic (probabilistic)
+
+Wrote master index: /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/EXPERIMENT_PARAMETERS.md
+Per-experiment files under: data/deterministic/params/ and data/probabilistic/params/
+---- ExportExperimentParameters done in 0s ----
+=== DETERMINISTIC DONE Mon Jun  1 16:28:30 UTC 2026 ===
+=== run_all  (TITER=10000, SEED=0) ===
+
+  data outputs -> /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/[deterministic|probabilistic]/
+  plot outputs -> /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/[deterministic|probabilistic]/
+
+---- ErrorVsChannel_probabilistic ----
+
+========== weight mode: deterministic  ->  ErrorVsChannel_probabilistic ==========
+Running probabilistic ErrorVsChannel_probabilistic sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  N values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: deterministic  (w = 0.01 everywhere except w[0,1]=1 and w[4,0]=1 (two priority pairs; MATLAB w(1,2)=1, w(5,1)=1))
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  N=  2: MGF=18, MAF=19.5, MIEF=18, Random=19.6   (2.1s)
+  N=  4: MGF=18, MAF=19.3, MIEF=18, Random=19.4   (2.2s)
+  N=  6: MGF=18, MAF=19.1, MIEF=18, Random=19.2   (2.1s)
+  N=  8: MGF=18, MAF=18.9, MIEF=18, Random=19.1   (2.1s)
+  N= 10: MGF=18, MAF=18.8, MIEF=17.9, Random=19   (2.1s)
+  N= 12: MGF=18, MAF=18.6, MIEF=17.9, Random=18.8   (2.2s)
+  N= 14: MGF=17.9, MAF=18.5, MIEF=17.9, Random=18.7   (2.1s)
+  N= 16: MGF=17.9, MAF=18.5, MIEF=17.9, Random=18.6   (2.2s)
+  N= 18: MGF=17.9, MAF=18.4, MIEF=17.9, Random=18.6   (2.2s)
+  N= 20: MGF=17.9, MAF=18.3, MIEF=17.8, Random=18.5   (2.2s)
+
+--- profile: uniform_low ---
+  N=  2: MGF=18.2, MAF=19.5, MIEF=18.2, Random=19.6   (2.1s)
+  N=  4: MGF=18.2, MAF=19.4, MIEF=18.2, Random=19.5   (2.1s)
+  N=  6: MGF=18.2, MAF=19.1, MIEF=18.2, Random=19.3   (2.1s)
+  N=  8: MGF=18.2, MAF=19, MIEF=18.2, Random=19.2   (2.1s)
+  N= 10: MGF=18.2, MAF=18.9, MIEF=18.1, Random=19   (2.1s)
+  N= 12: MGF=18.2, MAF=18.8, MIEF=18.1, Random=18.9   (2.2s)
+  N= 14: MGF=18.2, MAF=18.6, MIEF=18.1, Random=18.8   (2.2s)
+  N= 16: MGF=18.1, MAF=18.6, MIEF=18.1, Random=18.7   (2.1s)
+  N= 18: MGF=18.1, MAF=18.5, MIEF=18.1, Random=18.7   (2.2s)
+  N= 20: MGF=18.1, MAF=18.4, MIEF=18.1, Random=18.6   (2.2s)
+
+--- profile: uniform_mid ---
+  N=  2: MGF=18, MAF=19.4, MIEF=18, Random=19.6   (2.1s)
+  N=  4: MGF=18, MAF=19.2, MIEF=17.9, Random=19.4   (2.1s)
+  N=  6: MGF=17.9, MAF=19, MIEF=17.9, Random=19.2   (2.1s)
+  N=  8: MGF=17.9, MAF=18.8, MIEF=17.9, Random=19.1   (2.2s)
+  N= 10: MGF=17.9, MAF=18.7, MIEF=17.9, Random=18.9   (2.1s)
+  N= 12: MGF=17.9, MAF=18.6, MIEF=17.8, Random=18.8   (2.1s)
+  N= 14: MGF=17.9, MAF=18.4, MIEF=17.8, Random=18.7   (2.1s)
+  N= 16: MGF=17.8, MAF=18.3, MIEF=17.8, Random=18.6   (2.2s)
+  N= 18: MGF=17.8, MAF=18.3, MIEF=17.8, Random=18.5   (2.1s)
+  N= 20: MGF=17.8, MAF=18.2, MIEF=17.7, Random=18.5   (2.1s)
+
+--- profile: uniform_very_wide ---
+  N=  2: MGF=18.2, MAF=19.5, MIEF=18.2, Random=19.6   (2.2s)
+  N=  4: MGF=18.2, MAF=19.3, MIEF=18.1, Random=19.5   (2.2s)
+  N=  6: MGF=18.2, MAF=19.2, MIEF=18.1, Random=19.3   (2.1s)
+  N=  8: MGF=18.1, MAF=19, MIEF=18.1, Random=19.2   (2.1s)
+  N= 10: MGF=18.1, MAF=18.9, MIEF=18.1, Random=19   (2.2s)
+  N= 12: MGF=18.1, MAF=18.8, MIEF=18.1, Random=18.9   (2.2s)
+  N= 14: MGF=18.1, MAF=18.6, MIEF=18, Random=18.8   (2.2s)
+  N= 16: MGF=18, MAF=18.5, MIEF=18, Random=18.7   (2.2s)
+  N= 18: MGF=18, MAF=18.5, MIEF=18, Random=18.7   (2.2s)
+  N= 20: MGF=18, MAF=18.4, MIEF=18, Random=18.6   (2.1s)
+
+--- profile: uniform_with_perfect_outliers ---
+  N=  2: MGF=17.8, MAF=19.5, MIEF=17.8, Random=19.6   (2.1s)
+  N=  4: MGF=17.8, MAF=19.3, MIEF=17.7, Random=19.4   (2.2s)
+  N=  6: MGF=17.7, MAF=19.1, MIEF=17.7, Random=19.2   (2.2s)
+  N=  8: MGF=17.7, MAF=18.9, MIEF=17.7, Random=19.1   (2.0s)
+  N= 10: MGF=17.7, MAF=18.7, MIEF=17.7, Random=18.9   (2.2s)
+  N= 12: MGF=17.7, MAF=18.6, MIEF=17.6, Random=18.7   (2.2s)
+  N= 14: MGF=17.7, MAF=18.5, MIEF=17.6, Random=18.6   (2.2s)
+  N= 16: MGF=17.7, MAF=18.4, MIEF=17.6, Random=18.5   (2.1s)
+  N= 18: MGF=17.6, MAF=18.3, MIEF=17.6, Random=18.4   (2.2s)
+  N= 20: MGF=17.6, MAF=18.2, MIEF=17.6, Random=18.4   (2.2s)
+
+--- profile: bimodal_extreme ---
+  N=  2: MGF=17.5, MAF=19.5, MIEF=17.5, Random=19.5   (2.1s)
+  N=  4: MGF=17.5, MAF=19.3, MIEF=17.4, Random=19.3   (2.1s)
+  N=  6: MGF=17.5, MAF=19.1, MIEF=17.4, Random=19   (2.1s)
+  N=  8: MGF=17.5, MAF=18.9, MIEF=17.4, Random=18.8   (2.2s)
+  N= 10: MGF=17.4, MAF=18.7, MIEF=17.4, Random=18.6   (2.1s)
+  N= 12: MGF=17.4, MAF=18.5, MIEF=17.4, Random=18.5   (2.1s)
+  N= 14: MGF=17.4, MAF=18.4, MIEF=17.3, Random=18.3   (2.2s)
+  N= 16: MGF=17.3, MAF=18.3, MIEF=17.3, Random=18.2   (2.2s)
+  N= 18: MGF=17.3, MAF=18.1, MIEF=17.3, Random=18.1   (2.1s)
+  N= 20: MGF=17.3, MAF=18, MIEF=17.3, Random=18   (2.2s)
+
+--- profile: bimodal_balanced ---
+  N=  2: MGF=18.1, MAF=19.6, MIEF=18.1, Random=19.5   (2.2s)
+  N=  4: MGF=18.1, MAF=19.4, MIEF=18, Random=19.3   (2.1s)
+  N=  6: MGF=18.1, MAF=19.2, MIEF=18, Random=19.1   (2.1s)
+  N=  8: MGF=18.1, MAF=19, MIEF=18, Random=19   (2.2s)
+  N= 10: MGF=18, MAF=18.8, MIEF=18, Random=18.8   (2.2s)
+  N= 12: MGF=18, MAF=18.7, MIEF=18, Random=18.7   (2.1s)
+  N= 14: MGF=18, MAF=18.6, MIEF=18, Random=18.6   (2.1s)
+  N= 16: MGF=18, MAF=18.5, MIEF=17.9, Random=18.5   (2.2s)
+  N= 18: MGF=17.9, MAF=18.4, MIEF=17.9, Random=18.5   (2.2s)
+  N= 20: MGF=17.9, MAF=18.3, MIEF=17.9, Random=18.4   (2.1s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  N=  2: MGF=18.2, MAF=19.6, MIEF=18.2, Random=19.6   (2.1s)
+  N=  4: MGF=18.2, MAF=19.4, MIEF=18.1, Random=19.4   (2.2s)
+  N=  6: MGF=18.2, MAF=19.2, MIEF=18.1, Random=19.2   (2.1s)
+  N=  8: MGF=18.1, MAF=19, MIEF=18.1, Random=19   (2.0s)
+  N= 10: MGF=18.1, MAF=18.9, MIEF=18.1, Random=18.9   (2.1s)
+  N= 12: MGF=18.1, MAF=18.8, MIEF=18, Random=18.7   (2.1s)
+  N= 14: MGF=18.1, MAF=18.7, MIEF=18, Random=18.7   (2.1s)
+  N= 16: MGF=18, MAF=18.5, MIEF=18, Random=18.6   (2.1s)
+  N= 18: MGF=18.1, MAF=18.5, MIEF=18, Random=18.5   (2.1s)
+  N= 20: MGF=18, MAF=18.4, MIEF=18, Random=18.5   (2.1s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  N=  2: MGF=17.5, MAF=19.5, MIEF=17.5, Random=19.5   (2.1s)
+  N=  4: MGF=17.5, MAF=19.2, MIEF=17.4, Random=19.2   (2.1s)
+  N=  6: MGF=17.5, MAF=19, MIEF=17.4, Random=19   (2.1s)
+  N=  8: MGF=17.4, MAF=18.8, MIEF=17.4, Random=18.8   (2.1s)
+  N= 10: MGF=17.4, MAF=18.6, MIEF=17.3, Random=18.6   (2.1s)
+  N= 12: MGF=17.4, MAF=18.4, MIEF=17.3, Random=18.4   (2.1s)
+  N= 14: MGF=17.4, MAF=18.3, MIEF=17.3, Random=18.3   (2.1s)
+  N= 16: MGF=17.3, MAF=18.2, MIEF=17.3, Random=18.2   (2.2s)
+  N= 18: MGF=17.3, MAF=18, MIEF=17.3, Random=18.1   (2.2s)
+  N= 20: MGF=17.3, MAF=17.9, MIEF=17.3, Random=18   (2.2s)
+
+--- profile: trimodal_perfect_mid_low ---
+  N=  2: MGF=17.6, MAF=19.5, MIEF=17.6, Random=19.6   (2.1s)
+  N=  4: MGF=17.7, MAF=19.3, MIEF=17.6, Random=19.4   (2.1s)
+  N=  6: MGF=17.6, MAF=19.1, MIEF=17.6, Random=19.1   (2.2s)
+  N=  8: MGF=17.6, MAF=18.9, MIEF=17.6, Random=19   (2.2s)
+  N= 10: MGF=17.6, MAF=18.8, MIEF=17.5, Random=18.8   (2.1s)
+  N= 12: MGF=17.6, MAF=18.6, MIEF=17.5, Random=18.7   (2.1s)
+  N= 14: MGF=17.6, MAF=18.5, MIEF=17.5, Random=18.5   (2.1s)
+  N= 16: MGF=17.5, MAF=18.4, MIEF=17.5, Random=18.4   (2.1s)
+  N= 18: MGF=17.5, MAF=18.3, MIEF=17.5, Random=18.4   (2.2s)
+  N= 20: MGF=17.5, MAF=18.1, MIEF=17.4, Random=18.3   (2.2s)
+
+--- profile: source_split_perfect_or_lossy ---
+  N=  2: MGF=18.3, MAF=19.5, MIEF=18.3, Random=19.6   (2.1s)
+  N=  4: MGF=18.3, MAF=19.3, MIEF=18.2, Random=19.5   (2.1s)
+  N=  6: MGF=18.3, MAF=19.1, MIEF=18.2, Random=19.3   (2.1s)
+  N=  8: MGF=18.3, MAF=19, MIEF=18.2, Random=19.2   (2.1s)
+  N= 10: MGF=18.2, MAF=18.8, MIEF=18.2, Random=19.1   (2.1s)
+  N= 12: MGF=18.2, MAF=18.7, MIEF=18.2, Random=18.9   (2.1s)
+  N= 14: MGF=18.2, MAF=18.6, MIEF=18.1, Random=18.8   (2.1s)
+  N= 16: MGF=18.2, MAF=18.5, MIEF=18.1, Random=18.8   (2.2s)
+  N= 18: MGF=18.1, MAF=18.4, MIEF=18.1, Random=18.7   (2.2s)
+  N= 20: MGF=18.1, MAF=18.4, MIEF=18.1, Random=18.7   (2.2s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  N=  2: MGF=17.5, MAF=19.4, MIEF=17.5, Random=19.5   (2.1s)
+  N=  4: MGF=17.5, MAF=19, MIEF=17.4, Random=19.2   (2.2s)
+  N=  6: MGF=17.5, MAF=18.8, MIEF=17.4, Random=19   (2.1s)
+  N=  8: MGF=17.4, MAF=18.6, MIEF=17.3, Random=18.8   (2.2s)
+  N= 10: MGF=17.4, MAF=18.4, MIEF=17.3, Random=18.6   (2.2s)
+  N= 12: MGF=17.4, MAF=18.2, MIEF=17.3, Random=18.4   (2.2s)
+  N= 14: MGF=17.3, MAF=18.2, MIEF=17.3, Random=18.3   (2.2s)
+  N= 16: MGF=17.4, MAF=18, MIEF=17.3, Random=18.2   (2.2s)
+  N= 18: MGF=17.3, MAF=17.9, MIEF=17.3, Random=18.1   (2.1s)
+  N= 20: MGF=17.3, MAF=17.8, MIEF=17.3, Random=18   (2.1s)
+
+Total runtime: 257.4s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannel_probabilistic_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannel_probabilistic_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsChannel_probabilistic.png
+
+========== weight mode: ones  ->  ErrorVsChannel_probabilistic_weights_1 ==========
+Running probabilistic ErrorVsChannel_probabilistic_weights_1 sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  N values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: ones  (w = 1 for every (source, task) pair  [weights_1])
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  N=  2: MGF=328, MAF=329, MIEF=329, Random=329   (2.1s)
+  N=  4: MGF=324, MAF=325, MIEF=327, Random=325   (2.1s)
+  N=  6: MGF=321, MAF=322, MIEF=324, Random=323   (2.1s)
+  N=  8: MGF=318, MAF=319, MIEF=322, Random=320   (2.1s)
+  N= 10: MGF=315, MAF=316, MIEF=320, Random=318   (2.1s)
+  N= 12: MGF=314, MAF=314, MIEF=318, Random=316   (2.1s)
+  N= 14: MGF=312, MAF=312, MIEF=316, Random=314   (2.1s)
+  N= 16: MGF=310, MAF=310, MIEF=314, Random=312   (2.1s)
+  N= 18: MGF=308, MAF=309, MIEF=312, Random=310   (2.1s)
+  N= 20: MGF=307, MAF=307, MIEF=310, Random=309   (2.2s)
+
+--- profile: uniform_low ---
+  N=  2: MGF=329, MAF=329, MIEF=329, Random=329   (2.1s)
+  N=  4: MGF=326, MAF=326, MIEF=327, Random=327   (2.1s)
+  N=  6: MGF=324, MAF=323, MIEF=325, Random=324   (2.0s)
+  N=  8: MGF=321, MAF=321, MIEF=323, Random=322   (2.0s)
+  N= 10: MGF=319, MAF=318, MIEF=322, Random=320   (2.0s)
+  N= 12: MGF=316, MAF=317, MIEF=320, Random=319   (2.1s)
+  N= 14: MGF=314, MAF=315, MIEF=318, Random=317   (2.1s)
+  N= 16: MGF=313, MAF=313, MIEF=316, Random=315   (2.1s)
+  N= 18: MGF=312, MAF=311, MIEF=315, Random=314   (2.1s)
+  N= 20: MGF=310, MAF=310, MIEF=313, Random=312   (2.1s)
+
+--- profile: uniform_mid ---
+  N=  2: MGF=329, MAF=328, MIEF=328, Random=329   (2.1s)
+  N=  4: MGF=325, MAF=324, MIEF=326, Random=325   (2.1s)
+  N=  6: MGF=321, MAF=321, MIEF=324, Random=322   (2.1s)
+  N=  8: MGF=318, MAF=318, MIEF=322, Random=320   (2.1s)
+  N= 10: MGF=316, MAF=315, MIEF=320, Random=317   (2.2s)
+  N= 12: MGF=313, MAF=313, MIEF=317, Random=315   (2.2s)
+  N= 14: MGF=310, MAF=311, MIEF=315, Random=313   (2.2s)
+  N= 16: MGF=309, MAF=309, MIEF=313, Random=311   (2.1s)
+  N= 18: MGF=308, MAF=307, MIEF=311, Random=310   (2.0s)
+  N= 20: MGF=307, MAF=306, MIEF=310, Random=308   (2.0s)
+
+--- profile: uniform_very_wide ---
+  N=  2: MGF=328, MAF=329, MIEF=329, Random=329   (2.1s)
+  N=  4: MGF=324, MAF=326, MIEF=327, Random=326   (2.1s)
+  N=  6: MGF=321, MAF=323, MIEF=324, Random=324   (2.1s)
+  N=  8: MGF=318, MAF=321, MIEF=322, Random=321   (2.1s)
+  N= 10: MGF=317, MAF=318, MIEF=320, Random=319   (2.1s)
+  N= 12: MGF=315, MAF=316, MIEF=318, Random=317   (2.1s)
+  N= 14: MGF=313, MAF=314, MIEF=317, Random=316   (2.1s)
+  N= 16: MGF=311, MAF=312, MIEF=315, Random=314   (2.1s)
+  N= 18: MGF=310, MAF=311, MIEF=313, Random=312   (2.1s)
+  N= 20: MGF=308, MAF=309, MIEF=311, Random=311   (2.2s)
+
+--- profile: uniform_with_perfect_outliers ---
+  N=  2: MGF=328, MAF=329, MIEF=329, Random=329   (2.1s)
+  N=  4: MGF=324, MAF=325, MIEF=327, Random=326   (2.1s)
+  N=  6: MGF=321, MAF=322, MIEF=324, Random=323   (2.1s)
+  N=  8: MGF=318, MAF=319, MIEF=322, Random=320   (2.0s)
+  N= 10: MGF=316, MAF=316, MIEF=320, Random=318   (2.0s)
+  N= 12: MGF=313, MAF=314, MIEF=318, Random=316   (2.1s)
+  N= 14: MGF=312, MAF=312, MIEF=316, Random=314   (2.1s)
+  N= 16: MGF=310, MAF=310, MIEF=315, Random=313   (2.1s)
+  N= 18: MGF=309, MAF=309, MIEF=313, Random=311   (2.1s)
+  N= 20: MGF=307, MAF=307, MIEF=311, Random=309   (2.1s)
+
+--- profile: bimodal_extreme ---
+  N=  2: MGF=329, MAF=330, MIEF=327, Random=328   (2.1s)
+  N=  4: MGF=323, MAF=326, MIEF=323, Random=325   (2.1s)
+  N=  6: MGF=320, MAF=322, MIEF=321, Random=322   (2.1s)
+  N=  8: MGF=317, MAF=319, MIEF=319, Random=319   (2.1s)
+  N= 10: MGF=315, MAF=316, MIEF=318, Random=317   (2.1s)
+  N= 12: MGF=313, MAF=314, MIEF=316, Random=315   (2.1s)
+  N= 14: MGF=311, MAF=312, MIEF=315, Random=313   (2.1s)
+  N= 16: MGF=309, MAF=310, MIEF=313, Random=311   (2.1s)
+  N= 18: MGF=307, MAF=308, MIEF=311, Random=310   (2.0s)
+  N= 20: MGF=305, MAF=307, MIEF=308, Random=308   (2.0s)
+
+--- profile: bimodal_balanced ---
+  N=  2: MGF=328, MAF=330, MIEF=327, Random=329   (2.0s)
+  N=  4: MGF=324, MAF=327, MIEF=324, Random=326   (2.1s)
+  N=  6: MGF=321, MAF=324, MIEF=322, Random=323   (2.1s)
+  N=  8: MGF=319, MAF=320, MIEF=321, Random=321   (2.1s)
+  N= 10: MGF=316, MAF=318, MIEF=320, Random=319   (2.1s)
+  N= 12: MGF=315, MAF=316, MIEF=318, Random=317   (2.1s)
+  N= 14: MGF=313, MAF=314, MIEF=316, Random=315   (2.1s)
+  N= 16: MGF=311, MAF=312, MIEF=314, Random=314   (2.1s)
+  N= 18: MGF=310, MAF=311, MIEF=312, Random=312   (2.1s)
+  N= 20: MGF=308, MAF=309, MIEF=310, Random=311   (2.2s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  N=  2: MGF=328, MAF=330, MIEF=328, Random=329   (2.1s)
+  N=  4: MGF=325, MAF=327, MIEF=326, Random=326   (2.2s)
+  N=  6: MGF=322, MAF=324, MIEF=325, Random=324   (2.2s)
+  N=  8: MGF=320, MAF=321, MIEF=323, Random=322   (2.1s)
+  N= 10: MGF=319, MAF=319, MIEF=321, Random=320   (2.0s)
+  N= 12: MGF=317, MAF=317, MIEF=318, Random=318   (2.1s)
+  N= 14: MGF=314, MAF=315, MIEF=316, Random=317   (2.4s)
+  N= 16: MGF=312, MAF=313, MIEF=315, Random=315   (2.1s)
+  N= 18: MGF=310, MAF=312, MIEF=313, Random=314   (2.1s)
+  N= 20: MGF=309, MAF=311, MIEF=312, Random=312   (2.2s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  N=  2: MGF=329, MAF=329, MIEF=326, Random=328   (2.1s)
+  N=  4: MGF=325, MAF=324, MIEF=322, Random=324   (2.1s)
+  N=  6: MGF=320, MAF=320, MIEF=320, Random=321   (2.1s)
+  N=  8: MGF=316, MAF=317, MIEF=319, Random=318   (2.1s)
+  N= 10: MGF=313, MAF=314, MIEF=318, Random=316   (2.1s)
+  N= 12: MGF=313, MAF=311, MIEF=317, Random=313   (2.1s)
+  N= 14: MGF=312, MAF=309, MIEF=316, Random=311   (2.1s)
+  N= 16: MGF=308, MAF=308, MIEF=312, Random=309   (2.1s)
+  N= 18: MGF=307, MAF=306, MIEF=310, Random=308   (2.1s)
+  N= 20: MGF=304, MAF=304, MIEF=308, Random=306   (2.0s)
+
+--- profile: trimodal_perfect_mid_low ---
+  N=  2: MGF=329, MAF=329, MIEF=327, Random=329   (2.0s)
+  N=  4: MGF=325, MAF=326, MIEF=326, Random=326   (2.1s)
+  N=  6: MGF=320, MAF=322, MIEF=325, Random=323   (2.1s)
+  N=  8: MGF=318, MAF=319, MIEF=322, Random=320   (2.1s)
+  N= 10: MGF=317, MAF=317, MIEF=320, Random=318   (2.1s)
+  N= 12: MGF=315, MAF=315, MIEF=318, Random=316   (2.1s)
+  N= 14: MGF=312, MAF=313, MIEF=316, Random=315   (2.1s)
+  N= 16: MGF=311, MAF=311, MIEF=313, Random=313   (2.1s)
+  N= 18: MGF=309, MAF=310, MIEF=312, Random=311   (2.1s)
+  N= 20: MGF=307, MAF=308, MIEF=310, Random=310   (2.1s)
+
+--- profile: source_split_perfect_or_lossy ---
+  N=  2: MGF=328, MAF=329, MIEF=327, Random=329   (2.1s)
+  N=  4: MGF=324, MAF=325, MIEF=325, Random=326   (2.1s)
+  N=  6: MGF=321, MAF=322, MIEF=324, Random=323   (2.1s)
+  N=  8: MGF=318, MAF=319, MIEF=323, Random=320   (2.1s)
+  N= 10: MGF=316, MAF=317, MIEF=320, Random=318   (2.0s)
+  N= 12: MGF=315, MAF=314, MIEF=318, Random=316   (2.0s)
+  N= 14: MGF=312, MAF=313, MIEF=316, Random=314   (2.1s)
+  N= 16: MGF=310, MAF=311, MIEF=314, Random=312   (2.1s)
+  N= 18: MGF=308, MAF=309, MIEF=311, Random=311   (2.1s)
+  N= 20: MGF=306, MAF=308, MIEF=310, Random=309   (2.1s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  N=  2: MGF=330, MAF=327, MIEF=326, Random=327   (2.1s)
+  N=  4: MGF=324, MAF=321, MIEF=321, Random=323   (2.1s)
+  N=  6: MGF=320, MAF=317, MIEF=318, Random=319   (2.1s)
+  N=  8: MGF=315, MAF=313, MIEF=316, Random=316   (2.1s)
+  N= 10: MGF=313, MAF=310, MIEF=314, Random=313   (2.1s)
+  N= 12: MGF=313, MAF=308, MIEF=313, Random=310   (2.1s)
+  N= 14: MGF=310, MAF=306, MIEF=312, Random=308   (2.2s)
+  N= 16: MGF=310, MAF=303, MIEF=311, Random=306   (2.2s)
+  N= 18: MGF=307, MAF=302, MIEF=310, Random=304   (2.2s)
+  N= 20: MGF=306, MAF=300, MIEF=310, Random=302   (2.0s)
+
+Total runtime: 252.6s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannel_probabilistic_weights_1_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannel_probabilistic_weights_1_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsChannel_probabilistic_weights_1.png
+---- ErrorVsChannel_probabilistic done in 524s ----
+
+---- ErrorVsChannelsmodel_probabilistic ----
+
+========== weight mode: deterministic  ->  ErrorVsChannelsmodel_probabilistic ==========
+Running probabilistic ErrorVsChannelsmodel_probabilistic sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  N values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: deterministic  (w = 1 for the first half of the sources (m+1 <= M/2), else w = 0.01)
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  N=  2: MGF=2.23e+03, MAF=5.56e+03, MIEF=1.77e+03, Random=5.86e+03   (4.3s)
+  N=  4: MGF=221, MAF=4.83e+03, MIEF=272, Random=5.13e+03   (4.4s)
+  N=  6: MGF=124, MAF=4.78e+03, MIEF=171, Random=4.48e+03   (4.4s)
+  N=  8: MGF=95.1, MAF=3.19e+03, MIEF=119, Random=3.86e+03   (4.4s)
+  N= 10: MGF=71.6, MAF=2.95e+03, MIEF=82.8, Random=3.43e+03   (4.5s)
+  N= 12: MGF=62.7, MAF=1.68e+03, MIEF=73.3, Random=3.04e+03   (4.5s)
+  N= 14: MGF=54.7, MAF=1.03e+03, MIEF=63.3, Random=2.65e+03   (4.5s)
+  N= 16: MGF=50.8, MAF=546, MIEF=57.7, Random=2.33e+03   (4.4s)
+  N= 18: MGF=45.8, MAF=350, MIEF=52.8, Random=2.02e+03   (4.3s)
+  N= 20: MGF=43, MAF=201, MIEF=49.9, Random=1.81e+03   (4.4s)
+
+--- profile: uniform_low ---
+  N=  2: MGF=2.65e+03, MAF=6.01e+03, MIEF=2.73e+03, Random=6.02e+03   (4.4s)
+  N=  4: MGF=307, MAF=4.85e+03, MIEF=636, Random=5.41e+03   (4.4s)
+  N=  6: MGF=161, MAF=4.9e+03, MIEF=233, Random=4.86e+03   (4.4s)
+  N=  8: MGF=117, MAF=4.24e+03, MIEF=151, Random=4.39e+03   (4.4s)
+  N= 10: MGF=92.6, MAF=3.3e+03, MIEF=108, Random=4.05e+03   (4.2s)
+  N= 12: MGF=75.5, MAF=3.05e+03, MIEF=96.9, Random=3.69e+03   (4.5s)
+  N= 14: MGF=66.8, MAF=1.83e+03, MIEF=82.5, Random=3.33e+03   (4.5s)
+  N= 16: MGF=62.1, MAF=1.35e+03, MIEF=74.1, Random=3.01e+03   (4.5s)
+  N= 18: MGF=55.9, MAF=906, MIEF=68.9, Random=2.69e+03   (4.5s)
+  N= 20: MGF=52.4, MAF=544, MIEF=62.8, Random=2.42e+03   (4.5s)
+
+--- profile: uniform_mid ---
+  N=  2: MGF=1.74e+03, MAF=5.32e+03, MIEF=1.59e+03, Random=5.81e+03   (4.5s)
+  N=  4: MGF=197, MAF=4.83e+03, MIEF=234, Random=5.09e+03   (4.4s)
+  N=  6: MGF=111, MAF=4.05e+03, MIEF=131, Random=4.43e+03   (4.3s)
+  N=  8: MGF=85, MAF=3e+03, MIEF=96.6, Random=3.79e+03   (4.3s)
+  N= 10: MGF=68.5, MAF=2.33e+03, MIEF=75.5, Random=3.36e+03   (4.4s)
+  N= 12: MGF=58.5, MAF=1.21e+03, MIEF=64.2, Random=2.91e+03   (4.5s)
+  N= 14: MGF=52.1, MAF=668, MIEF=56.1, Random=2.49e+03   (4.5s)
+  N= 16: MGF=47.6, MAF=330, MIEF=51.2, Random=2.19e+03   (4.5s)
+  N= 18: MGF=42.8, MAF=191, MIEF=46.1, Random=1.87e+03   (4.5s)
+  N= 20: MGF=40.4, MAF=133, MIEF=42.5, Random=1.63e+03   (4.5s)
+
+--- profile: uniform_very_wide ---
+  N=  2: MGF=2.89e+03, MAF=6.06e+03, MIEF=2.1e+03, Random=5.96e+03   (4.5s)
+  N=  4: MGF=378, MAF=4.84e+03, MIEF=424, Random=5.31e+03   (4.4s)
+  N=  6: MGF=169, MAF=4.93e+03, MIEF=236, Random=4.71e+03   (4.4s)
+  N=  8: MGF=123, MAF=4.36e+03, MIEF=158, Random=4.17e+03   (4.4s)
+  N= 10: MGF=96, MAF=3.32e+03, MIEF=123, Random=3.8e+03   (4.5s)
+  N= 12: MGF=77.3, MAF=2.95e+03, MIEF=106, Random=3.44e+03   (4.5s)
+  N= 14: MGF=69.4, MAF=1.8e+03, MIEF=98, Random=3.05e+03   (4.4s)
+  N= 16: MGF=63.9, MAF=1.27e+03, MIEF=91.1, Random=2.72e+03   (4.4s)
+  N= 18: MGF=59.1, MAF=955, MIEF=89.4, Random=2.41e+03   (4.5s)
+  N= 20: MGF=56, MAF=567, MIEF=80.6, Random=2.18e+03   (4.4s)
+
+--- profile: uniform_with_perfect_outliers ---
+  N=  2: MGF=2.17e+03, MAF=5.42e+03, MIEF=1.97e+03, Random=5.84e+03   (4.4s)
+  N=  4: MGF=223, MAF=4.82e+03, MIEF=359, Random=5.13e+03   (4.4s)
+  N=  6: MGF=131, MAF=4.85e+03, MIEF=183, Random=4.57e+03   (4.4s)
+  N=  8: MGF=96, MAF=3.15e+03, MIEF=108, Random=3.97e+03   (4.4s)
+  N= 10: MGF=74.4, MAF=2.95e+03, MIEF=88.9, Random=3.59e+03   (4.4s)
+  N= 12: MGF=64.1, MAF=1.62e+03, MIEF=75.4, Random=3.21e+03   (4.5s)
+  N= 14: MGF=56.5, MAF=1.14e+03, MIEF=65.5, Random=2.82e+03   (4.5s)
+  N= 16: MGF=51.9, MAF=573, MIEF=59.3, Random=2.48e+03   (4.5s)
+  N= 18: MGF=46.5, MAF=344, MIEF=56.9, Random=2.14e+03   (4.5s)
+  N= 20: MGF=43.7, MAF=200, MIEF=52, Random=1.92e+03   (4.5s)
+
+--- profile: bimodal_extreme ---
+  N=  2: MGF=2.44e+03, MAF=6.21e+03, MIEF=1.75e+03, Random=5.73e+03   (4.4s)
+  N=  4: MGF=339, MAF=4.9e+03, MIEF=420, Random=4.94e+03   (4.4s)
+  N=  6: MGF=162, MAF=4.88e+03, MIEF=203, Random=4.29e+03   (4.4s)
+  N=  8: MGF=118, MAF=3.63e+03, MIEF=137, Random=3.79e+03   (4.4s)
+  N= 10: MGF=100, MAF=3.11e+03, MIEF=121, Random=3.39e+03   (4.4s)
+  N= 12: MGF=86.9, MAF=2.71e+03, MIEF=105, Random=2.96e+03   (4.4s)
+  N= 14: MGF=76.6, MAF=1.58e+03, MIEF=95.2, Random=2.51e+03   (4.4s)
+  N= 16: MGF=66.4, MAF=1.02e+03, MIEF=91, Random=2.21e+03   (4.4s)
+  N= 18: MGF=61.7, MAF=591, MIEF=86.9, Random=1.96e+03   (4.4s)
+  N= 20: MGF=58.8, MAF=392, MIEF=86.4, Random=1.8e+03   (4.5s)
+
+--- profile: bimodal_balanced ---
+  N=  2: MGF=2.55e+03, MAF=5.99e+03, MIEF=2.27e+03, Random=5.88e+03   (4.4s)
+  N=  4: MGF=315, MAF=4.84e+03, MIEF=396, Random=5.18e+03   (4.4s)
+  N=  6: MGF=161, MAF=4.84e+03, MIEF=195, Random=4.65e+03   (4.4s)
+  N=  8: MGF=119, MAF=3.67e+03, MIEF=139, Random=4.14e+03   (4.4s)
+  N= 10: MGF=89.5, MAF=3.08e+03, MIEF=110, Random=3.79e+03   (4.4s)
+  N= 12: MGF=76.8, MAF=2.66e+03, MIEF=90.6, Random=3.41e+03   (4.4s)
+  N= 14: MGF=65.7, MAF=1.51e+03, MIEF=79.9, Random=3.02e+03   (4.4s)
+  N= 16: MGF=57.1, MAF=1.17e+03, MIEF=70.9, Random=2.71e+03   (4.5s)
+  N= 18: MGF=53.1, MAF=642, MIEF=62.7, Random=2.45e+03   (4.5s)
+  N= 20: MGF=49.3, MAF=386, MIEF=58.1, Random=2.26e+03   (4.4s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  N=  2: MGF=3.08e+03, MAF=6.61e+03, MIEF=2.66e+03, Random=6.02e+03   (4.4s)
+  N=  4: MGF=600, MAF=4.87e+03, MIEF=582, Random=5.4e+03   (4.4s)
+  N=  6: MGF=233, MAF=4.85e+03, MIEF=277, Random=4.91e+03   (4.5s)
+  N=  8: MGF=142, MAF=4.32e+03, MIEF=171, Random=4.49e+03   (4.5s)
+  N= 10: MGF=106, MAF=3.24e+03, MIEF=140, Random=4.1e+03   (4.5s)
+  N= 12: MGF=89.5, MAF=3.09e+03, MIEF=118, Random=3.77e+03   (4.5s)
+  N= 14: MGF=76.9, MAF=2.41e+03, MIEF=109, Random=3.34e+03   (4.5s)
+  N= 16: MGF=71.1, MAF=1.66e+03, MIEF=89.8, Random=3e+03   (4.5s)
+  N= 18: MGF=65.6, MAF=1.33e+03, MIEF=82.3, Random=2.76e+03   (4.5s)
+  N= 20: MGF=60.7, MAF=803, MIEF=78.4, Random=2.53e+03   (4.5s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  N=  2: MGF=1.84e+03, MAF=5.42e+03, MIEF=1.37e+03, Random=5.68e+03   (4.4s)
+  N=  4: MGF=234, MAF=4.83e+03, MIEF=259, Random=4.88e+03   (4.4s)
+  N=  6: MGF=120, MAF=4.19e+03, MIEF=146, Random=4.17e+03   (4.4s)
+  N=  8: MGF=91.2, MAF=3.06e+03, MIEF=103, Random=3.63e+03   (4.4s)
+  N= 10: MGF=74.9, MAF=2.73e+03, MIEF=83.5, Random=3.18e+03   (4.4s)
+  N= 12: MGF=58.6, MAF=1.34e+03, MIEF=74.8, Random=2.74e+03   (4.4s)
+  N= 14: MGF=53, MAF=863, MIEF=70.2, Random=2.32e+03   (4.4s)
+  N= 16: MGF=47.4, MAF=407, MIEF=64.1, Random=1.98e+03   (4.4s)
+  N= 18: MGF=43.8, MAF=245, MIEF=59.6, Random=1.72e+03   (4.4s)
+  N= 20: MGF=41.2, MAF=160, MIEF=47.5, Random=1.56e+03   (4.4s)
+
+--- profile: trimodal_perfect_mid_low ---
+  N=  2: MGF=3.11e+03, MAF=6.34e+03, MIEF=2.12e+03, Random=5.94e+03   (4.4s)
+  N=  4: MGF=454, MAF=4.87e+03, MIEF=423, Random=5.28e+03   (4.5s)
+  N=  6: MGF=167, MAF=4.86e+03, MIEF=218, Random=4.72e+03   (4.4s)
+  N=  8: MGF=116, MAF=3.73e+03, MIEF=148, Random=4.12e+03   (4.4s)
+  N= 10: MGF=95.3, MAF=3.15e+03, MIEF=116, Random=3.74e+03   (4.4s)
+  N= 12: MGF=80.2, MAF=2.77e+03, MIEF=101, Random=3.39e+03   (4.4s)
+  N= 14: MGF=70.1, MAF=1.61e+03, MIEF=93.2, Random=2.99e+03   (4.4s)
+  N= 16: MGF=62, MAF=1.2e+03, MIEF=86.4, Random=2.71e+03   (4.4s)
+  N= 18: MGF=57.4, MAF=642, MIEF=76.6, Random=2.45e+03   (4.5s)
+  N= 20: MGF=54, MAF=415, MIEF=68.7, Random=2.22e+03   (4.4s)
+
+--- profile: source_split_perfect_or_lossy ---
+  N=  2: MGF=2.7e+03, MAF=5.97e+03, MIEF=2.19e+03, Random=5.81e+03   (4.4s)
+  N=  4: MGF=315, MAF=4.87e+03, MIEF=438, Random=5.19e+03   (4.4s)
+  N=  6: MGF=149, MAF=4.69e+03, MIEF=202, Random=4.59e+03   (4.4s)
+  N=  8: MGF=109, MAF=3.32e+03, MIEF=141, Random=4.16e+03   (4.4s)
+  N= 10: MGF=86.4, MAF=3.09e+03, MIEF=105, Random=3.74e+03   (4.4s)
+  N= 12: MGF=73.3, MAF=1.91e+03, MIEF=94.3, Random=3.35e+03   (4.4s)
+  N= 14: MGF=65.8, MAF=1.25e+03, MIEF=82, Random=2.96e+03   (4.4s)
+  N= 16: MGF=60.3, MAF=697, MIEF=76, Random=2.66e+03   (4.4s)
+  N= 18: MGF=54.6, MAF=410, MIEF=71.3, Random=2.37e+03   (4.4s)
+  N= 20: MGF=52.8, MAF=245, MIEF=67.3, Random=2.14e+03   (4.4s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  N=  2: MGF=557, MAF=4.73e+03, MIEF=497, Random=5.47e+03   (4.3s)
+  N=  4: MGF=145, MAF=4.84e+03, MIEF=131, Random=4.48e+03   (4.3s)
+  N=  6: MGF=83.8, MAF=3.87e+03, MIEF=85.3, Random=3.69e+03   (4.3s)
+  N=  8: MGF=75.9, MAF=3.04e+03, MIEF=64.8, Random=2.95e+03   (4.3s)
+  N= 10: MGF=59, MAF=2.62e+03, MIEF=52.5, Random=2.49e+03   (4.3s)
+  N= 12: MGF=47.3, MAF=1.26e+03, MIEF=47.8, Random=2.04e+03   (4.3s)
+  N= 14: MGF=47.7, MAF=916, MIEF=43, Random=1.63e+03   (4.3s)
+  N= 16: MGF=41.8, MAF=502, MIEF=39.7, Random=1.37e+03   (4.3s)
+  N= 18: MGF=38.1, MAF=248, MIEF=37.1, Random=1.07e+03   (4.4s)
+  N= 20: MGF=35.5, MAF=159, MIEF=34.3, Random=902   (4.3s)
+
+Total runtime: 530.3s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannelsmodel_probabilistic_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannelsmodel_probabilistic_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsChannelsmodel_probabilistic.png
+
+========== weight mode: ones  ->  ErrorVsChannelsmodel_probabilistic_weights_1 ==========
+Running probabilistic ErrorVsChannelsmodel_probabilistic_weights_1 sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  N values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: ones  (w = 1 for every (source, task) pair  [weights_1])
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  N=  2: MGF=8.35e+03, MAF=1.21e+04, MIEF=7.65e+03, Random=1.18e+04   (4.3s)
+  N=  4: MGF=3.72e+03, MAF=9.54e+03, MIEF=3.37e+03, Random=1.02e+04   (4.1s)
+  N=  6: MGF=826, MAF=9.53e+03, MIEF=1.06e+03, Random=8.99e+03   (4.4s)
+  N=  8: MGF=292, MAF=6.55e+03, MIEF=404, Random=7.78e+03   (4.4s)
+  N= 10: MGF=187, MAF=5.89e+03, MIEF=246, Random=6.84e+03   (4.4s)
+  N= 12: MGF=149, MAF=3.83e+03, MIEF=202, Random=5.95e+03   (4.5s)
+  N= 14: MGF=138, MAF=2.05e+03, MIEF=177, Random=5.26e+03   (4.5s)
+  N= 16: MGF=123, MAF=1.06e+03, MIEF=145, Random=4.69e+03   (4.5s)
+  N= 18: MGF=117, MAF=688, MIEF=134, Random=4.05e+03   (4.5s)
+  N= 20: MGF=110, MAF=395, MIEF=125, Random=3.62e+03   (4.5s)
+
+--- profile: uniform_low ---
+  N=  2: MGF=9.75e+03, MAF=1.26e+04, MIEF=8.99e+03, Random=1.2e+04   (4.4s)
+  N=  4: MGF=5.07e+03, MAF=9.78e+03, MIEF=5.66e+03, Random=1.08e+04   (4.4s)
+  N=  6: MGF=1.8e+03, MAF=9.64e+03, MIEF=2.32e+03, Random=9.68e+03   (4.4s)
+  N=  8: MGF=490, MAF=8.76e+03, MIEF=988, Random=8.72e+03   (4.4s)
+  N= 10: MGF=299, MAF=6.79e+03, MIEF=450, Random=7.9e+03   (4.4s)
+  N= 12: MGF=208, MAF=6.07e+03, MIEF=298, Random=7.13e+03   (4.5s)
+  N= 14: MGF=170, MAF=4.18e+03, MIEF=233, Random=6.5e+03   (4.5s)
+  N= 16: MGF=151, MAF=2.77e+03, MIEF=188, Random=5.96e+03   (4.5s)
+  N= 18: MGF=137, MAF=1.82e+03, MIEF=162, Random=5.32e+03   (4.5s)
+  N= 20: MGF=131, MAF=1.06e+03, MIEF=153, Random=4.8e+03   (4.6s)
+
+--- profile: uniform_mid ---
+  N=  2: MGF=8.26e+03, MAF=1.18e+04, MIEF=8.1e+03, Random=1.17e+04   (4.4s)
+  N=  4: MGF=3.13e+03, MAF=9.52e+03, MIEF=3.16e+03, Random=1.01e+04   (4.3s)
+  N=  6: MGF=436, MAF=8.73e+03, MIEF=799, Random=8.85e+03   (4.4s)
+  N=  8: MGF=216, MAF=5.99e+03, MIEF=311, Random=7.61e+03   (4.4s)
+  N= 10: MGF=158, MAF=5.14e+03, MIEF=203, Random=6.65e+03   (4.4s)
+  N= 12: MGF=155, MAF=2.48e+03, MIEF=168, Random=5.74e+03   (4.5s)
+  N= 14: MGF=128, MAF=1.32e+03, MIEF=146, Random=5.04e+03   (4.4s)
+  N= 16: MGF=119, MAF=656, MIEF=132, Random=4.49e+03   (4.5s)
+  N= 18: MGF=112, MAF=377, MIEF=121, Random=3.84e+03   (4.5s)
+  N= 20: MGF=108, MAF=267, MIEF=114, Random=3.36e+03   (4.5s)
+
+--- profile: uniform_very_wide ---
+  N=  2: MGF=9.08e+03, MAF=1.27e+04, MIEF=7.72e+03, Random=1.19e+04   (4.4s)
+  N=  4: MGF=4.86e+03, MAF=9.73e+03, MIEF=4.23e+03, Random=1.05e+04   (4.4s)
+  N=  6: MGF=1.64e+03, MAF=9.68e+03, MIEF=1.63e+03, Random=9.32e+03   (4.4s)
+  N=  8: MGF=481, MAF=8.94e+03, MIEF=610, Random=8.26e+03   (4.4s)
+  N= 10: MGF=246, MAF=6.79e+03, MIEF=347, Random=7.4e+03   (4.4s)
+  N= 12: MGF=197, MAF=5.92e+03, MIEF=292, Random=6.59e+03   (4.4s)
+  N= 14: MGF=164, MAF=4.03e+03, MIEF=241, Random=5.9e+03   (4.5s)
+  N= 16: MGF=147, MAF=2.6e+03, MIEF=210, Random=5.34e+03   (4.5s)
+  N= 18: MGF=135, MAF=1.84e+03, MIEF=196, Random=4.71e+03   (4.5s)
+  N= 20: MGF=129, MAF=1.09e+03, MIEF=174, Random=4.26e+03   (4.5s)
+
+--- profile: uniform_with_perfect_outliers ---
+  N=  2: MGF=8.51e+03, MAF=1.2e+04, MIEF=7.98e+03, Random=1.18e+04   (4.4s)
+  N=  4: MGF=4.38e+03, MAF=9.55e+03, MIEF=3.96e+03, Random=1.03e+04   (4.4s)
+  N=  6: MGF=779, MAF=9.59e+03, MIEF=1.33e+03, Random=9.15e+03   (4.4s)
+  N=  8: MGF=275, MAF=6.45e+03, MIEF=498, Random=7.98e+03   (4.3s)
+  N= 10: MGF=192, MAF=5.91e+03, MIEF=285, Random=7.04e+03   (4.4s)
+  N= 12: MGF=161, MAF=3.76e+03, MIEF=222, Random=6.22e+03   (4.4s)
+  N= 14: MGF=143, MAF=2.27e+03, MIEF=195, Random=5.54e+03   (4.5s)
+  N= 16: MGF=128, MAF=1.12e+03, MIEF=154, Random=4.97e+03   (4.5s)
+  N= 18: MGF=121, MAF=690, MIEF=140, Random=4.27e+03   (4.4s)
+  N= 20: MGF=114, MAF=397, MIEF=129, Random=3.83e+03   (4.5s)
+
+--- profile: bimodal_extreme ---
+  N=  2: MGF=9.34e+03, MAF=1.28e+04, MIEF=6.8e+03, Random=1.16e+04   (4.4s)
+  N=  4: MGF=5.74e+03, MAF=9.97e+03, MIEF=3.92e+03, Random=1.01e+04   (4.4s)
+  N=  6: MGF=2.29e+03, MAF=9.64e+03, MIEF=2.06e+03, Random=8.89e+03   (4.4s)
+  N=  8: MGF=796, MAF=7.85e+03, MIEF=889, Random=7.85e+03   (4.4s)
+  N= 10: MGF=348, MAF=6.3e+03, MIEF=506, Random=6.99e+03   (4.4s)
+  N= 12: MGF=252, MAF=5.68e+03, MIEF=366, Random=6.19e+03   (4.4s)
+  N= 14: MGF=199, MAF=3.45e+03, MIEF=307, Random=5.4e+03   (4.4s)
+  N= 16: MGF=176, MAF=2.15e+03, MIEF=272, Random=4.92e+03   (4.5s)
+  N= 18: MGF=164, MAF=1.28e+03, MIEF=256, Random=4.41e+03   (4.6s)
+  N= 20: MGF=157, MAF=949, MIEF=243, Random=4e+03   (4.6s)
+
+--- profile: bimodal_balanced ---
+  N=  2: MGF=9.04e+03, MAF=1.26e+04, MIEF=7.55e+03, Random=1.18e+04   (4.4s)
+  N=  4: MGF=5.06e+03, MAF=9.73e+03, MIEF=4.62e+03, Random=1.04e+04   (4.4s)
+  N=  6: MGF=1.78e+03, MAF=9.56e+03, MIEF=2.09e+03, Random=9.25e+03   (4.4s)
+  N=  8: MGF=740, MAF=7.91e+03, MIEF=732, Random=8.27e+03   (4.4s)
+  N= 10: MGF=292, MAF=6.16e+03, MIEF=379, Random=7.46e+03   (4.4s)
+  N= 12: MGF=214, MAF=5.55e+03, MIEF=288, Random=6.73e+03   (4.4s)
+  N= 14: MGF=173, MAF=3.37e+03, MIEF=233, Random=6.01e+03   (4.5s)
+  N= 16: MGF=155, MAF=2.35e+03, MIEF=208, Random=5.45e+03   (4.5s)
+  N= 18: MGF=138, MAF=1.32e+03, MIEF=189, Random=4.89e+03   (4.5s)
+  N= 20: MGF=133, MAF=867, MIEF=176, Random=4.45e+03   (4.5s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  N=  2: MGF=9.7e+03, MAF=1.32e+04, MIEF=8.59e+03, Random=1.21e+04   (4.3s)
+  N=  4: MGF=6.34e+03, MAF=9.94e+03, MIEF=5.99e+03, Random=1.08e+04   (4.4s)
+  N=  6: MGF=3.67e+03, MAF=9.58e+03, MIEF=3.66e+03, Random=9.75e+03   (4.4s)
+  N=  8: MGF=1.23e+03, MAF=9.04e+03, MIEF=1.44e+03, Random=8.93e+03   (4.4s)
+  N= 10: MGF=522, MAF=6.83e+03, MIEF=732, Random=8.18e+03   (4.4s)
+  N= 12: MGF=308, MAF=6.19e+03, MIEF=465, Random=7.52e+03   (4.4s)
+  N= 14: MGF=233, MAF=5.27e+03, MIEF=355, Random=6.8e+03   (4.4s)
+  N= 16: MGF=200, MAF=3.66e+03, MIEF=256, Random=6.23e+03   (4.4s)
+  N= 18: MGF=174, MAF=2.66e+03, MIEF=234, Random=5.68e+03   (4.4s)
+  N= 20: MGF=164, MAF=1.69e+03, MIEF=221, Random=5.22e+03   (4.5s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  N=  2: MGF=8.64e+03, MAF=1.19e+04, MIEF=6.48e+03, Random=1.15e+04   (4.4s)
+  N=  4: MGF=4.51e+03, MAF=9.54e+03, MIEF=3.06e+03, Random=9.87e+03   (4.4s)
+  N=  6: MGF=843, MAF=8.93e+03, MIEF=873, Random=8.43e+03   (4.4s)
+  N=  8: MGF=331, MAF=6.1e+03, MIEF=390, Random=7.33e+03   (4.3s)
+  N= 10: MGF=209, MAF=5.65e+03, MIEF=263, Random=6.36e+03   (4.3s)
+  N= 12: MGF=154, MAF=2.89e+03, MIEF=188, Random=5.58e+03   (4.4s)
+  N= 14: MGF=143, MAF=1.75e+03, MIEF=169, Random=4.81e+03   (4.5s)
+  N= 16: MGF=131, MAF=853, MIEF=153, Random=4.22e+03   (4.5s)
+  N= 18: MGF=125, MAF=501, MIEF=140, Random=3.66e+03   (4.4s)
+  N= 20: MGF=111, MAF=334, MIEF=134, Random=3.28e+03   (4.5s)
+
+--- profile: trimodal_perfect_mid_low ---
+  N=  2: MGF=9.21e+03, MAF=1.3e+04, MIEF=7.63e+03, Random=1.18e+04   (4.4s)
+  N=  4: MGF=6.08e+03, MAF=9.83e+03, MIEF=4.17e+03, Random=1.04e+04   (4.4s)
+  N=  6: MGF=2.42e+03, MAF=9.58e+03, MIEF=2.2e+03, Random=9.28e+03   (4.4s)
+  N=  8: MGF=614, MAF=8.03e+03, MIEF=639, Random=8.15e+03   (4.3s)
+  N= 10: MGF=284, MAF=6.38e+03, MIEF=421, Random=7.37e+03   (4.4s)
+  N= 12: MGF=223, MAF=5.7e+03, MIEF=308, Random=6.6e+03   (4.4s)
+  N= 14: MGF=176, MAF=3.61e+03, MIEF=246, Random=5.92e+03   (4.5s)
+  N= 16: MGF=153, MAF=2.37e+03, MIEF=213, Random=5.41e+03   (4.5s)
+  N= 18: MGF=144, MAF=1.32e+03, MIEF=194, Random=4.83e+03   (4.4s)
+  N= 20: MGF=135, MAF=870, MIEF=175, Random=4.37e+03   (4.5s)
+
+--- profile: source_split_perfect_or_lossy ---
+  N=  2: MGF=9.26e+03, MAF=1.26e+04, MIEF=7.36e+03, Random=1.16e+04   (4.4s)
+  N=  4: MGF=5.35e+03, MAF=9.8e+03, MIEF=3.57e+03, Random=1.02e+04   (4.4s)
+  N=  6: MGF=1.47e+03, MAF=9.39e+03, MIEF=1.46e+03, Random=8.89e+03   (4.4s)
+  N=  8: MGF=393, MAF=6.95e+03, MIEF=485, Random=7.93e+03   (4.5s)
+  N= 10: MGF=228, MAF=6.07e+03, MIEF=310, Random=7.08e+03   (4.4s)
+  N= 12: MGF=166, MAF=4.26e+03, MIEF=235, Random=6.27e+03   (4.4s)
+  N= 14: MGF=150, MAF=2.45e+03, MIEF=210, Random=5.58e+03   (4.4s)
+  N= 16: MGF=141, MAF=1.34e+03, MIEF=191, Random=5.05e+03   (4.4s)
+  N= 18: MGF=133, MAF=799, MIEF=163, Random=4.48e+03   (4.4s)
+  N= 20: MGF=125, MAF=491, MIEF=154, Random=4.02e+03   (4.5s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  N=  2: MGF=6.91e+03, MAF=9.56e+03, MIEF=6.42e+03, Random=1.11e+04   (4.4s)
+  N=  4: MGF=1.56e+03, MAF=9.52e+03, MIEF=861, Random=9.07e+03   (4.4s)
+  N=  6: MGF=273, MAF=7.97e+03, MIEF=249, Random=7.41e+03   (4.4s)
+  N=  8: MGF=158, MAF=6.07e+03, MIEF=168, Random=6.03e+03   (4.3s)
+  N= 10: MGF=143, MAF=5.42e+03, MIEF=139, Random=5e+03   (4.3s)
+  N= 12: MGF=144, MAF=2.62e+03, MIEF=124, Random=4.07e+03   (4.3s)
+  N= 14: MGF=118, MAF=1.81e+03, MIEF=114, Random=3.38e+03   (4.4s)
+  N= 16: MGF=108, MAF=989, MIEF=104, Random=2.89e+03   (4.3s)
+  N= 18: MGF=100, MAF=501, MIEF=95.1, Random=2.3e+03   (4.4s)
+  N= 20: MGF=94.3, MAF=328, MIEF=88.6, Random=1.87e+03   (4.4s)
+
+Total runtime: 531.5s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannelsmodel_probabilistic_weights_1_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsChannelsmodel_probabilistic_weights_1_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsChannelsmodel_probabilistic_weights_1.png
+---- ErrorVsChannelsmodel_probabilistic done in 1092s ----
+
+---- ErrorVsSources_probabilistic ----
+
+========== weight mode: deterministic  ->  ErrorVsSources_probabilistic ==========
+Running probabilistic ErrorVsSources_probabilistic sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  M values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: deterministic  (w = 1 for the first half of the sources (m+1 <= M/2), else w = 0.01)
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  M=  2: MGF=36.9, MAF=44.5, MIEF=40, Random=447   (1.7s)
+  M=  4: MGF=38.5, MAF=49.1, MIEF=41.2, Random=536   (2.0s)
+  M=  6: MGF=38, MAF=60.4, MIEF=40.9, Random=1.26e+03   (2.3s)
+  M=  8: MGF=40.9, MAF=107, MIEF=51.7, Random=1.33e+03   (2.6s)
+  M= 10: MGF=42.4, MAF=212, MIEF=47, Random=2.13e+03   (2.9s)
+  M= 12: MGF=48.2, MAF=477, MIEF=55.1, Random=2.72e+03   (3.2s)
+  M= 14: MGF=54.9, MAF=981, MIEF=64.6, Random=2.55e+03   (3.5s)
+  M= 16: MGF=59.3, MAF=1.35e+03, MIEF=70.5, Random=3.06e+03   (3.9s)
+  M= 18: MGF=67.1, MAF=2.14e+03, MIEF=72.7, Random=3.21e+03   (4.2s)
+  M= 20: MGF=71.6, MAF=2.95e+03, MIEF=82.8, Random=3.43e+03   (4.4s)
+
+--- profile: uniform_low ---
+  M=  2: MGF=43.3, MAF=64.5, MIEF=49.7, Random=633   (1.7s)
+  M=  4: MGF=45.1, MAF=78.3, MIEF=48.5, Random=827   (2.0s)
+  M=  6: MGF=48.8, MAF=119, MIEF=52.1, Random=1.77e+03   (2.2s)
+  M=  8: MGF=53.3, MAF=227, MIEF=64.2, Random=2.02e+03   (2.5s)
+  M= 10: MGF=52.1, MAF=560, MIEF=60.4, Random=2.74e+03   (2.9s)
+  M= 12: MGF=59.5, MAF=1.2e+03, MIEF=72.7, Random=3.2e+03   (3.2s)
+  M= 14: MGF=68.5, MAF=1.8e+03, MIEF=84.1, Random=3.18e+03   (3.5s)
+  M= 16: MGF=75.8, MAF=2.66e+03, MIEF=88.3, Random=3.63e+03   (3.9s)
+  M= 18: MGF=82.7, MAF=3.11e+03, MIEF=96.9, Random=3.68e+03   (4.2s)
+  M= 20: MGF=92.6, MAF=3.3e+03, MIEF=108, Random=4.05e+03   (4.4s)
+
+--- profile: uniform_mid ---
+  M=  2: MGF=35.3, MAF=39.4, MIEF=36.2, Random=323   (1.7s)
+  M=  4: MGF=34.8, MAF=40.1, MIEF=35.4, Random=364   (2.0s)
+  M=  6: MGF=36.1, MAF=49.7, MIEF=35.8, Random=1.06e+03   (2.2s)
+  M=  8: MGF=36.3, MAF=75.8, MIEF=37.5, Random=1.13e+03   (2.5s)
+  M= 10: MGF=40.5, MAF=137, MIEF=43.4, Random=2.1e+03   (2.9s)
+  M= 12: MGF=45.8, MAF=255, MIEF=49.4, Random=2.5e+03   (3.2s)
+  M= 14: MGF=51.3, MAF=547, MIEF=56, Random=2.38e+03   (3.5s)
+  M= 16: MGF=56.7, MAF=1.06e+03, MIEF=66, Random=2.93e+03   (3.8s)
+  M= 18: MGF=60.7, MAF=1.41e+03, MIEF=67.2, Random=3.14e+03   (4.1s)
+  M= 20: MGF=68.5, MAF=2.33e+03, MIEF=75.5, Random=3.36e+03   (4.4s)
+
+--- profile: uniform_very_wide ---
+  M=  2: MGF=42.4, MAF=84.7, MIEF=45.7, Random=594   (1.8s)
+  M=  4: MGF=48.6, MAF=103, MIEF=79.9, Random=846   (2.0s)
+  M=  6: MGF=56.9, MAF=126, MIEF=107, Random=1.45e+03   (2.2s)
+  M=  8: MGF=58.7, MAF=279, MIEF=76.1, Random=1.64e+03   (2.5s)
+  M= 10: MGF=53.3, MAF=565, MIEF=63.4, Random=2.41e+03   (2.9s)
+  M= 12: MGF=63, MAF=1.19e+03, MIEF=72.8, Random=2.96e+03   (3.3s)
+  M= 14: MGF=64.1, MAF=1.57e+03, MIEF=78.7, Random=2.8e+03   (3.5s)
+  M= 16: MGF=82.7, MAF=2.44e+03, MIEF=99.9, Random=3.31e+03   (3.8s)
+  M= 18: MGF=84.4, MAF=3.14e+03, MIEF=112, Random=3.43e+03   (4.1s)
+  M= 20: MGF=96, MAF=3.32e+03, MIEF=123, Random=3.8e+03   (4.4s)
+
+--- profile: uniform_with_perfect_outliers ---
+  M=  2: MGF=34.5, MAF=41.4, MIEF=38.8, Random=497   (1.7s)
+  M=  4: MGF=40.1, MAF=51.3, MIEF=41.7, Random=609   (2.0s)
+  M=  6: MGF=38.8, MAF=64.5, MIEF=42.4, Random=1.42e+03   (2.3s)
+  M=  8: MGF=42.9, MAF=114, MIEF=52.2, Random=1.51e+03   (2.5s)
+  M= 10: MGF=43.9, MAF=236, MIEF=49.9, Random=2.5e+03   (2.8s)
+  M= 12: MGF=49.4, MAF=446, MIEF=56.2, Random=2.84e+03   (3.2s)
+  M= 14: MGF=57.2, MAF=1.09e+03, MIEF=66.1, Random=2.75e+03   (3.5s)
+  M= 16: MGF=60, MAF=1.45e+03, MIEF=69.8, Random=3.08e+03   (3.8s)
+  M= 18: MGF=67.3, MAF=2.3e+03, MIEF=76.3, Random=3.26e+03   (4.1s)
+  M= 20: MGF=74.4, MAF=2.95e+03, MIEF=88.9, Random=3.59e+03   (4.4s)
+
+--- profile: bimodal_extreme ---
+  M=  2: MGF=98.3, MAF=257, MIEF=193, Random=1.43e+03   (1.8s)
+  M=  4: MGF=79.6, MAF=191, MIEF=119, Random=1.61e+03   (2.0s)
+  M=  6: MGF=58.6, MAF=124, MIEF=69.1, Random=1.66e+03   (2.3s)
+  M=  8: MGF=60.9, MAF=152, MIEF=83.3, Random=1.55e+03   (2.5s)
+  M= 10: MGF=51.2, MAF=358, MIEF=61.4, Random=2.19e+03   (2.8s)
+  M= 12: MGF=82.8, MAF=1.15e+03, MIEF=113, Random=2.89e+03   (3.2s)
+  M= 14: MGF=86.3, MAF=1.52e+03, MIEF=118, Random=2.73e+03   (3.5s)
+  M= 16: MGF=90.4, MAF=2.45e+03, MIEF=135, Random=2.92e+03   (3.7s)
+  M= 18: MGF=95.1, MAF=2.93e+03, MIEF=137, Random=3.35e+03   (4.1s)
+  M= 20: MGF=100, MAF=3.11e+03, MIEF=121, Random=3.39e+03   (4.4s)
+
+--- profile: bimodal_balanced ---
+  M=  2: MGF=47.1, MAF=141, MIEF=55.6, Random=883   (1.8s)
+  M=  4: MGF=46.4, MAF=119, MIEF=58.6, Random=1.11e+03   (2.1s)
+  M=  6: MGF=48.9, MAF=105, MIEF=53.5, Random=1.52e+03   (2.3s)
+  M=  8: MGF=47.6, MAF=168, MIEF=56.1, Random=1.83e+03   (2.6s)
+  M= 10: MGF=57.4, MAF=516, MIEF=69.9, Random=2.66e+03   (2.9s)
+  M= 12: MGF=61.2, MAF=1.17e+03, MIEF=75.6, Random=3.08e+03   (3.2s)
+  M= 14: MGF=81.7, MAF=1.64e+03, MIEF=122, Random=3.13e+03   (3.4s)
+  M= 16: MGF=76.5, MAF=2.53e+03, MIEF=111, Random=3.4e+03   (3.7s)
+  M= 18: MGF=83.5, MAF=3.06e+03, MIEF=98.4, Random=3.57e+03   (4.0s)
+  M= 20: MGF=89.5, MAF=3.08e+03, MIEF=110, Random=3.79e+03   (4.3s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  M=  2: MGF=44.4, MAF=76.2, MIEF=49.6, Random=835   (1.7s)
+  M=  4: MGF=47, MAF=135, MIEF=57.3, Random=1.06e+03   (2.0s)
+  M=  6: MGF=55.8, MAF=167, MIEF=73.3, Random=1.79e+03   (2.3s)
+  M=  8: MGF=55.1, MAF=260, MIEF=60.9, Random=2.48e+03   (2.5s)
+  M= 10: MGF=56.2, MAF=804, MIEF=76.5, Random=3.18e+03   (2.9s)
+  M= 12: MGF=68.6, MAF=1.67e+03, MIEF=84.7, Random=3.61e+03   (3.2s)
+  M= 14: MGF=90.6, MAF=2.18e+03, MIEF=105, Random=3.22e+03   (3.4s)
+  M= 16: MGF=91.8, MAF=3.12e+03, MIEF=149, Random=3.83e+03   (3.8s)
+  M= 18: MGF=99.9, MAF=3.16e+03, MIEF=143, Random=3.8e+03   (4.0s)
+  M= 20: MGF=106, MAF=3.24e+03, MIEF=140, Random=4.1e+03   (4.3s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  M=  2: MGF=36.9, MAF=42.5, MIEF=43, Random=826   (1.7s)
+  M=  4: MGF=39.7, MAF=72.3, MIEF=50.4, Random=957   (2.0s)
+  M=  6: MGF=41.6, MAF=65.7, MIEF=46.3, Random=1.37e+03   (2.3s)
+  M=  8: MGF=35.9, MAF=82.3, MIEF=39.9, Random=1.3e+03   (2.5s)
+  M= 10: MGF=39.7, MAF=120, MIEF=42.4, Random=1.84e+03   (2.9s)
+  M= 12: MGF=47.3, MAF=457, MIEF=58, Random=2.53e+03   (3.2s)
+  M= 14: MGF=52.2, MAF=775, MIEF=58.5, Random=2.23e+03   (3.4s)
+  M= 16: MGF=61.8, MAF=1.24e+03, MIEF=88, Random=2.78e+03   (3.7s)
+  M= 18: MGF=64, MAF=1.58e+03, MIEF=75, Random=2.95e+03   (4.0s)
+  M= 20: MGF=74.9, MAF=2.73e+03, MIEF=83.5, Random=3.18e+03   (4.3s)
+
+--- profile: trimodal_perfect_mid_low ---
+  M=  2: MGF=33.9, MAF=38.5, MIEF=32, Random=274   (1.7s)
+  M=  4: MGF=37.9, MAF=62.8, MIEF=38.3, Random=423   (2.0s)
+  M=  6: MGF=49.5, MAF=98.7, MIEF=64.6, Random=1.62e+03   (2.3s)
+  M=  8: MGF=49, MAF=206, MIEF=52.4, Random=1.71e+03   (2.6s)
+  M= 10: MGF=52.2, MAF=473, MIEF=65.3, Random=2.25e+03   (2.9s)
+  M= 12: MGF=57.3, MAF=971, MIEF=67.7, Random=2.61e+03   (3.1s)
+  M= 14: MGF=70.3, MAF=1.6e+03, MIEF=89.6, Random=2.88e+03   (3.4s)
+  M= 16: MGF=88, MAF=2.72e+03, MIEF=118, Random=3.51e+03   (3.7s)
+  M= 18: MGF=96.7, MAF=3.06e+03, MIEF=103, Random=3.36e+03   (4.0s)
+  M= 20: MGF=95.3, MAF=3.15e+03, MIEF=116, Random=3.74e+03   (4.4s)
+
+--- profile: source_split_perfect_or_lossy ---
+  M=  2: MGF=53.7, MAF=127, MIEF=63.6, Random=1.05e+03   (1.7s)
+  M=  4: MGF=39.1, MAF=50.3, MIEF=45.4, Random=489   (2.0s)
+  M=  6: MGF=37.1, MAF=50.5, MIEF=35.9, Random=1.06e+03   (2.3s)
+  M=  8: MGF=35.5, MAF=105, MIEF=36, Random=915   (2.5s)
+  M= 10: MGF=44.9, MAF=415, MIEF=51.1, Random=1.82e+03   (2.9s)
+  M= 12: MGF=53.4, MAF=919, MIEF=68, Random=2.63e+03   (3.2s)
+  M= 14: MGF=64.4, MAF=1.19e+03, MIEF=74.2, Random=2.81e+03   (3.4s)
+  M= 16: MGF=67.6, MAF=1.86e+03, MIEF=92.5, Random=3.13e+03   (3.8s)
+  M= 18: MGF=75.7, MAF=2.66e+03, MIEF=88.7, Random=3.46e+03   (4.0s)
+  M= 20: MGF=86.4, MAF=3.09e+03, MIEF=105, Random=3.74e+03   (4.3s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  M=  2: MGF=33.5, MAF=41.6, MIEF=30.2, Random=88.7   (1.7s)
+  M=  4: MGF=32.5, MAF=42.7, MIEF=30.1, Random=142   (2.0s)
+  M=  6: MGF=32.8, MAF=58.1, MIEF=30.5, Random=454   (2.3s)
+  M=  8: MGF=32, MAF=76.5, MIEF=30.7, Random=650   (2.5s)
+  M= 10: MGF=35.3, MAF=154, MIEF=34.3, Random=1.1e+03   (2.8s)
+  M= 12: MGF=40.7, MAF=450, MIEF=38.9, Random=1.79e+03   (3.1s)
+  M= 14: MGF=45.8, MAF=794, MIEF=42.5, Random=1.57e+03   (3.4s)
+  M= 16: MGF=48, MAF=1.18e+03, MIEF=46.9, Random=1.98e+03   (3.7s)
+  M= 18: MGF=54.3, MAF=1.75e+03, MIEF=49.8, Random=2.34e+03   (4.0s)
+  M= 20: MGF=59, MAF=2.62e+03, MIEF=52.5, Random=2.49e+03   (4.2s)
+
+Total runtime: 363.2s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsSources_probabilistic_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsSources_probabilistic_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsSources_probabilistic.png
+
+========== weight mode: ones  ->  ErrorVsSources_probabilistic_weights_1 ==========
+Running probabilistic ErrorVsSources_probabilistic_weights_1 sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  M values: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: ones  (w = 1 for every (source, task) pair  [weights_1])
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  M=  2: MGF=81.2, MAF=102, MIEF=86.1, Random=1.49e+03   (1.7s)
+  M=  4: MGF=75.6, MAF=92.6, MIEF=78.4, Random=996   (2.0s)
+  M=  6: MGF=79.7, MAF=113, MIEF=88.2, Random=2.24e+03   (2.3s)
+  M=  8: MGF=107, MAF=234, MIEF=143, Random=2.84e+03   (2.5s)
+  M= 10: MGF=111, MAF=460, MIEF=131, Random=4.22e+03   (2.9s)
+  M= 12: MGF=119, MAF=966, MIEF=140, Random=5.02e+03   (3.2s)
+  M= 14: MGF=133, MAF=1.95e+03, MIEF=159, Random=5.09e+03   (3.4s)
+  M= 16: MGF=142, MAF=2.87e+03, MIEF=170, Random=5.79e+03   (3.8s)
+  M= 18: MGF=157, MAF=4.93e+03, MIEF=201, Random=6.28e+03   (4.1s)
+  M= 20: MGF=187, MAF=5.89e+03, MIEF=246, Random=6.84e+03   (4.3s)
+
+--- profile: uniform_low ---
+  M=  2: MGF=94.1, MAF=153, MIEF=106, Random=2.03e+03   (1.7s)
+  M=  4: MGF=87.6, MAF=144, MIEF=97.8, Random=1.61e+03   (2.0s)
+  M=  6: MGF=100, MAF=201, MIEF=119, Random=3.17e+03   (2.3s)
+  M=  8: MGF=136, MAF=480, MIEF=165, Random=4e+03   (2.6s)
+  M= 10: MGF=131, MAF=1.15e+03, MIEF=161, Random=5.34e+03   (2.9s)
+  M= 12: MGF=142, MAF=2.44e+03, MIEF=172, Random=6.05e+03   (3.2s)
+  M= 14: MGF=172, MAF=4.07e+03, MIEF=221, Random=6.4e+03   (3.5s)
+  M= 16: MGF=189, MAF=5.56e+03, MIEF=240, Random=7.09e+03   (3.7s)
+  M= 18: MGF=217, MAF=6.19e+03, MIEF=351, Random=7.29e+03   (4.1s)
+  M= 20: MGF=299, MAF=6.79e+03, MIEF=450, Random=7.9e+03   (4.4s)
+
+--- profile: uniform_mid ---
+  M=  2: MGF=68.9, MAF=77.2, MIEF=71, Random=992   (1.7s)
+  M=  4: MGF=69.6, MAF=78.8, MIEF=70.3, Random=746   (2.0s)
+  M=  6: MGF=76.4, MAF=94.8, MIEF=82.8, Random=1.96e+03   (2.3s)
+  M=  8: MGF=95.5, MAF=153, MIEF=101, Random=2.35e+03   (2.5s)
+  M= 10: MGF=110, MAF=293, MIEF=117, Random=4.04e+03   (2.8s)
+  M= 12: MGF=120, MAF=512, MIEF=127, Random=4.69e+03   (3.1s)
+  M= 14: MGF=142, MAF=1.08e+03, MIEF=145, Random=4.82e+03   (3.5s)
+  M= 16: MGF=138, MAF=2.12e+03, MIEF=163, Random=5.66e+03   (3.8s)
+  M= 18: MGF=160, MAF=3.18e+03, MIEF=187, Random=6.14e+03   (4.0s)
+  M= 20: MGF=158, MAF=5.14e+03, MIEF=203, Random=6.65e+03   (4.4s)
+
+--- profile: uniform_very_wide ---
+  M=  2: MGF=94.6, MAF=178, MIEF=123, Random=1.71e+03   (1.7s)
+  M=  4: MGF=88.6, MAF=179, MIEF=124, Random=1.52e+03   (2.0s)
+  M=  6: MGF=105, MAF=201, MIEF=166, Random=2.61e+03   (2.3s)
+  M=  8: MGF=152, MAF=588, MIEF=211, Random=3.58e+03   (2.5s)
+  M= 10: MGF=149, MAF=1.24e+03, MIEF=218, Random=4.92e+03   (2.9s)
+  M= 12: MGF=142, MAF=2.51e+03, MIEF=192, Random=5.54e+03   (3.2s)
+  M= 14: MGF=153, MAF=3.57e+03, MIEF=191, Random=5.6e+03   (3.4s)
+  M= 16: MGF=178, MAF=5.28e+03, MIEF=254, Random=6.3e+03   (3.8s)
+  M= 18: MGF=207, MAF=6.22e+03, MIEF=348, Random=6.69e+03   (4.1s)
+  M= 20: MGF=246, MAF=6.79e+03, MIEF=347, Random=7.4e+03   (4.4s)
+
+--- profile: uniform_with_perfect_outliers ---
+  M=  2: MGF=73, MAF=91.3, MIEF=79.4, Random=1.76e+03   (1.7s)
+  M=  4: MGF=77.7, MAF=96.8, MIEF=82.9, Random=1.16e+03   (2.0s)
+  M=  6: MGF=83.2, MAF=129, MIEF=92.5, Random=2.52e+03   (2.3s)
+  M=  8: MGF=115, MAF=238, MIEF=142, Random=3.19e+03   (2.5s)
+  M= 10: MGF=114, MAF=486, MIEF=134, Random=4.84e+03   (2.9s)
+  M= 12: MGF=123, MAF=855, MIEF=149, Random=5.15e+03   (3.2s)
+  M= 14: MGF=136, MAF=2.13e+03, MIEF=175, Random=5.38e+03   (3.4s)
+  M= 16: MGF=154, MAF=3.19e+03, MIEF=185, Random=6.07e+03   (3.8s)
+  M= 18: MGF=169, MAF=5.13e+03, MIEF=231, Random=6.56e+03   (4.1s)
+  M= 20: MGF=192, MAF=5.91e+03, MIEF=285, Random=7.04e+03   (4.3s)
+
+--- profile: bimodal_extreme ---
+  M=  2: MGF=156, MAF=356, MIEF=268, Random=2.82e+03   (1.7s)
+  M=  4: MGF=113, MAF=238, MIEF=151, Random=1.82e+03   (2.0s)
+  M=  6: MGF=113, MAF=237, MIEF=150, Random=2.66e+03   (2.3s)
+  M=  8: MGF=142, MAF=328, MIEF=203, Random=3.14e+03   (2.5s)
+  M= 10: MGF=142, MAF=782, MIEF=192, Random=4.23e+03   (2.8s)
+  M= 12: MGF=226, MAF=2.33e+03, MIEF=359, Random=5.5e+03   (3.2s)
+  M= 14: MGF=262, MAF=3.21e+03, MIEF=316, Random=5.87e+03   (3.5s)
+  M= 16: MGF=253, MAF=5.16e+03, MIEF=327, Random=6.15e+03   (3.7s)
+  M= 18: MGF=295, MAF=5.92e+03, MIEF=372, Random=6.6e+03   (4.1s)
+  M= 20: MGF=348, MAF=6.3e+03, MIEF=506, Random=6.99e+03   (4.4s)
+
+--- profile: bimodal_balanced ---
+  M=  2: MGF=94.8, MAF=207, MIEF=107, Random=2.13e+03   (1.7s)
+  M=  4: MGF=90.7, MAF=206, MIEF=110, Random=1.72e+03   (2.0s)
+  M=  6: MGF=102, MAF=214, MIEF=140, Random=2.89e+03   (2.3s)
+  M=  8: MGF=111, MAF=328, MIEF=141, Random=3.62e+03   (2.6s)
+  M= 10: MGF=136, MAF=984, MIEF=172, Random=5.07e+03   (2.8s)
+  M= 12: MGF=160, MAF=2.27e+03, MIEF=220, Random=5.91e+03   (3.1s)
+  M= 14: MGF=197, MAF=3.45e+03, MIEF=256, Random=6.43e+03   (3.5s)
+  M= 16: MGF=198, MAF=5.28e+03, MIEF=271, Random=6.95e+03   (3.8s)
+  M= 18: MGF=238, MAF=6.02e+03, MIEF=301, Random=6.94e+03   (4.0s)
+  M= 20: MGF=292, MAF=6.16e+03, MIEF=379, Random=7.46e+03   (4.4s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  M=  2: MGF=92.8, MAF=157, MIEF=98.5, Random=2.02e+03   (1.7s)
+  M=  4: MGF=111, MAF=236, MIEF=153, Random=2.56e+03   (2.0s)
+  M=  6: MGF=114, MAF=330, MIEF=137, Random=3.64e+03   (2.3s)
+  M=  8: MGF=127, MAF=501, MIEF=147, Random=4.41e+03   (2.6s)
+  M= 10: MGF=140, MAF=1.48e+03, MIEF=181, Random=5.55e+03   (2.9s)
+  M= 12: MGF=186, MAF=3.51e+03, MIEF=290, Random=6.69e+03   (3.1s)
+  M= 14: MGF=264, MAF=4.9e+03, MIEF=379, Random=6.99e+03   (3.4s)
+  M= 16: MGF=279, MAF=6.14e+03, MIEF=424, Random=7.8e+03   (3.8s)
+  M= 18: MGF=339, MAF=6.44e+03, MIEF=561, Random=7.55e+03   (4.0s)
+  M= 20: MGF=522, MAF=6.83e+03, MIEF=732, Random=8.18e+03   (4.4s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  M=  2: MGF=77.3, MAF=97.2, MIEF=90.1, Random=1.98e+03   (1.7s)
+  M=  4: MGF=70.6, MAF=104, MIEF=78.7, Random=1.15e+03   (2.0s)
+  M=  6: MGF=83.6, MAF=111, MIEF=88.7, Random=2.03e+03   (2.2s)
+  M=  8: MGF=96.2, MAF=172, MIEF=114, Random=2.53e+03   (2.5s)
+  M= 10: MGF=112, MAF=240, MIEF=122, Random=3.54e+03   (2.8s)
+  M= 12: MGF=138, MAF=905, MIEF=179, Random=4.81e+03   (3.1s)
+  M= 14: MGF=154, MAF=1.58e+03, MIEF=194, Random=4.98e+03   (3.4s)
+  M= 16: MGF=160, MAF=2.38e+03, MIEF=198, Random=5.71e+03   (3.8s)
+  M= 18: MGF=155, MAF=3.47e+03, MIEF=203, Random=5.82e+03   (4.0s)
+  M= 20: MGF=209, MAF=5.65e+03, MIEF=263, Random=6.36e+03   (4.3s)
+
+--- profile: trimodal_perfect_mid_low ---
+  M=  2: MGF=74.3, MAF=105, MIEF=73.1, Random=979   (1.7s)
+  M=  4: MGF=90.3, MAF=145, MIEF=137, Random=1.67e+03   (2.0s)
+  M=  6: MGF=91.9, MAF=154, MIEF=120, Random=2.66e+03   (2.3s)
+  M=  8: MGF=139, MAF=443, MIEF=186, Random=3.69e+03   (2.5s)
+  M= 10: MGF=159, MAF=1.05e+03, MIEF=240, Random=4.98e+03   (2.8s)
+  M= 12: MGF=146, MAF=1.99e+03, MIEF=197, Random=5.38e+03   (3.2s)
+  M= 14: MGF=176, MAF=3.63e+03, MIEF=228, Random=6.24e+03   (3.5s)
+  M= 16: MGF=235, MAF=5.63e+03, MIEF=382, Random=6.75e+03   (3.8s)
+  M= 18: MGF=299, MAF=6.05e+03, MIEF=446, Random=6.7e+03   (4.1s)
+  M= 20: MGF=284, MAF=6.38e+03, MIEF=421, Random=7.37e+03   (4.4s)
+
+--- profile: source_split_perfect_or_lossy ---
+  M=  2: MGF=79.1, MAF=153, MIEF=87.8, Random=1.31e+03   (1.7s)
+  M=  4: MGF=66.7, MAF=75.6, MIEF=69.6, Random=679   (2.0s)
+  M=  6: MGF=85.7, MAF=135, MIEF=112, Random=2.19e+03   (2.3s)
+  M=  8: MGF=125, MAF=310, MIEF=147, Random=3.36e+03   (2.5s)
+  M= 10: MGF=126, MAF=897, MIEF=154, Random=4.7e+03   (2.8s)
+  M= 12: MGF=137, MAF=1.76e+03, MIEF=161, Random=5.37e+03   (3.1s)
+  M= 14: MGF=165, MAF=2.5e+03, MIEF=227, Random=5.72e+03   (3.5s)
+  M= 16: MGF=172, MAF=3.99e+03, MIEF=233, Random=6.38e+03   (3.8s)
+  M= 18: MGF=177, MAF=5.58e+03, MIEF=295, Random=6.67e+03   (4.1s)
+  M= 20: MGF=228, MAF=6.07e+03, MIEF=310, Random=7.08e+03   (4.4s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  M=  2: MGF=61.2, MAF=83.6, MIEF=60, Random=353   (1.7s)
+  M=  4: MGF=60.4, MAF=83.4, MIEF=59.7, Random=337   (2.0s)
+  M=  6: MGF=70.5, MAF=106, MIEF=66.6, Random=797   (2.2s)
+  M=  8: MGF=85.7, MAF=151, MIEF=79.6, Random=1.23e+03   (2.5s)
+  M= 10: MGF=111, MAF=319, MIEF=88.6, Random=2.17e+03   (2.8s)
+  M= 12: MGF=118, MAF=904, MIEF=101, Random=3.25e+03   (3.1s)
+  M= 14: MGF=132, MAF=1.56e+03, MIEF=112, Random=3.27e+03   (3.4s)
+  M= 16: MGF=132, MAF=2.36e+03, MIEF=121, Random=3.93e+03   (3.7s)
+  M= 18: MGF=138, MAF=3.74e+03, MIEF=130, Random=4.44e+03   (4.0s)
+  M= 20: MGF=143, MAF=5.42e+03, MIEF=139, Random=5e+03   (4.3s)
+
+Total runtime: 362.0s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsSources_probabilistic_weights_1_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsSources_probabilistic_weights_1_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsSources_probabilistic_weights_1.png
+---- ErrorVsSources_probabilistic done in 749s ----
+
+---- ErrorVsTasks_probabilistic ----
+
+========== weight mode: deterministic  ->  ErrorVsTasks_probabilistic ==========
+Running probabilistic ErrorVsTasks_probabilistic sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  km values: [3, 6, 9, 12, 15]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: deterministic  (w = 1 for the first half of the sources (m+1 <= M/2), else w = 0.01)
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  km=  3: MGF=34.4, MAF=74.8, MIEF=41.2, Random=1.16e+03   (2.4s)
+  km=  6: MGF=62.4, MAF=765, MIEF=75.4, Random=2.68e+03   (3.4s)
+  km=  9: MGF=71.6, MAF=2.95e+03, MIEF=82.8, Random=3.43e+03   (4.4s)
+  km= 12: MGF=91.8, MAF=3.9e+03, MIEF=111, Random=4.15e+03   (5.3s)
+  km= 15: MGF=114, MAF=4.53e+03, MIEF=144, Random=4.47e+03   (6.3s)
+
+--- profile: uniform_low ---
+  km=  3: MGF=41.1, MAF=118, MIEF=49.3, Random=1.69e+03   (2.4s)
+  km=  6: MGF=77.2, MAF=1.3e+03, MIEF=101, Random=3.17e+03   (3.4s)
+  km=  9: MGF=92.6, MAF=3.3e+03, MIEF=108, Random=4.05e+03   (4.4s)
+  km= 12: MGF=131, MAF=4.04e+03, MIEF=153, Random=4.58e+03   (5.3s)
+  km= 15: MGF=160, MAF=4.62e+03, MIEF=214, Random=4.96e+03   (6.3s)
+
+--- profile: uniform_mid ---
+  km=  3: MGF=27.5, MAF=52.8, MIEF=28.7, Random=986   (2.4s)
+  km=  6: MGF=50.2, MAF=500, MIEF=53.3, Random=2.51e+03   (3.3s)
+  km=  9: MGF=68.5, MAF=2.33e+03, MIEF=75.5, Random=3.36e+03   (4.4s)
+  km= 12: MGF=88.8, MAF=3.35e+03, MIEF=101, Random=4.13e+03   (5.2s)
+  km= 15: MGF=109, MAF=4.06e+03, MIEF=123, Random=4.46e+03   (6.3s)
+
+--- profile: uniform_very_wide ---
+  km=  3: MGF=46.9, MAF=147, MIEF=58.6, Random=1.43e+03   (2.4s)
+  km=  6: MGF=75.2, MAF=1.32e+03, MIEF=114, Random=2.97e+03   (3.4s)
+  km=  9: MGF=96, MAF=3.32e+03, MIEF=123, Random=3.8e+03   (4.4s)
+  km= 12: MGF=121, MAF=4.04e+03, MIEF=148, Random=4.33e+03   (5.3s)
+  km= 15: MGF=140, MAF=4.63e+03, MIEF=190, Random=4.68e+03   (6.3s)
+
+--- profile: uniform_with_perfect_outliers ---
+  km=  3: MGF=31.8, MAF=65.6, MIEF=42.6, Random=1.35e+03   (2.4s)
+  km=  6: MGF=66.5, MAF=868, MIEF=78.7, Random=2.87e+03   (3.4s)
+  km=  9: MGF=74.4, MAF=2.95e+03, MIEF=88.9, Random=3.59e+03   (4.4s)
+  km= 12: MGF=104, MAF=3.94e+03, MIEF=118, Random=4.28e+03   (5.3s)
+  km= 15: MGF=126, MAF=4.53e+03, MIEF=163, Random=4.56e+03   (6.3s)
+
+--- profile: bimodal_extreme ---
+  km=  3: MGF=55.9, MAF=148, MIEF=69.1, Random=1.66e+03   (2.4s)
+  km=  6: MGF=82.2, MAF=1.44e+03, MIEF=136, Random=2.67e+03   (3.4s)
+  km=  9: MGF=100, MAF=3.11e+03, MIEF=121, Random=3.39e+03   (4.4s)
+  km= 12: MGF=162, MAF=4.09e+03, MIEF=200, Random=4.24e+03   (5.3s)
+  km= 15: MGF=252, MAF=4.6e+03, MIEF=294, Random=4.65e+03   (6.3s)
+
+--- profile: bimodal_balanced ---
+  km=  3: MGF=39.3, MAF=95.8, MIEF=44.4, Random=1.77e+03   (2.4s)
+  km=  6: MGF=68.4, MAF=1.24e+03, MIEF=90.3, Random=2.92e+03   (3.4s)
+  km=  9: MGF=89.5, MAF=3.08e+03, MIEF=110, Random=3.79e+03   (4.4s)
+  km= 12: MGF=145, MAF=4.07e+03, MIEF=168, Random=4.48e+03   (5.3s)
+  km= 15: MGF=190, MAF=4.58e+03, MIEF=262, Random=4.82e+03   (6.3s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  km=  3: MGF=41.7, MAF=112, MIEF=50.2, Random=2.09e+03   (2.4s)
+  km=  6: MGF=78.5, MAF=1.6e+03, MIEF=109, Random=3.38e+03   (3.4s)
+  km=  9: MGF=106, MAF=3.24e+03, MIEF=140, Random=4.1e+03   (4.4s)
+  km= 12: MGF=163, MAF=4.23e+03, MIEF=223, Random=4.71e+03   (5.3s)
+  km= 15: MGF=227, MAF=4.68e+03, MIEF=358, Random=5.06e+03   (6.4s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  km=  3: MGF=26.4, MAF=52.7, MIEF=31.1, Random=1.23e+03   (2.4s)
+  km=  6: MGF=57.8, MAF=720, MIEF=69.9, Random=2.34e+03   (3.3s)
+  km=  9: MGF=74.9, MAF=2.73e+03, MIEF=83.5, Random=3.18e+03   (4.3s)
+  km= 12: MGF=101, MAF=3.83e+03, MIEF=115, Random=4.03e+03   (5.3s)
+  km= 15: MGF=136, MAF=4.29e+03, MIEF=153, Random=4.41e+03   (6.3s)
+
+--- profile: trimodal_perfect_mid_low ---
+  km=  3: MGF=38.5, MAF=93.4, MIEF=53.3, Random=1.91e+03   (2.4s)
+  km=  6: MGF=87.6, MAF=1.47e+03, MIEF=144, Random=2.82e+03   (3.4s)
+  km=  9: MGF=95.3, MAF=3.15e+03, MIEF=116, Random=3.74e+03   (4.3s)
+  km= 12: MGF=141, MAF=4.06e+03, MIEF=199, Random=4.43e+03   (5.3s)
+  km= 15: MGF=175, MAF=4.57e+03, MIEF=234, Random=4.68e+03   (6.3s)
+
+--- profile: source_split_perfect_or_lossy ---
+  km=  3: MGF=34.8, MAF=76.5, MIEF=39.5, Random=1.7e+03   (2.4s)
+  km=  6: MGF=63.7, MAF=998, MIEF=81, Random=3.06e+03   (3.4s)
+  km=  9: MGF=86.4, MAF=3.09e+03, MIEF=105, Random=3.74e+03   (4.4s)
+  km= 12: MGF=121, MAF=4.01e+03, MIEF=147, Random=4.4e+03   (5.3s)
+  km= 15: MGF=148, MAF=4.52e+03, MIEF=197, Random=4.75e+03   (6.4s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  km=  3: MGF=25.1, MAF=59, MIEF=24.8, Random=554   (2.4s)
+  km=  6: MGF=43.7, MAF=794, MIEF=41.2, Random=1.67e+03   (3.3s)
+  km=  9: MGF=59, MAF=2.62e+03, MIEF=52.5, Random=2.49e+03   (4.3s)
+  km= 12: MGF=76.5, MAF=3.75e+03, MIEF=69.5, Random=3.37e+03   (5.2s)
+  km= 15: MGF=86.1, MAF=4.14e+03, MIEF=85.3, Random=3.8e+03   (6.3s)
+
+Total runtime: 260.3s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsTasks_probabilistic_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsTasks_probabilistic_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsTasks_probabilistic.png
+
+========== weight mode: ones  ->  ErrorVsTasks_probabilistic_weights_1 ==========
+Running probabilistic ErrorVsTasks_probabilistic_weights_1 sweep
+  TITER=1000, MC_TRIALS=10, SEED=0
+  km values: [3, 6, 9, 12, 15]
+  profiles: ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  extra policies: 0
+  weights mode: ones  (w = 1 for every (source, task) pair  [weights_1])
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+
+--- profile: uniform_wide ---
+  km=  3: MGF=96.7, MAF=142, MIEF=106, Random=2.25e+03   (2.4s)
+  km=  6: MGF=142, MAF=1.46e+03, MIEF=171, Random=4.9e+03   (3.4s)
+  km=  9: MGF=187, MAF=5.89e+03, MIEF=246, Random=6.84e+03   (4.4s)
+  km= 12: MGF=359, MAF=7.75e+03, MIEF=438, Random=8.21e+03   (5.5s)
+  km= 15: MGF=695, MAF=8.94e+03, MIEF=935, Random=8.89e+03   (6.6s)
+
+--- profile: uniform_low ---
+  km=  3: MGF=114, MAF=222, MIEF=133, Random=3.21e+03   (2.4s)
+  km=  6: MGF=171, MAF=2.71e+03, MIEF=238, Random=5.89e+03   (3.4s)
+  km=  9: MGF=299, MAF=6.79e+03, MIEF=450, Random=7.9e+03   (4.4s)
+  km= 12: MGF=1e+03, MAF=8.12e+03, MIEF=1.18e+03, Random=9.04e+03   (5.6s)
+  km= 15: MGF=1.89e+03, MAF=9.23e+03, MIEF=2.76e+03, Random=9.88e+03   (6.6s)
+
+--- profile: uniform_mid ---
+  km=  3: MGF=84.3, MAF=105, MIEF=89.6, Random=1.92e+03   (2.4s)
+  km=  6: MGF=127, MAF=947, MIEF=138, Random=4.64e+03   (3.4s)
+  km=  9: MGF=158, MAF=5.14e+03, MIEF=203, Random=6.65e+03   (4.4s)
+  km= 12: MGF=241, MAF=7.1e+03, MIEF=350, Random=8.07e+03   (5.5s)
+  km= 15: MGF=549, MAF=8.39e+03, MIEF=730, Random=8.79e+03   (6.6s)
+
+--- profile: uniform_very_wide ---
+  km=  3: MGF=115, MAF=277, MIEF=153, Random=2.89e+03   (2.4s)
+  km=  6: MGF=155, MAF=2.74e+03, MIEF=248, Random=5.36e+03   (3.4s)
+  km=  9: MGF=246, MAF=6.79e+03, MIEF=347, Random=7.4e+03   (4.4s)
+  km= 12: MGF=688, MAF=8.09e+03, MIEF=802, Random=8.58e+03   (5.5s)
+  km= 15: MGF=1.24e+03, MAF=9.31e+03, MIEF=1.82e+03, Random=9.37e+03   (6.6s)
+
+--- profile: uniform_with_perfect_outliers ---
+  km=  3: MGF=91, MAF=130, MIEF=110, Random=2.56e+03   (2.4s)
+  km=  6: MGF=145, MAF=1.66e+03, MIEF=184, Random=5.19e+03   (3.4s)
+  km=  9: MGF=192, MAF=5.91e+03, MIEF=285, Random=7.04e+03   (4.5s)
+  km= 12: MGF=454, MAF=7.8e+03, MIEF=564, Random=8.41e+03   (5.5s)
+  km= 15: MGF=904, MAF=8.95e+03, MIEF=1.28e+03, Random=9.19e+03   (6.5s)
+
+--- profile: bimodal_extreme ---
+  km=  3: MGF=123, MAF=241, MIEF=208, Random=2.87e+03   (2.4s)
+  km=  6: MGF=228, MAF=3.05e+03, MIEF=398, Random=5.49e+03   (3.3s)
+  km=  9: MGF=348, MAF=6.3e+03, MIEF=506, Random=6.99e+03   (4.4s)
+  km= 12: MGF=721, MAF=8.12e+03, MIEF=685, Random=7.95e+03   (5.5s)
+  km= 15: MGF=2.41e+03, MAF=9.14e+03, MIEF=1.53e+03, Random=9.06e+03   (6.7s)
+
+--- profile: bimodal_balanced ---
+  km=  3: MGF=98.9, MAF=180, MIEF=114, Random=3.03e+03   (2.4s)
+  km=  6: MGF=181, MAF=2.65e+03, MIEF=234, Random=5.83e+03   (3.4s)
+  km=  9: MGF=292, MAF=6.16e+03, MIEF=379, Random=7.46e+03   (4.4s)
+  km= 12: MGF=821, MAF=8.08e+03, MIEF=864, Random=8.38e+03   (5.5s)
+  km= 15: MGF=2.27e+03, MAF=9.09e+03, MIEF=1.94e+03, Random=9.41e+03   (6.6s)
+
+--- profile: bimodal_q1_vs_lossy_30_70 ---
+  km=  3: MGF=106, MAF=215, MIEF=154, Random=3.36e+03   (2.4s)
+  km=  6: MGF=230, MAF=3.81e+03, MIEF=279, Random=6.68e+03   (3.4s)
+  km=  9: MGF=522, MAF=6.83e+03, MIEF=732, Random=8.18e+03   (4.5s)
+  km= 12: MGF=1.37e+03, MAF=8.69e+03, MIEF=1.41e+03, Random=9.04e+03   (5.5s)
+  km= 15: MGF=3.69e+03, MAF=9.51e+03, MIEF=3.43e+03, Random=1e+04   (6.6s)
+
+--- profile: bimodal_q1_vs_lossy_70_30 ---
+  km=  3: MGF=81.2, MAF=100, MIEF=86, Random=2.05e+03   (2.4s)
+  km=  6: MGF=152, MAF=1.45e+03, MIEF=193, Random=4.8e+03   (3.4s)
+  km=  9: MGF=209, MAF=5.65e+03, MIEF=263, Random=6.36e+03   (4.4s)
+  km= 12: MGF=309, MAF=7.63e+03, MIEF=405, Random=7.54e+03   (5.5s)
+  km= 15: MGF=926, MAF=8.67e+03, MIEF=760, Random=8.69e+03   (6.7s)
+
+--- profile: trimodal_perfect_mid_low ---
+  km=  3: MGF=99.7, MAF=202, MIEF=139, Random=3.08e+03   (2.4s)
+  km=  6: MGF=189, MAF=3.17e+03, MIEF=327, Random=5.57e+03   (3.4s)
+  km=  9: MGF=284, MAF=6.38e+03, MIEF=421, Random=7.37e+03   (4.4s)
+  km= 12: MGF=724, MAF=8.09e+03, MIEF=883, Random=8.69e+03   (5.4s)
+  km= 15: MGF=2.75e+03, MAF=9.1e+03, MIEF=2.2e+03, Random=9.37e+03   (6.6s)
+
+--- profile: source_split_perfect_or_lossy ---
+  km=  3: MGF=93.7, MAF=151, MIEF=105, Random=2.75e+03   (2.4s)
+  km=  6: MGF=152, MAF=1.92e+03, MIEF=208, Random=5.51e+03   (3.5s)
+  km=  9: MGF=228, MAF=6.07e+03, MIEF=310, Random=7.08e+03   (4.5s)
+  km= 12: MGF=431, MAF=7.9e+03, MIEF=543, Random=8.23e+03   (5.4s)
+  km= 15: MGF=1.4e+03, MAF=8.95e+03, MIEF=1.15e+03, Random=9.17e+03   (6.5s)
+
+--- profile: adversarial_perfect_with_critical_lossy ---
+  km=  3: MGF=74.4, MAF=116, MIEF=71, Random=967   (2.3s)
+  km=  6: MGF=115, MAF=1.55e+03, MIEF=109, Random=3.19e+03   (3.3s)
+  km=  9: MGF=143, MAF=5.42e+03, MIEF=139, Random=5e+03   (4.4s)
+  km= 12: MGF=231, MAF=7.54e+03, MIEF=178, Random=6.49e+03   (5.6s)
+  km= 15: MGF=436, MAF=8.44e+03, MIEF=249, Random=7.58e+03   (6.5s)
+
+Total runtime: 267.5s
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsTasks_probabilistic_weights_1_data.csv
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsTasks_probabilistic_weights_1_summary.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsTasks_probabilistic_weights_1.png
+---- ErrorVsTasks_probabilistic done in 547s ----
+
+---- ErrorVsIterations_probabilistic ----
+ErrorVsIterations (probabilistic MGF, q=1) vs deterministic MGF1
+  iterations: [1, 2, 4, 8, 16, 32]
+  reference iters: 10000
+  settings: ['ErrorVsChannel', 'ErrorVsChannelsmodel', 'ErrorVsSources']
+
+=== setting ErrorVsChannel  (M=20, N=10, km=2) ===
+  iters=   1: MGF(prob,q=1)=19.672530  MGF1(det)=19.672530  rel.diff=3.61e-16
+  iters=   2: MGF(prob,q=1)=19.608803  MGF1(det)=19.608803  rel.diff=3.62e-16
+  iters=   4: MGF(prob,q=1)=18.968569  MGF1(det)=18.968569  rel.diff=3.75e-16
+  iters=   8: MGF(prob,q=1)=17.292480  MGF1(det)=17.292480  rel.diff=4.11e-16
+  iters=  16: MGF(prob,q=1)=17.600468  MGF1(det)=17.600468  rel.diff=2.02e-16
+  iters=  32: MGF(prob,q=1)=17.288699  MGF1(det)=17.288699  rel.diff=4.11e-16
+  reference MGF1 @ 10000 iters = 17.296652
+
+=== setting ErrorVsChannelsmodel  (M=20, N=10, km=9) ===
+  iters=   1: MGF(prob,q=1)=122.439894  MGF1(det)=122.439894  rel.diff=2.32e-16
+  iters=   2: MGF(prob,q=1)=121.217871  MGF1(det)=121.217871  rel.diff=4.69e-16
+  iters=   4: MGF(prob,q=1)=117.207913  MGF1(det)=117.207913  rel.diff=6.06e-16
+  iters=   8: MGF(prob,q=1)=110.973206  MGF1(det)=110.973206  rel.diff=0.00e+00
+  iters=  16: MGF(prob,q=1)=107.954616  MGF1(det)=107.954616  rel.diff=2.63e-16
+  iters=  32: MGF(prob,q=1)=84.702962  MGF1(det)=84.702962  rel.diff=1.68e-16
+  reference MGF1 @ 10000 iters = 67.206651
+
+=== setting ErrorVsSources  (M=10, N=10, km=9) ===
+  iters=   1: MGF(prob,q=1)=68.933019  MGF1(det)=68.933019  rel.diff=0.00e+00
+  iters=   2: MGF(prob,q=1)=65.852663  MGF1(det)=65.852663  rel.diff=4.32e-16
+  iters=   4: MGF(prob,q=1)=57.922474  MGF1(det)=57.922474  rel.diff=6.13e-16
+  iters=   8: MGF(prob,q=1)=54.176395  MGF1(det)=54.176395  rel.diff=2.62e-16
+  iters=  16: MGF(prob,q=1)=49.407931  MGF1(det)=49.407931  rel.diff=1.44e-16
+  iters=  32: MGF(prob,q=1)=48.755069  MGF1(det)=48.755069  rel.diff=0.00e+00
+  reference MGF1 @ 10000 iters = 28.601651
+
+Wrote /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/ErrorVsIterations_probabilistic_data.csv
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsIterations_ErrorVsChannel_probabilistic.png
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsIterations_ErrorVsChannelsmodel_probabilistic.png
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsIterations_ErrorVsSources_probabilistic.png
+Saved plot to /mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/plots/probabilistic/ErrorVsIterations_probabilistic.png
+
+============================================================
+SANITY CHECK PASSED: probabilistic MGF (q=1) matches deterministic MGF1 (the MATLAB 1:1 port) at every iteration count.
+  max relative difference = 6.134e-16 (tol 1e-06)
+============================================================
+---- ErrorVsIterations_probabilistic done in 92s ----
+
+---- CompareSubgradient_probabilistic ----
+Comparing subgradient methods: ['harmonic', 'sqrt', 'normalized', 'adagrad', 'adam']
+  TITER=100  MC_TRIALS=3  SEED=0
+  M_VALS=[6, 10]  PROFILES=['uniform_wide', 'uniform_low', 'bimodal_extreme']
+
+--- M=6, profile=uniform_wide ---
+     harmonic: obj=84.729+-0.753  runtime=0.20s  |lam|max=2.978  |mu|max=20.145  tail_lam=3.621e-03  viol(c,N)=(4.398e+00,2.800e+01)
+         sqrt: obj=83.933+-1.8  runtime=0.20s  |lam|max=2.528  |mu|max=21.331  tail_lam=5.217e-02  viol(c,N)=(3.925e+00,2.501e+01)
+   normalized: obj=80.634+-3.98  runtime=0.20s  |lam|max=0.938  |mu|max=5.292  tail_lam=4.631e-03  viol(c,N)=(6.296e+00,3.975e+01)
+      adagrad: obj=78.39+-2.39  runtime=0.20s  |lam|max=7.302  |mu|max=7.939  tail_lam=3.592e-02  viol(c,N)=(1.133e+00,7.335e+00)
+         adam: obj=82.698+-2.53  runtime=0.20s  |lam|max=8.379  |mu|max=17.404  tail_lam=1.494e-01  viol(c,N)=(8.088e-01,3.895e+00)
+
+--- M=6, profile=uniform_low ---
+Traceback (most recent call last):
+  File "/home/adampi/anaconda3/lib/python3.13/site-packages/scipy/io/matlab/_mio.py", line 39, in _open_file
+    return open(file_like, mode), True
+           ~~~~^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/multipliers_probabilistic_harmonic_uniform_low_M6.mat'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/run_all.py", line 123, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/run_all.py", line 115, in main
+    _import_and_run(name, seed, name)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/run_all.py", line 71, in _import_and_run
+    mod.main()
+    ~~~~~~~~^^
+  File "/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/execute/CompareSubgradient_probabilistic.py", line 163, in main
+    lambdasource, mu = load_multipliers_probabilistic(save_path)
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/src/main/subgradientiter1_probabilistic.py", line 326, in load_multipliers_probabilistic
+    data = sio.loadmat(path)
+  File "/home/adampi/anaconda3/lib/python3.13/site-packages/scipy/io/matlab/_mio.py", line 233, in loadmat
+    with _open_file_context(file_name, appendmat) as f:
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adampi/anaconda3/lib/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/adampi/anaconda3/lib/python3.13/site-packages/scipy/io/matlab/_mio.py", line 17, in _open_file_context
+    f, opened = _open_file(file_like, appendmat, mode)
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/adampi/anaconda3/lib/python3.13/site-packages/scipy/io/matlab/_mio.py", line 45, in _open_file
+    return open(file_like, mode), True
+           ~~~~^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/c/Users/adamp/Desktop/Purdue/Research/Reviews and Codes ToN Paper/INFOCOM CODE/INFOCOM CODE/INFOCOM Code/python_code/data/probabilistic/multipliers_probabilistic_harmonic_uniform_low_M6.mat'
+=== PROBABILISTIC DONE Mon Jun  1 17:18:37 UTC 2026 ===
+ALL DONE Mon Jun  1 17:18:37 UTC 2026

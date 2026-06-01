@@ -148,19 +148,19 @@ def main():
 
             for method in methods:
                 t0 = time.perf_counter()
-                save_path = os.path.join(
-                    DATA_DIR,
-                    f"multipliers_probabilistic_{method}_{profile}_M{M}.mat",
-                )
-                _, hist = subgradientiter1_probabilistic(
+                # Use the in-memory multipliers (A = [lambdasource; mu]) directly
+                # instead of round-tripping through a .mat file: with save=False
+                # (the default) no file is written, and relying on a stale file
+                # is fragile (it crashes for any (method, profile) never run
+                # before). subgradientiter1_probabilistic returns (A, hist).
+                A, hist = subgradientiter1_probabilistic(
                     M, N, T, B, gamma, p, km, w, n_arr, c, q,
                     titer=TITER, method=method,
                     seed=SEED, verbose=False, history=True,
-                    save_path=save_path,
                 )
                 training_runtime = time.perf_counter() - t0
 
-                lambdasource, mu = load_multipliers_probabilistic(save_path)
+                lambdasource, mu = A[:M, :], A[M, :]
                 asource1 = _batched_gain_table_probabilistic(
                     lambdasource, mu, B, T, gamma, w, p, M, km, q, n_arr,
                 )

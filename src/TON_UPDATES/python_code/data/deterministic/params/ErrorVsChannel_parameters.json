@@ -1,0 +1,150 @@
+{
+  "stem": "ErrorVsChannel",
+  "family": "ErrorVsChannel",
+  "flavor": "deterministic",
+  "description": "Sweep channels N; empirical penalties from loss.mat (km=2).",
+  "dimensions": {
+    "M": 20,
+    "N": null,
+    "km": 2,
+    "B": 20,
+    "T": 100,
+    "K": 100,
+    "gamma": 0.9
+  },
+  "sweep": {
+    "variable": "N",
+    "values": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "env_var": "INFOCOM_CHANNELS"
+  },
+  "resources": {
+    "n_channel_cost": 1.0,
+    "c_compute_cap": 2.0
+  },
+  "penalty": "empirical loss.mat (p1, p2)",
+  "weights": {
+    "mode": "deterministic",
+    "pattern": "w = 0.01 everywhere except w[0,1]=1 and w[4,0]=1 (two priority pairs; MATLAB w(1,2)=1, w(5,1)=1)",
+    "representative_dims": {
+      "M": 20,
+      "km": 2
+    },
+    "value_summary": {
+      "0.01": 38,
+      "1.0": 2
+    },
+    "matrix": [
+      [
+        0.01,
+        1.0
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        1.0,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ],
+      [
+        0.01,
+        0.01
+      ]
+    ]
+  },
+  "policies": [
+    "Random",
+    "MAF",
+    "MGF",
+    "MIEF"
+  ],
+  "solver": {
+    "method": "harmonic (Episode1 M-step)",
+    "iterations": 10000,
+    "iterations_env": "INFOCOM_TITER",
+    "mc_trials": null,
+    "seed": 0
+  },
+  "q_profiles": null,
+  "outputs": {
+    "data_csv": "data/deterministic/ErrorVsChannel_data.csv",
+    "plot_png": "plots/deterministic/ErrorVsChannel.png",
+    "summary_csv": null,
+    "q_profiles_npz": null
+  }
+}

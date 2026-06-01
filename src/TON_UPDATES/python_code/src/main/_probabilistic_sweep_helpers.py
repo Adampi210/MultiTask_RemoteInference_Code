@@ -27,6 +27,14 @@ from MAF1_probabilistic import MAF1_probabilistic
 from MIEF1_probabilistic import MIEF1_probabilistic
 from randpolicy_probabilistic import randpolicy_probabilistic
 from probability_profiles_probabilistic import make_q_profile, list_q_profiles
+from experiment_configs import (
+    make_weights,
+    describe_weights,
+    weights_suffix,
+    WEIGHTS_DETERMINISTIC,
+    WEIGHTS_ONES,
+    WEIGHT_MODES,
+)
 from paths import (
     data_path,
     plot_path,
@@ -108,6 +116,8 @@ def run_sweep(
                       #   M, N, km, T, B, K, n, c, w, p, gamma
     sweep_label,      # x-axis label, e.g. "Number of Channels"
     title_prefix,     # plot title prefix
+    experiment_name=None,   # e.g. "ErrorVsChannel" -- selects the weight pattern
+    weights_mode=None,      # "deterministic" / "ones"; overrides build_problem's w
     subgradient_method=None,
     subgradient_source=None,
     profiles=None,
@@ -117,9 +127,18 @@ def run_sweep(
     extra_policies=None,
     use_log_y=True,
 ):
-    """Run the full {profile x sweep x policy} grid and emit CSV + PNG."""
+    """Run the full {profile x sweep x policy} grid and emit CSV + PNG.
+
+    When ``experiment_name`` and ``weights_mode`` are both given, the weight
+    matrix returned by ``build_problem`` is overridden with
+    ``make_weights(experiment_name, M, km, weights_mode)``; this is how the two
+    weight modes (heterogeneous deterministic vs. uniform ``weights_1``) are
+    produced from the same problem builder.
+    """
     data_dir = DATA_PROBABILISTIC_DIR
     plot_dir = PLOTS_PROBABILISTIC_DIR
+    if weights_mode is None:
+        weights_mode = WEIGHTS_DETERMINISTIC
     if profiles is None:
         profiles = parse_profiles()  # honors INFOCOM_PROFILES env var
     titer = titer if titer is not None else TITER
@@ -135,6 +154,11 @@ def run_sweep(
     print(f"  {sweep_name} values: {list(sweep_values)}")
     print(f"  profiles: {profiles}")
     print(f"  extra policies: {extra_policies}")
+    print(f"  weights mode: {weights_mode}", end="")
+    if experiment_name:
+        print(f"  ({describe_weights(experiment_name, weights_mode)})")
+    else:
+        print()
     print(f"  subgradient method: {subgradient_method}  ({subgradient_source})")
 
     policies = ["MGF", "MAF", "MIEF", "Random"]
@@ -152,8 +176,14 @@ def run_sweep(
             prob = build_problem(int(v))
             M, N = prob["M"], prob["N"]
             km, T, B, K = prob["km"], prob["T"], prob["B"], prob["K"]
-            n, c, w = prob["n"], prob["c"], prob["w"]
+            n, c = prob["n"], prob["c"]
             p, gamma = prob["p"], prob["gamma"]
+            # Weight matrix: when an experiment name is supplied, the mode
+            # (deterministic / ones) decides the weights, overriding build_problem.
+            if experiment_name is not None:
+                w = make_weights(experiment_name, M, km, weights_mode)
+            else:
+                w = prob["w"]
 
             # q is keyed by (M, km) so it must be re-drawn per sweep point.
             q, meta = make_q_profile(profile, M, km, seed=seed)
@@ -206,6 +236,7 @@ def run_sweep(
                     "policy": policy,
                     "mean_error": mean_e,
                     "std_error": std_e,
+                    "weights_mode": weights_mode,
                     "seed": seed,
                     "titer": titer,
                     "mc_trials": mc_trials,
@@ -287,10 +318,60 @@ def run_sweep(
     for idx in range(n_profiles, n_rows * n_cols):
         axes[idx // n_cols][idx % n_cols].axis("off")
 
-    fig.suptitle(f"{title_prefix} (probabilistic, "
+    wmode_tag = ("w=1 (weights_1)" if weights_mode == WEIGHTS_ONES
+                 else "deterministic weights")
+    fig.suptitle(f"{title_prefix} (probabilistic, {wmode_tag}, "
                  f"{subgradient_method} subgradient)", fontsize=12)
     plt.tight_layout()
     out = os.path.join(plot_dir, f"{output_stem}.png")
     plt.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close(fig)
     print(f"Saved plot to {out}")
     return rows, summary_rows
+
+
+def run_sweep_both_modes(
+    *,
+    base_stem,        # e.g. "ErrorVsChannel_probabilistic"
+    experiment_name,  # e.g. "ErrorVsChannel" (selects the weight pattern)
+    sweep_name,
+    sweep_values,
+    build_problem,
+    sweep_label,
+    title_prefix,
+    weight_modes=WEIGHT_MODES,
+    **kwargs,
+):
+    """Run ``run_sweep`` once per weight mode.
+
+    The deterministic (heterogeneous, paper-matching) mode writes to
+    ``<base_stem>`` and the uniform mode writes to ``<base_stem>_weights_1``.
+    ``weight_modes`` can be narrowed (e.g. via INFOCOM_WEIGHT_MODES) to run only
+    one mode.  Returns a dict mapping weight-mode -> (rows, summary_rows).
+    """
+    env_modes = os.environ.get("INFOCOM_WEIGHT_MODES")
+    if env_modes:
+        requested = [m.strip() for m in env_modes.split(",") if m.strip()]
+        weight_modes = [m for m in requested if m in WEIGHT_MODES]
+        if not weight_modes:
+            raise ValueError(
+                f"INFOCOM_WEIGHT_MODES={env_modes!r} has no valid modes; "
+                f"choose from {WEIGHT_MODES}"
+            )
+
+    results = {}
+    for mode in weight_modes:
+        stem = base_stem + weights_suffix(mode)
+        print(f"\n========== weight mode: {mode}  ->  {stem} ==========")
+        results[mode] = run_sweep(
+            output_stem=stem,
+            sweep_name=sweep_name,
+            sweep_values=sweep_values,
+            build_problem=build_problem,
+            sweep_label=sweep_label,
+            title_prefix=title_prefix,
+            experiment_name=experiment_name,
+            weights_mode=mode,
+            **kwargs,
+        )
+    return results
