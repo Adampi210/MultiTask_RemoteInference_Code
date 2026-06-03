@@ -25,8 +25,17 @@ def _as_1d_c(c, M):
     return c[:, 0].astype(float)
 
 
-def MGF1(M, N, km, T, B, K, n, c, w, gamma, p, titer=10000, verbose=True):
-    """Run the MGF policy and return the discounted sum of weighted errors."""
+def MGF1(M, N, km, T, B, K, n, c, w, gamma, p, titer=10000, verbose=True,
+         save_multipliers=True, m_step_repeats=1):
+    """Run the MGF policy and return the discounted sum of weighted errors.
+
+    save_multipliers=False skips subgradientiter1's write to multipliers.mat
+    (used when many MGF1 calls run concurrently, e.g. the steps sweep).
+
+    m_step_repeats controls how many times Episode1's M-pass projection block
+    is applied per timestep (total projected sub-updates = m_step_repeats * M).
+    m_step_repeats=1 reproduces MATLAB exactly.
+    """
     n = np.asarray(n, dtype=float)
     w = np.asarray(w, dtype=float)
     p = np.asarray(p, dtype=float)
@@ -35,7 +44,8 @@ def MGF1(M, N, km, T, B, K, n, c, w, gamma, p, titer=10000, verbose=True):
     # 1) Subgradient method. Returned A is shape (M+1, T) with A[:M] =
     # lambdasource and A[M] = mu. subgradientiter1 also writes multipliers.mat
     # for compatibility but we don't read it back here.
-    A = subgradientiter1(M, N, T, B, gamma, p, km, w, n, c, titer=titer)
+    A = subgradientiter1(M, N, T, B, gamma, p, km, w, n, c, titer=titer,
+                         save=save_multipliers, m_step_repeats=m_step_repeats)
     lambdasource = A[:M, :]
     mu = A[M, :]
 

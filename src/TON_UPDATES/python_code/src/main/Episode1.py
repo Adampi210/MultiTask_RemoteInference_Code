@@ -63,11 +63,19 @@ def _project_channel(A_init_mu, delta_mu):
     return max(0.0, S_total - min_S_partial, A_init_mu + S_total)
 
 
-def Episode1(asource1, M, T, B, gamma, N, beta, lambdasource, mu, km, w, n, c):
+def Episode1(asource1, M, T, B, gamma, N, beta, lambdasource, mu, km, w, n, c,
+             m_step_repeats=1):
     """1:1 port of Episode1.m with the inner M loop closed-formed.
 
     Returns A of shape (M+1, T) with A[:M] = updated lambdasource,
     A[M] = updated mu.
+
+    m_step_repeats : int >= 1. The MATLAB M-pass projection block (M projected
+        sub-updates per timestep, the "Episode1 M-step") is applied this many
+        times per timestep, so the total number of projected sub-updates per
+        timestep is m_step_repeats * M. Each repeat re-runs the full M-step
+        ramp on the current multipliers using the same (fixed) schedule for
+        that timestep. m_step_repeats=1 reproduces MATLAB exactly.
     """
     A = np.zeros((M + 1, T))
     A[:M, :] = lambdasource
@@ -92,12 +100,18 @@ def Episode1(asource1, M, T, B, gamma, N, beta, lambdasource, mu, km, w, n, c):
         s_vec = beta * c_use * gt
         dp_vec = beta * (gsum - c_use) * gt
 
-        A[:M, t] = _project_M_steps(A[:M, t], s_vec, dp_vec, m_vec, M)
-
         g_row_n = (g_final * n).sum(axis=1)
         Ncurr_vec = np.cumsum(g_row_n)
         delta_mu = beta * (Ncurr_vec - N) * gt
-        A[M, t] = _project_channel(A[M, t], delta_mu)
+
+        # Apply the MATLAB M-pass projection block m_step_repeats times. The
+        # schedule (and hence s_vec/dp_vec/delta_mu) is fixed for this timestep,
+        # so each repeat just re-projects the current multipliers; total
+        # projected sub-updates per timestep = m_step_repeats * M. With
+        # m_step_repeats=1 this is byte-identical to the original Episode1.
+        for _ in range(m_step_repeats):
+            A[:M, t] = _project_M_steps(A[:M, t], s_vec, dp_vec, m_vec, M)
+            A[M, t] = _project_channel(A[M, t], delta_mu)
 
         Delta = Delta_new
 

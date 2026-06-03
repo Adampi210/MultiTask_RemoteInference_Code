@@ -46,7 +46,8 @@ def _batched_gain_table(lambdasource, mu, B, T, gamma, w, p, M, km):
     return a.reshape(M, km, T, B).transpose(0, 2, 3, 1)
 
 
-def subgradientiter1(M, N, T, B, gamma, p, km, w, n, c, titer=10000, verbose=False):
+def subgradientiter1(M, N, T, B, gamma, p, km, w, n, c, titer=10000, verbose=False,
+                     save=True, m_step_repeats=1):
     lambdasource = np.zeros((M, T))
     mu = np.zeros(T)
     beta = 0.9
@@ -57,7 +58,8 @@ def subgradientiter1(M, N, T, B, gamma, p, km, w, n, c, titer=10000, verbose=Fal
     for j in range(1, titer + 1):  # MATLAB j = 1..Titer
         asource1 = _batched_gain_table(lambdasource, mu, B, T, gamma, w, p, M, km)
         A = Episode1(asource1, M, T, B, gamma, N, beta / j,
-                     lambdasource, mu, km, w, n, c)
+                     lambdasource, mu, km, w, n, c,
+                     m_step_repeats=m_step_repeats)
         lambdasource = A[:M, :]
         mu = A[M, :]
 
@@ -66,9 +68,12 @@ def subgradientiter1(M, N, T, B, gamma, p, km, w, n, c, titer=10000, verbose=Fal
                   f"max|lambda|={np.max(np.abs(lambdasource)):.4f}  "
                   f"max|mu|={np.max(np.abs(mu)):.4f}")
 
-    sio.savemat(_MULTIPLIERS_PATH,
-                {'lambdasource': lambdasource,
-                 'mu': mu.reshape(1, -1)})
+    # save=False lets concurrent callers (e.g. the steps sweep) skip the shared
+    # multipliers.mat write so parallel runs don't race/corrupt the file.
+    if save:
+        sio.savemat(_MULTIPLIERS_PATH,
+                    {'lambdasource': lambdasource,
+                     'mu': mu.reshape(1, -1)})
     return A
 
 

@@ -1,0 +1,302 @@
+Robot-loss probabilistic ErrorVsChannel (grid per weight mode)
+  TITER=1000  MC_TRIALS=20  SEED=0
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+  channels: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+  profiles (12): ['uniform_wide', 'uniform_low', 'uniform_mid', 'uniform_very_wide', 'uniform_with_perfect_outliers', 'bimodal_extreme', 'bimodal_balanced', 'bimodal_q1_vs_lossy_30_70', 'bimodal_q1_vs_lossy_70_30', 'trimodal_perfect_mid_low', 'source_split_perfect_or_lossy', 'adversarial_perfect_with_critical_lossy']
+  weight modes: ['deterministic', 'ones']
+
+========== weight mode: deterministic (original weights) ==========
+  --- profile: q=1 (deterministic ref) ---
+    N=  2: Random=19.5, MAF=19.4, MGF=17.5, MEF=17.5
+    N=  4: Random=19.3, MAF=19, MGF=17.5, MEF=17.4
+    N=  6: Random=19, MAF=18.8, MGF=17.5, MEF=17.4
+    N=  8: Random=18.8, MAF=18.6, MGF=17.4, MEF=17.3
+    N= 10: Random=18.6, MAF=18.4, MGF=17.4, MEF=17.3
+    N= 12: Random=18.5, MAF=18.2, MGF=17.4, MEF=17.3
+    N= 14: Random=18.3, MAF=18.2, MGF=17.3, MEF=17.3
+    N= 16: Random=18.2, MAF=18, MGF=17.4, MEF=17.3
+    N= 18: Random=18.1, MAF=17.9, MGF=17.3, MEF=17.3
+    N= 20: Random=17.9, MAF=17.8, MGF=17.3, MEF=17.3
+  --- profile: uniform_wide ---
+    N=  2: Random=19.6, MAF=19.5, MGF=18.1, MEF=18.1
+    N=  4: Random=19.4, MAF=19.3, MGF=18.1, MEF=18
+    N=  6: Random=19.3, MAF=19.1, MGF=18, MEF=18
+    N=  8: Random=19.1, MAF=18.9, MGF=18, MEF=18
+    N= 10: Random=19, MAF=18.8, MGF=18, MEF=18
+    N= 12: Random=18.8, MAF=18.6, MGF=18, MEF=17.9
+    N= 14: Random=18.7, MAF=18.5, MGF=18, MEF=17.9
+    N= 16: Random=18.6, MAF=18.5, MGF=17.9, MEF=17.9
+    N= 18: Random=18.5, MAF=18.4, MGF=17.9, MEF=17.9
+    N= 20: Random=18.4, MAF=18.3, MGF=17.9, MEF=17.9
+  --- profile: uniform_low ---
+    N=  2: Random=19.6, MAF=19.5, MGF=18.3, MEF=18.3
+    N=  4: Random=19.5, MAF=19.4, MGF=18.3, MEF=18.2
+    N=  6: Random=19.3, MAF=19.2, MGF=18.3, MEF=18.2
+    N=  8: Random=19.2, MAF=19, MGF=18.3, MEF=18.2
+    N= 10: Random=19.1, MAF=18.9, MGF=18.2, MEF=18.2
+    N= 12: Random=18.9, MAF=18.8, MGF=18.2, MEF=18.2
+    N= 14: Random=18.8, MAF=18.7, MGF=18.2, MEF=18.2
+    N= 16: Random=18.8, MAF=18.6, MGF=18.2, MEF=18.1
+    N= 18: Random=18.7, MAF=18.5, MGF=18.1, MEF=18.1
+    N= 20: Random=18.6, MAF=18.5, MGF=18.2, MEF=18.1
+  --- profile: uniform_mid ---
+    N=  2: Random=19.6, MAF=19.4, MGF=17.9, MEF=17.9
+    N=  4: Random=19.4, MAF=19.2, MGF=17.9, MEF=17.9
+    N=  6: Random=19.2, MAF=19, MGF=17.9, MEF=17.9
+    N=  8: Random=19.1, MAF=18.8, MGF=17.9, MEF=17.9
+    N= 10: Random=18.9, MAF=18.7, MGF=17.9, MEF=17.8
+    N= 12: Random=18.8, MAF=18.5, MGF=17.9, MEF=17.8
+    N= 14: Random=18.7, MAF=18.4, MGF=17.8, MEF=17.8
+    N= 16: Random=18.6, MAF=18.3, MGF=17.8, MEF=17.8
+    N= 18: Random=18.5, MAF=18.2, MGF=17.7, MEF=17.7
+    N= 20: Random=18.4, MAF=18.1, MGF=17.8, MEF=17.7
+  --- profile: uniform_very_wide ---
+    N=  2: Random=19.6, MAF=19.5, MGF=18.2, MEF=18.2
+    N=  4: Random=19.5, MAF=19.4, MGF=18.2, MEF=18.2
+    N=  6: Random=19.3, MAF=19.2, MGF=18.2, MEF=18.2
+    N=  8: Random=19.2, MAF=19, MGF=18.2, MEF=18.1
+    N= 10: Random=19.1, MAF=18.9, MGF=18.2, MEF=18.1
+    N= 12: Random=18.9, MAF=18.8, MGF=18.1, MEF=18.1
+    N= 14: Random=18.8, MAF=18.6, MGF=18.1, MEF=18.1
+    N= 16: Random=18.8, MAF=18.6, MGF=18.1, MEF=18.1
+    N= 18: Random=18.7, MAF=18.5, MGF=18, MEF=18
+    N= 20: Random=18.6, MAF=18.4, MGF=18.1, MEF=18
+  --- profile: uniform_with_perfect_outliers ---
+    N=  2: Random=19.6, MAF=19.5, MGF=17.8, MEF=17.8
+    N=  4: Random=19.4, MAF=19.3, MGF=17.8, MEF=17.8
+    N=  6: Random=19.2, MAF=19.1, MGF=17.8, MEF=17.7
+    N=  8: Random=19.1, MAF=18.9, MGF=17.8, MEF=17.7
+    N= 10: Random=18.9, MAF=18.8, MGF=17.7, MEF=17.7
+    N= 12: Random=18.7, MAF=18.6, MGF=17.7, MEF=17.7
+    N= 14: Random=18.6, MAF=18.5, MGF=17.7, MEF=17.6
+    N= 16: Random=18.5, MAF=18.4, MGF=17.7, MEF=17.6
+    N= 18: Random=18.4, MAF=18.3, MGF=17.6, MEF=17.6
+    N= 20: Random=18.3, MAF=18.2, MGF=17.6, MEF=17.6
+  --- profile: bimodal_extreme ---
+    N=  2: Random=19.5, MAF=19.5, MGF=17.5, MEF=17.5
+    N=  4: Random=19.3, MAF=19.3, MGF=17.5, MEF=17.4
+    N=  6: Random=19, MAF=19.1, MGF=17.5, MEF=17.4
+    N=  8: Random=18.9, MAF=18.9, MGF=17.5, MEF=17.4
+    N= 10: Random=18.7, MAF=18.7, MGF=17.4, MEF=17.4
+    N= 12: Random=18.5, MAF=18.5, MGF=17.4, MEF=17.4
+    N= 14: Random=18.4, MAF=18.4, MGF=17.4, MEF=17.3
+    N= 16: Random=18.3, MAF=18.3, MGF=17.3, MEF=17.3
+    N= 18: Random=18.1, MAF=18.2, MGF=17.3, MEF=17.3
+    N= 20: Random=18, MAF=18, MGF=17.3, MEF=17.3
+  --- profile: bimodal_balanced ---
+    N=  2: Random=19.6, MAF=19.6, MGF=18.1, MEF=18.1
+    N=  4: Random=19.4, MAF=19.4, MGF=18.1, MEF=18.1
+    N=  6: Random=19.2, MAF=19.2, MGF=18.1, MEF=18
+    N=  8: Random=19.1, MAF=19, MGF=18.1, MEF=18
+    N= 10: Random=18.9, MAF=18.8, MGF=18.1, MEF=18
+    N= 12: Random=18.8, MAF=18.7, MGF=18, MEF=18
+    N= 14: Random=18.7, MAF=18.6, MGF=18, MEF=18
+    N= 16: Random=18.6, MAF=18.5, MGF=18, MEF=18
+    N= 18: Random=18.5, MAF=18.4, MGF=18, MEF=17.9
+    N= 20: Random=18.4, MAF=18.3, MGF=18, MEF=17.9
+  --- profile: bimodal_q1_vs_lossy_30_70 ---
+    N=  2: Random=19.6, MAF=19.6, MGF=18.2, MEF=18.2
+    N=  4: Random=19.4, MAF=19.4, MGF=18.2, MEF=18.1
+    N=  6: Random=19.2, MAF=19.2, MGF=18.2, MEF=18.1
+    N=  8: Random=19.1, MAF=19, MGF=18.1, MEF=18.1
+    N= 10: Random=18.9, MAF=18.9, MGF=18.1, MEF=18.1
+    N= 12: Random=18.8, MAF=18.8, MGF=18.1, MEF=18.1
+    N= 14: Random=18.7, MAF=18.7, MGF=18.1, MEF=18
+    N= 16: Random=18.6, MAF=18.6, MGF=18, MEF=18
+    N= 18: Random=18.5, MAF=18.5, MGF=18.1, MEF=18
+    N= 20: Random=18.4, MAF=18.4, MGF=18, MEF=18
+  --- profile: bimodal_q1_vs_lossy_70_30 ---
+    N=  2: Random=19.5, MAF=19.4, MGF=17.5, MEF=17.5
+    N=  4: Random=19.3, MAF=19.2, MGF=17.5, MEF=17.4
+    N=  6: Random=19, MAF=18.9, MGF=17.5, MEF=17.4
+    N=  8: Random=18.9, MAF=18.8, MGF=17.4, MEF=17.4
+    N= 10: Random=18.7, MAF=18.6, MGF=17.4, MEF=17.3
+    N= 12: Random=18.5, MAF=18.4, MGF=17.4, MEF=17.3
+    N= 14: Random=18.3, MAF=18.3, MGF=17.4, MEF=17.3
+    N= 16: Random=18.2, MAF=18.2, MGF=17.3, MEF=17.3
+    N= 18: Random=18.1, MAF=18, MGF=17.3, MEF=17.3
+    N= 20: Random=18, MAF=17.9, MGF=17.3, MEF=17.3
+  --- profile: trimodal_perfect_mid_low ---
+    N=  2: Random=19.5, MAF=19.5, MGF=17.6, MEF=17.6
+    N=  4: Random=19.4, MAF=19.3, MGF=17.7, MEF=17.6
+    N=  6: Random=19.1, MAF=19.1, MGF=17.6, MEF=17.6
+    N=  8: Random=19, MAF=18.9, MGF=17.6, MEF=17.6
+    N= 10: Random=18.8, MAF=18.8, MGF=17.6, MEF=17.5
+    N= 12: Random=18.7, MAF=18.6, MGF=17.6, MEF=17.5
+    N= 14: Random=18.5, MAF=18.5, MGF=17.6, MEF=17.5
+    N= 16: Random=18.4, MAF=18.4, MGF=17.5, MEF=17.5
+    N= 18: Random=18.3, MAF=18.3, MGF=17.5, MEF=17.5
+    N= 20: Random=18.2, MAF=18.1, MGF=17.5, MEF=17.4
+  --- profile: source_split_perfect_or_lossy ---
+    N=  2: Random=19.6, MAF=19.5, MGF=18.3, MEF=18.3
+    N=  4: Random=19.5, MAF=19.3, MGF=18.3, MEF=18.3
+    N=  6: Random=19.4, MAF=19.1, MGF=18.3, MEF=18.3
+    N=  8: Random=19.2, MAF=19, MGF=18.3, MEF=18.3
+    N= 10: Random=19.1, MAF=18.8, MGF=18.3, MEF=18.2
+    N= 12: Random=19, MAF=18.7, MGF=18.2, MEF=18.2
+    N= 14: Random=18.9, MAF=18.6, MGF=18.2, MEF=18.2
+    N= 16: Random=18.8, MAF=18.6, MGF=18.2, MEF=18.2
+    N= 18: Random=18.7, MAF=18.5, MGF=18.2, MEF=18.2
+    N= 20: Random=18.6, MAF=18.4, MGF=18.2, MEF=18.1
+  --- profile: adversarial_perfect_with_critical_lossy ---
+    N=  2: Random=19.5, MAF=19.4, MGF=17.5, MEF=17.5
+    N=  4: Random=19.3, MAF=19, MGF=17.5, MEF=17.4
+    N=  6: Random=19, MAF=18.8, MGF=17.5, MEF=17.4
+    N=  8: Random=18.8, MAF=18.6, MGF=17.4, MEF=17.3
+    N= 10: Random=18.6, MAF=18.4, MGF=17.4, MEF=17.3
+    N= 12: Random=18.5, MAF=18.2, MGF=17.4, MEF=17.3
+    N= 14: Random=18.3, MAF=18.2, MGF=17.3, MEF=17.3
+    N= 16: Random=18.2, MAF=18, MGF=17.4, MEF=17.3
+    N= 18: Random=18.1, MAF=17.9, MGF=17.3, MEF=17.3
+    N= 20: Random=17.9, MAF=17.8, MGF=17.3, MEF=17.3
+  saved grid C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\robot\ErrorVsChannel_robot_probabilistic_orig_weights.png
+  saved data C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\ErrorVsChannel_robot_probabilistic_orig_weights_data.csv
+
+========== weight mode: ones (w = 1) ==========
+  --- profile: q=1 (deterministic ref) ---
+    N=  2: Random=327, MAF=327, MGF=330, MEF=326
+    N=  4: Random=323, MAF=321, MGF=324, MEF=321
+    N=  6: Random=319, MAF=317, MGF=320, MEF=318
+    N=  8: Random=316, MAF=313, MGF=315, MEF=316
+    N= 10: Random=313, MAF=310, MGF=313, MEF=314
+    N= 12: Random=310, MAF=308, MGF=313, MEF=313
+    N= 14: Random=308, MAF=306, MGF=310, MEF=312
+    N= 16: Random=306, MAF=303, MGF=310, MEF=311
+    N= 18: Random=304, MAF=302, MGF=307, MEF=310
+    N= 20: Random=302, MAF=300, MGF=306, MEF=310
+  --- profile: uniform_wide ---
+    N=  2: Random=329, MAF=329, MGF=328, MEF=329
+    N=  4: Random=325, MAF=325, MGF=324, MEF=327
+    N=  6: Random=323, MAF=322, MGF=320, MEF=324
+    N=  8: Random=320, MAF=319, MGF=318, MEF=322
+    N= 10: Random=318, MAF=316, MGF=315, MEF=320
+    N= 12: Random=316, MAF=314, MGF=314, MEF=318
+    N= 14: Random=314, MAF=312, MGF=312, MEF=316
+    N= 16: Random=312, MAF=310, MGF=310, MEF=314
+    N= 18: Random=310, MAF=309, MGF=308, MEF=312
+    N= 20: Random=309, MAF=307, MGF=307, MEF=310
+  --- profile: uniform_low ---
+    N=  2: Random=329, MAF=329, MGF=329, MEF=329
+    N=  4: Random=327, MAF=326, MGF=326, MEF=327
+    N=  6: Random=324, MAF=323, MGF=323, MEF=325
+    N=  8: Random=322, MAF=321, MGF=321, MEF=323
+    N= 10: Random=320, MAF=318, MGF=319, MEF=322
+    N= 12: Random=318, MAF=317, MGF=316, MEF=320
+    N= 14: Random=317, MAF=315, MGF=314, MEF=318
+    N= 16: Random=315, MAF=313, MGF=313, MEF=316
+    N= 18: Random=314, MAF=311, MGF=312, MEF=315
+    N= 20: Random=312, MAF=310, MGF=310, MEF=313
+  --- profile: uniform_mid ---
+    N=  2: Random=328, MAF=328, MGF=329, MEF=328
+    N=  4: Random=325, MAF=324, MGF=324, MEF=326
+    N=  6: Random=322, MAF=321, MGF=321, MEF=324
+    N=  8: Random=320, MAF=318, MGF=318, MEF=322
+    N= 10: Random=317, MAF=315, MGF=316, MEF=320
+    N= 12: Random=315, MAF=312, MGF=313, MEF=317
+    N= 14: Random=313, MAF=311, MGF=310, MEF=315
+    N= 16: Random=311, MAF=309, MGF=309, MEF=313
+    N= 18: Random=310, MAF=307, MGF=308, MEF=311
+    N= 20: Random=308, MAF=306, MGF=307, MEF=309
+  --- profile: uniform_very_wide ---
+    N=  2: Random=329, MAF=329, MGF=328, MEF=329
+    N=  4: Random=326, MAF=326, MGF=324, MEF=327
+    N=  6: Random=323, MAF=323, MGF=320, MEF=324
+    N=  8: Random=321, MAF=321, MGF=318, MEF=322
+    N= 10: Random=319, MAF=318, MGF=316, MEF=320
+    N= 12: Random=317, MAF=316, MGF=315, MEF=318
+    N= 14: Random=316, MAF=314, MGF=312, MEF=317
+    N= 16: Random=314, MAF=312, MGF=311, MEF=315
+    N= 18: Random=312, MAF=311, MGF=310, MEF=313
+    N= 20: Random=311, MAF=309, MGF=308, MEF=311
+  --- profile: uniform_with_perfect_outliers ---
+    N=  2: Random=329, MAF=329, MGF=328, MEF=329
+    N=  4: Random=326, MAF=325, MGF=324, MEF=327
+    N=  6: Random=323, MAF=322, MGF=321, MEF=324
+    N=  8: Random=320, MAF=319, MGF=318, MEF=322
+    N= 10: Random=318, MAF=316, MGF=316, MEF=320
+    N= 12: Random=316, MAF=314, MGF=313, MEF=318
+    N= 14: Random=314, MAF=312, MGF=312, MEF=316
+    N= 16: Random=313, MAF=310, MGF=310, MEF=315
+    N= 18: Random=311, MAF=309, MGF=309, MEF=313
+    N= 20: Random=309, MAF=307, MGF=307, MEF=311
+  --- profile: bimodal_extreme ---
+    N=  2: Random=328, MAF=330, MGF=329, MEF=327
+    N=  4: Random=325, MAF=326, MGF=323, MEF=323
+    N=  6: Random=322, MAF=322, MGF=320, MEF=321
+    N=  8: Random=319, MAF=319, MGF=317, MEF=319
+    N= 10: Random=317, MAF=316, MGF=315, MEF=318
+    N= 12: Random=315, MAF=314, MGF=314, MEF=316
+    N= 14: Random=313, MAF=312, MGF=311, MEF=315
+    N= 16: Random=311, MAF=310, MGF=309, MEF=313
+    N= 18: Random=309, MAF=308, MGF=307, MEF=311
+    N= 20: Random=308, MAF=307, MGF=305, MEF=308
+  --- profile: bimodal_balanced ---
+    N=  2: Random=329, MAF=330, MGF=328, MEF=327
+    N=  4: Random=326, MAF=327, MGF=324, MEF=324
+    N=  6: Random=323, MAF=324, MGF=321, MEF=322
+    N=  8: Random=321, MAF=321, MGF=319, MEF=321
+    N= 10: Random=319, MAF=318, MGF=316, MEF=320
+    N= 12: Random=317, MAF=316, MGF=315, MEF=318
+    N= 14: Random=315, MAF=314, MGF=313, MEF=316
+    N= 16: Random=313, MAF=312, MGF=311, MEF=314
+    N= 18: Random=312, MAF=311, MGF=310, MEF=312
+    N= 20: Random=311, MAF=309, MGF=308, MEF=310
+  --- profile: bimodal_q1_vs_lossy_30_70 ---
+    N=  2: Random=329, MAF=330, MGF=328, MEF=328
+    N=  4: Random=326, MAF=327, MGF=325, MEF=326
+    N=  6: Random=324, MAF=324, MGF=322, MEF=325
+    N=  8: Random=322, MAF=321, MGF=320, MEF=323
+    N= 10: Random=320, MAF=319, MGF=319, MEF=321
+    N= 12: Random=318, MAF=317, MGF=317, MEF=318
+    N= 14: Random=317, MAF=315, MGF=314, MEF=316
+    N= 16: Random=315, MAF=313, MGF=312, MEF=315
+    N= 18: Random=314, MAF=312, MGF=311, MEF=313
+    N= 20: Random=312, MAF=311, MGF=309, MEF=312
+  --- profile: bimodal_q1_vs_lossy_70_30 ---
+    N=  2: Random=328, MAF=328, MGF=329, MEF=326
+    N=  4: Random=324, MAF=324, MGF=325, MEF=322
+    N=  6: Random=321, MAF=320, MGF=320, MEF=320
+    N=  8: Random=318, MAF=317, MGF=316, MEF=319
+    N= 10: Random=316, MAF=314, MGF=314, MEF=318
+    N= 12: Random=313, MAF=311, MGF=313, MEF=317
+    N= 14: Random=311, MAF=310, MGF=312, MEF=316
+    N= 16: Random=309, MAF=308, MGF=308, MEF=312
+    N= 18: Random=308, MAF=306, MGF=307, MEF=310
+    N= 20: Random=306, MAF=304, MGF=304, MEF=308
+  --- profile: trimodal_perfect_mid_low ---
+    N=  2: Random=329, MAF=329, MGF=329, MEF=327
+    N=  4: Random=326, MAF=326, MGF=325, MEF=326
+    N=  6: Random=323, MAF=322, MGF=320, MEF=325
+    N=  8: Random=320, MAF=319, MGF=318, MEF=322
+    N= 10: Random=318, MAF=317, MGF=317, MEF=320
+    N= 12: Random=316, MAF=315, MGF=315, MEF=318
+    N= 14: Random=314, MAF=313, MGF=312, MEF=316
+    N= 16: Random=313, MAF=311, MGF=310, MEF=313
+    N= 18: Random=311, MAF=309, MGF=309, MEF=312
+    N= 20: Random=310, MAF=308, MGF=307, MEF=310
+  --- profile: source_split_perfect_or_lossy ---
+    N=  2: Random=329, MAF=329, MGF=328, MEF=327
+    N=  4: Random=325, MAF=325, MGF=324, MEF=325
+    N=  6: Random=323, MAF=322, MGF=321, MEF=324
+    N=  8: Random=320, MAF=319, MGF=318, MEF=323
+    N= 10: Random=318, MAF=317, MGF=316, MEF=320
+    N= 12: Random=316, MAF=314, MGF=315, MEF=318
+    N= 14: Random=314, MAF=313, MGF=312, MEF=316
+    N= 16: Random=312, MAF=311, MGF=310, MEF=314
+    N= 18: Random=311, MAF=309, MGF=308, MEF=311
+    N= 20: Random=309, MAF=308, MGF=306, MEF=310
+  --- profile: adversarial_perfect_with_critical_lossy ---
+    N=  2: Random=327, MAF=327, MGF=330, MEF=326
+    N=  4: Random=323, MAF=321, MGF=324, MEF=321
+    N=  6: Random=319, MAF=317, MGF=320, MEF=318
+    N=  8: Random=316, MAF=313, MGF=315, MEF=316
+    N= 10: Random=313, MAF=310, MGF=313, MEF=314
+    N= 12: Random=310, MAF=308, MGF=313, MEF=313
+    N= 14: Random=308, MAF=306, MGF=310, MEF=312
+    N= 16: Random=306, MAF=303, MGF=310, MEF=311
+    N= 18: Random=304, MAF=302, MGF=307, MEF=310
+    N= 20: Random=302, MAF=300, MGF=306, MEF=310
+  saved grid C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\robot\ErrorVsChannel_robot_probabilistic_weights_1.png
+  saved data C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\ErrorVsChannel_robot_probabilistic_weights_1_data.csv
+
+Done.

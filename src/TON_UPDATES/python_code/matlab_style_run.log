@@ -1,0 +1,155 @@
+MATLAB-style probabilistic plots
+  TITER=1000  MC_TRIALS=20  SEED=0
+  subgradient method: adam  (from recommended_subgradient_methods.json)
+  profiles: ['uniform_very_wide', 'bimodal_q1_vs_lossy_30_70']
+  weight modes: ['ones', 'deterministic']
+
+=== ErrorVsChannel | uniform_very_wide | w = 1 ===
+  channel=  2: Random=1.2e+04, MAF=1.27e+04, MGF=9.05e+03, MEF=7.63e+03
+  channel=  4: Random=1.06e+04, MAF=9.71e+03, MGF=4.79e+03, MEF=4.16e+03
+  channel=  6: Random=9.4e+03, MAF=9.68e+03, MGF=1.61e+03, MEF=1.68e+03
+  channel=  8: Random=8.37e+03, MAF=8.67e+03, MGF=454, MEF=592
+  channel= 10: Random=7.51e+03, MAF=6.56e+03, MGF=250, MEF=357
+  channel= 12: Random=6.67e+03, MAF=5.89e+03, MGF=198, MEF=291
+  channel= 14: Random=5.95e+03, MAF=4.02e+03, MGF=167, MEF=254
+  channel= 16: Random=5.33e+03, MAF=2.66e+03, MGF=149, MEF=222
+  channel= 18: Random=4.72e+03, MAF=1.81e+03, MGF=136, MEF=203
+  channel= 20: Random=4.25e+03, MAF=1.09e+03, MGF=131, MEF=173
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsChannel_uniform_very_wide_weights_1.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsChannel_uniform_very_wide_weights_1.csv
+
+=== ErrorVsChannel | bimodal_q1_vs_lossy_30_70 | w = 1 ===
+  channel=  2: Random=1.22e+04, MAF=1.32e+04, MGF=9.57e+03, MEF=8.66e+03
+  channel=  4: Random=1.1e+04, MAF=1.03e+04, MGF=6.28e+03, MEF=5.77e+03
+  channel=  6: Random=9.9e+03, MAF=9.6e+03, MGF=3.68e+03, MEF=3.49e+03
+  channel=  8: Random=9.1e+03, MAF=8.86e+03, MGF=1.26e+03, MEF=1.42e+03
+  channel= 10: Random=8.33e+03, MAF=6.79e+03, MGF=476, MEF=696
+  channel= 12: Random=7.67e+03, MAF=6.16e+03, MGF=296, MEF=428
+  channel= 14: Random=7e+03, MAF=5.38e+03, MGF=236, MEF=320
+  channel= 16: Random=6.39e+03, MAF=3.68e+03, MGF=192, MEF=246
+  channel= 18: Random=5.85e+03, MAF=2.57e+03, MGF=168, MEF=218
+  channel= 20: Random=5.31e+03, MAF=1.68e+03, MGF=157, MEF=203
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsChannel_bimodal_q1_vs_lossy_30_70_weights_1.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsChannel_bimodal_q1_vs_lossy_30_70_weights_1.csv
+
+=== ErrorVsSources | uniform_very_wide | w = 1 ===
+  Number of Sources=  2: Random=1.69e+03, MAF=224, MGF=94.5, MEF=126
+  Number of Sources=  4: Random=1.44e+03, MAF=211, MGF=89.5, MEF=111
+  Number of Sources=  6: Random=2.25e+03, MAF=202, MGF=98.5, MEF=139
+  Number of Sources=  8: Random=3.45e+03, MAF=536, MGF=140, MEF=201
+  Number of Sources= 10: Random=4.58e+03, MAF=1.26e+03, MGF=147, MEF=220
+  Number of Sources= 12: Random=5.19e+03, MAF=2.38e+03, MGF=143, MEF=195
+  Number of Sources= 14: Random=5.63e+03, MAF=3.98e+03, MGF=160, MEF=216
+  Number of Sources= 16: Random=6.33e+03, MAF=5.4e+03, MGF=183, MEF=267
+  Number of Sources= 18: Random=6.82e+03, MAF=6.17e+03, MGF=217, MEF=313
+  Number of Sources= 20: Random=7.51e+03, MAF=6.56e+03, MGF=250, MEF=357
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsSources_uniform_very_wide_weights_1.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsSources_uniform_very_wide_weights_1.csv
+
+=== ErrorVsSources | bimodal_q1_vs_lossy_30_70 | w = 1 ===
+  Number of Sources=  2: Random=2.07e+03, MAF=175, MGF=89.2, MEF=101
+  Number of Sources=  4: Random=2.75e+03, MAF=317, MGF=124, MEF=172
+  Number of Sources=  6: Random=3.25e+03, MAF=323, MGF=111, MEF=134
+  Number of Sources=  8: Random=4.22e+03, MAF=504, MGF=124, MEF=152
+  Number of Sources= 10: Random=5.3e+03, MAF=1.55e+03, MGF=138, MEF=177
+  Number of Sources= 12: Random=6.33e+03, MAF=3.46e+03, MGF=185, MEF=264
+  Number of Sources= 14: Random=6.97e+03, MAF=4.95e+03, MGF=226, MEF=352
+  Number of Sources= 16: Random=7.64e+03, MAF=6.13e+03, MGF=271, MEF=442
+  Number of Sources= 18: Random=7.76e+03, MAF=6.37e+03, MGF=359, MEF=581
+  Number of Sources= 20: Random=8.33e+03, MAF=6.79e+03, MGF=476, MEF=696
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsSources_bimodal_q1_vs_lossy_30_70_weights_1.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsSources_bimodal_q1_vs_lossy_30_70_weights_1.csv
+
+=== ErrorVsTasks | uniform_very_wide | w = 1 ===
+  Number of Tasks=  3: Random=2.86e+03, MAF=275, MGF=130, MEF=175
+  Number of Tasks=  6: Random=5.41e+03, MAF=2.72e+03, MGF=150, MEF=219
+  Number of Tasks=  9: Random=7.51e+03, MAF=6.56e+03, MGF=250, MEF=357
+  Number of Tasks= 12: Random=8.7e+03, MAF=8.1e+03, MGF=743, MEF=844
+  Number of Tasks= 15: Random=9.41e+03, MAF=9.31e+03, MGF=1.51e+03, MEF=1.7e+03
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsTasks_uniform_very_wide_weights_1.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsTasks_uniform_very_wide_weights_1.csv
+
+=== ErrorVsTasks | bimodal_q1_vs_lossy_30_70 | w = 1 ===
+  Number of Tasks=  3: Random=3.07e+03, MAF=221, MGF=105, MEF=142
+  Number of Tasks=  6: Random=6.73e+03, MAF=3.81e+03, MGF=227, MEF=273
+  Number of Tasks=  9: Random=8.33e+03, MAF=6.79e+03, MGF=476, MEF=696
+  Number of Tasks= 12: Random=9.2e+03, MAF=8.61e+03, MGF=1.44e+03, MEF=1.5e+03
+  Number of Tasks= 15: Random=1.01e+04, MAF=9.41e+03, MGF=3.37e+03, MEF=3.27e+03
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsTasks_bimodal_q1_vs_lossy_30_70_weights_1.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsTasks_bimodal_q1_vs_lossy_30_70_weights_1.csv
+
+=== ErrorVsChannel | uniform_very_wide | original weights ===
+  channel=  2: Random=5.99e+03, MAF=6.07e+03, MGF=2.73e+03, MEF=2.21e+03
+  channel=  4: Random=5.34e+03, MAF=4.85e+03, MGF=363, MEF=422
+  channel=  6: Random=4.72e+03, MAF=4.92e+03, MGF=176, MEF=234
+  channel=  8: Random=4.18e+03, MAF=4.15e+03, MGF=127, MEF=170
+  channel= 10: Random=3.79e+03, MAF=3.24e+03, MGF=96.9, MEF=127
+  channel= 12: Random=3.36e+03, MAF=2.9e+03, MGF=80.7, MEF=104
+  channel= 14: Random=3.03e+03, MAF=1.82e+03, MGF=72.2, MEF=94.4
+  channel= 16: Random=2.7e+03, MAF=1.31e+03, MGF=65.9, MEF=88.3
+  channel= 18: Random=2.4e+03, MAF=945, MGF=61.3, MEF=82.6
+  channel= 20: Random=2.17e+03, MAF=573, MGF=58.5, MEF=76.6
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsChannel_uniform_very_wide_orig_weights.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsChannel_uniform_very_wide_orig_weights.csv
+
+=== ErrorVsChannel | bimodal_q1_vs_lossy_30_70 | original weights ===
+  channel=  2: Random=6.07e+03, MAF=6.54e+03, MGF=3.07e+03, MEF=2.66e+03
+  channel=  4: Random=5.45e+03, MAF=4.94e+03, MGF=554, MEF=633
+  channel=  6: Random=4.93e+03, MAF=4.87e+03, MGF=222, MEF=277
+  channel=  8: Random=4.5e+03, MAF=4.18e+03, MGF=140, MEF=166
+  channel= 10: Random=4.12e+03, MAF=3.25e+03, MGF=108, MEF=136
+  channel= 12: Random=3.76e+03, MAF=3.08e+03, MGF=90.8, MEF=115
+  channel= 14: Random=3.4e+03, MAF=2.51e+03, MGF=76.8, MEF=106
+  channel= 16: Random=3.07e+03, MAF=1.66e+03, MGF=71.2, MEF=92.1
+  channel= 18: Random=2.81e+03, MAF=1.27e+03, MGF=65, MEF=83.9
+  channel= 20: Random=2.52e+03, MAF=819, MGF=60, MEF=79.3
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsChannel_bimodal_q1_vs_lossy_30_70_orig_weights.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsChannel_bimodal_q1_vs_lossy_30_70_orig_weights.csv
+
+=== ErrorVsSources | uniform_very_wide | original weights ===
+  Number of Sources=  2: Random=606, MAF=109, MGF=41.8, MEF=45
+  Number of Sources=  4: Random=873, MAF=133, MGF=48.4, MEF=67.7
+  Number of Sources=  6: Random=1.36e+03, MAF=123, MGF=51.5, MEF=78
+  Number of Sources=  8: Random=1.58e+03, MAF=249, MGF=56.5, MEF=71.3
+  Number of Sources= 10: Random=2.24e+03, MAF=594, MGF=56.7, MEF=79.1
+  Number of Sources= 12: Random=2.66e+03, MAF=1.15e+03, MGF=59.7, MEF=72.9
+  Number of Sources= 14: Random=2.88e+03, MAF=1.8e+03, MGF=68.5, MEF=89.6
+  Number of Sources= 16: Random=3.4e+03, MAF=2.54e+03, MGF=83.7, MEF=111
+  Number of Sources= 18: Random=3.49e+03, MAF=3.11e+03, MGF=82.4, MEF=109
+  Number of Sources= 20: Random=3.79e+03, MAF=3.24e+03, MGF=96.9, MEF=127
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsSources_uniform_very_wide_orig_weights.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsSources_uniform_very_wide_orig_weights.csv
+
+=== ErrorVsSources | bimodal_q1_vs_lossy_30_70 | original weights ===
+  Number of Sources=  2: Random=967, MAF=75.7, MGF=43.1, MEF=50.4
+  Number of Sources=  4: Random=1.29e+03, MAF=108, MGF=46.5, MEF=55.9
+  Number of Sources=  6: Random=1.77e+03, MAF=171, MGF=52.7, MEF=66.2
+  Number of Sources=  8: Random=2.3e+03, MAF=271, MGF=54.5, MEF=66.3
+  Number of Sources= 10: Random=3.01e+03, MAF=859, MGF=56.9, MEF=77.8
+  Number of Sources= 12: Random=3.3e+03, MAF=1.64e+03, MGF=69.7, MEF=84.4
+  Number of Sources= 14: Random=3.21e+03, MAF=2.24e+03, MGF=81, MEF=101
+  Number of Sources= 16: Random=3.71e+03, MAF=3.08e+03, MGF=98, MEF=147
+  Number of Sources= 18: Random=3.88e+03, MAF=3.16e+03, MGF=102, MEF=147
+  Number of Sources= 20: Random=4.12e+03, MAF=3.25e+03, MGF=108, MEF=136
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsSources_bimodal_q1_vs_lossy_30_70_orig_weights.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsSources_bimodal_q1_vs_lossy_30_70_orig_weights.csv
+
+=== ErrorVsTasks | uniform_very_wide | original weights ===
+  Number of Tasks=  3: Random=1.29e+03, MAF=146, MGF=53.4, MEF=76.1
+  Number of Tasks=  6: Random=2.89e+03, MAF=1.31e+03, MGF=69.1, MEF=100
+  Number of Tasks=  9: Random=3.79e+03, MAF=3.24e+03, MGF=96.9, MEF=127
+  Number of Tasks= 12: Random=4.36e+03, MAF=4.04e+03, MGF=121, MEF=153
+  Number of Tasks= 15: Random=4.64e+03, MAF=4.65e+03, MGF=153, MEF=199
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsTasks_uniform_very_wide_orig_weights.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsTasks_uniform_very_wide_orig_weights.csv
+
+=== ErrorVsTasks | bimodal_q1_vs_lossy_30_70 | original weights ===
+  Number of Tasks=  3: Random=1.71e+03, MAF=116, MGF=40.8, MEF=48.3
+  Number of Tasks=  6: Random=3.33e+03, MAF=1.61e+03, MGF=78.2, MEF=104
+  Number of Tasks=  9: Random=4.12e+03, MAF=3.25e+03, MGF=108, MEF=136
+  Number of Tasks= 12: Random=4.74e+03, MAF=4.2e+03, MGF=159, MEF=219
+  Number of Tasks= 15: Random=5.1e+03, MAF=4.66e+03, MGF=222, MEF=329
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style\ErrorVsTasks_bimodal_q1_vs_lossy_30_70_orig_weights.png
+  saved C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\data\probabilistic\matlab_style_ErrorVsTasks_bimodal_q1_vs_lossy_30_70_orig_weights.csv
+
+Done. Wrote 12 figures to C:\Users\adamp\Desktop\Purdue\Research\MultiTask_RemoteInference_Code\src\TON_UPDATES\python_code\plots\probabilistic\matlab_style

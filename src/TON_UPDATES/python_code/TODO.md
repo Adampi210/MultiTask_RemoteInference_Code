@@ -1,6 +1,1 @@
-- Make larger number of iterations
-- Choose higher channel number
-- Try different weights w_i
-- Fix number of sources, increase tasks and channels
-- Increase computational resource, r as a new axis
-- Increase the number of iterationsg   
+- For the robot make the discount factor small and the T small
