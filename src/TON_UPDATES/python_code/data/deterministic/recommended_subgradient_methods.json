@@ -1,20 +1,20 @@
 {
   "deterministic": {
     "recommended_method": "episode1_mstep",
-    "reason": "lowest mean total_score (2.65); top3: episode1_mstep=2.65, normalized_blocks=3.20, adam=3.40",
-    "timestamp": "2026-06-01T16:05:58",
+    "reason": "lowest mean total_score (2.65); top3: episode1_mstep=2.65, normalized_blocks=3.20, adagrad=3.30",
+    "timestamp": "2026-06-04T15:27:11",
     "precheck_file": "PrecheckSubgradientMethods_data.csv"
   },
   "probabilistic": {
     "recommended_method": "adam",
     "reason": "lowest mean total_score (2.52); top3: adam=2.52, rmsprop=3.45, episode1_mstep=3.75",
-    "timestamp": "2026-06-01T16:05:58",
+    "timestamp": "2026-06-04T15:27:11",
     "precheck_file": "PrecheckSubgradientMethods_data.csv"
   },
   "combined": {
     "recommended_method": "adam",
-    "reason": "lowest mean total_score (2.82); top3: adam=2.82, episode1_mstep=3.38, rmsprop=3.97",
-    "timestamp": "2026-06-01T16:05:58",
+    "reason": "lowest mean total_score (2.92); top3: adam=2.92, episode1_mstep=3.38, rmsprop=3.97",
+    "timestamp": "2026-06-04T15:27:11",
     "precheck_file": "PrecheckSubgradientMethods_data.csv"
   }
 }

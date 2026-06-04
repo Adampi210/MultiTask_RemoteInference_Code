@@ -1,1 +1,3 @@
 - For the robot make the discount factor small and the T small
+- Change channels to \alpha K
+- Tasks - k_m

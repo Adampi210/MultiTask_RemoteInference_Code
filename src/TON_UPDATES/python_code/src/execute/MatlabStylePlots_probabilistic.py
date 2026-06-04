@@ -85,9 +85,9 @@ WEIGHT_MODES = [
 #   order matters: this is the plot/legend order.
 POLICY_STYLE = [
     ("Random", "ro-", "Random Policy"),
-    ("MAF",    "b*-", "MAF Policy"),
-    ("MGF",    "kd-", "MGF Policy"),
-    ("MEF",    "g^-", "MEF Policy"),
+    ("MAF", "b*-", "MAF Policy"),
+    ("MEF", "g^-", "MEF Policy"),
+    ("MGF", "kd-", "MGF Policy"),
 ]
 
 B = 20
